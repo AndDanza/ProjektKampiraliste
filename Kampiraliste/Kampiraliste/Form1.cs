@@ -16,5 +16,13 @@ namespace Kampiraliste
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // Insert this line as the body of method button1_Click.
+            label1.Text = "Hello, World!";
+
+
+        }
     }
 }
