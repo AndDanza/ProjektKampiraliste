@@ -21,8 +21,14 @@ namespace Kampiraliste
         {
             // Insert this line as the body of method button1_Click.
             label1.Text = "Hello, World!";
+        }
 
-
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                checkBox1.BackColor = Color.LightGreen;
+            else
+                checkBox1.BackColor = Color.Silver;
         }
     }
 }
