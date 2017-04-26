@@ -51,7 +51,7 @@
             // 
             // korisnickoIme
             // 
-            this.korisnickoIme.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.korisnickoIme.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.korisnickoIme.Location = new System.Drawing.Point(271, 117);
             this.korisnickoIme.Multiline = true;
             this.korisnickoIme.Name = "korisnickoIme";

@@ -13,11 +13,13 @@ namespace Kampiraliste
     public partial class PrijavaForma : Form
     {
         KampiralisteEntiteti ef;
+        zaposlenik prijavljeniZaposlenik;
         public PrijavaForma()
         {
             ef = new KampiralisteEntiteti();
             InitializeComponent();
-            zaposlenik zaposlenik = new zaposlenik();
+            //zaposlenik zaposlenik = new zaposlenik();
+            prijavljeniZaposlenik = new zaposlenik();
         }
 
         private void zapamtiMeCheckedChanged(object sender, EventArgs e)
@@ -34,6 +36,7 @@ namespace Kampiraliste
             {
                 if (zaposlenik.korisnicko_ime == korisnickoIme.Text && zaposlenik.lozinka == lozinka.Text)
                 {
+                    prijavljeniZaposlenik = zaposlenik;
                     provjeraPrijave = true;
                     break;
                 }
@@ -44,8 +47,22 @@ namespace Kampiraliste
                 MessageBox.Show("Unjeli ste krivo korisnicko ime ili lozinku!");
                 return;
             }
-           
-            MessageBox.Show("Uspješna prijava!");
+
+            if(prijavljeniZaposlenik.tip == 1)
+            {
+                MessageBox.Show("Uspješna prijava!");
+                Admin formaUredi = new Admin();
+                formaUredi.ShowDialog();
+            }
+
+            if (prijavljeniZaposlenik.tip == 2)
+            {
+                MessageBox.Show("Uspješna prijava!");
+                Radnik formaUredi = new Radnik();
+                formaUredi.ShowDialog();
+            }
+
+
         }
     }
 }
