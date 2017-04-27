@@ -115,6 +115,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PrijavaForma";
             this.Text = "Prijava u sustav";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PrijavaForma_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

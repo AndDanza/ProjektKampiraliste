@@ -173,6 +173,9 @@
       <DependentUpon>Kampiraliste.edmx</DependentUpon>
       <LastGenOutput>Kampiraliste.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\korisnicka_dokumentacija.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\prijava_img.png" />
   </ItemGroup>
   <ItemGroup>

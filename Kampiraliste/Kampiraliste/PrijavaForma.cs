@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,6 +64,12 @@ namespace Kampiraliste
             }
 
 
+        }
+
+        private void PrijavaForma_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            var path = Directory.GetCurrentDirectory();
+            Help.ShowHelp(this, "file://" + path + "\\Resources\\korisnicka_dokumentacija.chm");
         }
     }
 }
