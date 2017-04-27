@@ -28,7 +28,7 @@ namespace Kampiraliste
             zaposleniciLista.Items.Clear();
             foreach (var zaposlenik in ef.zaposleniks)
             {
-                string noviRed = zaposlenik.ime + " " + zaposlenik.prezime;
+                string noviRed = zaposlenik.PredstaviSe();
                 zaposleniciLista.Items.Add(noviRed);
 
 

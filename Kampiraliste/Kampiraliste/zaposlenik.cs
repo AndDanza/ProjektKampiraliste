@@ -20,5 +20,10 @@ namespace Kampiraliste
         public string korisnicko_ime { get; set; }
         public int tip { get; set; }
         public string lozinka { get; set; }
+
+        public string PredstaviSe()
+        {
+            return ime + " " + prezime;
+        }
     }
 }
