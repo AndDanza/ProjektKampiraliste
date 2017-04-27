@@ -27,7 +27,7 @@ namespace Kampiraliste
             
 
         }
-
+        
         private void PrijaviMe(object sender, EventArgs e)
         {
             bool provjeraPrijave = false;
@@ -48,14 +48,14 @@ namespace Kampiraliste
                 return;
             }
 
-            if(prijavljeniZaposlenik.tip == 1)
+            if(prijavljeniZaposlenik.vrsta_zaposlenika == 1)
             {
                 MessageBox.Show("Uspješna prijava!");
                 Admin formaUredi = new Admin();
                 formaUredi.ShowDialog();
             }
 
-            if (prijavljeniZaposlenik.tip == 2)
+            if (prijavljeniZaposlenik.vrsta_zaposlenika == 2)
             {
                 MessageBox.Show("Uspješna prijava!");
                 Radnik formaUredi = new Radnik();

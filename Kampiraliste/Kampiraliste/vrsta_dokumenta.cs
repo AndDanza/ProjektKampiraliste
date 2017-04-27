@@ -12,25 +12,18 @@ namespace Kampiraliste
     using System;
     using System.Collections.Generic;
     
-    public partial class zaposlenik
+    public partial class vrsta_dokumenta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public zaposlenik()
+        public vrsta_dokumenta()
         {
-            this.prijavas = new HashSet<prijava>();
-            this.racuns = new HashSet<racun>();
+            this.gosts = new HashSet<gost>();
         }
     
         public int id { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public string korisnicko_ime { get; set; }
-        public int vrsta_zaposlenika { get; set; }
-        public string lozinka { get; set; }
+        public string naziv { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<prijava> prijavas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<racun> racuns { get; set; }
+        public virtual ICollection<gost> gosts { get; set; }
     }
 }

@@ -4,8 +4,34 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="21dfdade690e4a71bf64fdc17ae44ca8" Name="Diagram1">
-        <EntityTypeShape EntityType="DBModel.zaposlenik" Width="1.5" PointX="2" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="21dfdade690e4a71bf64fdc17ae44ca8" Name="Diagram1" ZoomLevel="45">
+        <EntityTypeShape EntityType="DBModel.drzava" Width="1.5" PointX="0.5" PointY="3.125" />
+        <EntityTypeShape EntityType="DBModel.gost" Width="1.75" PointX="3.375" PointY="2.125" />
+        <EntityTypeShape EntityType="DBModel.parcela" Width="1.5" PointX="14.125" PointY="13" />
+        <EntityTypeShape EntityType="DBModel.prijava" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.racun" Width="2" PointX="10.75" PointY="1.75" />
+        <EntityTypeShape EntityType="DBModel.smjestaj" Width="1.5" PointX="10" PointY="11.125" />
+        <EntityTypeShape EntityType="DBModel.status_osobe" Width="1.5" PointX="4.125" PointY="11.375" />
+        <EntityTypeShape EntityType="DBModel.vrsta_dokumenta" Width="1.5" PointX="0.875" PointY="0.625" />
+        <EntityTypeShape EntityType="DBModel.vrsta_smjestaja" Width="1.5" PointX="14.375" PointY="10.125" />
+        <EntityTypeShape EntityType="DBModel.zaposlenik" Width="1.5" PointX="9.75" PointY="7" />
+        <AssociationConnector Association="DBModel.FK_gost_drzavaDrzavljanstvo" />
+        <AssociationConnector Association="DBModel.FK_gost_drzavaRodenja" />
+        <AssociationConnector Association="DBModel.FK_gost_dokument" />
+        <AssociationConnector Association="DBModel.FK_racun_gost" />
+        <AssociationConnector Association="DBModel.FK_smjestaj_parcela" />
+        <AssociationConnector Association="DBModel.FK_prijava_smjestaj" />
+        <AssociationConnector Association="DBModel.FK_prijava_status_osobe" />
+        <AssociationConnector Association="DBModel.FK_prijava_zaposlenik" />
+        <AssociationConnector Association="DBModel.FK_racun_smjestaj" />
+        <AssociationConnector Association="DBModel.FK_racun_zaposlenik" />
+        <AssociationConnector Association="DBModel.FK_smjestaj_vrsta_smjestaja" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="DBModel.FK_prijava_gost1" ManuallyRouted="true" >
+          <ConnectorPoint PointX="5.125" PointY="4.74960129557291" />
+          <ConnectorPoint PointX="6.75" PointY="4.74960129557291" />
+          <ConnectorPoint PointX="6.75" PointY="6.125" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

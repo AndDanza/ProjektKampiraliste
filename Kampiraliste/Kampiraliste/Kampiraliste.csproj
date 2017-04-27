@@ -57,6 +57,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="drzava.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gost.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="parcela.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prijava.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
     <Compile Include="PrijavaForma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +98,26 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="racun.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
     <Compile Include="Radnik.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Radnik.Designer.cs">
       <DependentUpon>Radnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="smjestaj.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="status_osobe.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vrsta_dokumenta.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vrsta_smjestaja.cs">
+      <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
     <Compile Include="zaposlenik.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>

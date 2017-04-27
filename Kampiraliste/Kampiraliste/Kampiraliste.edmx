@@ -4,7 +4,94 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="drzava">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spol" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="datum_rodenja" Type="date" Nullable="false" />
+          <Property Name="drzava_id_rodenja" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="drzava_id_drzavljanstvo" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="dokument_id" Type="int" Nullable="false" />
+          <Property Name="broj_dokumenta" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="parcela">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="slobodno" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prijava">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="gost_id" Type="int" Nullable="false" />
+          <Property Name="smjestaj_id" Type="int" Nullable="false" />
+          <Property Name="datum_prijave" Type="datetime" Nullable="false" />
+          <Property Name="datum_odjave" Type="datetime" Nullable="false" />
+          <Property Name="zaposlenik_id" Type="int" Nullable="false" />
+          <Property Name="status_osobe_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="racun">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="gost_id" Type="int" Nullable="false" />
+          <Property Name="zaposlenik_id" Type="int" Nullable="false" />
+          <Property Name="smjestaj_id" Type="int" Nullable="false" />
+          <Property Name="datum_vrijem_izdavanja" Type="datetime" Nullable="false" />
+          <Property Name="JIR" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="ZIR" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="preostalo_za_platit" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="iznos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="smjestaj">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="broj_osoba" Type="int" Nullable="false" />
+          <Property Name="vrsta_smjestaja_id" Type="int" Nullable="false" />
+          <Property Name="parcela_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="status_osobe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="iznos" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vrsta_dokumenta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vrsta_smjestaja">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="iznos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+        </EntityType>
         <EntityType Name="zaposlenik">
           <Key>
             <PropertyRef Name="id" />
@@ -13,46 +100,654 @@
           <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="korisnicko_ime" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="tip" Type="int" Nullable="false" />
+          <Property Name="vrsta_zaposlenika" Type="int" Nullable="false" />
           <Property Name="lozinka" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <Association Name="FK_gost_dokument">
+          <End Role="vrsta_dokumenta" Type="Self.vrsta_dokumenta" Multiplicity="1" />
+          <End Role="gost" Type="Self.gost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vrsta_dokumenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gost">
+              <PropertyRef Name="dokument_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gost_drzavaDrzavljanstvo">
+          <End Role="drzava" Type="Self.drzava" Multiplicity="1" />
+          <End Role="gost" Type="Self.gost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drzava">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gost">
+              <PropertyRef Name="drzava_id_drzavljanstvo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gost_drzavaRodenja">
+          <End Role="drzava" Type="Self.drzava" Multiplicity="1" />
+          <End Role="gost" Type="Self.gost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drzava">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gost">
+              <PropertyRef Name="drzava_id_rodenja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_gost">
+          <End Role="gost" Type="Self.gost" Multiplicity="1" />
+          <End Role="prijava" Type="Self.prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gost">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="gost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_smjestaj">
+          <End Role="smjestaj" Type="Self.smjestaj" Multiplicity="1" />
+          <End Role="prijava" Type="Self.prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="smjestaj">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="smjestaj_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_status_osobe">
+          <End Role="status_osobe" Type="Self.status_osobe" Multiplicity="1" />
+          <End Role="prijava" Type="Self.prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status_osobe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="status_osobe_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_zaposlenik">
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+          <End Role="prijava" Type="Self.prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="zaposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_racun_gost">
+          <End Role="gost" Type="Self.gost" Multiplicity="1" />
+          <End Role="racun" Type="Self.racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gost">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="racun">
+              <PropertyRef Name="gost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_racun_smjestaj">
+          <End Role="smjestaj" Type="Self.smjestaj" Multiplicity="1" />
+          <End Role="racun" Type="Self.racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="smjestaj">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="racun">
+              <PropertyRef Name="smjestaj_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_racun_zaposlenik">
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+          <End Role="racun" Type="Self.racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="racun">
+              <PropertyRef Name="zaposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_smjestaj_parcela">
+          <End Role="parcela" Type="Self.parcela" Multiplicity="1" />
+          <End Role="smjestaj" Type="Self.smjestaj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="parcela">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="smjestaj">
+              <PropertyRef Name="parcela_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_smjestaj_vrsta_smjestaja">
+          <End Role="vrsta_smjestaja" Type="Self.vrsta_smjestaja" Multiplicity="1" />
+          <End Role="smjestaj" Type="Self.smjestaj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vrsta_smjestaja">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="smjestaj">
+              <PropertyRef Name="vrsta_smjestaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="drzava" EntityType="Self.drzava" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gost" EntityType="Self.gost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="parcela" EntityType="Self.parcela" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prijava" EntityType="Self.prijava" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="racun" EntityType="Self.racun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="smjestaj" EntityType="Self.smjestaj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status_osobe" EntityType="Self.status_osobe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vrsta_dokumenta" EntityType="Self.vrsta_dokumenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vrsta_smjestaja" EntityType="Self.vrsta_smjestaja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="zaposlenik" EntityType="Self.zaposlenik" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_gost_dokument" Association="Self.FK_gost_dokument">
+            <End Role="vrsta_dokumenta" EntitySet="vrsta_dokumenta" />
+            <End Role="gost" EntitySet="gost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gost_drzavaDrzavljanstvo" Association="Self.FK_gost_drzavaDrzavljanstvo">
+            <End Role="drzava" EntitySet="drzava" />
+            <End Role="gost" EntitySet="gost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gost_drzavaRodenja" Association="Self.FK_gost_drzavaRodenja">
+            <End Role="drzava" EntitySet="drzava" />
+            <End Role="gost" EntitySet="gost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_gost" Association="Self.FK_prijava_gost">
+            <End Role="gost" EntitySet="gost" />
+            <End Role="prijava" EntitySet="prijava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_smjestaj" Association="Self.FK_prijava_smjestaj">
+            <End Role="smjestaj" EntitySet="smjestaj" />
+            <End Role="prijava" EntitySet="prijava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_status_osobe" Association="Self.FK_prijava_status_osobe">
+            <End Role="status_osobe" EntitySet="status_osobe" />
+            <End Role="prijava" EntitySet="prijava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_zaposlenik" Association="Self.FK_prijava_zaposlenik">
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+            <End Role="prijava" EntitySet="prijava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_racun_gost" Association="Self.FK_racun_gost">
+            <End Role="gost" EntitySet="gost" />
+            <End Role="racun" EntitySet="racun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_racun_smjestaj" Association="Self.FK_racun_smjestaj">
+            <End Role="smjestaj" EntitySet="smjestaj" />
+            <End Role="racun" EntitySet="racun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_racun_zaposlenik" Association="Self.FK_racun_zaposlenik">
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+            <End Role="racun" EntitySet="racun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_smjestaj_parcela" Association="Self.FK_smjestaj_parcela">
+            <End Role="parcela" EntitySet="parcela" />
+            <End Role="smjestaj" EntitySet="smjestaj" />
+          </AssociationSet>
+          <AssociationSet Name="FK_smjestaj_vrsta_smjestaja" Association="Self.FK_smjestaj_vrsta_smjestaja">
+            <End Role="vrsta_smjestaja" EntitySet="vrsta_smjestaja" />
+            <End Role="smjestaj" EntitySet="smjestaj" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="KampiralisteEntiteti" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="drzavas" EntityType="DBModel.drzava" />
+          <EntitySet Name="gosts" EntityType="DBModel.gost" />
+          <EntitySet Name="parcelas" EntityType="DBModel.parcela" />
+          <EntitySet Name="prijavas" EntityType="DBModel.prijava" />
+          <EntitySet Name="racuns" EntityType="DBModel.racun" />
+          <EntitySet Name="smjestajs" EntityType="DBModel.smjestaj" />
+          <EntitySet Name="status_osobe" EntityType="DBModel.status_osobe" />
+          <EntitySet Name="vrsta_dokumenta" EntityType="DBModel.vrsta_dokumenta" />
+          <EntitySet Name="vrsta_smjestaja" EntityType="DBModel.vrsta_smjestaja" />
+          <EntitySet Name="zaposleniks" EntityType="DBModel.zaposlenik" />
+          <AssociationSet Name="FK_gost_drzavaDrzavljanstvo" Association="DBModel.FK_gost_drzavaDrzavljanstvo">
+            <End Role="drzava" EntitySet="drzavas" />
+            <End Role="gost" EntitySet="gosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gost_drzavaRodenja" Association="DBModel.FK_gost_drzavaRodenja">
+            <End Role="drzava" EntitySet="drzavas" />
+            <End Role="gost" EntitySet="gosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gost_dokument" Association="DBModel.FK_gost_dokument">
+            <End Role="vrsta_dokumenta" EntitySet="vrsta_dokumenta" />
+            <End Role="gost" EntitySet="gosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_racun_gost" Association="DBModel.FK_racun_gost">
+            <End Role="gost" EntitySet="gosts" />
+            <End Role="racun" EntitySet="racuns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_smjestaj_parcela" Association="DBModel.FK_smjestaj_parcela">
+            <End Role="parcela" EntitySet="parcelas" />
+            <End Role="smjestaj" EntitySet="smjestajs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_smjestaj" Association="DBModel.FK_prijava_smjestaj">
+            <End Role="smjestaj" EntitySet="smjestajs" />
+            <End Role="prijava" EntitySet="prijavas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_status_osobe" Association="DBModel.FK_prijava_status_osobe">
+            <End Role="status_osobe" EntitySet="status_osobe" />
+            <End Role="prijava" EntitySet="prijavas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_zaposlenik" Association="DBModel.FK_prijava_zaposlenik">
+            <End Role="zaposlenik" EntitySet="zaposleniks" />
+            <End Role="prijava" EntitySet="prijavas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_racun_smjestaj" Association="DBModel.FK_racun_smjestaj">
+            <End Role="smjestaj" EntitySet="smjestajs" />
+            <End Role="racun" EntitySet="racuns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_racun_zaposlenik" Association="DBModel.FK_racun_zaposlenik">
+            <End Role="zaposlenik" EntitySet="zaposleniks" />
+            <End Role="racun" EntitySet="racuns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_smjestaj_vrsta_smjestaja" Association="DBModel.FK_smjestaj_vrsta_smjestaja">
+            <End Role="vrsta_smjestaja" EntitySet="vrsta_smjestaja" />
+            <End Role="smjestaj" EntitySet="smjestajs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prijava_gost1" Association="DBModel.FK_prijava_gost1">
+            <End Role="gost" EntitySet="gosts" />
+            <End Role="prijava" EntitySet="prijavas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="drzava">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="gosts" Relationship="DBModel.FK_gost_drzavaDrzavljanstvo" FromRole="drzava" ToRole="gost" />
+          <NavigationProperty Name="gosts1" Relationship="DBModel.FK_gost_drzavaRodenja" FromRole="drzava" ToRole="gost" />
+        </EntityType>
+        <EntityType Name="gost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="spol" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="datum_rodenja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="drzava_id_rodenja" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="drzava_id_drzavljanstvo" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="dokument_id" Type="Int32" Nullable="false" />
+          <Property Name="broj_dokumenta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="drzava" Relationship="DBModel.FK_gost_drzavaDrzavljanstvo" FromRole="gost" ToRole="drzava" />
+          <NavigationProperty Name="drzava1" Relationship="DBModel.FK_gost_drzavaRodenja" FromRole="gost" ToRole="drzava" />
+          <NavigationProperty Name="vrsta_dokumenta" Relationship="DBModel.FK_gost_dokument" FromRole="gost" ToRole="vrsta_dokumenta" />
+          <NavigationProperty Name="racuns" Relationship="DBModel.FK_racun_gost" FromRole="gost" ToRole="racun" />
+          <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_gost1" FromRole="gost" ToRole="prijava" />
+        </EntityType>
+        <EntityType Name="parcela">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="slobodno" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="smjestajs" Relationship="DBModel.FK_smjestaj_parcela" FromRole="parcela" ToRole="smjestaj" />
+        </EntityType>
+        <EntityType Name="prijava">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="gost_id" Type="Int32" Nullable="false" />
+          <Property Name="smjestaj_id" Type="Int32" Nullable="false" />
+          <Property Name="datum_prijave" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="datum_odjave" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="zaposlenik_id" Type="Int32" Nullable="false" />
+          <Property Name="status_osobe_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="smjestaj" Relationship="DBModel.FK_prijava_smjestaj" FromRole="prijava" ToRole="smjestaj" />
+          <NavigationProperty Name="status_osobe" Relationship="DBModel.FK_prijava_status_osobe" FromRole="prijava" ToRole="status_osobe" />
+          <NavigationProperty Name="zaposlenik" Relationship="DBModel.FK_prijava_zaposlenik" FromRole="prijava" ToRole="zaposlenik" />
+          <NavigationProperty Name="gost1" Relationship="DBModel.FK_prijava_gost1" FromRole="prijava" ToRole="gost" />
+        </EntityType>
+        <EntityType Name="racun">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="gost_id" Type="Int32" Nullable="false" />
+          <Property Name="zaposlenik_id" Type="Int32" Nullable="false" />
+          <Property Name="smjestaj_id" Type="Int32" Nullable="false" />
+          <Property Name="datum_vrijem_izdavanja" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="JIR" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="ZIR" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="preostalo_za_platit" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="iznos" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <NavigationProperty Name="gost" Relationship="DBModel.FK_racun_gost" FromRole="racun" ToRole="gost" />
+          <NavigationProperty Name="smjestaj" Relationship="DBModel.FK_racun_smjestaj" FromRole="racun" ToRole="smjestaj" />
+          <NavigationProperty Name="zaposlenik" Relationship="DBModel.FK_racun_zaposlenik" FromRole="racun" ToRole="zaposlenik" />
+        </EntityType>
+        <EntityType Name="smjestaj">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="broj_osoba" Type="Int32" Nullable="false" />
+          <Property Name="vrsta_smjestaja_id" Type="Int32" Nullable="false" />
+          <Property Name="parcela_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="parcela" Relationship="DBModel.FK_smjestaj_parcela" FromRole="smjestaj" ToRole="parcela" />
+          <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_smjestaj" FromRole="smjestaj" ToRole="prijava" />
+          <NavigationProperty Name="racuns" Relationship="DBModel.FK_racun_smjestaj" FromRole="smjestaj" ToRole="racun" />
+          <NavigationProperty Name="vrsta_smjestaja" Relationship="DBModel.FK_smjestaj_vrsta_smjestaja" FromRole="smjestaj" ToRole="vrsta_smjestaja" />
+        </EntityType>
+        <EntityType Name="status_osobe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="iznos" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_status_osobe" FromRole="status_osobe" ToRole="prijava" />
+        </EntityType>
+        <EntityType Name="vrsta_dokumenta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="gosts" Relationship="DBModel.FK_gost_dokument" FromRole="vrsta_dokumenta" ToRole="gost" />
+        </EntityType>
+        <EntityType Name="vrsta_smjestaja">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="iznos" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <NavigationProperty Name="smjestajs" Relationship="DBModel.FK_smjestaj_vrsta_smjestaja" FromRole="vrsta_smjestaja" ToRole="smjestaj" />
+        </EntityType>
         <EntityType Name="zaposlenik">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="korisnicko_ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="tip" Type="Int32" Nullable="false" />
-          <Property Name="lozinka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="korisnicko_ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vrsta_zaposlenika" Type="Int32" Nullable="false" />
+          <Property Name="lozinka" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_zaposlenik" FromRole="zaposlenik" ToRole="prijava" />
+          <NavigationProperty Name="racuns" Relationship="DBModel.FK_racun_zaposlenik" FromRole="zaposlenik" ToRole="racun" />
         </EntityType>
-        <EntityContainer Name="KampiralisteEntiteti" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="zaposleniks" EntityType="Self.zaposlenik" />
-        </EntityContainer>
-      </Schema>
+        <Association Name="FK_gost_drzavaDrzavljanstvo">
+          <End Type="DBModel.drzava" Role="drzava" Multiplicity="1" />
+          <End Type="DBModel.gost" Role="gost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drzava">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gost">
+              <PropertyRef Name="drzava_id_drzavljanstvo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gost_drzavaRodenja">
+          <End Type="DBModel.drzava" Role="drzava" Multiplicity="1" />
+          <End Type="DBModel.gost" Role="gost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drzava">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gost">
+              <PropertyRef Name="drzava_id_rodenja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gost_dokument">
+          <End Type="DBModel.vrsta_dokumenta" Role="vrsta_dokumenta" Multiplicity="1" />
+          <End Type="DBModel.gost" Role="gost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vrsta_dokumenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gost">
+              <PropertyRef Name="dokument_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_racun_gost">
+          <End Type="DBModel.gost" Role="gost" Multiplicity="1" />
+          <End Type="DBModel.racun" Role="racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gost">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="racun">
+              <PropertyRef Name="gost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_smjestaj_parcela">
+          <End Type="DBModel.parcela" Role="parcela" Multiplicity="1" />
+          <End Type="DBModel.smjestaj" Role="smjestaj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="parcela">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="smjestaj">
+              <PropertyRef Name="parcela_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_smjestaj">
+          <End Type="DBModel.smjestaj" Role="smjestaj" Multiplicity="1" />
+          <End Type="DBModel.prijava" Role="prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="smjestaj">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="smjestaj_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_status_osobe">
+          <End Type="DBModel.status_osobe" Role="status_osobe" Multiplicity="1" />
+          <End Type="DBModel.prijava" Role="prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status_osobe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="status_osobe_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_zaposlenik">
+          <End Type="DBModel.zaposlenik" Role="zaposlenik" Multiplicity="1" />
+          <End Type="DBModel.prijava" Role="prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="zaposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_racun_smjestaj">
+          <End Type="DBModel.smjestaj" Role="smjestaj" Multiplicity="1" />
+          <End Type="DBModel.racun" Role="racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="smjestaj">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="racun">
+              <PropertyRef Name="smjestaj_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_racun_zaposlenik">
+          <End Type="DBModel.zaposlenik" Role="zaposlenik" Multiplicity="1" />
+          <End Type="DBModel.racun" Role="racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="racun">
+              <PropertyRef Name="zaposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_smjestaj_vrsta_smjestaja">
+          <End Type="DBModel.vrsta_smjestaja" Role="vrsta_smjestaja" Multiplicity="1" />
+          <End Type="DBModel.smjestaj" Role="smjestaj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vrsta_smjestaja">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="smjestaj">
+              <PropertyRef Name="vrsta_smjestaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prijava_gost1">
+          <End Type="DBModel.gost" Role="gost" Multiplicity="1" />
+          <End Type="DBModel.prijava" Role="prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gost">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="gost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="KampiralisteEntiteti">
+          <EntitySetMapping Name="drzavas">
+            <EntityTypeMapping TypeName="DBModel.drzava">
+              <MappingFragment StoreEntitySet="drzava">
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gosts">
+            <EntityTypeMapping TypeName="DBModel.gost">
+              <MappingFragment StoreEntitySet="gost">
+                <ScalarProperty Name="broj_dokumenta" ColumnName="broj_dokumenta" />
+                <ScalarProperty Name="dokument_id" ColumnName="dokument_id" />
+                <ScalarProperty Name="drzava_id_drzavljanstvo" ColumnName="drzava_id_drzavljanstvo" />
+                <ScalarProperty Name="drzava_id_rodenja" ColumnName="drzava_id_rodenja" />
+                <ScalarProperty Name="datum_rodenja" ColumnName="datum_rodenja" />
+                <ScalarProperty Name="spol" ColumnName="spol" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="parcelas">
+            <EntityTypeMapping TypeName="DBModel.parcela">
+              <MappingFragment StoreEntitySet="parcela">
+                <ScalarProperty Name="slobodno" ColumnName="slobodno" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prijavas">
+            <EntityTypeMapping TypeName="DBModel.prijava">
+              <MappingFragment StoreEntitySet="prijava">
+                <ScalarProperty Name="status_osobe_id" ColumnName="status_osobe_id" />
+                <ScalarProperty Name="zaposlenik_id" ColumnName="zaposlenik_id" />
+                <ScalarProperty Name="datum_odjave" ColumnName="datum_odjave" />
+                <ScalarProperty Name="datum_prijave" ColumnName="datum_prijave" />
+                <ScalarProperty Name="smjestaj_id" ColumnName="smjestaj_id" />
+                <ScalarProperty Name="gost_id" ColumnName="gost_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="racuns">
+            <EntityTypeMapping TypeName="DBModel.racun">
+              <MappingFragment StoreEntitySet="racun">
+                <ScalarProperty Name="iznos" ColumnName="iznos" />
+                <ScalarProperty Name="preostalo_za_platit" ColumnName="preostalo_za_platit" />
+                <ScalarProperty Name="ZIR" ColumnName="ZIR" />
+                <ScalarProperty Name="JIR" ColumnName="JIR" />
+                <ScalarProperty Name="datum_vrijem_izdavanja" ColumnName="datum_vrijem_izdavanja" />
+                <ScalarProperty Name="smjestaj_id" ColumnName="smjestaj_id" />
+                <ScalarProperty Name="zaposlenik_id" ColumnName="zaposlenik_id" />
+                <ScalarProperty Name="gost_id" ColumnName="gost_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="smjestajs">
+            <EntityTypeMapping TypeName="DBModel.smjestaj">
+              <MappingFragment StoreEntitySet="smjestaj">
+                <ScalarProperty Name="parcela_id" ColumnName="parcela_id" />
+                <ScalarProperty Name="vrsta_smjestaja_id" ColumnName="vrsta_smjestaja_id" />
+                <ScalarProperty Name="broj_osoba" ColumnName="broj_osoba" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status_osobe">
+            <EntityTypeMapping TypeName="DBModel.status_osobe">
+              <MappingFragment StoreEntitySet="status_osobe">
+                <ScalarProperty Name="iznos" ColumnName="iznos" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vrsta_dokumenta">
+            <EntityTypeMapping TypeName="DBModel.vrsta_dokumenta">
+              <MappingFragment StoreEntitySet="vrsta_dokumenta">
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vrsta_smjestaja">
+            <EntityTypeMapping TypeName="DBModel.vrsta_smjestaja">
+              <MappingFragment StoreEntitySet="vrsta_smjestaja">
+                <ScalarProperty Name="iznos" ColumnName="iznos" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="zaposleniks">
             <EntityTypeMapping TypeName="DBModel.zaposlenik">
               <MappingFragment StoreEntitySet="zaposlenik">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="ime" ColumnName="ime" />
-                <ScalarProperty Name="prezime" ColumnName="prezime" />
-                <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
-                <ScalarProperty Name="tip" ColumnName="tip" />
                 <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+                <ScalarProperty Name="vrsta_zaposlenika" ColumnName="vrsta_zaposlenika" />
+                <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

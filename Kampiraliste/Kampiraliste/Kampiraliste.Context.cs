@@ -25,6 +25,15 @@ namespace Kampiraliste
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<drzava> drzavas { get; set; }
+        public virtual DbSet<gost> gosts { get; set; }
+        public virtual DbSet<parcela> parcelas { get; set; }
+        public virtual DbSet<prijava> prijavas { get; set; }
+        public virtual DbSet<racun> racuns { get; set; }
+        public virtual DbSet<smjestaj> smjestajs { get; set; }
+        public virtual DbSet<status_osobe> status_osobe { get; set; }
+        public virtual DbSet<vrsta_dokumenta> vrsta_dokumenta { get; set; }
+        public virtual DbSet<vrsta_smjestaja> vrsta_smjestaja { get; set; }
         public virtual DbSet<zaposlenik> zaposleniks { get; set; }
     }
 }
