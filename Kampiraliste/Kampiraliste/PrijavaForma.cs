@@ -71,5 +71,16 @@ namespace Kampiraliste
             var path = Directory.GetCurrentDirectory();
             Help.ShowHelp(this, "file://" + path + "\\Resources\\korisnicka_dokumentacija.chm");
         }
+
+        private void helpPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            toolTipForHelpIcon.SetToolTip(helpPictureBox, "Kliknite na ikonu ili pritisnite tipku F1");
+        }
+
+        private void helpPictureBox_Click(object sender, EventArgs e)
+        {
+            var path = Directory.GetCurrentDirectory();
+            Help.ShowHelp(this, "file://" + path + "\\Resources\\korisnicka_dokumentacija.chm");
+        }
     }
 }

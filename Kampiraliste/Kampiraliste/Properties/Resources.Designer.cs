@@ -63,6 +63,16 @@ namespace Kampiraliste.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap help_ic {
+            get {
+                object obj = ResourceManager.GetObject("help_ic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap prijava_img {
             get {
                 object obj = ResourceManager.GetObject("prijava_img", resourceCulture);

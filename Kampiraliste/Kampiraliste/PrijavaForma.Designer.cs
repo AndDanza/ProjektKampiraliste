@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.zapamtiMe = new System.Windows.Forms.CheckBox();
             this.korisnickoIme = new System.Windows.Forms.TextBox();
             this.lozinka = new System.Windows.Forms.TextBox();
             this.korisnickoImeLabela = new System.Windows.Forms.Label();
             this.lozinkaLabela = new System.Windows.Forms.Label();
             this.prijavaGumb = new System.Windows.Forms.Button();
+            this.helpPictureBox = new System.Windows.Forms.PictureBox();
+            this.toolTipForHelpIcon = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.helpPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // zapamtiMe
@@ -99,12 +103,25 @@
             this.prijavaGumb.UseVisualStyleBackColor = false;
             this.prijavaGumb.Click += new System.EventHandler(this.PrijaviMe);
             // 
+            // helpPictureBox
+            // 
+            this.helpPictureBox.Image = global::Kampiraliste.Properties.Resources.help_ic;
+            this.helpPictureBox.Location = new System.Drawing.Point(10, 16);
+            this.helpPictureBox.Name = "helpPictureBox";
+            this.helpPictureBox.Size = new System.Drawing.Size(52, 49);
+            this.helpPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.helpPictureBox.TabIndex = 6;
+            this.helpPictureBox.TabStop = false;
+            this.helpPictureBox.Click += new System.EventHandler(this.helpPictureBox_Click);
+            this.helpPictureBox.MouseHover += new System.EventHandler(this.helpPictureBox_MouseHover);
+            // 
             // PrijavaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(623, 411);
+            this.Controls.Add(this.helpPictureBox);
             this.Controls.Add(this.prijavaGumb);
             this.Controls.Add(this.lozinkaLabela);
             this.Controls.Add(this.korisnickoImeLabela);
@@ -116,6 +133,7 @@
             this.Name = "PrijavaForma";
             this.Text = "Prijava u sustav";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PrijavaForma_HelpRequested);
+            ((System.ComponentModel.ISupportInitialize)(this.helpPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +147,8 @@
         private System.Windows.Forms.Label korisnickoImeLabela;
         private System.Windows.Forms.Label lozinkaLabela;
         private System.Windows.Forms.Button prijavaGumb;
+        private System.Windows.Forms.PictureBox helpPictureBox;
+        private System.Windows.Forms.ToolTip toolTipForHelpIcon;
     }
 }
 
