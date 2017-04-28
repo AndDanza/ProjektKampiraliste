@@ -90,6 +90,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Kampiraliste.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PrijavaGostaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrijavaGostaForma.Designer.cs">
+      <DependentUpon>PrijavaGostaForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin.cs">
@@ -97,6 +103,11 @@
     </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="racun.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
@@ -125,16 +136,14 @@
     <EmbeddedResource Include="PrijavaForma.resx">
       <DependentUpon>PrijavaForma.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrijavaGostaForma.resx">
+      <DependentUpon>PrijavaGostaForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,9 +182,15 @@
       <DependentUpon>Kampiraliste.edmx</DependentUpon>
       <LastGenOutput>Kampiraliste.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\WvftUC.jpg" />
     <None Include="Resources\login_ic.png" />
-    <None Include="Resources\help_ic.png" />
+    <None Include="Resources\button_potvrdi-prijavu.png" />
+    <None Include="Resources\help_ic.jpg" />
+    <None Include="Resources\button_prijavite-se.png" />
+    <None Include="Resources\dodaj_gosta.png" />
     <Content Include="Resources\help_icon.jpg" />
+    <None Include="Resources\help_icon.png" />
+    <None Include="Resources\help_icon1.png" />
     <Content Include="Resources\korisnicka_dokumentacija.chm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

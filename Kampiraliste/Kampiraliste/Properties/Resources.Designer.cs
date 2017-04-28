@@ -63,9 +63,29 @@ namespace Kampiraliste.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap help_ic {
+        internal static System.Drawing.Bitmap button_potvrdi_prijavu {
             get {
-                object obj = ResourceManager.GetObject("help_ic", resourceCulture);
+                object obj = ResourceManager.GetObject("button_potvrdi_prijavu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dodaj_gosta {
+            get {
+                object obj = ResourceManager.GetObject("dodaj_gosta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap help_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("help_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,19 +103,9 @@ namespace Kampiraliste.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login_ic1 {
+        internal static System.Drawing.Bitmap WvftUC {
             get {
-                object obj = ResourceManager.GetObject("login_ic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap prijava_img {
-            get {
-                object obj = ResourceManager.GetObject("prijava_img", resourceCulture);
+                object obj = ResourceManager.GetObject("WvftUC", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
