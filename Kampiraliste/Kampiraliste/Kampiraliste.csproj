@@ -173,6 +173,7 @@
       <DependentUpon>Kampiraliste.edmx</DependentUpon>
       <LastGenOutput>Kampiraliste.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\login_ic.png" />
     <None Include="Resources\help_ic.png" />
     <Content Include="Resources\help_icon.jpg" />
     <Content Include="Resources\korisnicka_dokumentacija.chm">

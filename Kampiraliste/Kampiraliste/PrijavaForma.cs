@@ -22,12 +22,6 @@ namespace Kampiraliste
             //zaposlenik zaposlenik = new zaposlenik();
             prijavljeniZaposlenik = new zaposlenik();
         }
-
-        private void zapamtiMeCheckedChanged(object sender, EventArgs e)
-        {
-            
-
-        }
         
         private void PrijaviMe(object sender, EventArgs e)
         {
@@ -82,5 +76,7 @@ namespace Kampiraliste
             var path = Directory.GetCurrentDirectory();
             Help.ShowHelp(this, "file://" + path + "\\Resources\\korisnicka_dokumentacija.chm");
         }
+
+    
     }
 }

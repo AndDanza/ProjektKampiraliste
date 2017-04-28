@@ -35,8 +35,10 @@
             this.korisnickoImeLabela = new System.Windows.Forms.Label();
             this.lozinkaLabela = new System.Windows.Forms.Label();
             this.prijavaGumb = new System.Windows.Forms.Button();
-            this.helpPictureBox = new System.Windows.Forms.PictureBox();
             this.toolTipForHelpIcon = new System.Windows.Forms.ToolTip(this.components);
+            this.loginPictureBox = new System.Windows.Forms.PictureBox();
+            this.helpPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.loginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,19 +46,18 @@
             // 
             this.zapamtiMe.AutoSize = true;
             this.zapamtiMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zapamtiMe.ForeColor = System.Drawing.Color.Lime;
-            this.zapamtiMe.Location = new System.Drawing.Point(271, 224);
+            this.zapamtiMe.ForeColor = System.Drawing.Color.Navy;
+            this.zapamtiMe.Location = new System.Drawing.Point(301, 486);
             this.zapamtiMe.Name = "zapamtiMe";
             this.zapamtiMe.Size = new System.Drawing.Size(161, 33);
             this.zapamtiMe.TabIndex = 0;
             this.zapamtiMe.Text = "Zapamti me";
             this.zapamtiMe.UseVisualStyleBackColor = true;
-            this.zapamtiMe.CheckedChanged += new System.EventHandler(this.zapamtiMeCheckedChanged);
             // 
             // korisnickoIme
             // 
             this.korisnickoIme.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.korisnickoIme.Location = new System.Drawing.Point(271, 117);
+            this.korisnickoIme.Location = new System.Drawing.Point(301, 377);
             this.korisnickoIme.Multiline = true;
             this.korisnickoIme.Name = "korisnickoIme";
             this.korisnickoIme.Size = new System.Drawing.Size(258, 28);
@@ -64,7 +65,7 @@
             // 
             // lozinka
             // 
-            this.lozinka.Location = new System.Drawing.Point(271, 172);
+            this.lozinka.Location = new System.Drawing.Point(301, 428);
             this.lozinka.Multiline = true;
             this.lozinka.Name = "lozinka";
             this.lozinka.Size = new System.Drawing.Size(258, 29);
@@ -74,34 +75,46 @@
             // 
             this.korisnickoImeLabela.AutoSize = true;
             this.korisnickoImeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.korisnickoImeLabela.Location = new System.Drawing.Point(68, 117);
+            this.korisnickoImeLabela.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.korisnickoImeLabela.Location = new System.Drawing.Point(91, 377);
             this.korisnickoImeLabela.Name = "korisnickoImeLabela";
-            this.korisnickoImeLabela.Size = new System.Drawing.Size(168, 29);
+            this.korisnickoImeLabela.Size = new System.Drawing.Size(178, 29);
             this.korisnickoImeLabela.TabIndex = 3;
-            this.korisnickoImeLabela.Text = "korisnicko ime";
+            this.korisnickoImeLabela.Text = "Korisnicko ime:";
             // 
             // lozinkaLabela
             // 
             this.lozinkaLabela.AutoSize = true;
             this.lozinkaLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lozinkaLabela.Location = new System.Drawing.Point(148, 172);
+            this.lozinkaLabela.ForeColor = System.Drawing.Color.Navy;
+            this.lozinkaLabela.Location = new System.Drawing.Point(171, 428);
             this.lozinkaLabela.Name = "lozinkaLabela";
-            this.lozinkaLabela.Size = new System.Drawing.Size(88, 29);
+            this.lozinkaLabela.Size = new System.Drawing.Size(101, 29);
             this.lozinkaLabela.TabIndex = 4;
-            this.lozinkaLabela.Text = "lozinka";
+            this.lozinkaLabela.Text = "Lozinka:";
             // 
             // prijavaGumb
             // 
             this.prijavaGumb.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.prijavaGumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prijavaGumb.ForeColor = System.Drawing.Color.Black;
-            this.prijavaGumb.Location = new System.Drawing.Point(98, 295);
+            this.prijavaGumb.Location = new System.Drawing.Point(96, 538);
             this.prijavaGumb.Name = "prijavaGumb";
-            this.prijavaGumb.Size = new System.Drawing.Size(431, 54);
+            this.prijavaGumb.Size = new System.Drawing.Size(463, 54);
             this.prijavaGumb.TabIndex = 5;
             this.prijavaGumb.Text = "Prijava";
             this.prijavaGumb.UseVisualStyleBackColor = false;
             this.prijavaGumb.Click += new System.EventHandler(this.PrijaviMe);
+            // 
+            // loginPictureBox
+            // 
+            this.loginPictureBox.Image = global::Kampiraliste.Properties.Resources.login_ic1;
+            this.loginPictureBox.Location = new System.Drawing.Point(176, 16);
+            this.loginPictureBox.Name = "loginPictureBox";
+            this.loginPictureBox.Size = new System.Drawing.Size(265, 275);
+            this.loginPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.loginPictureBox.TabIndex = 7;
+            this.loginPictureBox.TabStop = false;
             // 
             // helpPictureBox
             // 
@@ -119,8 +132,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(623, 411);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(678, 658);
+            this.Controls.Add(this.loginPictureBox);
             this.Controls.Add(this.helpPictureBox);
             this.Controls.Add(this.prijavaGumb);
             this.Controls.Add(this.lozinkaLabela);
@@ -130,9 +144,12 @@
             this.Controls.Add(this.zapamtiMe);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "PrijavaForma";
+            this.ShowIcon = false;
             this.Text = "Prijava u sustav";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PrijavaForma_HelpRequested);
+            ((System.ComponentModel.ISupportInitialize)(this.loginPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -149,6 +166,7 @@
         private System.Windows.Forms.Button prijavaGumb;
         private System.Windows.Forms.PictureBox helpPictureBox;
         private System.Windows.Forms.ToolTip toolTipForHelpIcon;
+        private System.Windows.Forms.PictureBox loginPictureBox;
     }
 }
 
