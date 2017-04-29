@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Kampiraliste
 {
-    public partial class Admin : Form
+    public partial class VoditeljForma : Form
     {
         KampiralisteEntiteti ef;
-        public Admin()
+        public VoditeljForma()
         {
             ef = new KampiralisteEntiteti();
             InitializeComponent();

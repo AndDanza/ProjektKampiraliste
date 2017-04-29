@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.zapamtiMe = new System.Windows.Forms.CheckBox();
-            this.korisnickoIme = new System.Windows.Forms.TextBox();
-            this.lozinka = new System.Windows.Forms.TextBox();
+            this.unosKorisnickoIme = new System.Windows.Forms.TextBox();
+            this.unosLozinka = new System.Windows.Forms.TextBox();
             this.korisnickoImeLabela = new System.Windows.Forms.Label();
             this.lozinkaLabela = new System.Windows.Forms.Label();
-            this.prijavaGumb = new System.Windows.Forms.Button();
+            this.akcijaPrijava = new System.Windows.Forms.Button();
             this.toolTipForHelpIcon = new System.Windows.Forms.ToolTip(this.components);
             this.loginPictureBox = new System.Windows.Forms.PictureBox();
             this.helpPictureBox = new System.Windows.Forms.PictureBox();
@@ -56,24 +56,24 @@
             this.zapamtiMe.Text = "Zapamti me";
             this.zapamtiMe.UseVisualStyleBackColor = false;
             // 
-            // korisnickoIme
+            // unosKorisnickoIme
             // 
-            this.korisnickoIme.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.korisnickoIme.Location = new System.Drawing.Point(226, 306);
-            this.korisnickoIme.Margin = new System.Windows.Forms.Padding(2);
-            this.korisnickoIme.Multiline = true;
-            this.korisnickoIme.Name = "korisnickoIme";
-            this.korisnickoIme.Size = new System.Drawing.Size(194, 24);
-            this.korisnickoIme.TabIndex = 1;
+            this.unosKorisnickoIme.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.unosKorisnickoIme.Location = new System.Drawing.Point(226, 306);
+            this.unosKorisnickoIme.Margin = new System.Windows.Forms.Padding(2);
+            this.unosKorisnickoIme.Multiline = true;
+            this.unosKorisnickoIme.Name = "unosKorisnickoIme";
+            this.unosKorisnickoIme.Size = new System.Drawing.Size(194, 24);
+            this.unosKorisnickoIme.TabIndex = 1;
             // 
-            // lozinka
+            // unosLozinka
             // 
-            this.lozinka.Location = new System.Drawing.Point(226, 348);
-            this.lozinka.Margin = new System.Windows.Forms.Padding(2);
-            this.lozinka.Multiline = true;
-            this.lozinka.Name = "lozinka";
-            this.lozinka.Size = new System.Drawing.Size(194, 24);
-            this.lozinka.TabIndex = 2;
+            this.unosLozinka.Location = new System.Drawing.Point(226, 348);
+            this.unosLozinka.Margin = new System.Windows.Forms.Padding(2);
+            this.unosLozinka.Multiline = true;
+            this.unosLozinka.Name = "unosLozinka";
+            this.unosLozinka.Size = new System.Drawing.Size(194, 24);
+            this.unosLozinka.TabIndex = 2;
             // 
             // korisnickoImeLabela
             // 
@@ -101,21 +101,21 @@
             this.lozinkaLabela.TabIndex = 4;
             this.lozinkaLabela.Text = "Lozinka:";
             // 
-            // prijavaGumb
+            // akcijaPrijava
             // 
-            this.prijavaGumb.BackColor = System.Drawing.Color.Tan;
-            this.prijavaGumb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.prijavaGumb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.prijavaGumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prijavaGumb.ForeColor = System.Drawing.Color.Black;
-            this.prijavaGumb.Location = new System.Drawing.Point(73, 441);
-            this.prijavaGumb.Margin = new System.Windows.Forms.Padding(2);
-            this.prijavaGumb.Name = "prijavaGumb";
-            this.prijavaGumb.Size = new System.Drawing.Size(347, 44);
-            this.prijavaGumb.TabIndex = 5;
-            this.prijavaGumb.Text = "Prijava";
-            this.prijavaGumb.UseVisualStyleBackColor = false;
-            this.prijavaGumb.Click += new System.EventHandler(this.PrijaviMe);
+            this.akcijaPrijava.BackColor = System.Drawing.Color.Tan;
+            this.akcijaPrijava.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.akcijaPrijava.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.akcijaPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.akcijaPrijava.ForeColor = System.Drawing.Color.Black;
+            this.akcijaPrijava.Location = new System.Drawing.Point(73, 441);
+            this.akcijaPrijava.Margin = new System.Windows.Forms.Padding(2);
+            this.akcijaPrijava.Name = "akcijaPrijava";
+            this.akcijaPrijava.Size = new System.Drawing.Size(347, 44);
+            this.akcijaPrijava.TabIndex = 5;
+            this.akcijaPrijava.Text = "Prijava";
+            this.akcijaPrijava.UseVisualStyleBackColor = false;
+            this.akcijaPrijava.Click += new System.EventHandler(this.PrijaviMe);
             // 
             // loginPictureBox
             // 
@@ -153,11 +153,11 @@
             this.ClientSize = new System.Drawing.Size(508, 535);
             this.Controls.Add(this.loginPictureBox);
             this.Controls.Add(this.helpPictureBox);
-            this.Controls.Add(this.prijavaGumb);
+            this.Controls.Add(this.akcijaPrijava);
             this.Controls.Add(this.lozinkaLabela);
             this.Controls.Add(this.korisnickoImeLabela);
-            this.Controls.Add(this.lozinka);
-            this.Controls.Add(this.korisnickoIme);
+            this.Controls.Add(this.unosLozinka);
+            this.Controls.Add(this.unosKorisnickoIme);
             this.Controls.Add(this.zapamtiMe);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -177,11 +177,11 @@
         #endregion
 
         private System.Windows.Forms.CheckBox zapamtiMe;
-        private System.Windows.Forms.TextBox korisnickoIme;
-        private System.Windows.Forms.TextBox lozinka;
+        private System.Windows.Forms.TextBox unosKorisnickoIme;
+        private System.Windows.Forms.TextBox unosLozinka;
         private System.Windows.Forms.Label korisnickoImeLabela;
         private System.Windows.Forms.Label lozinkaLabela;
-        private System.Windows.Forms.Button prijavaGumb;
+        private System.Windows.Forms.Button akcijaPrijava;
         private System.Windows.Forms.PictureBox helpPictureBox;
         private System.Windows.Forms.ToolTip toolTipForHelpIcon;
         private System.Windows.Forms.PictureBox loginPictureBox;

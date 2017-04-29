@@ -46,6 +46,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +63,12 @@
     </Compile>
     <Compile Include="gost.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IzdavanjeRacunaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzdavanjeRacunaForma.Designer.cs">
+      <DependentUpon>IzdavanjeRacunaForma.cs</DependentUpon>
     </Compile>
     <Compile Include="parcela.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
@@ -96,13 +103,19 @@
     <Compile Include="PrijavaGostaForma.Designer.cs">
       <DependentUpon>PrijavaGostaForma.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Admin.cs">
+    <Compile Include="PrikazStatistikeForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="PrikazStatistikeForma.Designer.cs">
+      <DependentUpon>PrikazStatistikeForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VoditeljForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VoditeljForma.Designer.cs">
+      <DependentUpon>VoditeljForma.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -112,11 +125,11 @@
     <Compile Include="racun.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
-    <Compile Include="Radnik.cs">
+    <Compile Include="RecepcionerForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Radnik.Designer.cs">
-      <DependentUpon>Radnik.cs</DependentUpon>
+    <Compile Include="RecepcionerForma.Designer.cs">
+      <DependentUpon>RecepcionerForma.cs</DependentUpon>
     </Compile>
     <Compile Include="smjestaj.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
@@ -133,22 +146,28 @@
     <Compile Include="zaposlenik.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="IzdavanjeRacunaForma.resx">
+      <DependentUpon>IzdavanjeRacunaForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrijavaForma.resx">
       <DependentUpon>PrijavaForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrijavaGostaForma.resx">
       <DependentUpon>PrijavaGostaForma.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrikazStatistikeForma.resx">
+      <DependentUpon>PrikazStatistikeForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <EmbeddedResource Include="VoditeljForma.resx">
+      <DependentUpon>VoditeljForma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Radnik.resx">
-      <DependentUpon>Radnik.cs</DependentUpon>
+    <EmbeddedResource Include="RecepcionerForma.resx">
+      <DependentUpon>RecepcionerForma.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Kampiraliste.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

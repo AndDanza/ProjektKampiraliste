@@ -1,6 +1,6 @@
 ﻿namespace Kampiraliste
 {
-    partial class Admin
+    partial class VoditeljForma
     {
         /// <summary>
         /// Required designer variable.

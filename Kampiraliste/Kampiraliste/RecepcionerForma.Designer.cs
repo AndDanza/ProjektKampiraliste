@@ -1,6 +1,6 @@
 ﻿namespace Kampiraliste
 {
-    partial class Radnik
+    partial class RecepcionerForma
     {
         /// <summary>
         /// Required designer variable.

@@ -16,8 +16,10 @@ namespace Kampiraliste
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PrijavaGostaForma());
+            //Application.Run(new PrijavaGostaForma());
             //Application.Run(new PrijavaForma());
+            //Application.Run(new PrikazStatistikeForma());
+            Application.Run(new IzdavanjeRacunaForma());
         }
     }
 }

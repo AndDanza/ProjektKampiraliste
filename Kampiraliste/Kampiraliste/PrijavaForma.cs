@@ -29,7 +29,7 @@ namespace Kampiraliste
             
             foreach (var zaposlenik in ef.zaposleniks)
             {
-                if (zaposlenik.korisnicko_ime == korisnickoIme.Text && zaposlenik.lozinka == lozinka.Text)
+                if (zaposlenik.korisnicko_ime == unosKorisnickoIme.Text && zaposlenik.lozinka == unosLozinka.Text)
                 {
                     prijavljeniZaposlenik = zaposlenik;
                     provjeraPrijave = true;
@@ -46,14 +46,14 @@ namespace Kampiraliste
             if(prijavljeniZaposlenik.vrsta_zaposlenika == 1)
             {
                 MessageBox.Show("Uspješna prijava!");
-                Admin formaUredi = new Admin();
+                VoditeljForma formaUredi = new VoditeljForma();
                 formaUredi.ShowDialog();
             }
 
             if (prijavljeniZaposlenik.vrsta_zaposlenika == 2)
             {
                 MessageBox.Show("Uspješna prijava!");
-                Radnik formaUredi = new Radnik();
+                RecepcionerForma formaUredi = new RecepcionerForma();
                 formaUredi.ShowDialog();
             }
 

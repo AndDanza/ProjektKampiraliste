@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Kampiraliste
 {
-    public partial class Radnik : Form
+    public partial class IzdavanjeRacunaForma : Form
     {
-        public Radnik()
+        public IzdavanjeRacunaForma()
         {
             InitializeComponent();
         }
