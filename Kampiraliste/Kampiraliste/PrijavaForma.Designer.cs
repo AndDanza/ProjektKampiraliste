@@ -47,8 +47,8 @@
             this.zapamtiMe.AutoSize = true;
             this.zapamtiMe.BackColor = System.Drawing.Color.Transparent;
             this.zapamtiMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zapamtiMe.ForeColor = System.Drawing.Color.Navy;
-            this.zapamtiMe.Location = new System.Drawing.Point(226, 395);
+            this.zapamtiMe.ForeColor = System.Drawing.Color.Black;
+            this.zapamtiMe.Location = new System.Drawing.Point(226, 377);
             this.zapamtiMe.Margin = new System.Windows.Forms.Padding(2);
             this.zapamtiMe.Name = "zapamtiMe";
             this.zapamtiMe.Size = new System.Drawing.Size(128, 28);
@@ -68,7 +68,7 @@
             // 
             // unosLozinka
             // 
-            this.unosLozinka.Location = new System.Drawing.Point(226, 348);
+            this.unosLozinka.Location = new System.Drawing.Point(226, 334);
             this.unosLozinka.Margin = new System.Windows.Forms.Padding(2);
             this.unosLozinka.Multiline = true;
             this.unosLozinka.Name = "unosLozinka";
@@ -80,7 +80,7 @@
             this.korisnickoImeLabela.AutoSize = true;
             this.korisnickoImeLabela.BackColor = System.Drawing.Color.Transparent;
             this.korisnickoImeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.korisnickoImeLabela.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.korisnickoImeLabela.ForeColor = System.Drawing.Color.Black;
             this.korisnickoImeLabela.Location = new System.Drawing.Point(68, 306);
             this.korisnickoImeLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.korisnickoImeLabela.Name = "korisnickoImeLabela";
@@ -93,8 +93,8 @@
             this.lozinkaLabela.AutoSize = true;
             this.lozinkaLabela.BackColor = System.Drawing.Color.Transparent;
             this.lozinkaLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lozinkaLabela.ForeColor = System.Drawing.Color.Navy;
-            this.lozinkaLabela.Location = new System.Drawing.Point(128, 348);
+            this.lozinkaLabela.ForeColor = System.Drawing.Color.Black;
+            this.lozinkaLabela.Location = new System.Drawing.Point(128, 334);
             this.lozinkaLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lozinkaLabela.Name = "lozinkaLabela";
             this.lozinkaLabela.Size = new System.Drawing.Size(79, 24);
@@ -108,7 +108,7 @@
             this.akcijaPrijava.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.akcijaPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.akcijaPrijava.ForeColor = System.Drawing.Color.Black;
-            this.akcijaPrijava.Location = new System.Drawing.Point(73, 441);
+            this.akcijaPrijava.Location = new System.Drawing.Point(73, 422);
             this.akcijaPrijava.Margin = new System.Windows.Forms.Padding(2);
             this.akcijaPrijava.Name = "akcijaPrijava";
             this.akcijaPrijava.Size = new System.Drawing.Size(347, 44);

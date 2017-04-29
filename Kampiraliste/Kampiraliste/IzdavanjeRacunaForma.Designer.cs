@@ -164,7 +164,7 @@
             this.akcijaKreirajRacun.Text = "Kreiraj račun";
             this.akcijaKreirajRacun.UseVisualStyleBackColor = true;
             // 
-            // IzdavanjeRacunaForm
+            // IzdavanjeRacunaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,8 +185,8 @@
             this.Controls.Add(this.ispisGostiUSmjestaju);
             this.Controls.Add(this.odabirSmjestaj);
             this.Controls.Add(this.smjestajLabela);
-            this.Name = "IzdavanjeRacunaForm";
-            this.Text = "IzdavanjeRacunaForm";
+            this.Name = "IzdavanjeRacunaForma";
+            this.Text = "Izdavanje računa";
             this.ResumeLayout(false);
             this.PerformLayout();
 
