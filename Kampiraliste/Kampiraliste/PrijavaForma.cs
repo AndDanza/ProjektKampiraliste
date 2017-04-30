@@ -48,7 +48,7 @@ namespace Kampiraliste
                 MessageBox.Show("Uspješna prijava!");
                 MeniVoditeljForma formaUredi = new MeniVoditeljForma();
                 formaUredi.Show();
-                this.Close();
+                
             }
 
             if (prijavljeniZaposlenik.vrsta_zaposlenika == 2)
@@ -56,7 +56,7 @@ namespace Kampiraliste
                 MessageBox.Show("Uspješna prijava!");
                 MeniRecepcionerForma formaUredi = new MeniRecepcionerForma();
                 formaUredi.Show();
-                this.Close();
+         
             }
 
 
