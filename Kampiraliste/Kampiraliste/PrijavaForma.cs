@@ -78,5 +78,7 @@ namespace Kampiraliste
             var path = Directory.GetCurrentDirectory();
             Help.ShowHelp(this, "file://" + path + "\\Resources\\korisnicka_dokumentacija.chm");
         }
+
+        
     }
 }
