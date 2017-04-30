@@ -28,79 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.zaposleniciLista = new System.Windows.Forms.ListBox();
-            this.ucitajZaposlenike = new System.Windows.Forms.Button();
-            this.tablicaZaposlenika = new System.Windows.Forms.TableLayoutPanel();
+            this.otvoriPopisCjenikaAkcija = new System.Windows.Forms.Button();
+            this.otvorPopisZaposlenikaAkcija = new System.Windows.Forms.Button();
+            this.otvoriPrijavuGostaAction = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // otvoriPopisCjenikaAkcija
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "admin";
+            this.otvoriPopisCjenikaAkcija.BackColor = System.Drawing.Color.Peru;
+            this.otvoriPopisCjenikaAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otvoriPopisCjenikaAkcija.Location = new System.Drawing.Point(39, 262);
+            this.otvoriPopisCjenikaAkcija.Name = "otvoriPopisCjenikaAkcija";
+            this.otvoriPopisCjenikaAkcija.Size = new System.Drawing.Size(300, 149);
+            this.otvoriPopisCjenikaAkcija.TabIndex = 0;
+            this.otvoriPopisCjenikaAkcija.Text = "Cjenik";
+            this.otvoriPopisCjenikaAkcija.UseVisualStyleBackColor = false;
+            this.otvoriPopisCjenikaAkcija.Click += new System.EventHandler(this.otvoriPopisCjenikaAkcija_Click);
             // 
-            // zaposleniciLista
+            // otvorPopisZaposlenikaAkcija
             // 
-            this.zaposleniciLista.FormattingEnabled = true;
-            this.zaposleniciLista.ItemHeight = 16;
-            this.zaposleniciLista.Location = new System.Drawing.Point(14, 362);
-            this.zaposleniciLista.Name = "zaposleniciLista";
-            this.zaposleniciLista.Size = new System.Drawing.Size(705, 100);
-            this.zaposleniciLista.TabIndex = 1;
+            this.otvorPopisZaposlenikaAkcija.BackColor = System.Drawing.Color.Peru;
+            this.otvorPopisZaposlenikaAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otvorPopisZaposlenikaAkcija.Location = new System.Drawing.Point(381, 262);
+            this.otvorPopisZaposlenikaAkcija.Name = "otvorPopisZaposlenikaAkcija";
+            this.otvorPopisZaposlenikaAkcija.Size = new System.Drawing.Size(309, 148);
+            this.otvorPopisZaposlenikaAkcija.TabIndex = 1;
+            this.otvorPopisZaposlenikaAkcija.Text = "Zaposlenici";
+            this.otvorPopisZaposlenikaAkcija.UseVisualStyleBackColor = false;
+            this.otvorPopisZaposlenikaAkcija.Click += new System.EventHandler(this.otvorPopisZaposlenikaAkcija_Click);
             // 
-            // ucitajZaposlenike
+            // otvoriPrijavuGostaAction
             // 
-            this.ucitajZaposlenike.Location = new System.Drawing.Point(357, 29);
-            this.ucitajZaposlenike.Name = "ucitajZaposlenike";
-            this.ucitajZaposlenike.Size = new System.Drawing.Size(267, 55);
-            this.ucitajZaposlenike.TabIndex = 2;
-            this.ucitajZaposlenike.Text = "Ucitaj zaposlenike";
-            this.ucitajZaposlenike.UseVisualStyleBackColor = true;
-            this.ucitajZaposlenike.Click += new System.EventHandler(this.UcitajZaposlenike);
+            this.otvoriPrijavuGostaAction.BackColor = System.Drawing.Color.Peru;
+            this.otvoriPrijavuGostaAction.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otvoriPrijavuGostaAction.ForeColor = System.Drawing.Color.Black;
+            this.otvoriPrijavuGostaAction.Location = new System.Drawing.Point(39, 39);
+            this.otvoriPrijavuGostaAction.Name = "otvoriPrijavuGostaAction";
+            this.otvoriPrijavuGostaAction.Size = new System.Drawing.Size(300, 160);
+            this.otvoriPrijavuGostaAction.TabIndex = 2;
+            this.otvoriPrijavuGostaAction.Text = "Prijava gosta";
+            this.otvoriPrijavuGostaAction.UseVisualStyleBackColor = false;
+            this.otvoriPrijavuGostaAction.Click += new System.EventHandler(this.otvoriPrijavuGostaAction_Click);
             // 
-            // tablicaZaposlenika
-            // 
-            this.tablicaZaposlenika.ColumnCount = 5;
-            this.tablicaZaposlenika.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tablicaZaposlenika.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tablicaZaposlenika.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tablicaZaposlenika.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tablicaZaposlenika.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tablicaZaposlenika.Location = new System.Drawing.Point(19, 132);
-            this.tablicaZaposlenika.Name = "tablicaZaposlenika";
-            this.tablicaZaposlenika.RowCount = 1;
-            this.tablicaZaposlenika.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablicaZaposlenika.Size = new System.Drawing.Size(695, 202);
-            this.tablicaZaposlenika.TabIndex = 3;
-            this.tablicaZaposlenika.Paint += new System.Windows.Forms.PaintEventHandler(this.tablicaZaposlenika_Paint);
-            // 
-            // Admin
+            // VoditeljForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 481);
-            this.Controls.Add(this.tablicaZaposlenika);
-            this.Controls.Add(this.ucitajZaposlenike);
-            this.Controls.Add(this.zaposleniciLista);
-            this.Controls.Add(this.label1);
-            this.Name = "Admin";
-            this.Text = "UrediRadnika";
-            this.Load += new System.EventHandler(this.Admin_Load);
+            this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(735, 555);
+            this.Controls.Add(this.otvoriPrijavuGostaAction);
+            this.Controls.Add(this.otvorPopisZaposlenikaAkcija);
+            this.Controls.Add(this.otvoriPopisCjenikaAkcija);
+            this.Name = "VoditeljForma";
+            this.Text = "Voditelj";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox zaposleniciLista;
-        private System.Windows.Forms.Button ucitajZaposlenike;
-        private System.Windows.Forms.TableLayoutPanel tablicaZaposlenika;
+        private System.Windows.Forms.Button otvoriPopisCjenikaAkcija;
+        private System.Windows.Forms.Button otvorPopisZaposlenikaAkcija;
+        private System.Windows.Forms.Button otvoriPrijavuGostaAction;
     }
 }

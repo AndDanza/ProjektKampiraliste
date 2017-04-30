@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Kampiraliste
 {
-    public partial class RecepcionerForma : Form
+    public partial class CjenikForma : Form
     {
-        public RecepcionerForma()
+        public CjenikForma()
         {
             InitializeComponent();
-        }
-
-        private void otvoriPrijavuGostaAction_Click(object sender, EventArgs e)
-        {
-            PrijavaGostaForma urediFormu = new PrijavaGostaForma();
-            urediFormu.ShowDialog();
         }
     }
 }

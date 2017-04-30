@@ -28,34 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.otvoriPrijavuGostaAction = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // otvoriPrijavuGostaAction
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "radnik";
+            this.otvoriPrijavuGostaAction.BackColor = System.Drawing.Color.Peru;
+            this.otvoriPrijavuGostaAction.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otvoriPrijavuGostaAction.ForeColor = System.Drawing.Color.Black;
+            this.otvoriPrijavuGostaAction.Location = new System.Drawing.Point(37, 46);
+            this.otvoriPrijavuGostaAction.Name = "otvoriPrijavuGostaAction";
+            this.otvoriPrijavuGostaAction.Size = new System.Drawing.Size(257, 160);
+            this.otvoriPrijavuGostaAction.TabIndex = 0;
+            this.otvoriPrijavuGostaAction.Text = "Prijava gosta";
+            this.otvoriPrijavuGostaAction.UseVisualStyleBackColor = false;
+            this.otvoriPrijavuGostaAction.Click += new System.EventHandler(this.otvoriPrijavuGostaAction_Click);
             // 
-            // Radnik
+            // RecepcionerForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 253);
-            this.Controls.Add(this.label1);
-            this.Name = "Radnik";
-            this.Text = "Radnik";
+            this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(681, 558);
+            this.Controls.Add(this.otvoriPrijavuGostaAction);
+            this.Name = "RecepcionerForma";
+            this.Text = "Recepcioner";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button otvoriPrijavuGostaAction;
     }
 }

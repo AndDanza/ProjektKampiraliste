@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CjenikForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CjenikForma.Designer.cs">
+      <DependentUpon>CjenikForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="drzava.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
@@ -155,6 +161,12 @@
     <Compile Include="vrsta_smjestaja.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
+    <Compile Include="ZaposleniciForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZaposleniciForma.Designer.cs">
+      <DependentUpon>ZaposleniciForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="zaposlenik.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
@@ -186,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionerForma.resx">
       <DependentUpon>RecepcionerForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaposleniciForma.resx">
+      <DependentUpon>ZaposleniciForma.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Kampiraliste.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

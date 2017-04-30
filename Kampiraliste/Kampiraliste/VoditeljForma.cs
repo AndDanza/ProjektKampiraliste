@@ -19,33 +19,22 @@ namespace Kampiraliste
             InitializeComponent();
         }
 
-        private void Admin_Load(object sender, EventArgs e)
+        private void otvorPopisZaposlenikaAkcija_Click(object sender, EventArgs e)
         {
-
-        }
-        private void UcitajZaposlenike(object sender, EventArgs e)
-        {
-            zaposleniciLista.Items.Clear();
-            foreach (var zaposlenik in ef.zaposleniks)
-            {
-                string noviRed = zaposlenik.ime + zaposlenik.prezime;
-                zaposleniciLista.Items.Add(noviRed);
-
-
-                tablicaZaposlenika.RowCount = tablicaZaposlenika.RowCount + 1;
-                tablicaZaposlenika.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-                tablicaZaposlenika.Controls.Add(new Label() { Text = zaposlenik.ime }, 1, tablicaZaposlenika.RowCount - 1);
-                tablicaZaposlenika.Controls.Add(new Label() { Text = zaposlenik.prezime }, 2, tablicaZaposlenika.RowCount - 1);
-                tablicaZaposlenika.Controls.Add(new Label() { Text = zaposlenik.korisnicko_ime }, 3, tablicaZaposlenika.RowCount - 1);
-                tablicaZaposlenika.Controls.Add(new Label() { Text = zaposlenik.lozinka }, 4, tablicaZaposlenika.RowCount - 1);
-                tablicaZaposlenika.Controls.Add(new Label() { Text = zaposlenik.vrsta_zaposlenika.ToString() }, 5, tablicaZaposlenika.RowCount - 1);
-
-            }
+            ZaposleniciForma formaUredi = new ZaposleniciForma();
+            formaUredi.ShowDialog();
         }
 
-        private void tablicaZaposlenika_Paint(object sender, PaintEventArgs e)
+        private void otvoriPopisCjenikaAkcija_Click(object sender, EventArgs e)
         {
+            CjenikForma formaUredi = new CjenikForma();
+            formaUredi.ShowDialog();
+        }
 
+        private void otvoriPrijavuGostaAction_Click(object sender, EventArgs e)
+        {
+            PrijavaGostaForma urediFormu = new PrijavaGostaForma();
+            urediFormu.ShowDialog();
         }
     }
 }
