@@ -22,5 +22,7 @@ namespace Kampiraliste
             }
             cjenikBindingSource.DataSource = listaZaposlenika;
         }
+
+        
     }
 }

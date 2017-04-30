@@ -33,19 +33,20 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.cjenikBindingSource = new System.Windows.Forms.DataGridView();
-            this.vrstadokumentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iznos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstasmjestajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cjenikBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstasmjestajaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Peru;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(33, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(261, 71);
@@ -56,7 +57,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Peru;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Location = new System.Drawing.Point(358, 24);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(276, 71);
@@ -67,10 +70,12 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Peru;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(169, 124);
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button3.Location = new System.Drawing.Point(154, 124);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(330, 72);
+            this.button3.Size = new System.Drawing.Size(345, 72);
             this.button3.TabIndex = 2;
             this.button3.Text = "Obriši cjenik";
             this.button3.UseVisualStyleBackColor = false;
@@ -81,17 +86,14 @@
             this.cjenikBindingSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cjenikBindingSource.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.nazivDataGridViewTextBoxColumn});
+            this.nazivDataGridViewTextBoxColumn,
+            this.iznos});
             this.cjenikBindingSource.DataSource = this.vrstasmjestajaBindingSource;
-            this.cjenikBindingSource.Location = new System.Drawing.Point(220, 238);
+            this.cjenikBindingSource.Location = new System.Drawing.Point(154, 234);
             this.cjenikBindingSource.Name = "cjenikBindingSource";
             this.cjenikBindingSource.RowTemplate.Height = 24;
-            this.cjenikBindingSource.Size = new System.Drawing.Size(244, 172);
+            this.cjenikBindingSource.Size = new System.Drawing.Size(345, 172);
             this.cjenikBindingSource.TabIndex = 3;
-            // 
-            // vrstadokumentaBindingSource
-            // 
-            this.vrstadokumentaBindingSource.DataSource = typeof(Kampiraliste.vrsta_dokumenta);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -104,6 +106,12 @@
             this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
             this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            // 
+            // iznos
+            // 
+            this.iznos.DataPropertyName = "iznos";
+            this.iznos.HeaderText = "iznos";
+            this.iznos.Name = "iznos";
             // 
             // vrstasmjestajaBindingSource
             // 
@@ -121,12 +129,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CjenikForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CjenikForma";
             ((System.ComponentModel.ISupportInitialize)(this.cjenikBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstasmjestajaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -138,9 +145,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView cjenikBindingSource;
+        private System.Windows.Forms.BindingSource vrstasmjestajaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource vrstasmjestajaBindingSource;
-        private System.Windows.Forms.BindingSource vrstadokumentaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iznos;
     }
 }

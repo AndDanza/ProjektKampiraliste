@@ -47,7 +47,7 @@ namespace Kampiraliste
             {
                 MessageBox.Show("Uspješna prijava!");
                 MeniVoditeljForma formaUredi = new MeniVoditeljForma();
-                formaUredi.ShowDialog();
+                formaUredi.Show();
                 this.Close();
             }
 
@@ -55,7 +55,7 @@ namespace Kampiraliste
             {
                 MessageBox.Show("Uspješna prijava!");
                 MeniRecepcionerForma formaUredi = new MeniRecepcionerForma();
-                formaUredi.ShowDialog();
+                formaUredi.Show();
                 this.Close();
             }
 
