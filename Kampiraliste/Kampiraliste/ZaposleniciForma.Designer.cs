@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -113,53 +119,65 @@
             this.prijavasDataGridViewTextBoxColumn,
             this.racunsDataGridViewTextBoxColumn});
             this.zaposlenikDataBinding.DataSource = this.zaposlenikBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.zaposlenikDataBinding.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.zaposlenikDataBinding.DefaultCellStyle = dataGridViewCellStyle7;
             this.zaposlenikDataBinding.Location = new System.Drawing.Point(62, 284);
             this.zaposlenikDataBinding.Name = "zaposlenikDataBinding";
             this.zaposlenikDataBinding.RowTemplate.Height = 24;
-            this.zaposlenikDataBinding.Size = new System.Drawing.Size(635, 188);
+            this.zaposlenikDataBinding.Size = new System.Drawing.Size(644, 188);
             this.zaposlenikDataBinding.TabIndex = 5;
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
             // imeDataGridViewTextBoxColumn
             // 
             this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.imeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.imeDataGridViewTextBoxColumn.HeaderText = "ime";
             this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
             // 
             // prezimeDataGridViewTextBoxColumn
             // 
             this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.prezimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.prezimeDataGridViewTextBoxColumn.HeaderText = "prezime";
             this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
             // 
             // korisnickoimeDataGridViewTextBoxColumn
             // 
             this.korisnickoimeDataGridViewTextBoxColumn.DataPropertyName = "korisnicko_ime";
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.korisnickoimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.korisnickoimeDataGridViewTextBoxColumn.HeaderText = "korisnicko_ime";
             this.korisnickoimeDataGridViewTextBoxColumn.Name = "korisnickoimeDataGridViewTextBoxColumn";
             // 
             // vrstazaposlenikaDataGridViewTextBoxColumn
             // 
             this.vrstazaposlenikaDataGridViewTextBoxColumn.DataPropertyName = "vrsta_zaposlenika";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.vrstazaposlenikaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.vrstazaposlenikaDataGridViewTextBoxColumn.HeaderText = "vrsta_zaposlenika";
             this.vrstazaposlenikaDataGridViewTextBoxColumn.Name = "vrstazaposlenikaDataGridViewTextBoxColumn";
             // 
             // lozinkaDataGridViewTextBoxColumn
             // 
             this.lozinkaDataGridViewTextBoxColumn.DataPropertyName = "lozinka";
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.lozinkaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.lozinkaDataGridViewTextBoxColumn.HeaderText = "lozinka";
             this.lozinkaDataGridViewTextBoxColumn.Name = "lozinkaDataGridViewTextBoxColumn";
             // 
@@ -168,12 +186,14 @@
             this.prijavasDataGridViewTextBoxColumn.DataPropertyName = "prijavas";
             this.prijavasDataGridViewTextBoxColumn.HeaderText = "prijavas";
             this.prijavasDataGridViewTextBoxColumn.Name = "prijavasDataGridViewTextBoxColumn";
+            this.prijavasDataGridViewTextBoxColumn.Visible = false;
             // 
             // racunsDataGridViewTextBoxColumn
             // 
             this.racunsDataGridViewTextBoxColumn.DataPropertyName = "racuns";
             this.racunsDataGridViewTextBoxColumn.HeaderText = "racuns";
             this.racunsDataGridViewTextBoxColumn.Name = "racunsDataGridViewTextBoxColumn";
+            this.racunsDataGridViewTextBoxColumn.Visible = false;
             // 
             // zaposlenikBindingSource
             // 
