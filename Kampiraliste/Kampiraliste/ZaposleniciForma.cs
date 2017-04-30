@@ -21,8 +21,7 @@ namespace Kampiraliste
             {
                 listaZaposlenika = new BindingList<zaposlenik>(ef.zaposleniks.ToList());
             }
-            zaposlenikBindingSource.DataSource = listaZaposlenika;
+            zaposlenikDataBinding.DataSource = listaZaposlenika;
         }
-        
     }
 }

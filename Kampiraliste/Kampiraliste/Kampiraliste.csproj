@@ -218,6 +218,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Kampiraliste.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Kampiraliste.edmx.diagram">
       <DependentUpon>Kampiraliste.edmx</DependentUpon>
     </None>
