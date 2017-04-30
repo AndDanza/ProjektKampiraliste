@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Kampiraliste
 {
-    public partial class PrijavaGostaForma : Form
+    public partial class RadSPrijavamaForma : Form
     {
-        public PrijavaGostaForma()
+        public RadSPrijavamaForma()
         {
             InitializeComponent();
-        }
-
-        private void pokreniUnosSmjestaj_Click(object sender, EventArgs e)
-        {
-            UnosSmjestajForma formaSmjestaj = new UnosSmjestajForma();
-            formaSmjestaj.Show();
         }
     }
 }

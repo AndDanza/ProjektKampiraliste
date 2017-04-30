@@ -56,18 +56,21 @@
             // 
             // odabirSmjestaj
             // 
+            this.odabirSmjestaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.odabirSmjestaj.FormattingEnabled = true;
-            this.odabirSmjestaj.Location = new System.Drawing.Point(122, 30);
+            this.odabirSmjestaj.Location = new System.Drawing.Point(122, 25);
             this.odabirSmjestaj.Name = "odabirSmjestaj";
-            this.odabirSmjestaj.Size = new System.Drawing.Size(149, 21);
+            this.odabirSmjestaj.Size = new System.Drawing.Size(154, 26);
             this.odabirSmjestaj.TabIndex = 1;
             // 
             // ispisGostiUSmjestaju
             // 
+            this.ispisGostiUSmjestaju.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ispisGostiUSmjestaju.FormattingEnabled = true;
-            this.ispisGostiUSmjestaju.Location = new System.Drawing.Point(321, 30);
+            this.ispisGostiUSmjestaju.ItemHeight = 18;
+            this.ispisGostiUSmjestaju.Location = new System.Drawing.Point(310, 32);
             this.ispisGostiUSmjestaju.Name = "ispisGostiUSmjestaju";
-            this.ispisGostiUSmjestaju.Size = new System.Drawing.Size(142, 186);
+            this.ispisGostiUSmjestaju.Size = new System.Drawing.Size(169, 184);
             this.ispisGostiUSmjestaju.TabIndex = 2;
             // 
             // gostiUOdabranomSmjestajuLabela
@@ -83,9 +86,10 @@
             // 
             // ispisDatumDolaska
             // 
+            this.ispisDatumDolaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ispisDatumDolaska.Location = new System.Drawing.Point(122, 66);
             this.ispisDatumDolaska.Name = "ispisDatumDolaska";
-            this.ispisDatumDolaska.Size = new System.Drawing.Size(149, 20);
+            this.ispisDatumDolaska.Size = new System.Drawing.Size(154, 24);
             this.ispisDatumDolaska.TabIndex = 4;
             // 
             // datumDolaskaLabela
@@ -112,9 +116,10 @@
             // 
             // ispisDatumOdlaska
             // 
+            this.ispisDatumOdlaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ispisDatumOdlaska.Location = new System.Drawing.Point(122, 102);
             this.ispisDatumOdlaska.Name = "ispisDatumOdlaska";
-            this.ispisDatumOdlaska.Size = new System.Drawing.Size(149, 20);
+            this.ispisDatumOdlaska.Size = new System.Drawing.Size(154, 24);
             this.ispisDatumOdlaska.TabIndex = 6;
             // 
             // odabraniGostiLabela
@@ -130,10 +135,11 @@
             // 
             // ispisOdabraniGosti
             // 
+            this.ispisOdabraniGosti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ispisOdabraniGosti.Location = new System.Drawing.Point(122, 141);
             this.ispisOdabraniGosti.Multiline = true;
             this.ispisOdabraniGosti.Name = "ispisOdabraniGosti";
-            this.ispisOdabraniGosti.Size = new System.Drawing.Size(149, 75);
+            this.ispisOdabraniGosti.Size = new System.Drawing.Size(154, 75);
             this.ispisOdabraniGosti.TabIndex = 8;
             // 
             // iznosRacunaLabela
@@ -149,20 +155,24 @@
             // 
             // IspisRacuna
             // 
-            this.IspisRacuna.Location = new System.Drawing.Point(321, 262);
+            this.IspisRacuna.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IspisRacuna.Location = new System.Drawing.Point(324, 259);
             this.IspisRacuna.Name = "IspisRacuna";
-            this.IspisRacuna.Size = new System.Drawing.Size(142, 20);
+            this.IspisRacuna.Size = new System.Drawing.Size(147, 24);
             this.IspisRacuna.TabIndex = 10;
             // 
             // akcijaKreirajRacun
             // 
-            this.akcijaKreirajRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.akcijaKreirajRacun.BackColor = System.Drawing.Color.Peru;
+            this.akcijaKreirajRacun.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.akcijaKreirajRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.akcijaKreirajRacun.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.akcijaKreirajRacun.Location = new System.Drawing.Point(506, 122);
             this.akcijaKreirajRacun.Name = "akcijaKreirajRacun";
             this.akcijaKreirajRacun.Size = new System.Drawing.Size(166, 55);
             this.akcijaKreirajRacun.TabIndex = 12;
             this.akcijaKreirajRacun.Text = "Kreiraj račun";
-            this.akcijaKreirajRacun.UseVisualStyleBackColor = true;
+            this.akcijaKreirajRacun.UseVisualStyleBackColor = false;
             // 
             // IzdavanjeRacunaForma
             // 
@@ -185,7 +195,9 @@
             this.Controls.Add(this.ispisGostiUSmjestaju);
             this.Controls.Add(this.odabirSmjestaj);
             this.Controls.Add(this.smjestajLabela);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "IzdavanjeRacunaForma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izdavanje računa";
             this.ResumeLayout(false);
             this.PerformLayout();

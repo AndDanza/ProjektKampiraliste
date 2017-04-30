@@ -103,11 +103,11 @@
             // 
             // akcijaPrijava
             // 
-            this.akcijaPrijava.BackColor = System.Drawing.Color.Tan;
+            this.akcijaPrijava.BackColor = System.Drawing.Color.Peru;
             this.akcijaPrijava.Cursor = System.Windows.Forms.Cursors.Hand;
             this.akcijaPrijava.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.akcijaPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.akcijaPrijava.ForeColor = System.Drawing.Color.Black;
+            this.akcijaPrijava.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.akcijaPrijava.Location = new System.Drawing.Point(73, 422);
             this.akcijaPrijava.Margin = new System.Windows.Forms.Padding(2);
             this.akcijaPrijava.Name = "akcijaPrijava";

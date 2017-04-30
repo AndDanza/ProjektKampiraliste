@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrijavaGostaForma));
             this.odabirSmjestajaLabela = new System.Windows.Forms.Label();
             this.odabirSmjestajaUnos = new System.Windows.Forms.ComboBox();
-            this.prezimeUnos = new System.Windows.Forms.TextBox();
-            this.brojDocUnos = new System.Windows.Forms.TextBox();
+            this.unosPrezime = new System.Windows.Forms.TextBox();
+            this.unosBrojDoc = new System.Windows.Forms.TextBox();
             this.unosDrzavaRod = new System.Windows.Forms.ComboBox();
             this.unosStatus = new System.Windows.Forms.ComboBox();
             this.unosDatumDolaska = new System.Windows.Forms.DateTimePicker();
@@ -56,10 +55,11 @@
             this.unosSpolZenski = new System.Windows.Forms.RadioButton();
             this.unosSpolMuski = new System.Windows.Forms.RadioButton();
             this.spolLabela = new System.Windows.Forms.Label();
-            this.imeUnos = new System.Windows.Forms.TextBox();
+            this.unosIme = new System.Windows.Forms.TextBox();
             this.prezimeLabela = new System.Windows.Forms.Label();
             this.imeLabela = new System.Windows.Forms.Label();
             this.podaciGost = new System.Windows.Forms.GroupBox();
+            this.pokreniUnosSmjestaj = new System.Windows.Forms.Button();
             this.podaciPrijava.SuspendLayout();
             this.podaciGost.SuspendLayout();
             this.SuspendLayout();
@@ -83,21 +83,21 @@
             this.odabirSmjestajaUnos.Size = new System.Drawing.Size(200, 26);
             this.odabirSmjestajaUnos.TabIndex = 13;
             // 
-            // prezimeUnos
+            // unosPrezime
             // 
-            this.prezimeUnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prezimeUnos.Location = new System.Drawing.Point(573, 87);
-            this.prezimeUnos.Name = "prezimeUnos";
-            this.prezimeUnos.Size = new System.Drawing.Size(281, 24);
-            this.prezimeUnos.TabIndex = 4;
+            this.unosPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosPrezime.Location = new System.Drawing.Point(573, 87);
+            this.unosPrezime.Name = "unosPrezime";
+            this.unosPrezime.Size = new System.Drawing.Size(281, 24);
+            this.unosPrezime.TabIndex = 4;
             // 
-            // brojDocUnos
+            // unosBrojDoc
             // 
-            this.brojDocUnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brojDocUnos.Location = new System.Drawing.Point(573, 132);
-            this.brojDocUnos.Name = "brojDocUnos";
-            this.brojDocUnos.Size = new System.Drawing.Size(241, 24);
-            this.brojDocUnos.TabIndex = 6;
+            this.unosBrojDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosBrojDoc.Location = new System.Drawing.Point(573, 132);
+            this.unosBrojDoc.Name = "unosBrojDoc";
+            this.unosBrojDoc.Size = new System.Drawing.Size(251, 24);
+            this.unosBrojDoc.TabIndex = 6;
             // 
             // unosDrzavaRod
             // 
@@ -214,17 +214,17 @@
             // 
             // potvrdiPrijavu
             // 
-            this.potvrdiPrijavu.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.potvrdiPrijavu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("potvrdiPrijavu.BackgroundImage")));
+            this.potvrdiPrijavu.BackColor = System.Drawing.Color.Peru;
             this.potvrdiPrijavu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.potvrdiPrijavu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.potvrdiPrijavu.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.potvrdiPrijavu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.potvrdiPrijavu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.potvrdiPrijavu.Location = new System.Drawing.Point(587, 85);
+            this.potvrdiPrijavu.Location = new System.Drawing.Point(629, 116);
             this.potvrdiPrijavu.Name = "potvrdiPrijavu";
             this.potvrdiPrijavu.Size = new System.Drawing.Size(195, 39);
             this.potvrdiPrijavu.TabIndex = 16;
+            this.potvrdiPrijavu.Text = "Potvrdi prijavu";
             this.potvrdiPrijavu.UseVisualStyleBackColor = false;
             // 
             // label4
@@ -349,13 +349,13 @@
             this.spolLabela.TabIndex = 29;
             this.spolLabela.Text = "Spol:";
             // 
-            // imeUnos
+            // unosIme
             // 
-            this.imeUnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imeUnos.Location = new System.Drawing.Point(159, 87);
-            this.imeUnos.Name = "imeUnos";
-            this.imeUnos.Size = new System.Drawing.Size(252, 24);
-            this.imeUnos.TabIndex = 3;
+            this.unosIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosIme.Location = new System.Drawing.Point(159, 87);
+            this.unosIme.Name = "unosIme";
+            this.unosIme.Size = new System.Drawing.Size(252, 24);
+            this.unosIme.TabIndex = 3;
             // 
             // prezimeLabela
             // 
@@ -386,9 +386,9 @@
             this.podaciGost.Controls.Add(this.label3);
             this.podaciGost.Controls.Add(this.unosDrzavaRod);
             this.podaciGost.Controls.Add(this.label2);
-            this.podaciGost.Controls.Add(this.brojDocUnos);
+            this.podaciGost.Controls.Add(this.unosBrojDoc);
             this.podaciGost.Controls.Add(this.unosDrzavaStan);
-            this.podaciGost.Controls.Add(this.prezimeUnos);
+            this.podaciGost.Controls.Add(this.unosPrezime);
             this.podaciGost.Controls.Add(this.label1);
             this.podaciGost.Controls.Add(this.spolLabela);
             this.podaciGost.Controls.Add(this.brojDocLabela);
@@ -396,7 +396,7 @@
             this.podaciGost.Controls.Add(this.unosVrstaDoc);
             this.podaciGost.Controls.Add(this.prezimeLabela);
             this.podaciGost.Controls.Add(this.vrstaDocLabela);
-            this.podaciGost.Controls.Add(this.imeUnos);
+            this.podaciGost.Controls.Add(this.unosIme);
             this.podaciGost.Controls.Add(this.unosSpolZenski);
             this.podaciGost.Controls.Add(this.unosSpolMuski);
             this.podaciGost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -407,12 +407,27 @@
             this.podaciGost.TabStop = false;
             this.podaciGost.Text = "Podaci o gostu";
             // 
+            // pokreniUnosSmjestaj
+            // 
+            this.pokreniUnosSmjestaj.BackColor = System.Drawing.Color.Peru;
+            this.pokreniUnosSmjestaj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.pokreniUnosSmjestaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pokreniUnosSmjestaj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pokreniUnosSmjestaj.Location = new System.Drawing.Point(753, 21);
+            this.pokreniUnosSmjestaj.Name = "pokreniUnosSmjestaj";
+            this.pokreniUnosSmjestaj.Size = new System.Drawing.Size(102, 61);
+            this.pokreniUnosSmjestaj.TabIndex = 3;
+            this.pokreniUnosSmjestaj.Text = "Unos smještaja";
+            this.pokreniUnosSmjestaj.UseVisualStyleBackColor = false;
+            this.pokreniUnosSmjestaj.Click += new System.EventHandler(this.pokreniUnosSmjestaj_Click);
+            // 
             // PrijavaGostaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.ClientSize = new System.Drawing.Size(946, 542);
+            this.Controls.Add(this.pokreniUnosSmjestaj);
             this.Controls.Add(this.podaciPrijava);
             this.Controls.Add(this.podaciGost);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -431,8 +446,8 @@
 
         private System.Windows.Forms.Label odabirSmjestajaLabela;
         private System.Windows.Forms.ComboBox odabirSmjestajaUnos;
-        private System.Windows.Forms.TextBox prezimeUnos;
-        private System.Windows.Forms.TextBox brojDocUnos;
+        private System.Windows.Forms.TextBox unosPrezime;
+        private System.Windows.Forms.TextBox unosBrojDoc;
         private System.Windows.Forms.ComboBox unosDrzavaRod;
         private System.Windows.Forms.ComboBox unosStatus;
         private System.Windows.Forms.DateTimePicker unosDatumDolaska;
@@ -455,10 +470,11 @@
         private System.Windows.Forms.RadioButton unosSpolZenski;
         private System.Windows.Forms.RadioButton unosSpolMuski;
         private System.Windows.Forms.Label spolLabela;
-        private System.Windows.Forms.TextBox imeUnos;
+        private System.Windows.Forms.TextBox unosIme;
         private System.Windows.Forms.Label prezimeLabela;
         private System.Windows.Forms.Label imeLabela;
         private System.Windows.Forms.GroupBox podaciGost;
         private System.Windows.Forms.Button potvrdiPrijavu;
+        private System.Windows.Forms.Button pokreniUnosSmjestaj;
     }
 }
