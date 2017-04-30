@@ -123,6 +123,12 @@
     <Compile Include="RadSPrijavamaForma.Designer.cs">
       <DependentUpon>RadSPrijavamaForma.cs</DependentUpon>
     </Compile>
+    <Compile Include="StorniranjeRacunaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StorniranjeRacunaForma.Designer.cs">
+      <DependentUpon>StorniranjeRacunaForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnosSmjestajForma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     <Compile Include="zaposlenik.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CjenikForma.resx">
+      <DependentUpon>CjenikForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IzdavanjeRacunaForma.resx">
       <DependentUpon>IzdavanjeRacunaForma.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RadSPrijavamaForma.resx">
       <DependentUpon>RadSPrijavamaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StorniranjeRacunaForma.resx">
+      <DependentUpon>StorniranjeRacunaForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosSmjestajForma.resx">
       <DependentUpon>UnosSmjestajForma.cs</DependentUpon>

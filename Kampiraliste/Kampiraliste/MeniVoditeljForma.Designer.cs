@@ -35,14 +35,19 @@
             this.otvoriRadSPrijavamaAkcija = new System.Windows.Forms.Button();
             this.otvoriIzdavanjeRacunaAkcija = new System.Windows.Forms.Button();
             this.otvoriStatistikuAkcija = new System.Windows.Forms.Button();
+            this.stornoRacunaAkcija = new System.Windows.Forms.Button();
+            this.odjavaAkcija = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // otvoriPopisCjenikaAkcija
             // 
             this.otvoriPopisCjenikaAkcija.BackColor = System.Drawing.Color.Peru;
+            this.otvoriPopisCjenikaAkcija.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.otvoriPopisCjenikaAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.otvoriPopisCjenikaAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otvoriPopisCjenikaAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.otvoriPopisCjenikaAkcija.Location = new System.Drawing.Point(546, 307);
-            this.otvoriPopisCjenikaAkcija.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.otvoriPopisCjenikaAkcija.Margin = new System.Windows.Forms.Padding(2);
             this.otvoriPopisCjenikaAkcija.Name = "otvoriPopisCjenikaAkcija";
             this.otvoriPopisCjenikaAkcija.Size = new System.Drawing.Size(225, 126);
             this.otvoriPopisCjenikaAkcija.TabIndex = 0;
@@ -53,9 +58,12 @@
             // otvorPopisZaposlenikaAkcija
             // 
             this.otvorPopisZaposlenikaAkcija.BackColor = System.Drawing.Color.Peru;
+            this.otvorPopisZaposlenikaAkcija.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.otvorPopisZaposlenikaAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.otvorPopisZaposlenikaAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otvorPopisZaposlenikaAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.otvorPopisZaposlenikaAkcija.Location = new System.Drawing.Point(296, 307);
-            this.otvorPopisZaposlenikaAkcija.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.otvorPopisZaposlenikaAkcija.Margin = new System.Windows.Forms.Padding(2);
             this.otvorPopisZaposlenikaAkcija.Name = "otvorPopisZaposlenikaAkcija";
             this.otvorPopisZaposlenikaAkcija.Size = new System.Drawing.Size(225, 126);
             this.otvorPopisZaposlenikaAkcija.TabIndex = 1;
@@ -66,10 +74,12 @@
             // otvoriPrijavuGostaAkcija
             // 
             this.otvoriPrijavuGostaAkcija.BackColor = System.Drawing.Color.Peru;
+            this.otvoriPrijavuGostaAkcija.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.otvoriPrijavuGostaAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.otvoriPrijavuGostaAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otvoriPrijavuGostaAkcija.ForeColor = System.Drawing.Color.Black;
+            this.otvoriPrijavuGostaAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.otvoriPrijavuGostaAkcija.Location = new System.Drawing.Point(296, 148);
-            this.otvoriPrijavuGostaAkcija.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.otvoriPrijavuGostaAkcija.Margin = new System.Windows.Forms.Padding(2);
             this.otvoriPrijavuGostaAkcija.Name = "otvoriPrijavuGostaAkcija";
             this.otvoriPrijavuGostaAkcija.Size = new System.Drawing.Size(225, 130);
             this.otvoriPrijavuGostaAkcija.TabIndex = 2;
@@ -92,8 +102,10 @@
             // otvoriRadSPrijavamaAkcija
             // 
             this.otvoriRadSPrijavamaAkcija.BackColor = System.Drawing.Color.Peru;
+            this.otvoriRadSPrijavamaAkcija.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.otvoriRadSPrijavamaAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.otvoriRadSPrijavamaAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otvoriRadSPrijavamaAkcija.ForeColor = System.Drawing.Color.Black;
+            this.otvoriRadSPrijavamaAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.otvoriRadSPrijavamaAkcija.Location = new System.Drawing.Point(546, 148);
             this.otvoriRadSPrijavamaAkcija.Margin = new System.Windows.Forms.Padding(2);
             this.otvoriRadSPrijavamaAkcija.Name = "otvoriRadSPrijavamaAkcija";
@@ -106,8 +118,10 @@
             // otvoriIzdavanjeRacunaAkcija
             // 
             this.otvoriIzdavanjeRacunaAkcija.BackColor = System.Drawing.Color.Peru;
+            this.otvoriIzdavanjeRacunaAkcija.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.otvoriIzdavanjeRacunaAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.otvoriIzdavanjeRacunaAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otvoriIzdavanjeRacunaAkcija.ForeColor = System.Drawing.Color.Black;
+            this.otvoriIzdavanjeRacunaAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.otvoriIzdavanjeRacunaAkcija.Location = new System.Drawing.Point(800, 148);
             this.otvoriIzdavanjeRacunaAkcija.Margin = new System.Windows.Forms.Padding(2);
             this.otvoriIzdavanjeRacunaAkcija.Name = "otvoriIzdavanjeRacunaAkcija";
@@ -121,8 +135,11 @@
             // 
             this.otvoriStatistikuAkcija.AllowDrop = true;
             this.otvoriStatistikuAkcija.BackColor = System.Drawing.Color.Peru;
+            this.otvoriStatistikuAkcija.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.otvoriStatistikuAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.otvoriStatistikuAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otvoriStatistikuAkcija.Location = new System.Drawing.Point(800, 307);
+            this.otvoriStatistikuAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.otvoriStatistikuAkcija.Location = new System.Drawing.Point(546, 460);
             this.otvoriStatistikuAkcija.Margin = new System.Windows.Forms.Padding(2);
             this.otvoriStatistikuAkcija.Name = "otvoriStatistikuAkcija";
             this.otvoriStatistikuAkcija.Size = new System.Drawing.Size(225, 126);
@@ -131,6 +148,36 @@
             this.otvoriStatistikuAkcija.UseVisualStyleBackColor = false;
             this.otvoriStatistikuAkcija.Click += new System.EventHandler(this.otvoriStatistikuAkcija_Click);
             // 
+            // stornoRacunaAkcija
+            // 
+            this.stornoRacunaAkcija.AllowDrop = true;
+            this.stornoRacunaAkcija.BackColor = System.Drawing.Color.Peru;
+            this.stornoRacunaAkcija.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.stornoRacunaAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.stornoRacunaAkcija.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stornoRacunaAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.stornoRacunaAkcija.Location = new System.Drawing.Point(800, 307);
+            this.stornoRacunaAkcija.Margin = new System.Windows.Forms.Padding(2);
+            this.stornoRacunaAkcija.Name = "stornoRacunaAkcija";
+            this.stornoRacunaAkcija.Size = new System.Drawing.Size(225, 126);
+            this.stornoRacunaAkcija.TabIndex = 7;
+            this.stornoRacunaAkcija.Text = "Storno računa";
+            this.stornoRacunaAkcija.UseVisualStyleBackColor = false;
+            this.stornoRacunaAkcija.Click += new System.EventHandler(this.stornoRacunaAkcija_Click);
+            // 
+            // odjavaAkcija
+            // 
+            this.odjavaAkcija.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.odjavaAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.odjavaAkcija.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.odjavaAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.odjavaAkcija.Location = new System.Drawing.Point(1149, 23);
+            this.odjavaAkcija.Name = "odjavaAkcija";
+            this.odjavaAkcija.Size = new System.Drawing.Size(123, 63);
+            this.odjavaAkcija.TabIndex = 8;
+            this.odjavaAkcija.Text = "ODJAVA";
+            this.odjavaAkcija.UseVisualStyleBackColor = false;
+            // 
             // MeniVoditeljForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,6 +185,8 @@
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 681);
+            this.Controls.Add(this.odjavaAkcija);
+            this.Controls.Add(this.stornoRacunaAkcija);
             this.Controls.Add(this.otvoriStatistikuAkcija);
             this.Controls.Add(this.otvoriIzdavanjeRacunaAkcija);
             this.Controls.Add(this.otvoriRadSPrijavamaAkcija);
@@ -145,7 +194,7 @@
             this.Controls.Add(this.otvoriPrijavuGostaAkcija);
             this.Controls.Add(this.otvorPopisZaposlenikaAkcija);
             this.Controls.Add(this.otvoriPopisCjenikaAkcija);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MeniVoditeljForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -165,5 +214,7 @@
         private System.Windows.Forms.Button otvoriRadSPrijavamaAkcija;
         private System.Windows.Forms.Button otvoriIzdavanjeRacunaAkcija;
         private System.Windows.Forms.Button otvoriStatistikuAkcija;
+        private System.Windows.Forms.Button stornoRacunaAkcija;
+        private System.Windows.Forms.Button odjavaAkcija;
     }
 }

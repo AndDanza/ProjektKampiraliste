@@ -54,5 +54,11 @@ namespace Kampiraliste
             PrikazStatistikeForma instancaStatistikaForma = new PrikazStatistikeForma();
             instancaStatistikaForma.Show();
         }
+
+        private void stornoRacunaAkcija_Click(object sender, EventArgs e)
+        {
+            StorniranjeRacunaForma instancaStornoForma = new StorniranjeRacunaForma();
+            instancaStornoForma.Show();
+        }
     }
 }
