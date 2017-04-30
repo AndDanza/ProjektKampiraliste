@@ -129,11 +129,11 @@
     <Compile Include="UnosSmjestajForma.Designer.cs">
       <DependentUpon>UnosSmjestajForma.cs</DependentUpon>
     </Compile>
-    <Compile Include="VoditeljForma.cs">
+    <Compile Include="MeniVoditeljForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VoditeljForma.Designer.cs">
-      <DependentUpon>VoditeljForma.cs</DependentUpon>
+    <Compile Include="MeniVoditeljForma.Designer.cs">
+      <DependentUpon>MeniVoditeljForma.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -143,11 +143,11 @@
     <Compile Include="racun.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
-    <Compile Include="RecepcionerForma.cs">
+    <Compile Include="MeniRecepcionerForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RecepcionerForma.Designer.cs">
-      <DependentUpon>RecepcionerForma.cs</DependentUpon>
+    <Compile Include="MeniRecepcionerForma.Designer.cs">
+      <DependentUpon>MeniRecepcionerForma.cs</DependentUpon>
     </Compile>
     <Compile Include="smjestaj.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
@@ -193,11 +193,11 @@
     <EmbeddedResource Include="UnosSmjestajForma.resx">
       <DependentUpon>UnosSmjestajForma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VoditeljForma.resx">
-      <DependentUpon>VoditeljForma.cs</DependentUpon>
+    <EmbeddedResource Include="MeniVoditeljForma.resx">
+      <DependentUpon>MeniVoditeljForma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RecepcionerForma.resx">
-      <DependentUpon>RecepcionerForma.cs</DependentUpon>
+    <EmbeddedResource Include="MeniRecepcionerForma.resx">
+      <DependentUpon>MeniRecepcionerForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZaposleniciForma.resx">
       <DependentUpon>ZaposleniciForma.cs</DependentUpon>

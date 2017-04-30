@@ -86,15 +86,15 @@
             // unosPrezime
             // 
             this.unosPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosPrezime.Location = new System.Drawing.Point(573, 87);
+            this.unosPrezime.Location = new System.Drawing.Point(575, 76);
             this.unosPrezime.Name = "unosPrezime";
-            this.unosPrezime.Size = new System.Drawing.Size(281, 24);
+            this.unosPrezime.Size = new System.Drawing.Size(251, 24);
             this.unosPrezime.TabIndex = 4;
             // 
             // unosBrojDoc
             // 
             this.unosBrojDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosBrojDoc.Location = new System.Drawing.Point(573, 132);
+            this.unosBrojDoc.Location = new System.Drawing.Point(575, 121);
             this.unosBrojDoc.Name = "unosBrojDoc";
             this.unosBrojDoc.Size = new System.Drawing.Size(251, 24);
             this.unosBrojDoc.TabIndex = 6;
@@ -103,7 +103,7 @@
             // 
             this.unosDrzavaRod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosDrzavaRod.FormattingEnabled = true;
-            this.unosDrzavaRod.Location = new System.Drawing.Point(573, 177);
+            this.unosDrzavaRod.Location = new System.Drawing.Point(575, 166);
             this.unosDrzavaRod.Name = "unosDrzavaRod";
             this.unosDrzavaRod.Size = new System.Drawing.Size(251, 26);
             this.unosDrzavaRod.TabIndex = 8;
@@ -112,7 +112,7 @@
             // 
             this.unosStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosStatus.FormattingEnabled = true;
-            this.unosStatus.Location = new System.Drawing.Point(573, 219);
+            this.unosStatus.Location = new System.Drawing.Point(575, 208);
             this.unosStatus.Name = "unosStatus";
             this.unosStatus.Size = new System.Drawing.Size(251, 26);
             this.unosStatus.TabIndex = 10;
@@ -194,6 +194,7 @@
             // podaciPrijava
             // 
             this.podaciPrijava.BackColor = System.Drawing.Color.Tan;
+            this.podaciPrijava.Controls.Add(this.pokreniUnosSmjestaj);
             this.podaciPrijava.Controls.Add(this.potvrdiPrijavu);
             this.podaciPrijava.Controls.Add(this.unosAgencijski);
             this.podaciPrijava.Controls.Add(this.unosDatumOdlaska);
@@ -205,9 +206,9 @@
             this.podaciPrijava.Controls.Add(this.odabirSmjestajaUnos);
             this.podaciPrijava.Controls.Add(this.odabirSmjestajaLabela);
             this.podaciPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.podaciPrijava.Location = new System.Drawing.Point(21, 340);
+            this.podaciPrijava.Location = new System.Drawing.Point(21, 319);
             this.podaciPrijava.Name = "podaciPrijava";
-            this.podaciPrijava.Size = new System.Drawing.Size(898, 179);
+            this.podaciPrijava.Size = new System.Drawing.Size(873, 179);
             this.podaciPrijava.TabIndex = 2;
             this.podaciPrijava.TabStop = false;
             this.podaciPrijava.Text = "Podaci o prijavi";
@@ -220,9 +221,9 @@
             this.potvrdiPrijavu.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.potvrdiPrijavu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.potvrdiPrijavu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.potvrdiPrijavu.Location = new System.Drawing.Point(629, 116);
+            this.potvrdiPrijavu.Location = new System.Drawing.Point(719, 92);
             this.potvrdiPrijavu.Name = "potvrdiPrijavu";
-            this.potvrdiPrijavu.Size = new System.Drawing.Size(195, 39);
+            this.potvrdiPrijavu.Size = new System.Drawing.Size(107, 66);
             this.potvrdiPrijavu.TabIndex = 16;
             this.potvrdiPrijavu.Text = "Potvrdi prijavu";
             this.potvrdiPrijavu.UseVisualStyleBackColor = false;
@@ -231,7 +232,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(467, 222);
+            this.label4.Location = new System.Drawing.Point(469, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 18);
             this.label4.TabIndex = 40;
@@ -240,7 +241,7 @@
             // unosDatumRodenja
             // 
             this.unosDatumRodenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosDatumRodenja.Location = new System.Drawing.Point(159, 222);
+            this.unosDatumRodenja.Location = new System.Drawing.Point(161, 211);
             this.unosDatumRodenja.MaxDate = new System.DateTime(2090, 1, 1, 0, 0, 0, 0);
             this.unosDatumRodenja.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.unosDatumRodenja.Name = "unosDatumRodenja";
@@ -251,7 +252,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 227);
+            this.label3.Location = new System.Drawing.Point(46, 216);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 18);
             this.label3.TabIndex = 38;
@@ -261,7 +262,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 180);
+            this.label2.Location = new System.Drawing.Point(21, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 18);
             this.label2.TabIndex = 37;
@@ -271,7 +272,7 @@
             // 
             this.unosDrzavaStan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosDrzavaStan.FormattingEnabled = true;
-            this.unosDrzavaStan.Location = new System.Drawing.Point(159, 177);
+            this.unosDrzavaStan.Location = new System.Drawing.Point(161, 166);
             this.unosDrzavaStan.Name = "unosDrzavaStan";
             this.unosDrzavaStan.Size = new System.Drawing.Size(251, 26);
             this.unosDrzavaStan.TabIndex = 7;
@@ -280,7 +281,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(455, 180);
+            this.label1.Location = new System.Drawing.Point(457, 169);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 18);
             this.label1.TabIndex = 35;
@@ -290,7 +291,7 @@
             // 
             this.brojDocLabela.AutoSize = true;
             this.brojDocLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brojDocLabela.Location = new System.Drawing.Point(454, 135);
+            this.brojDocLabela.Location = new System.Drawing.Point(456, 124);
             this.brojDocLabela.Name = "brojDocLabela";
             this.brojDocLabela.Size = new System.Drawing.Size(113, 18);
             this.brojDocLabela.TabIndex = 34;
@@ -300,7 +301,7 @@
             // 
             this.unosVrstaDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosVrstaDoc.FormattingEnabled = true;
-            this.unosVrstaDoc.Location = new System.Drawing.Point(159, 130);
+            this.unosVrstaDoc.Location = new System.Drawing.Point(161, 119);
             this.unosVrstaDoc.Name = "unosVrstaDoc";
             this.unosVrstaDoc.Size = new System.Drawing.Size(251, 26);
             this.unosVrstaDoc.TabIndex = 5;
@@ -309,7 +310,7 @@
             // 
             this.vrstaDocLabela.AutoSize = true;
             this.vrstaDocLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vrstaDocLabela.Location = new System.Drawing.Point(29, 133);
+            this.vrstaDocLabela.Location = new System.Drawing.Point(31, 122);
             this.vrstaDocLabela.Name = "vrstaDocLabela";
             this.vrstaDocLabela.Size = new System.Drawing.Size(124, 18);
             this.vrstaDocLabela.TabIndex = 32;
@@ -319,7 +320,7 @@
             // 
             this.unosSpolZenski.AutoSize = true;
             this.unosSpolZenski.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosSpolZenski.Location = new System.Drawing.Point(311, 42);
+            this.unosSpolZenski.Location = new System.Drawing.Point(233, 37);
             this.unosSpolZenski.Name = "unosSpolZenski";
             this.unosSpolZenski.Size = new System.Drawing.Size(70, 22);
             this.unosSpolZenski.TabIndex = 2;
@@ -331,7 +332,7 @@
             // 
             this.unosSpolMuski.AutoSize = true;
             this.unosSpolMuski.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosSpolMuski.Location = new System.Drawing.Point(191, 42);
+            this.unosSpolMuski.Location = new System.Drawing.Point(161, 37);
             this.unosSpolMuski.Name = "unosSpolMuski";
             this.unosSpolMuski.Size = new System.Drawing.Size(66, 22);
             this.unosSpolMuski.TabIndex = 1;
@@ -343,7 +344,7 @@
             // 
             this.spolLabela.AutoSize = true;
             this.spolLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spolLabela.Location = new System.Drawing.Point(103, 42);
+            this.spolLabela.Location = new System.Drawing.Point(113, 39);
             this.spolLabela.Name = "spolLabela";
             this.spolLabela.Size = new System.Drawing.Size(42, 18);
             this.spolLabela.TabIndex = 29;
@@ -352,7 +353,7 @@
             // unosIme
             // 
             this.unosIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosIme.Location = new System.Drawing.Point(159, 87);
+            this.unosIme.Location = new System.Drawing.Point(161, 76);
             this.unosIme.Name = "unosIme";
             this.unosIme.Size = new System.Drawing.Size(252, 24);
             this.unosIme.TabIndex = 3;
@@ -361,7 +362,7 @@
             // 
             this.prezimeLabela.AutoSize = true;
             this.prezimeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prezimeLabela.Location = new System.Drawing.Point(500, 90);
+            this.prezimeLabela.Location = new System.Drawing.Point(502, 79);
             this.prezimeLabela.Name = "prezimeLabela";
             this.prezimeLabela.Size = new System.Drawing.Size(67, 18);
             this.prezimeLabela.TabIndex = 27;
@@ -371,7 +372,7 @@
             // 
             this.imeLabela.AutoSize = true;
             this.imeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imeLabela.Location = new System.Drawing.Point(117, 90);
+            this.imeLabela.Location = new System.Drawing.Point(119, 79);
             this.imeLabela.Name = "imeLabela";
             this.imeLabela.Size = new System.Drawing.Size(36, 18);
             this.imeLabela.TabIndex = 26;
@@ -402,7 +403,7 @@
             this.podaciGost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.podaciGost.Location = new System.Drawing.Point(21, 38);
             this.podaciGost.Name = "podaciGost";
-            this.podaciGost.Size = new System.Drawing.Size(898, 275);
+            this.podaciGost.Size = new System.Drawing.Size(873, 257);
             this.podaciGost.TabIndex = 1;
             this.podaciGost.TabStop = false;
             this.podaciGost.Text = "Podaci o gostu";
@@ -413,9 +414,9 @@
             this.pokreniUnosSmjestaj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.pokreniUnosSmjestaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pokreniUnosSmjestaj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pokreniUnosSmjestaj.Location = new System.Drawing.Point(753, 21);
+            this.pokreniUnosSmjestaj.Location = new System.Drawing.Point(575, 92);
             this.pokreniUnosSmjestaj.Name = "pokreniUnosSmjestaj";
-            this.pokreniUnosSmjestaj.Size = new System.Drawing.Size(102, 61);
+            this.pokreniUnosSmjestaj.Size = new System.Drawing.Size(107, 66);
             this.pokreniUnosSmjestaj.TabIndex = 3;
             this.pokreniUnosSmjestaj.Text = "Unos smještaja";
             this.pokreniUnosSmjestaj.UseVisualStyleBackColor = false;
@@ -426,8 +427,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
-            this.ClientSize = new System.Drawing.Size(946, 542);
-            this.Controls.Add(this.pokreniUnosSmjestaj);
+            this.ClientSize = new System.Drawing.Size(919, 534);
             this.Controls.Add(this.podaciPrijava);
             this.Controls.Add(this.podaciGost);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

@@ -46,15 +46,17 @@ namespace Kampiraliste
             if(prijavljeniZaposlenik.vrsta_zaposlenika == 1)
             {
                 MessageBox.Show("Uspješna prijava!");
-                VoditeljForma formaUredi = new VoditeljForma();
+                MeniVoditeljForma formaUredi = new MeniVoditeljForma();
                 formaUredi.ShowDialog();
+                this.Close();
             }
 
             if (prijavljeniZaposlenik.vrsta_zaposlenika == 2)
             {
                 MessageBox.Show("Uspješna prijava!");
-                RecepcionerForma formaUredi = new RecepcionerForma();
+                MeniRecepcionerForma formaUredi = new MeniRecepcionerForma();
                 formaUredi.ShowDialog();
+                this.Close();
             }
 
 
@@ -76,7 +78,5 @@ namespace Kampiraliste
             var path = Directory.GetCurrentDirectory();
             Help.ShowHelp(this, "file://" + path + "\\Resources\\korisnicka_dokumentacija.chm");
         }
-
-    
     }
 }

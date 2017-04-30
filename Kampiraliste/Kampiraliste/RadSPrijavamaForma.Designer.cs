@@ -34,6 +34,9 @@
             this.unosDolazak = new System.Windows.Forms.RadioButton();
             this.akcijaFiltriraj = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.izradiKnjiguStranihAkcija = new System.Windows.Forms.Button();
+            this.izradiKnjiguDomacihAkcija = new System.Windows.Forms.Button();
+            this.knjigeGostijuLabela = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listaAktivnihPrijavaBox
@@ -41,10 +44,10 @@
             this.listaAktivnihPrijavaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaAktivnihPrijavaBox.FormattingEnabled = true;
             this.listaAktivnihPrijavaBox.ItemHeight = 18;
-            this.listaAktivnihPrijavaBox.Location = new System.Drawing.Point(32, 129);
+            this.listaAktivnihPrijavaBox.Location = new System.Drawing.Point(32, 147);
             this.listaAktivnihPrijavaBox.Name = "listaAktivnihPrijavaBox";
             this.listaAktivnihPrijavaBox.ScrollAlwaysVisible = true;
-            this.listaAktivnihPrijavaBox.Size = new System.Drawing.Size(372, 382);
+            this.listaAktivnihPrijavaBox.Size = new System.Drawing.Size(496, 364);
             this.listaAktivnihPrijavaBox.TabIndex = 0;
             // 
             // filtrirajLabela
@@ -52,7 +55,7 @@
             this.filtrirajLabela.AutoSize = true;
             this.filtrirajLabela.BackColor = System.Drawing.Color.Transparent;
             this.filtrirajLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filtrirajLabela.Location = new System.Drawing.Point(53, 38);
+            this.filtrirajLabela.Location = new System.Drawing.Point(34, 38);
             this.filtrirajLabela.Name = "filtrirajLabela";
             this.filtrirajLabela.Size = new System.Drawing.Size(101, 18);
             this.filtrirajLabela.TabIndex = 1;
@@ -63,7 +66,7 @@
             this.unosOdlazak.AutoSize = true;
             this.unosOdlazak.BackColor = System.Drawing.Color.Transparent;
             this.unosOdlazak.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosOdlazak.Location = new System.Drawing.Point(257, 36);
+            this.unosOdlazak.Location = new System.Drawing.Point(238, 36);
             this.unosOdlazak.Name = "unosOdlazak";
             this.unosOdlazak.Size = new System.Drawing.Size(81, 22);
             this.unosOdlazak.TabIndex = 17;
@@ -76,7 +79,7 @@
             this.unosDolazak.AutoSize = true;
             this.unosDolazak.BackColor = System.Drawing.Color.Transparent;
             this.unosDolazak.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosDolazak.Location = new System.Drawing.Point(160, 36);
+            this.unosDolazak.Location = new System.Drawing.Point(141, 36);
             this.unosDolazak.Name = "unosDolazak";
             this.unosDolazak.Size = new System.Drawing.Size(81, 22);
             this.unosDolazak.TabIndex = 16;
@@ -88,8 +91,9 @@
             // 
             this.akcijaFiltriraj.BackColor = System.Drawing.Color.Peru;
             this.akcijaFiltriraj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.akcijaFiltriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.akcijaFiltriraj.Location = new System.Drawing.Point(83, 74);
+            this.akcijaFiltriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.akcijaFiltriraj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.akcijaFiltriraj.Location = new System.Drawing.Point(59, 78);
             this.akcijaFiltriraj.Name = "akcijaFiltriraj";
             this.akcijaFiltriraj.Size = new System.Drawing.Size(96, 38);
             this.akcijaFiltriraj.TabIndex = 18;
@@ -100,20 +104,61 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Peru;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(218, 74);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(187, 78);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 38);
             this.button1.TabIndex = 19;
             this.button1.Text = "Resetiraj";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // izradiKnjiguStranihAkcija
+            // 
+            this.izradiKnjiguStranihAkcija.BackColor = System.Drawing.Color.Peru;
+            this.izradiKnjiguStranihAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.izradiKnjiguStranihAkcija.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.izradiKnjiguStranihAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.izradiKnjiguStranihAkcija.Location = new System.Drawing.Point(549, 181);
+            this.izradiKnjiguStranihAkcija.Name = "izradiKnjiguStranihAkcija";
+            this.izradiKnjiguStranihAkcija.Size = new System.Drawing.Size(133, 45);
+            this.izradiKnjiguStranihAkcija.TabIndex = 20;
+            this.izradiKnjiguStranihAkcija.Text = "Domaći gosti";
+            this.izradiKnjiguStranihAkcija.UseVisualStyleBackColor = false;
+            // 
+            // izradiKnjiguDomacihAkcija
+            // 
+            this.izradiKnjiguDomacihAkcija.BackColor = System.Drawing.Color.Peru;
+            this.izradiKnjiguDomacihAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.izradiKnjiguDomacihAkcija.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.izradiKnjiguDomacihAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.izradiKnjiguDomacihAkcija.Location = new System.Drawing.Point(549, 244);
+            this.izradiKnjiguDomacihAkcija.Name = "izradiKnjiguDomacihAkcija";
+            this.izradiKnjiguDomacihAkcija.Size = new System.Drawing.Size(133, 45);
+            this.izradiKnjiguDomacihAkcija.TabIndex = 21;
+            this.izradiKnjiguDomacihAkcija.Text = "Strani gosti";
+            this.izradiKnjiguDomacihAkcija.UseVisualStyleBackColor = false;
+            // 
+            // knjigeGostijuLabela
+            // 
+            this.knjigeGostijuLabela.AutoSize = true;
+            this.knjigeGostijuLabela.BackColor = System.Drawing.Color.Transparent;
+            this.knjigeGostijuLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.knjigeGostijuLabela.Location = new System.Drawing.Point(546, 147);
+            this.knjigeGostijuLabela.Name = "knjigeGostijuLabela";
+            this.knjigeGostijuLabela.Size = new System.Drawing.Size(99, 18);
+            this.knjigeGostijuLabela.TabIndex = 22;
+            this.knjigeGostijuLabela.Text = "Knjige gostiju:";
+            // 
             // RadSPrijavamaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
-            this.ClientSize = new System.Drawing.Size(946, 542);
+            this.ClientSize = new System.Drawing.Size(705, 542);
+            this.Controls.Add(this.knjigeGostijuLabela);
+            this.Controls.Add(this.izradiKnjiguDomacihAkcija);
+            this.Controls.Add(this.izradiKnjiguStranihAkcija);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.akcijaFiltriraj);
             this.Controls.Add(this.unosOdlazak);
@@ -122,6 +167,7 @@
             this.Controls.Add(this.listaAktivnihPrijavaBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "RadSPrijavamaForma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RadSPrijavamaForma";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -136,5 +182,8 @@
         private System.Windows.Forms.RadioButton unosDolazak;
         private System.Windows.Forms.Button akcijaFiltriraj;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button izradiKnjiguStranihAkcija;
+        private System.Windows.Forms.Button izradiKnjiguDomacihAkcija;
+        private System.Windows.Forms.Label knjigeGostijuLabela;
     }
 }

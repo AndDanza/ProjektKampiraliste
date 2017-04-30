@@ -38,16 +38,18 @@
             this.zaposlenikBindingSource.Location = new System.Drawing.Point(24, 198);
             this.zaposlenikBindingSource.Name = "zaposlenikBindingSource";
             this.zaposlenikBindingSource.RowTemplate.Height = 24;
-            this.zaposlenikBindingSource.Size = new System.Drawing.Size(1291, 332);
+            this.zaposlenikBindingSource.Size = new System.Drawing.Size(1140, 332);
             this.zaposlenikBindingSource.TabIndex = 0;
             // 
             // ZaposleniciForma
             // 
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1335, 551);
+            this.ClientSize = new System.Drawing.Size(1192, 551);
             this.Controls.Add(this.zaposlenikBindingSource);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ZaposleniciForma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zaposlenici";
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).EndInit();
             this.ResumeLayout(false);

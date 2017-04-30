@@ -48,32 +48,34 @@
             this.zapamtiMe.BackColor = System.Drawing.Color.Transparent;
             this.zapamtiMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zapamtiMe.ForeColor = System.Drawing.Color.Black;
-            this.zapamtiMe.Location = new System.Drawing.Point(301, 464);
-            this.zapamtiMe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.zapamtiMe.Location = new System.Drawing.Point(216, 342);
+            this.zapamtiMe.Margin = new System.Windows.Forms.Padding(2);
             this.zapamtiMe.Name = "zapamtiMe";
-            this.zapamtiMe.Size = new System.Drawing.Size(161, 33);
+            this.zapamtiMe.Size = new System.Drawing.Size(128, 28);
             this.zapamtiMe.TabIndex = 0;
             this.zapamtiMe.Text = "Zapamti me";
             this.zapamtiMe.UseVisualStyleBackColor = false;
             // 
             // unosKorisnickoIme
             // 
+            this.unosKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosKorisnickoIme.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.unosKorisnickoIme.Location = new System.Drawing.Point(301, 377);
-            this.unosKorisnickoIme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.unosKorisnickoIme.Location = new System.Drawing.Point(216, 271);
+            this.unosKorisnickoIme.Margin = new System.Windows.Forms.Padding(2);
             this.unosKorisnickoIme.Multiline = true;
             this.unosKorisnickoIme.Name = "unosKorisnickoIme";
-            this.unosKorisnickoIme.Size = new System.Drawing.Size(257, 29);
+            this.unosKorisnickoIme.Size = new System.Drawing.Size(194, 24);
             this.unosKorisnickoIme.TabIndex = 1;
             // 
             // unosLozinka
             // 
-            this.unosLozinka.Location = new System.Drawing.Point(301, 411);
-            this.unosLozinka.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.unosLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosLozinka.Location = new System.Drawing.Point(216, 305);
+            this.unosLozinka.Margin = new System.Windows.Forms.Padding(2);
             this.unosLozinka.Multiline = true;
             this.unosLozinka.Name = "unosLozinka";
             this.unosLozinka.PasswordChar = '*';
-            this.unosLozinka.Size = new System.Drawing.Size(257, 29);
+            this.unosLozinka.Size = new System.Drawing.Size(194, 24);
             this.unosLozinka.TabIndex = 2;
             // 
             // korisnickoImeLabela
@@ -82,9 +84,10 @@
             this.korisnickoImeLabela.BackColor = System.Drawing.Color.Transparent;
             this.korisnickoImeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.korisnickoImeLabela.ForeColor = System.Drawing.Color.Black;
-            this.korisnickoImeLabela.Location = new System.Drawing.Point(91, 377);
+            this.korisnickoImeLabela.Location = new System.Drawing.Point(58, 271);
+            this.korisnickoImeLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.korisnickoImeLabela.Name = "korisnickoImeLabela";
-            this.korisnickoImeLabela.Size = new System.Drawing.Size(178, 29);
+            this.korisnickoImeLabela.Size = new System.Drawing.Size(138, 24);
             this.korisnickoImeLabela.TabIndex = 3;
             this.korisnickoImeLabela.Text = "Korisnicko ime:";
             // 
@@ -94,9 +97,10 @@
             this.lozinkaLabela.BackColor = System.Drawing.Color.Transparent;
             this.lozinkaLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lozinkaLabela.ForeColor = System.Drawing.Color.Black;
-            this.lozinkaLabela.Location = new System.Drawing.Point(171, 411);
+            this.lozinkaLabela.Location = new System.Drawing.Point(118, 305);
+            this.lozinkaLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lozinkaLabela.Name = "lozinkaLabela";
-            this.lozinkaLabela.Size = new System.Drawing.Size(101, 29);
+            this.lozinkaLabela.Size = new System.Drawing.Size(79, 24);
             this.lozinkaLabela.TabIndex = 4;
             this.lozinkaLabela.Text = "Lozinka:";
             // 
@@ -107,10 +111,10 @@
             this.akcijaPrijava.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.akcijaPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.akcijaPrijava.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.akcijaPrijava.Location = new System.Drawing.Point(97, 519);
-            this.akcijaPrijava.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.akcijaPrijava.Location = new System.Drawing.Point(92, 412);
+            this.akcijaPrijava.Margin = new System.Windows.Forms.Padding(2);
             this.akcijaPrijava.Name = "akcijaPrijava";
-            this.akcijaPrijava.Size = new System.Drawing.Size(463, 54);
+            this.akcijaPrijava.Size = new System.Drawing.Size(347, 44);
             this.akcijaPrijava.TabIndex = 5;
             this.akcijaPrijava.Text = "Prijava";
             this.akcijaPrijava.UseVisualStyleBackColor = false;
@@ -120,11 +124,11 @@
             // 
             this.loginPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.loginPictureBox.Image = global::Kampiraliste.Properties.Resources.login_ic;
-            this.loginPictureBox.Location = new System.Drawing.Point(176, 16);
-            this.loginPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.loginPictureBox.Location = new System.Drawing.Point(156, 28);
+            this.loginPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.loginPictureBox.Name = "loginPictureBox";
-            this.loginPictureBox.Size = new System.Drawing.Size(265, 275);
-            this.loginPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.loginPictureBox.Size = new System.Drawing.Size(210, 202);
+            this.loginPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.loginPictureBox.TabIndex = 7;
             this.loginPictureBox.TabStop = false;
             // 
@@ -133,10 +137,10 @@
             this.helpPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.helpPictureBox.Cursor = System.Windows.Forms.Cursors.Help;
             this.helpPictureBox.Image = global::Kampiraliste.Properties.Resources.help_icon1;
-            this.helpPictureBox.Location = new System.Drawing.Point(15, 16);
-            this.helpPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.helpPictureBox.Location = new System.Drawing.Point(11, 13);
+            this.helpPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.helpPictureBox.Name = "helpPictureBox";
-            this.helpPictureBox.Size = new System.Drawing.Size(69, 59);
+            this.helpPictureBox.Size = new System.Drawing.Size(52, 48);
             this.helpPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.helpPictureBox.TabIndex = 6;
             this.helpPictureBox.TabStop = false;
@@ -145,11 +149,11 @@
             // 
             // PrijavaForma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
-            this.ClientSize = new System.Drawing.Size(677, 658);
+            this.ClientSize = new System.Drawing.Size(508, 552);
             this.Controls.Add(this.loginPictureBox);
             this.Controls.Add(this.helpPictureBox);
             this.Controls.Add(this.akcijaPrijava);
@@ -159,7 +163,7 @@
             this.Controls.Add(this.unosKorisnickoIme);
             this.Controls.Add(this.zapamtiMe);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "PrijavaForma";
             this.ShowIcon = false;

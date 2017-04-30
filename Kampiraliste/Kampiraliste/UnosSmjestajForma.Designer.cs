@@ -141,7 +141,7 @@
             this.Controls.Add(this.vrstaSmjestajaLabela);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "UnosSmjestajForma";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UnosSmjestajForma";
             this.ResumeLayout(false);
             this.PerformLayout();
