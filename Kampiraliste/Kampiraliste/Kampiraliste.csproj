@@ -231,6 +231,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="vrsta_dokumenta.datasource" />
+    <None Include="vrsta_smjestaja.datasource" />
+    <None Include="zaposlenik.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

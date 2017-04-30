@@ -16,12 +16,12 @@ namespace Kampiraliste
         {
             InitializeComponent();
 
-            /*BindingList<zaposlenik> listaZaposlenika;
+            BindingList<zaposlenik> listaZaposlenika;
             using (var ef = new KampiralisteEntiteti())
             {
                 listaZaposlenika = new BindingList<zaposlenik>(ef.zaposleniks.ToList());
             }
-            zaposlenikBindingSource.DataSource = listaZaposlenika;*/
+            zaposlenikBindingSource.DataSource = listaZaposlenika;
         }
         
     }

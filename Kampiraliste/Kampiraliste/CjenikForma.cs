@@ -15,6 +15,12 @@ namespace Kampiraliste
         public CjenikForma()
         {
             InitializeComponent();
+            BindingList<zaposlenik> listaZaposlenika;
+            using (var ef = new KampiralisteEntiteti())
+            {
+                listaZaposlenika = new BindingList<zaposlenik>(ef.zaposleniks.ToList());
+            }
+            cjenikBindingSource.DataSource = listaZaposlenika;
         }
     }
 }
