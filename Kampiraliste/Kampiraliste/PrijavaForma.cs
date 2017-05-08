@@ -13,11 +13,11 @@ namespace Kampiraliste
 {
     public partial class PrijavaForma : Form
     {
-        KampiralisteEntiteti ef;
+        //KampiralisteEntiteti ef;
         zaposlenik prijavljeniZaposlenik;
         public PrijavaForma()
         {
-            ef = new KampiralisteEntiteti();
+            //ef = new KampiralisteEntiteti();
             InitializeComponent();
             //zaposlenik zaposlenik = new zaposlenik();
             prijavljeniZaposlenik = new zaposlenik();
@@ -25,39 +25,43 @@ namespace Kampiraliste
         
         private void PrijaviMe(object sender, EventArgs e)
         {
-            bool provjeraPrijave = false;
-            
-            foreach (var zaposlenik in ef.zaposleniks)
+            using (KampiralisteEntiteti ef = new KampiralisteEntiteti())
             {
-                if (zaposlenik.korisnicko_ime == unosKorisnickoIme.Text && zaposlenik.lozinka == unosLozinka.Text)
+                bool provjeraPrijave = false;
+
+                foreach (var zaposlenik in ef.zaposleniks)
                 {
-                    prijavljeniZaposlenik = zaposlenik;
-                    provjeraPrijave = true;
-                    break;
+                    if (zaposlenik.korisnicko_ime == unosKorisnickoIme.Text && zaposlenik.lozinka == unosLozinka.Text)
+                    {
+                        prijavljeniZaposlenik = zaposlenik;
+                        provjeraPrijave = true;
+                        break;
+                    }
+                }
+
+                if (!provjeraPrijave)
+                {
+                    MessageBox.Show("Unjeli ste krivo korisnicko ime ili lozinku!");
+                    return;
+                }
+
+                if (prijavljeniZaposlenik.vrsta_zaposlenika == 1)
+                {
+                    MessageBox.Show("Uspješna prijava!");
+                    MeniVoditeljForma formaUredi = new MeniVoditeljForma();
+                    formaUredi.Show();
+
+                }
+
+                if (prijavljeniZaposlenik.vrsta_zaposlenika == 2)
+                {
+                    MessageBox.Show("Uspješna prijava!");
+                    MeniRecepcionerForma formaUredi = new MeniRecepcionerForma();
+                    formaUredi.Show();
+
                 }
             }
-
-            if (!provjeraPrijave)
-            {
-                MessageBox.Show("Unjeli ste krivo korisnicko ime ili lozinku!");
-                return;
-            }
-
-            if(prijavljeniZaposlenik.vrsta_zaposlenika == 1)
-            {
-                MessageBox.Show("Uspješna prijava!");
-                MeniVoditeljForma formaUredi = new MeniVoditeljForma();
-                formaUredi.Show();
                 
-            }
-
-            if (prijavljeniZaposlenik.vrsta_zaposlenika == 2)
-            {
-                MessageBox.Show("Uspješna prijava!");
-                MeniRecepcionerForma formaUredi = new MeniRecepcionerForma();
-                formaUredi.Show();
-         
-            }
 
 
         }
