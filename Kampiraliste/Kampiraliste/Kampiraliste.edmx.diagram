@@ -28,8 +28,8 @@
         <AssociationConnector Association="DBModel.FK_smjestaj_vrsta_smjestaja" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="DBModel.FK_prijava_gost1" ManuallyRouted="true" >
-          <ConnectorPoint PointX="5.125" PointY="4.74960129557291" />
-          <ConnectorPoint PointX="6.75" PointY="4.74960129557291" />
+          <ConnectorPoint PointX="5.125" PointY="4.57390955387249" />
+          <ConnectorPoint PointX="6.75" PointY="4.57390955387249" />
           <ConnectorPoint PointX="6.75" PointY="6.125" />
         </AssociationConnector>
       </Diagram>
