@@ -16,9 +16,10 @@ namespace Kampiraliste
         BindingList<drzava> listaDrzavaRod = null;
         BindingList<vrsta_dokumenta> listaDokumenata = null;
         BindingList<status_osobe> listaStatusaOsobe = null;
+        BindingList<smjestaj> listaSmjestaja = null;
 
         public PrijavaGostaForma()
-        {
+        { 
             InitializeComponent();
         }
 
@@ -41,12 +42,14 @@ namespace Kampiraliste
                 listaDrzavaRod = new BindingList<drzava>(baza.drzavas.ToList());
                 listaDokumenata = new BindingList<vrsta_dokumenta>(baza.vrsta_dokumenta.ToList());
                 listaStatusaOsobe = new BindingList<status_osobe>(baza.status_osobe.ToList());
+                listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
             }
 
             unosDrzavaRod.DataSource = listaDrzavaRod;
             unosDrzavaStan.DataSource = listaDrzavaStan;
             unosVrstaDoc.DataSource = listaDokumenata;
             unosStatus.DataSource = listaStatusaOsobe;
+            odabirSmjestajaUnos.DataSource = listaSmjestaja;
         }
     }
 }

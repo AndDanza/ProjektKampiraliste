@@ -65,11 +65,13 @@
             this.imeLabela = new System.Windows.Forms.Label();
             this.podaciGost = new System.Windows.Forms.GroupBox();
             this.odustaniPrijavaGosta = new System.Windows.Forms.Button();
+            this.smjestajBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.drzavaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).BeginInit();
             this.podaciPrijava.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).BeginInit();
             this.podaciGost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // odabirSmjestajaLabela
@@ -84,12 +86,15 @@
             // 
             // odabirSmjestajaUnos
             // 
+            this.odabirSmjestajaUnos.DataSource = this.smjestajBindingSource;
+            this.odabirSmjestajaUnos.DisplayMember = "id";
             this.odabirSmjestajaUnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.odabirSmjestajaUnos.FormattingEnabled = true;
             this.odabirSmjestajaUnos.Location = new System.Drawing.Point(179, 89);
             this.odabirSmjestajaUnos.Name = "odabirSmjestajaUnos";
             this.odabirSmjestajaUnos.Size = new System.Drawing.Size(200, 26);
             this.odabirSmjestajaUnos.TabIndex = 13;
+            this.odabirSmjestajaUnos.ValueMember = "id";
             // 
             // unosPrezime
             // 
@@ -478,6 +483,10 @@
             this.odustaniPrijavaGosta.Text = "Odustani";
             this.odustaniPrijavaGosta.UseVisualStyleBackColor = false;
             // 
+            // smjestajBindingSource
+            // 
+            this.smjestajBindingSource.DataSource = typeof(Kampiraliste.smjestaj);
+            // 
             // PrijavaGostaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,6 +510,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).EndInit();
             this.podaciGost.ResumeLayout(false);
             this.podaciGost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -543,5 +553,6 @@
         private System.Windows.Forms.BindingSource vrstadokumentaBindingSource;
         private System.Windows.Forms.BindingSource statusosobeBindingSource;
         private System.Windows.Forms.Button odustaniPrijavaGosta;
+        private System.Windows.Forms.BindingSource smjestajBindingSource;
     }
 }

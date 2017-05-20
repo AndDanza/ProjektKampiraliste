@@ -224,6 +224,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\drzava.datasource" />
+    <None Include="Properties\DataSources\smjestaj.datasource" />
     <None Include="Properties\DataSources\status_osobe.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
