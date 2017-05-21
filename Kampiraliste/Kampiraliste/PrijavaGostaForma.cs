@@ -26,7 +26,14 @@ namespace Kampiraliste
         private void pokreniUnosSmjestaj_Click(object sender, EventArgs e)
         {
             UnosSmjestajForma formaSmjestaj = new UnosSmjestajForma();
-            formaSmjestaj.Show();
+            formaSmjestaj.ShowDialog();
+
+            using (var baza = new KampiralisteEntiteti())
+            {
+                this.listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
+            }
+
+            odabirSmjestajaUnos.DataSource = this.listaSmjestaja;
         }
 
         /// <summary>
@@ -38,18 +45,18 @@ namespace Kampiraliste
         {
             using (var baza = new KampiralisteEntiteti())
             {
-                listaDrzavaStan = new BindingList<drzava>(baza.drzavas.ToList());
-                listaDrzavaRod = new BindingList<drzava>(baza.drzavas.ToList());
-                listaDokumenata = new BindingList<vrsta_dokumenta>(baza.vrsta_dokumenta.ToList());
-                listaStatusaOsobe = new BindingList<status_osobe>(baza.status_osobe.ToList());
-                listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
+                this.listaDrzavaStan = new BindingList<drzava>(baza.drzavas.ToList());
+                this.listaDrzavaRod = new BindingList<drzava>(baza.drzavas.ToList());
+                this.listaDokumenata = new BindingList<vrsta_dokumenta>(baza.vrsta_dokumenta.ToList());
+                this.listaStatusaOsobe = new BindingList<status_osobe>(baza.status_osobe.ToList());
+                this.listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
             }
 
-            unosDrzavaRod.DataSource = listaDrzavaRod;
-            unosDrzavaStan.DataSource = listaDrzavaStan;
-            unosVrstaDoc.DataSource = listaDokumenata;
-            unosStatus.DataSource = listaStatusaOsobe;
-            odabirSmjestajaUnos.DataSource = listaSmjestaja;
+            unosDrzavaRod.DataSource = this.listaDrzavaRod;
+            unosDrzavaStan.DataSource = this.listaDrzavaStan;
+            unosVrstaDoc.DataSource = this.listaDokumenata;
+            unosStatus.DataSource = this.listaStatusaOsobe;
+            odabirSmjestajaUnos.DataSource = this.listaSmjestaja;
         }
     }
 }

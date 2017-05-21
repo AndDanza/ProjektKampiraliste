@@ -39,7 +39,7 @@ namespace Kampiraliste
             {
                 int brojOsoba = 0;
 
-                if(!int.TryParse(unosBrojOsoba.Text, out brojOsoba))
+                if(int.TryParse(unosBrojOsoba.Text, out brojOsoba))
                 {
                     vrsta_smjestaja smjestaj = unosVrstaSmjestaja.SelectedItem as vrsta_smjestaja;
                     parcela parcelaSmjestaja = unosParcele.SelectedItem as parcela;
@@ -58,16 +58,24 @@ namespace Kampiraliste
 
                         baza.smjestajs.Add(noviSmjestaj);
                         baza.SaveChanges();
+
+                        DialogResult rez = MessageBox.Show("Smještaj unesen");
+
+                        if (rez == DialogResult.OK)
+                        {
+                            this.Close();
+                        }
                     }
                 }
                 else
                 {
-                    //baci grešku
+                    throw new Exception();
                 }
             }
             catch
             {
-                ///obrada greške
+                DialogResult kriviUnos = MessageBox.Show("Unesena vrijednost za broj gostiju nije valjana!");
+                unosBrojOsoba.Clear();
             }
         }
     }

@@ -64,7 +64,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="broj_osoba" Type="int" Nullable="false" />
           <Property Name="vrsta_smjestaja_id" Type="int" Nullable="false" />
           <Property Name="parcela_id" Type="int" Nullable="false" />
