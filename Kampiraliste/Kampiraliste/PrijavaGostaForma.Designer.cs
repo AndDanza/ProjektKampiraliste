@@ -282,6 +282,7 @@
             this.potvrdiPrijavu.TabIndex = 16;
             this.potvrdiPrijavu.Text = "Potvrdi prijavu";
             this.potvrdiPrijavu.UseVisualStyleBackColor = false;
+            this.potvrdiPrijavu.Click += new System.EventHandler(this.potvrdiPrijavu_Click);
             // 
             // datumRodjenja
             // 

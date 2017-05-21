@@ -58,5 +58,60 @@ namespace Kampiraliste
             unosStatus.DataSource = this.listaStatusaOsobe;
             odabirSmjestajaUnos.DataSource = this.listaSmjestaja;
         }
+
+        private void UnosGosta()
+        {
+            int idGosta = ProvjeraGosta();
+            if(idGosta == 0)
+            {
+                MessageBox.Show("Vaš gost ne postoji u bazi!");
+            }
+            else if(idGosta != -1)
+            {
+                MessageBox.Show("Uneseni gost postoji");
+            }
+        }
+
+        private int ProvjeraGosta()
+        {
+            int gostPostoji = 0;
+
+            string ime = unosIme.Text;
+            string prezime = unosPrezime.Text;
+            string drzavaRodenja = (unosDrzavaRod.SelectedItem as drzava).id;
+            
+            try
+            {
+                DateTime datumRodenja = DateTime.Parse(unosDatumRodenja.Text);
+
+                if (String.IsNullOrEmpty(ime) || String.IsNullOrEmpty(prezime) || String.IsNullOrEmpty(drzavaRodenja) || String.IsNullOrEmpty(unosDatumRodenja.Text))
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    using (var baza = new KampiralisteEntiteti())
+                    {
+                        gostPostoji = (from b in baza.gosts
+                                       where b.ime == ime && b.prezime == prezime && b.drzava_id_rodenja == drzavaRodenja && b.datum_rodenja == datumRodenja
+                                       select b.id).FirstOrDefault();
+                    }
+
+                    
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Nisu uneseni svi podaci !!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                gostPostoji = -1;
+            }
+
+            return gostPostoji;
+        }
+
+        private void potvrdiPrijavu_Click(object sender, EventArgs e)
+        {
+            UnosGosta();
+        }
     }
 }
