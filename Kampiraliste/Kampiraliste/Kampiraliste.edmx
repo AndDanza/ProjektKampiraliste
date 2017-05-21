@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="spol" Type="char" MaxLength="1" Nullable="false" />
@@ -319,7 +319,6 @@
           <EntitySet Name="prijavas" EntityType="DBModel.prijava" />
           <EntitySet Name="racuns" EntityType="DBModel.racun" />
           <EntitySet Name="smjestajs" EntityType="DBModel.smjestaj" />
-          <EntitySet Name="status_osobe" EntityType="DBModel.status_osobe" />
           <EntitySet Name="vrsta_dokumenta" EntityType="DBModel.vrsta_dokumenta" />
           <EntitySet Name="vrsta_smjestaja" EntityType="DBModel.vrsta_smjestaja" />
           <EntitySet Name="zaposleniks" EntityType="DBModel.zaposlenik" />
@@ -347,10 +346,6 @@
             <End Role="smjestaj" EntitySet="smjestajs" />
             <End Role="prijava" EntitySet="prijavas" />
           </AssociationSet>
-          <AssociationSet Name="FK_prijava_status_osobe" Association="DBModel.FK_prijava_status_osobe">
-            <End Role="status_osobe" EntitySet="status_osobe" />
-            <End Role="prijava" EntitySet="prijavas" />
-          </AssociationSet>
           <AssociationSet Name="FK_prijava_zaposlenik" Association="DBModel.FK_prijava_zaposlenik">
             <End Role="zaposlenik" EntitySet="zaposleniks" />
             <End Role="prijava" EntitySet="prijavas" />
@@ -369,6 +364,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_prijava_gost1" Association="DBModel.FK_prijava_gost1">
             <End Role="gost" EntitySet="gosts" />
+            <End Role="prijava" EntitySet="prijavas" />
+          </AssociationSet>
+          <EntitySet Name="status_osobe" EntityType="DBModel.status_osobe" />
+          <AssociationSet Name="FK_prijava_status_osobe" Association="DBModel.FK_prijava_status_osobe">
+            <End Role="status_osobe" EntitySet="status_osobe" />
             <End Role="prijava" EntitySet="prijavas" />
           </AssociationSet>
         </EntityContainer>
@@ -421,10 +421,10 @@
           <Property Name="zaposlenik_id" Type="Int32" Nullable="false" />
           <Property Name="status_osobe_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="smjestaj" Relationship="DBModel.FK_prijava_smjestaj" FromRole="prijava" ToRole="smjestaj" />
-          <NavigationProperty Name="status_osobe" Relationship="DBModel.FK_prijava_status_osobe" FromRole="prijava" ToRole="status_osobe" />
           <NavigationProperty Name="zaposlenik" Relationship="DBModel.FK_prijava_zaposlenik" FromRole="prijava" ToRole="zaposlenik" />
           <NavigationProperty Name="gost1" Relationship="DBModel.FK_prijava_gost1" FromRole="prijava" ToRole="gost" />
           <Property Name="organizacija_dolaska" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="status_osobe" Relationship="DBModel.FK_prijava_status_osobe" FromRole="prijava" ToRole="status_osobe" />
         </EntityType>
         <EntityType Name="racun">
           <Key>
@@ -455,15 +455,6 @@
           <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_smjestaj" FromRole="smjestaj" ToRole="prijava" />
           <NavigationProperty Name="racuns" Relationship="DBModel.FK_racun_smjestaj" FromRole="smjestaj" ToRole="racun" />
           <NavigationProperty Name="vrsta_smjestaja" Relationship="DBModel.FK_smjestaj_vrsta_smjestaja" FromRole="smjestaj" ToRole="vrsta_smjestaja" />
-        </EntityType>
-        <EntityType Name="status_osobe">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="iznos" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
-          <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_status_osobe" FromRole="status_osobe" ToRole="prijava" />
         </EntityType>
         <EntityType Name="vrsta_dokumenta">
           <Key>
@@ -567,18 +558,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_prijava_status_osobe">
-          <End Type="DBModel.status_osobe" Role="status_osobe" Multiplicity="1" />
-          <End Type="DBModel.prijava" Role="prijava" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="status_osobe">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="prijava">
-              <PropertyRef Name="status_osobe_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_prijava_zaposlenik">
           <End Type="DBModel.zaposlenik" Role="zaposlenik" Multiplicity="1" />
           <End Type="DBModel.prijava" Role="prijava" Multiplicity="*" />
@@ -636,6 +615,27 @@
             </Principal>
             <Dependent Role="prijava">
               <PropertyRef Name="gost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="status_osobe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="iznos" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_status_osobe" FromRole="status_osobe" ToRole="prijava" />
+        </EntityType>
+        <Association Name="FK_prijava_status_osobe">
+          <End Type="DBModel.status_osobe" Role="status_osobe" Multiplicity="1" />
+          <End Type="DBModel.prijava" Role="prijava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status_osobe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prijava">
+              <PropertyRef Name="status_osobe_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -716,15 +716,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="status_osobe">
-            <EntityTypeMapping TypeName="DBModel.status_osobe">
-              <MappingFragment StoreEntitySet="status_osobe">
-                <ScalarProperty Name="iznos" ColumnName="iznos" />
-                <ScalarProperty Name="naziv" ColumnName="naziv" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vrsta_dokumenta">
             <EntityTypeMapping TypeName="DBModel.vrsta_dokumenta">
               <MappingFragment StoreEntitySet="vrsta_dokumenta">
@@ -750,6 +741,15 @@
                 <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
                 <ScalarProperty Name="prezime" ColumnName="prezime" />
                 <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status_osobe">
+            <EntityTypeMapping TypeName="DBModel.status_osobe">
+              <MappingFragment StoreEntitySet="status_osobe">
+                <ScalarProperty Name="iznos" ColumnName="iznos" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

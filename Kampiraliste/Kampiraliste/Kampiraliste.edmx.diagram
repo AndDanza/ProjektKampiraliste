@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="DBModel.prijava" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.racun" Width="2" PointX="10.875" PointY="1.125" />
         <EntityTypeShape EntityType="DBModel.smjestaj" Width="1.5" PointX="10" PointY="11.125" />
-        <EntityTypeShape EntityType="DBModel.status_osobe" Width="1.5" PointX="4.125" PointY="11.375" />
         <EntityTypeShape EntityType="DBModel.vrsta_dokumenta" Width="1.5" PointX="0.875" PointY="0.625" />
         <EntityTypeShape EntityType="DBModel.vrsta_smjestaja" Width="1.5" PointX="14.375" PointY="10.125" />
         <EntityTypeShape EntityType="DBModel.zaposlenik" Width="1.5" PointX="9.75" PointY="7" />
@@ -21,17 +20,18 @@
         <AssociationConnector Association="DBModel.FK_racun_gost" />
         <AssociationConnector Association="DBModel.FK_smjestaj_parcela" />
         <AssociationConnector Association="DBModel.FK_prijava_smjestaj" />
-        <AssociationConnector Association="DBModel.FK_prijava_status_osobe" />
         <AssociationConnector Association="DBModel.FK_prijava_zaposlenik" />
         <AssociationConnector Association="DBModel.FK_racun_smjestaj" />
         <AssociationConnector Association="DBModel.FK_racun_zaposlenik" />
         <AssociationConnector Association="DBModel.FK_smjestaj_vrsta_smjestaja" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="DBModel.FK_prijava_gost1" ManuallyRouted="true" >
-          <ConnectorPoint PointX="5.125" PointY="4.6568874261488524" />
-          <ConnectorPoint PointX="6.75" PointY="4.6568874261488524" />
+          <ConnectorPoint PointX="5.125" PointY="4.5933512955729174" />
+          <ConnectorPoint PointX="6.75" PointY="4.5933512955729174" />
           <ConnectorPoint PointX="6.75" PointY="6.125" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="DBModel.status_osobe" Width="1.5" PointX="2" PointY="8.25" />
+        <AssociationConnector Association="DBModel.FK_prijava_status_osobe" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

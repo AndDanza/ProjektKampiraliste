@@ -47,8 +47,8 @@ namespace Kampiraliste
             {
                 this.listaDrzavaStan = new BindingList<drzava>(baza.drzavas.ToList());
                 this.listaDrzavaRod = new BindingList<drzava>(baza.drzavas.ToList());
-                this.listaDokumenata = new BindingList<vrsta_dokumenta>(baza.vrsta_dokumenta.ToList());
-                this.listaStatusaOsobe = new BindingList<status_osobe>(baza.status_osobe.ToList());
+                this.listaDokumenata = new BindingList<vrsta_dokumenta>(baza.vrsta_dokumentas.ToList());
+                this.listaStatusaOsobe = new BindingList<status_osobe>(baza.status_osobes.ToList());
                 this.listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
             }
 
@@ -61,14 +61,33 @@ namespace Kampiraliste
 
         private void UnosGosta()
         {
-            int idGosta = ProvjeraGosta();
-            if(idGosta == 0)
+            MessageBox.Show("Vaš gost ne postoji u bazi!");
+
+            vrsta_dokumenta dokument = unosVrstaDoc.SelectedItem as vrsta_dokumenta;
+            drzava drzavaStan = unosDrzavaStan.SelectedItem as drzava;
+            drzava drzavaRod = unosDrzavaRod.SelectedItem as drzava;
+            string spol = unosSpolMuski.Checked ? spol = "M" : spol = "Ž";
+
+            using (var baza = new KampiralisteEntiteti())
             {
-                MessageBox.Show("Vaš gost ne postoji u bazi!");
-            }
-            else if(idGosta != -1)
-            {
-                MessageBox.Show("Uneseni gost postoji");
+                baza.vrsta_dokumentas.Attach(dokument);
+                baza.drzavas.Attach(drzavaStan);
+                baza.drzavas.Attach(drzavaRod);
+
+                gost noviGost = new gost
+                {
+                    spol = spol,
+                    ime = unosIme.Text,
+                    prezime = unosPrezime.Text,
+                    vrsta_dokumenta = dokument,
+                    broj_dokumenta = unosBrojDoc.Text,
+                    drzava1 = drzavaRod,
+                    drzava = drzavaStan,
+                    datum_rodenja = DateTime.Parse(unosDatumRodenja.Text)
+                };
+
+                baza.gosts.Add(noviGost);
+                baza.SaveChanges();
             }
         }
 
@@ -111,7 +130,17 @@ namespace Kampiraliste
 
         private void potvrdiPrijavu_Click(object sender, EventArgs e)
         {
-            UnosGosta();
+            int idGosta = ProvjeraGosta();
+
+            if (idGosta == 0)
+            {
+                UnosGosta();
+            }
+            else if (idGosta != -1)
+            {
+                MessageBox.Show("Uneseni gost postoji");
+            }
+            
         }
     }
 }

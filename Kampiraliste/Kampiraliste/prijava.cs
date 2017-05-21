@@ -24,8 +24,8 @@ namespace Kampiraliste
         public string organizacija_dolaska { get; set; }
     
         public virtual smjestaj smjestaj { get; set; }
-        public virtual status_osobe status_osobe { get; set; }
         public virtual zaposlenik zaposlenik { get; set; }
         public virtual gost gost1 { get; set; }
+        public virtual status_osobe status_osobe { get; set; }
     }
 }
