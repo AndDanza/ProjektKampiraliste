@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.vrstaSmjestajaLabela = new System.Windows.Forms.Label();
             this.unosVrstaSmjestaja = new System.Windows.Forms.ComboBox();
+            this.vrstasmjestajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unosParcele = new System.Windows.Forms.ComboBox();
+            this.parcelaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.parcelaLable = new System.Windows.Forms.Label();
             this.brOsobaLabel = new System.Windows.Forms.Label();
-            this.unosBrOsoba = new System.Windows.Forms.TextBox();
+            this.unosBrojOsoba = new System.Windows.Forms.TextBox();
             this.naslovLabela = new System.Windows.Forms.Label();
             this.potvrdiUnosSmjestaja = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstasmjestajaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // vrstaSmjestajaLabela
@@ -52,21 +57,35 @@
             // 
             // unosVrstaSmjestaja
             // 
+            this.unosVrstaSmjestaja.DataSource = this.vrstasmjestajaBindingSource;
+            this.unosVrstaSmjestaja.DisplayMember = "naziv";
             this.unosVrstaSmjestaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosVrstaSmjestaja.FormattingEnabled = true;
             this.unosVrstaSmjestaja.Location = new System.Drawing.Point(130, 115);
             this.unosVrstaSmjestaja.Name = "unosVrstaSmjestaja";
             this.unosVrstaSmjestaja.Size = new System.Drawing.Size(167, 26);
             this.unosVrstaSmjestaja.TabIndex = 1;
+            this.unosVrstaSmjestaja.ValueMember = "id";
+            // 
+            // vrstasmjestajaBindingSource
+            // 
+            this.vrstasmjestajaBindingSource.DataSource = typeof(Kampiraliste.vrsta_smjestaja);
             // 
             // unosParcele
             // 
+            this.unosParcele.DataSource = this.parcelaBindingSource;
+            this.unosParcele.DisplayMember = "naziv";
             this.unosParcele.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosParcele.FormattingEnabled = true;
             this.unosParcele.Location = new System.Drawing.Point(130, 158);
             this.unosParcele.Name = "unosParcele";
             this.unosParcele.Size = new System.Drawing.Size(167, 26);
             this.unosParcele.TabIndex = 3;
+            this.unosParcele.ValueMember = "id";
+            // 
+            // parcelaBindingSource
+            // 
+            this.parcelaBindingSource.DataSource = typeof(Kampiraliste.parcela);
             // 
             // parcelaLable
             // 
@@ -92,13 +111,13 @@
             this.brOsobaLabel.TabIndex = 4;
             this.brOsobaLabel.Text = "Broj osoba:";
             // 
-            // unosBrOsoba
+            // unosBrojOsoba
             // 
-            this.unosBrOsoba.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosBrOsoba.Location = new System.Drawing.Point(130, 203);
-            this.unosBrOsoba.Name = "unosBrOsoba";
-            this.unosBrOsoba.Size = new System.Drawing.Size(57, 24);
-            this.unosBrOsoba.TabIndex = 5;
+            this.unosBrojOsoba.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosBrojOsoba.Location = new System.Drawing.Point(130, 203);
+            this.unosBrojOsoba.Name = "unosBrojOsoba";
+            this.unosBrojOsoba.Size = new System.Drawing.Size(57, 24);
+            this.unosBrojOsoba.TabIndex = 5;
             // 
             // naslovLabela
             // 
@@ -124,16 +143,17 @@
             this.potvrdiUnosSmjestaja.TabIndex = 7;
             this.potvrdiUnosSmjestaja.Text = "Unesi smještaj";
             this.potvrdiUnosSmjestaja.UseVisualStyleBackColor = false;
+            this.potvrdiUnosSmjestaja.Click += new System.EventHandler(this.potvrdiUnosSmjestaja_Click);
             // 
             // UnosSmjestajForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
-            this.ClientSize = new System.Drawing.Size(319, 542);
+            this.ClientSize = new System.Drawing.Size(319, 526);
             this.Controls.Add(this.potvrdiUnosSmjestaja);
             this.Controls.Add(this.naslovLabela);
-            this.Controls.Add(this.unosBrOsoba);
+            this.Controls.Add(this.unosBrojOsoba);
             this.Controls.Add(this.brOsobaLabel);
             this.Controls.Add(this.unosParcele);
             this.Controls.Add(this.parcelaLable);
@@ -143,6 +163,9 @@
             this.Name = "UnosSmjestajForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UnosSmjestajForma";
+            this.Load += new System.EventHandler(this.UnosSmjestajForma_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vrstasmjestajaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,8 +178,10 @@
         private System.Windows.Forms.ComboBox unosParcele;
         private System.Windows.Forms.Label parcelaLable;
         private System.Windows.Forms.Label brOsobaLabel;
-        private System.Windows.Forms.TextBox unosBrOsoba;
+        private System.Windows.Forms.TextBox unosBrojOsoba;
         private System.Windows.Forms.Label naslovLabela;
         private System.Windows.Forms.Button potvrdiUnosSmjestaja;
+        private System.Windows.Forms.BindingSource vrstasmjestajaBindingSource;
+        private System.Windows.Forms.BindingSource parcelaBindingSource;
     }
 }
