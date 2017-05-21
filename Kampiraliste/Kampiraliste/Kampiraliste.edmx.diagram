@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="DBModel.gost" Width="1.75" PointX="3.375" PointY="2.125" />
         <EntityTypeShape EntityType="DBModel.parcela" Width="1.5" PointX="14.125" PointY="13" />
         <EntityTypeShape EntityType="DBModel.prijava" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.racun" Width="2" PointX="10.75" PointY="1.75" />
+        <EntityTypeShape EntityType="DBModel.racun" Width="2" PointX="10.875" PointY="1.125" />
         <EntityTypeShape EntityType="DBModel.smjestaj" Width="1.5" PointX="10" PointY="11.125" />
         <EntityTypeShape EntityType="DBModel.status_osobe" Width="1.5" PointX="4.125" PointY="11.375" />
         <EntityTypeShape EntityType="DBModel.vrsta_dokumenta" Width="1.5" PointX="0.875" PointY="0.625" />
@@ -28,8 +28,8 @@
         <AssociationConnector Association="DBModel.FK_smjestaj_vrsta_smjestaja" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="DBModel.FK_prijava_gost1" ManuallyRouted="true" >
-          <ConnectorPoint PointX="5.125" PointY="4.57390955387249" />
-          <ConnectorPoint PointX="6.75" PointY="4.57390955387249" />
+          <ConnectorPoint PointX="5.125" PointY="4.6568874261488524" />
+          <ConnectorPoint PointX="6.75" PointY="4.6568874261488524" />
           <ConnectorPoint PointX="6.75" PointY="6.125" />
         </AssociationConnector>
       </Diagram>

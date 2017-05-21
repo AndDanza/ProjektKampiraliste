@@ -12,11 +12,11 @@ namespace Kampiraliste
 {
     public partial class PrijavaGostaForma : Form
     {
-        BindingList<drzava> listaDrzavaStan = null;
-        BindingList<drzava> listaDrzavaRod = null;
-        BindingList<vrsta_dokumenta> listaDokumenata = null;
-        BindingList<status_osobe> listaStatusaOsobe = null;
-        BindingList<smjestaj> listaSmjestaja = null;
+        private BindingList<drzava> listaDrzavaStan = null;
+        private BindingList<drzava> listaDrzavaRod = null;
+        private BindingList<vrsta_dokumenta> listaDokumenata = null;
+        private BindingList<status_osobe> listaStatusaOsobe = null;
+        private BindingList<smjestaj> listaSmjestaja = null;
 
         public PrijavaGostaForma()
         { 

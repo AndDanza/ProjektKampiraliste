@@ -59,6 +59,7 @@
             // 
             this.unosVrstaSmjestaja.DataSource = this.vrstasmjestajaBindingSource;
             this.unosVrstaSmjestaja.DisplayMember = "naziv";
+            this.unosVrstaSmjestaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosVrstaSmjestaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosVrstaSmjestaja.FormattingEnabled = true;
             this.unosVrstaSmjestaja.Location = new System.Drawing.Point(130, 115);
@@ -75,6 +76,7 @@
             // 
             this.unosParcele.DataSource = this.parcelaBindingSource;
             this.unosParcele.DisplayMember = "naziv";
+            this.unosParcele.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosParcele.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosParcele.FormattingEnabled = true;
             this.unosParcele.Location = new System.Drawing.Point(130, 158);

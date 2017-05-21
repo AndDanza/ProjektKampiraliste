@@ -18,11 +18,11 @@ namespace Kampiraliste
         public int gost_id { get; set; }
         public int zaposlenik_id { get; set; }
         public int smjestaj_id { get; set; }
-        public System.DateTime datum_vrijem_izdavanja { get; set; }
         public string JIR { get; set; }
         public string ZIR { get; set; }
         public decimal preostalo_za_platit { get; set; }
         public decimal iznos { get; set; }
+        public System.DateTime datum_vrijeme_izdavanja { get; set; }
     
         public virtual gost gost { get; set; }
         public virtual smjestaj smjestaj { get; set; }

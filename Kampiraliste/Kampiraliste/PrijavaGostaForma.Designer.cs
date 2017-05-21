@@ -31,24 +31,24 @@
             this.components = new System.ComponentModel.Container();
             this.odabirSmjestajaLabela = new System.Windows.Forms.Label();
             this.odabirSmjestajaUnos = new System.Windows.Forms.ComboBox();
+            this.smjestajBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unosPrezime = new System.Windows.Forms.TextBox();
             this.unosBrojDoc = new System.Windows.Forms.TextBox();
             this.unosDrzavaRod = new System.Windows.Forms.ComboBox();
             this.drzavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unosStatus = new System.Windows.Forms.ComboBox();
             this.statusosobeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unosDatumDolaska = new System.Windows.Forms.DateTimePicker();
             this.datumDolaskaLabela = new System.Windows.Forms.Label();
-            this.unosDatumOdlaska = new System.Windows.Forms.DateTimePicker();
             this.datumOdlaskaLabela = new System.Windows.Forms.Label();
             this.unosAgencijski = new System.Windows.Forms.RadioButton();
             this.unosOsobno = new System.Windows.Forms.RadioButton();
             this.orgDolaskaLabela = new System.Windows.Forms.Label();
             this.podaciPrijava = new System.Windows.Forms.GroupBox();
-            this.statusOsobe = new System.Windows.Forms.Label();
+            this.unosDatumOdlaska = new System.Windows.Forms.TextBox();
+            this.unosDatumDolaska = new System.Windows.Forms.TextBox();
             this.pokreniUnosSmjestaj = new System.Windows.Forms.Button();
+            this.statusOsobe = new System.Windows.Forms.Label();
             this.potvrdiPrijavu = new System.Windows.Forms.Button();
-            this.unosDatumRodenja = new System.Windows.Forms.DateTimePicker();
             this.datumRodjenja = new System.Windows.Forms.Label();
             this.drzavaStanovanja = new System.Windows.Forms.Label();
             this.unosDrzavaStan = new System.Windows.Forms.ComboBox();
@@ -64,14 +64,13 @@
             this.prezimeLabela = new System.Windows.Forms.Label();
             this.imeLabela = new System.Windows.Forms.Label();
             this.podaciGost = new System.Windows.Forms.GroupBox();
-            this.odustaniPrijavaGosta = new System.Windows.Forms.Button();
-            this.smjestajBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unosDatumRodenja = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).BeginInit();
             this.podaciPrijava.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).BeginInit();
             this.podaciGost.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // odabirSmjestajaLabela
@@ -88,6 +87,7 @@
             // 
             this.odabirSmjestajaUnos.DataSource = this.smjestajBindingSource;
             this.odabirSmjestajaUnos.DisplayMember = "id";
+            this.odabirSmjestajaUnos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.odabirSmjestajaUnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.odabirSmjestajaUnos.FormattingEnabled = true;
             this.odabirSmjestajaUnos.Location = new System.Drawing.Point(179, 89);
@@ -95,6 +95,10 @@
             this.odabirSmjestajaUnos.Size = new System.Drawing.Size(200, 26);
             this.odabirSmjestajaUnos.TabIndex = 13;
             this.odabirSmjestajaUnos.ValueMember = "id";
+            // 
+            // smjestajBindingSource
+            // 
+            this.smjestajBindingSource.DataSource = typeof(Kampiraliste.smjestaj);
             // 
             // unosPrezime
             // 
@@ -117,6 +121,7 @@
             this.unosDrzavaRod.DataSource = this.drzavaBindingSource;
             this.unosDrzavaRod.DisplayMember = "naziv";
             this.unosDrzavaRod.DropDownHeight = 250;
+            this.unosDrzavaRod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosDrzavaRod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosDrzavaRod.FormattingEnabled = true;
             this.unosDrzavaRod.IntegralHeight = false;
@@ -134,6 +139,7 @@
             // 
             this.unosStatus.DataSource = this.statusosobeBindingSource;
             this.unosStatus.DisplayMember = "naziv";
+            this.unosStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosStatus.FormattingEnabled = true;
             this.unosStatus.Location = new System.Drawing.Point(593, 212);
@@ -146,16 +152,6 @@
             // 
             this.statusosobeBindingSource.DataSource = typeof(Kampiraliste.status_osobe);
             // 
-            // unosDatumDolaska
-            // 
-            this.unosDatumDolaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosDatumDolaska.Location = new System.Drawing.Point(593, 42);
-            this.unosDatumDolaska.MaxDate = new System.DateTime(2090, 1, 1, 0, 0, 0, 0);
-            this.unosDatumDolaska.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.unosDatumDolaska.Name = "unosDatumDolaska";
-            this.unosDatumDolaska.Size = new System.Drawing.Size(166, 24);
-            this.unosDatumDolaska.TabIndex = 11;
-            // 
             // datumDolaskaLabela
             // 
             this.datumDolaskaLabela.AutoSize = true;
@@ -165,16 +161,6 @@
             this.datumDolaskaLabela.Size = new System.Drawing.Size(112, 18);
             this.datumDolaskaLabela.TabIndex = 22;
             this.datumDolaskaLabela.Text = "Datum dolaska:";
-            // 
-            // unosDatumOdlaska
-            // 
-            this.unosDatumOdlaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosDatumOdlaska.Location = new System.Drawing.Point(593, 87);
-            this.unosDatumOdlaska.MaxDate = new System.DateTime(2090, 1, 1, 0, 0, 0, 0);
-            this.unosDatumOdlaska.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.unosDatumOdlaska.Name = "unosDatumOdlaska";
-            this.unosDatumOdlaska.Size = new System.Drawing.Size(164, 24);
-            this.unosDatumOdlaska.TabIndex = 12;
             // 
             // datumOdlaskaLabela
             // 
@@ -194,13 +180,13 @@
             this.unosAgencijski.Name = "unosAgencijski";
             this.unosAgencijski.Size = new System.Drawing.Size(92, 22);
             this.unosAgencijski.TabIndex = 15;
-            this.unosAgencijski.TabStop = true;
             this.unosAgencijski.Text = "Agencijski";
             this.unosAgencijski.UseVisualStyleBackColor = true;
             // 
             // unosOsobno
             // 
             this.unosOsobno.AutoSize = true;
+            this.unosOsobno.Checked = true;
             this.unosOsobno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosOsobno.Location = new System.Drawing.Point(179, 46);
             this.unosOsobno.Name = "unosOsobno";
@@ -223,13 +209,13 @@
             // podaciPrijava
             // 
             this.podaciPrijava.BackColor = System.Drawing.Color.Wheat;
+            this.podaciPrijava.Controls.Add(this.unosDatumOdlaska);
+            this.podaciPrijava.Controls.Add(this.unosDatumDolaska);
             this.podaciPrijava.Controls.Add(this.pokreniUnosSmjestaj);
             this.podaciPrijava.Controls.Add(this.unosAgencijski);
-            this.podaciPrijava.Controls.Add(this.unosDatumOdlaska);
             this.podaciPrijava.Controls.Add(this.unosOsobno);
             this.podaciPrijava.Controls.Add(this.datumOdlaskaLabela);
             this.podaciPrijava.Controls.Add(this.orgDolaskaLabela);
-            this.podaciPrijava.Controls.Add(this.unosDatumDolaska);
             this.podaciPrijava.Controls.Add(this.datumDolaskaLabela);
             this.podaciPrijava.Controls.Add(this.odabirSmjestajaUnos);
             this.podaciPrijava.Controls.Add(this.odabirSmjestajaLabela);
@@ -241,15 +227,21 @@
             this.podaciPrijava.TabStop = false;
             this.podaciPrijava.Text = "Podaci o prijavi";
             // 
-            // statusOsobe
+            // unosDatumOdlaska
             // 
-            this.statusOsobe.AutoSize = true;
-            this.statusOsobe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusOsobe.Location = new System.Drawing.Point(487, 215);
-            this.statusOsobe.Name = "statusOsobe";
-            this.statusOsobe.Size = new System.Drawing.Size(100, 18);
-            this.statusOsobe.TabIndex = 40;
-            this.statusOsobe.Text = "Status osobe:";
+            this.unosDatumOdlaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosDatumOdlaska.Location = new System.Drawing.Point(586, 90);
+            this.unosDatumOdlaska.Name = "unosDatumOdlaska";
+            this.unosDatumOdlaska.Size = new System.Drawing.Size(251, 24);
+            this.unosDatumOdlaska.TabIndex = 43;
+            // 
+            // unosDatumDolaska
+            // 
+            this.unosDatumDolaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosDatumDolaska.Location = new System.Drawing.Point(586, 45);
+            this.unosDatumDolaska.Name = "unosDatumDolaska";
+            this.unosDatumDolaska.Size = new System.Drawing.Size(251, 24);
+            this.unosDatumDolaska.TabIndex = 42;
             // 
             // pokreniUnosSmjestaj
             // 
@@ -265,6 +257,16 @@
             this.pokreniUnosSmjestaj.UseVisualStyleBackColor = false;
             this.pokreniUnosSmjestaj.Click += new System.EventHandler(this.pokreniUnosSmjestaj_Click);
             // 
+            // statusOsobe
+            // 
+            this.statusOsobe.AutoSize = true;
+            this.statusOsobe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusOsobe.Location = new System.Drawing.Point(487, 215);
+            this.statusOsobe.Name = "statusOsobe";
+            this.statusOsobe.Size = new System.Drawing.Size(100, 18);
+            this.statusOsobe.TabIndex = 40;
+            this.statusOsobe.Text = "Status osobe:";
+            // 
             // potvrdiPrijavu
             // 
             this.potvrdiPrijavu.BackColor = System.Drawing.Color.Peru;
@@ -274,22 +276,12 @@
             this.potvrdiPrijavu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.potvrdiPrijavu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.potvrdiPrijavu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.potvrdiPrijavu.Location = new System.Drawing.Point(623, 468);
+            this.potvrdiPrijavu.Location = new System.Drawing.Point(779, 464);
             this.potvrdiPrijavu.Name = "potvrdiPrijavu";
             this.potvrdiPrijavu.Size = new System.Drawing.Size(142, 38);
             this.potvrdiPrijavu.TabIndex = 16;
             this.potvrdiPrijavu.Text = "Potvrdi prijavu";
             this.potvrdiPrijavu.UseVisualStyleBackColor = false;
-            // 
-            // unosDatumRodenja
-            // 
-            this.unosDatumRodenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosDatumRodenja.Location = new System.Drawing.Point(179, 210);
-            this.unosDatumRodenja.MaxDate = new System.DateTime(2090, 1, 1, 0, 0, 0, 0);
-            this.unosDatumRodenja.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.unosDatumRodenja.Name = "unosDatumRodenja";
-            this.unosDatumRodenja.Size = new System.Drawing.Size(170, 24);
-            this.unosDatumRodenja.TabIndex = 9;
             // 
             // datumRodjenja
             // 
@@ -316,6 +308,7 @@
             this.unosDrzavaStan.DataSource = this.drzavaBindingSource;
             this.unosDrzavaStan.DisplayMember = "naziv";
             this.unosDrzavaStan.DropDownHeight = 250;
+            this.unosDrzavaStan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosDrzavaStan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosDrzavaStan.FormattingEnabled = true;
             this.unosDrzavaStan.IntegralHeight = false;
@@ -351,6 +344,7 @@
             // 
             this.unosVrstaDoc.DataSource = this.vrstadokumentaBindingSource;
             this.unosVrstaDoc.DisplayMember = "naziv";
+            this.unosVrstaDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosVrstaDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosVrstaDoc.FormattingEnabled = true;
             this.unosVrstaDoc.Location = new System.Drawing.Point(179, 118);
@@ -381,7 +375,6 @@
             this.unosSpolZenski.Name = "unosSpolZenski";
             this.unosSpolZenski.Size = new System.Drawing.Size(70, 22);
             this.unosSpolZenski.TabIndex = 2;
-            this.unosSpolZenski.TabStop = true;
             this.unosSpolZenski.Tag = "Ž";
             this.unosSpolZenski.Text = "Ženski";
             this.unosSpolZenski.UseVisualStyleBackColor = true;
@@ -389,6 +382,7 @@
             // unosSpolMuski
             // 
             this.unosSpolMuski.AutoSize = true;
+            this.unosSpolMuski.Checked = true;
             this.unosSpolMuski.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosSpolMuski.Location = new System.Drawing.Point(179, 36);
             this.unosSpolMuski.Name = "unosSpolMuski";
@@ -440,8 +434,8 @@
             // podaciGost
             // 
             this.podaciGost.BackColor = System.Drawing.Color.Wheat;
-            this.podaciGost.Controls.Add(this.statusOsobe);
             this.podaciGost.Controls.Add(this.unosDatumRodenja);
+            this.podaciGost.Controls.Add(this.statusOsobe);
             this.podaciGost.Controls.Add(this.unosStatus);
             this.podaciGost.Controls.Add(this.datumRodjenja);
             this.podaciGost.Controls.Add(this.unosDrzavaRod);
@@ -467,25 +461,13 @@
             this.podaciGost.TabStop = false;
             this.podaciGost.Text = "Podaci o gostu";
             // 
-            // odustaniPrijavaGosta
+            // unosDatumRodenja
             // 
-            this.odustaniPrijavaGosta.BackColor = System.Drawing.Color.Peru;
-            this.odustaniPrijavaGosta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.odustaniPrijavaGosta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.odustaniPrijavaGosta.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.odustaniPrijavaGosta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.odustaniPrijavaGosta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.odustaniPrijavaGosta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.odustaniPrijavaGosta.Location = new System.Drawing.Point(779, 468);
-            this.odustaniPrijavaGosta.Name = "odustaniPrijavaGosta";
-            this.odustaniPrijavaGosta.Size = new System.Drawing.Size(142, 38);
-            this.odustaniPrijavaGosta.TabIndex = 17;
-            this.odustaniPrijavaGosta.Text = "Odustani";
-            this.odustaniPrijavaGosta.UseVisualStyleBackColor = false;
-            // 
-            // smjestajBindingSource
-            // 
-            this.smjestajBindingSource.DataSource = typeof(Kampiraliste.smjestaj);
+            this.unosDatumRodenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosDatumRodenja.Location = new System.Drawing.Point(179, 212);
+            this.unosDatumRodenja.Name = "unosDatumRodenja";
+            this.unosDatumRodenja.Size = new System.Drawing.Size(251, 24);
+            this.unosDatumRodenja.TabIndex = 41;
             // 
             // PrijavaGostaForma
             // 
@@ -494,7 +476,6 @@
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(961, 526);
-            this.Controls.Add(this.odustaniPrijavaGosta);
             this.Controls.Add(this.podaciPrijava);
             this.Controls.Add(this.potvrdiPrijavu);
             this.Controls.Add(this.podaciGost);
@@ -503,6 +484,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava gosta";
             this.Load += new System.EventHandler(this.PrijavaGostaForma_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).EndInit();
             this.podaciPrijava.ResumeLayout(false);
@@ -510,7 +492,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).EndInit();
             this.podaciGost.ResumeLayout(false);
             this.podaciGost.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -523,16 +504,13 @@
         private System.Windows.Forms.TextBox unosBrojDoc;
         private System.Windows.Forms.ComboBox unosDrzavaRod;
         private System.Windows.Forms.ComboBox unosStatus;
-        private System.Windows.Forms.DateTimePicker unosDatumDolaska;
         private System.Windows.Forms.Label datumDolaskaLabela;
-        private System.Windows.Forms.DateTimePicker unosDatumOdlaska;
         private System.Windows.Forms.Label datumOdlaskaLabela;
         private System.Windows.Forms.RadioButton unosAgencijski;
         private System.Windows.Forms.RadioButton unosOsobno;
         private System.Windows.Forms.Label orgDolaskaLabela;
         private System.Windows.Forms.GroupBox podaciPrijava;
         private System.Windows.Forms.Label statusOsobe;
-        private System.Windows.Forms.DateTimePicker unosDatumRodenja;
         private System.Windows.Forms.Label datumRodjenja;
         private System.Windows.Forms.Label drzavaStanovanja;
         private System.Windows.Forms.ComboBox unosDrzavaStan;
@@ -552,7 +530,9 @@
         private System.Windows.Forms.BindingSource drzavaBindingSource;
         private System.Windows.Forms.BindingSource vrstadokumentaBindingSource;
         private System.Windows.Forms.BindingSource statusosobeBindingSource;
-        private System.Windows.Forms.Button odustaniPrijavaGosta;
         private System.Windows.Forms.BindingSource smjestajBindingSource;
+        private System.Windows.Forms.TextBox unosDatumOdlaska;
+        private System.Windows.Forms.TextBox unosDatumDolaska;
+        private System.Windows.Forms.TextBox unosDatumRodenja;
     }
 }

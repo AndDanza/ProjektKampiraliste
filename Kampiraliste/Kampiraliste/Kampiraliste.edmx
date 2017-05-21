@@ -41,10 +41,11 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="gost_id" Type="int" Nullable="false" />
           <Property Name="smjestaj_id" Type="int" Nullable="false" />
-          <Property Name="datum_prijave" Type="datetime" Nullable="false" />
-          <Property Name="datum_odjave" Type="datetime" Nullable="false" />
+          <Property Name="datum_prijave" Type="date" Nullable="false" />
+          <Property Name="datum_odjave" Type="date" Nullable="false" />
           <Property Name="zaposlenik_id" Type="int" Nullable="false" />
           <Property Name="status_osobe_id" Type="int" Nullable="false" />
+          <Property Name="organizacija_dolaska" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="racun">
           <Key>
@@ -54,7 +55,7 @@
           <Property Name="gost_id" Type="int" Nullable="false" />
           <Property Name="zaposlenik_id" Type="int" Nullable="false" />
           <Property Name="smjestaj_id" Type="int" Nullable="false" />
-          <Property Name="datum_vrijem_izdavanja" Type="datetime" Nullable="false" />
+          <Property Name="datum_vrijeme_izdavanja" Type="datetime" Nullable="false" />
           <Property Name="JIR" Type="char" MaxLength="32" Nullable="false" />
           <Property Name="ZIR" Type="char" MaxLength="32" Nullable="false" />
           <Property Name="preostalo_za_platit" Type="decimal" Precision="6" Scale="2" Nullable="false" />
@@ -415,14 +416,15 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="gost_id" Type="Int32" Nullable="false" />
           <Property Name="smjestaj_id" Type="Int32" Nullable="false" />
-          <Property Name="datum_prijave" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="datum_odjave" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="datum_prijave" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="datum_odjave" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="zaposlenik_id" Type="Int32" Nullable="false" />
           <Property Name="status_osobe_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="smjestaj" Relationship="DBModel.FK_prijava_smjestaj" FromRole="prijava" ToRole="smjestaj" />
           <NavigationProperty Name="status_osobe" Relationship="DBModel.FK_prijava_status_osobe" FromRole="prijava" ToRole="status_osobe" />
           <NavigationProperty Name="zaposlenik" Relationship="DBModel.FK_prijava_zaposlenik" FromRole="prijava" ToRole="zaposlenik" />
           <NavigationProperty Name="gost1" Relationship="DBModel.FK_prijava_gost1" FromRole="prijava" ToRole="gost" />
+          <Property Name="organizacija_dolaska" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="racun">
           <Key>
@@ -432,7 +434,6 @@
           <Property Name="gost_id" Type="Int32" Nullable="false" />
           <Property Name="zaposlenik_id" Type="Int32" Nullable="false" />
           <Property Name="smjestaj_id" Type="Int32" Nullable="false" />
-          <Property Name="datum_vrijem_izdavanja" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="JIR" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
           <Property Name="ZIR" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
           <Property Name="preostalo_za_platit" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
@@ -440,6 +441,7 @@
           <NavigationProperty Name="gost" Relationship="DBModel.FK_racun_gost" FromRole="racun" ToRole="gost" />
           <NavigationProperty Name="smjestaj" Relationship="DBModel.FK_racun_smjestaj" FromRole="racun" ToRole="smjestaj" />
           <NavigationProperty Name="zaposlenik" Relationship="DBModel.FK_racun_zaposlenik" FromRole="racun" ToRole="zaposlenik" />
+          <Property Name="datum_vrijeme_izdavanja" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="smjestaj">
           <Key>
@@ -678,6 +680,7 @@
           <EntitySetMapping Name="prijavas">
             <EntityTypeMapping TypeName="DBModel.prijava">
               <MappingFragment StoreEntitySet="prijava">
+                <ScalarProperty Name="organizacija_dolaska" ColumnName="organizacija_dolaska" />
                 <ScalarProperty Name="status_osobe_id" ColumnName="status_osobe_id" />
                 <ScalarProperty Name="zaposlenik_id" ColumnName="zaposlenik_id" />
                 <ScalarProperty Name="datum_odjave" ColumnName="datum_odjave" />
@@ -691,11 +694,11 @@
           <EntitySetMapping Name="racuns">
             <EntityTypeMapping TypeName="DBModel.racun">
               <MappingFragment StoreEntitySet="racun">
+                <ScalarProperty Name="datum_vrijeme_izdavanja" ColumnName="datum_vrijeme_izdavanja" />
                 <ScalarProperty Name="iznos" ColumnName="iznos" />
                 <ScalarProperty Name="preostalo_za_platit" ColumnName="preostalo_za_platit" />
                 <ScalarProperty Name="ZIR" ColumnName="ZIR" />
                 <ScalarProperty Name="JIR" ColumnName="JIR" />
-                <ScalarProperty Name="datum_vrijem_izdavanja" ColumnName="datum_vrijem_izdavanja" />
                 <ScalarProperty Name="smjestaj_id" ColumnName="smjestaj_id" />
                 <ScalarProperty Name="zaposlenik_id" ColumnName="zaposlenik_id" />
                 <ScalarProperty Name="gost_id" ColumnName="gost_id" />

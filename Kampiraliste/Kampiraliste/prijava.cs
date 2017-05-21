@@ -21,6 +21,7 @@ namespace Kampiraliste
         public System.DateTime datum_odjave { get; set; }
         public int zaposlenik_id { get; set; }
         public int status_osobe_id { get; set; }
+        public string organizacija_dolaska { get; set; }
     
         public virtual smjestaj smjestaj { get; set; }
         public virtual status_osobe status_osobe { get; set; }

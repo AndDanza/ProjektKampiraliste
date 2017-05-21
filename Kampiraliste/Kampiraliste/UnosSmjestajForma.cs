@@ -12,8 +12,8 @@ namespace Kampiraliste
 {
     public partial class UnosSmjestajForma : Form
     {
-        BindingList<vrsta_smjestaja> listaSmjestaja = null;
-        BindingList<parcela> listaParcela = null;
+        private BindingList<vrsta_smjestaja> listaSmjestaja = null;
+        private BindingList<parcela> listaParcela = null;
 
         public UnosSmjestajForma()
         {
@@ -63,6 +63,10 @@ namespace Kampiraliste
 
                         if (rez == DialogResult.OK)
                         {
+                            if(unosBrojOsoba.BackColor == Color.LightSalmon)
+                            {
+                                unosBrojOsoba.BackColor = Color.Empty;
+                            }
                             this.Close();
                         }
                     }
@@ -75,7 +79,7 @@ namespace Kampiraliste
             catch
             {
                 DialogResult kriviUnos = MessageBox.Show("Unesena vrijednost za broj gostiju nije valjana!");
-                unosBrojOsoba.Clear();
+                unosBrojOsoba.BackColor = Color.LightSalmon;
             }
         }
     }
