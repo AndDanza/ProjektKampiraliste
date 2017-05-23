@@ -229,6 +229,7 @@
     <None Include="Properties\DataSources\drzava.datasource" />
     <None Include="Properties\DataSources\parcela.datasource" />
     <None Include="Properties\DataSources\prijava.datasource" />
+    <None Include="Properties\DataSources\racun.datasource" />
     <None Include="Properties\DataSources\smjestaj.datasource" />
     <None Include="Properties\DataSources\status_osobe.datasource" />
     <None Include="Properties\Settings.settings">
