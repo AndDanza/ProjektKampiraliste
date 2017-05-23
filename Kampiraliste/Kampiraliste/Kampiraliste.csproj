@@ -227,6 +227,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\drzava.datasource" />
+    <None Include="Properties\DataSources\gost.datasource" />
     <None Include="Properties\DataSources\parcela.datasource" />
     <None Include="Properties\DataSources\prijava.datasource" />
     <None Include="Properties\DataSources\racun.datasource" />

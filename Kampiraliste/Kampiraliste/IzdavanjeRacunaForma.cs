@@ -16,5 +16,20 @@ namespace Kampiraliste
         {
             InitializeComponent();
         }
+
+        private void PrikaziParcele()
+        {
+            BindingList<parcela> listaParcela = null;
+            using (var baza = new KampiralisteEntiteti())
+            {
+                listaParcela = new BindingList<parcela>(baza.parcelas.ToList());
+            }
+            parcelaBindingSource.DataSource = listaParcela;
+        }
+
+        private void IzdavanjeRacunaForma_Load(object sender, EventArgs e)
+        {
+            PrikaziParcele();
+        }
     }
 }
