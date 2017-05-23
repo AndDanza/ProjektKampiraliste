@@ -17,7 +17,6 @@ namespace Kampiraliste
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public gost()
         {
-            this.racuns = new HashSet<racun>();
             this.prijavas = new HashSet<prijava>();
         }
     
@@ -34,8 +33,6 @@ namespace Kampiraliste
         public virtual drzava drzava { get; set; }
         public virtual drzava drzava1 { get; set; }
         public virtual vrsta_dokumenta vrsta_dokumenta { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<racun> racuns { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<prijava> prijavas { get; set; }
     }

@@ -47,8 +47,8 @@ namespace Kampiraliste
             {
                 this.listaDrzavaStan = new BindingList<drzava>(baza.drzavas.ToList());
                 this.listaDrzavaRod = new BindingList<drzava>(baza.drzavas.ToList());
-                this.listaDokumenata = new BindingList<vrsta_dokumenta>(baza.vrsta_dokumentas.ToList());
-                this.listaStatusaOsobe = new BindingList<status_osobe>(baza.status_osobes.ToList());
+                this.listaDokumenata = new BindingList<vrsta_dokumenta>(baza.vrsta_dokumenta.ToList());
+                this.listaStatusaOsobe = new BindingList<status_osobe>(baza.status_osobe.ToList());
                 this.listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
             }
 
@@ -70,7 +70,7 @@ namespace Kampiraliste
 
             using (var baza = new KampiralisteEntiteti())
             {
-                baza.vrsta_dokumentas.Attach(dokument);
+                baza.vrsta_dokumenta.Attach(dokument);
                 baza.drzavas.Attach(drzavaStan);
                 baza.drzavas.Attach(drzavaRod);
 

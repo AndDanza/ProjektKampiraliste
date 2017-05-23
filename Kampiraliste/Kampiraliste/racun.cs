@@ -15,7 +15,6 @@ namespace Kampiraliste
     public partial class racun
     {
         public int id { get; set; }
-        public int gost_id { get; set; }
         public int zaposlenik_id { get; set; }
         public int smjestaj_id { get; set; }
         public string JIR { get; set; }
@@ -23,9 +22,10 @@ namespace Kampiraliste
         public decimal preostalo_za_platit { get; set; }
         public decimal iznos { get; set; }
         public System.DateTime datum_vrijeme_izdavanja { get; set; }
+        public int prijava_id { get; set; }
     
-        public virtual gost gost { get; set; }
         public virtual smjestaj smjestaj { get; set; }
         public virtual zaposlenik zaposlenik { get; set; }
+        public virtual prijava prijava { get; set; }
     }
 }

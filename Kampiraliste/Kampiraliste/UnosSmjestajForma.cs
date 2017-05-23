@@ -24,7 +24,7 @@ namespace Kampiraliste
         {
             using (var baza = new KampiralisteEntiteti())
             {
-                listaSmjestaja = new BindingList<vrsta_smjestaja>(baza.vrsta_smjestajas.ToList());
+                listaSmjestaja = new BindingList<vrsta_smjestaja>(baza.vrsta_smjestaja.ToList());
                 //LINQ - dohvati parcele koje su slobodne
                 listaParcela = new BindingList<parcela>(baza.parcelas.Where(s => s.slobodno == true).ToList());
             }
@@ -46,7 +46,7 @@ namespace Kampiraliste
 
                     using (var baza = new KampiralisteEntiteti())
                     {
-                        baza.vrsta_smjestajas.Attach(smjestaj);
+                        baza.vrsta_smjestaja.Attach(smjestaj);
                         baza.parcelas.Attach(parcelaSmjestaja);
 
                         smjestaj noviSmjestaj = new smjestaj

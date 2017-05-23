@@ -14,6 +14,12 @@ namespace Kampiraliste
     
     public partial class prijava
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public prijava()
+        {
+            this.racuns = new HashSet<racun>();
+        }
+    
         public int id { get; set; }
         public int gost_id { get; set; }
         public int smjestaj_id { get; set; }
@@ -27,5 +33,7 @@ namespace Kampiraliste
         public virtual zaposlenik zaposlenik { get; set; }
         public virtual gost gost1 { get; set; }
         public virtual status_osobe status_osobe { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<racun> racuns { get; set; }
     }
 }

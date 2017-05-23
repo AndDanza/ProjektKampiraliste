@@ -12,7 +12,7 @@ namespace Kampiraliste
 {
     public partial class RadSPrijavamaForma : Form
     {
-        private BindingList<prijava> listaPrijava = null;
+        //private BindingList<prijava> listaPrijava = null;
 
         public RadSPrijavamaForma()
         {
