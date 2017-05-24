@@ -58,11 +58,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AzurirajZaposlenikaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AzurirajZaposlenikaForma.Designer.cs">
+      <DependentUpon>AzurirajZaposlenikaForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="CjenikForma.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CjenikForma.Designer.cs">
       <DependentUpon>CjenikForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajZaposlenikaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajZaposlenikaForma.Designer.cs">
+      <DependentUpon>DodajZaposlenikaForma.cs</DependentUpon>
     </Compile>
     <Compile Include="drzava.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
@@ -179,8 +191,14 @@
     <Compile Include="zaposlenik.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AzurirajZaposlenikaForma.resx">
+      <DependentUpon>AzurirajZaposlenikaForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CjenikForma.resx">
       <DependentUpon>CjenikForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajZaposlenikaForma.resx">
+      <DependentUpon>DodajZaposlenikaForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IzdavanjeRacunaForma.resx">
       <DependentUpon>IzdavanjeRacunaForma.cs</DependentUpon>
