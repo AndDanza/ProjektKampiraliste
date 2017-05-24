@@ -42,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxTest = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@
             this.lozinkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prijavasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.racunsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +95,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Obriši zaposlenika";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -146,10 +147,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(747, 216);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // zaposlenikBindingSource
-            // 
-            this.zaposlenikBindingSource.DataSource = typeof(Kampiraliste.zaposlenik);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -221,6 +218,10 @@
             this.racunsDataGridViewTextBoxColumn.Name = "racunsDataGridViewTextBoxColumn";
             this.racunsDataGridViewTextBoxColumn.ReadOnly = true;
             this.racunsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // zaposlenikBindingSource
+            // 
+            this.zaposlenikBindingSource.DataSource = typeof(Kampiraliste.zaposlenik);
             // 
             // ZaposleniciForma
             // 

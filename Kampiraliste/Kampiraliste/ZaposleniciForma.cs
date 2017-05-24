@@ -47,5 +47,19 @@ namespace Kampiraliste
             AzurirajZaposlenikaForma azuriraj = new AzurirajZaposlenikaForma(zaposlenikBindingSource.Current as zaposlenik);
             azuriraj.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (var ef = new KampiralisteEntiteti())
+            {
+                zaposlenik za = zaposlenikBindingSource.Current as zaposlenik;
+                ef.zaposleniks.Attach(za);
+                ef.zaposleniks.Remove(za);
+              
+                ef.SaveChanges();
+            }
+           
+
+        }
     }
 }

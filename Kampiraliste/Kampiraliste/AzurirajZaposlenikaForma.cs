@@ -43,12 +43,12 @@ namespace Kampiraliste
         {
             using (var ef = new KampiralisteEntiteti())
             {
-                ef.zaposleniks.Attach(zaposlenikZaIzmjenu);
-                zaposlenikZaIzmjenu.ime = textBoxIme.Text;
+                ef.zaposleniks.Remove(zaposlenikZaIzmjenu);
+               /* zaposlenikZaIzmjenu.ime = textBoxIme.Text;
                 zaposlenikZaIzmjenu.prezime = textBoxPrezime.Text;
                 zaposlenikZaIzmjenu.korisnicko_ime = textBoxKorIme.Text;
                 zaposlenikZaIzmjenu.vrsta_zaposlenika = int.Parse(textBoxVrsta.Text);
-                zaposlenikZaIzmjenu.lozinka = textBoxLozinka.Text;
+                zaposlenikZaIzmjenu.lozinka = textBoxLozinka.Text;*/
                 ef.SaveChanges();
             }
 
