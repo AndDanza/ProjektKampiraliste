@@ -35,7 +35,7 @@
             this.unosPrezime = new System.Windows.Forms.TextBox();
             this.unosBrojDoc = new System.Windows.Forms.TextBox();
             this.unosDrzavaRod = new System.Windows.Forms.ComboBox();
-            this.drzavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.drzavaRodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unosStatus = new System.Windows.Forms.ComboBox();
             this.statusosobeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datumDolaskaLabela = new System.Windows.Forms.Label();
@@ -65,12 +65,14 @@
             this.imeLabela = new System.Windows.Forms.Label();
             this.podaciGost = new System.Windows.Forms.GroupBox();
             this.unosDatumRodenja = new System.Windows.Forms.TextBox();
+            this.drzavaStanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drzavaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).BeginInit();
             this.podaciPrijava.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).BeginInit();
             this.podaciGost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // odabirSmjestajaLabela
@@ -118,7 +120,7 @@
             // 
             // unosDrzavaRod
             // 
-            this.unosDrzavaRod.DataSource = this.drzavaBindingSource;
+            this.unosDrzavaRod.DataSource = this.drzavaStanBindingSource;
             this.unosDrzavaRod.DisplayMember = "naziv";
             this.unosDrzavaRod.DropDownHeight = 250;
             this.unosDrzavaRod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -131,9 +133,9 @@
             this.unosDrzavaRod.TabIndex = 8;
             this.unosDrzavaRod.ValueMember = "id";
             // 
-            // drzavaBindingSource
+            // drzavaRodBindingSource
             // 
-            this.drzavaBindingSource.DataSource = typeof(Kampiraliste.drzava);
+            this.drzavaRodBindingSource.DataSource = typeof(Kampiraliste.drzava);
             // 
             // unosStatus
             // 
@@ -306,7 +308,7 @@
             // 
             // unosDrzavaStan
             // 
-            this.unosDrzavaStan.DataSource = this.drzavaBindingSource;
+            this.unosDrzavaStan.DataSource = this.drzavaRodBindingSource;
             this.unosDrzavaStan.DisplayMember = "naziv";
             this.unosDrzavaStan.DropDownHeight = 250;
             this.unosDrzavaStan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -470,6 +472,10 @@
             this.unosDatumRodenja.Size = new System.Drawing.Size(251, 24);
             this.unosDatumRodenja.TabIndex = 41;
             // 
+            // drzavaStanBindingSource
+            // 
+            this.drzavaStanBindingSource.DataSource = typeof(Kampiraliste.drzava);
+            // 
             // PrijavaGostaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,13 +492,14 @@
             this.Text = "Prijava gosta";
             this.Load += new System.EventHandler(this.PrijavaGostaForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drzavaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).EndInit();
             this.podaciPrijava.ResumeLayout(false);
             this.podaciPrijava.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).EndInit();
             this.podaciGost.ResumeLayout(false);
             this.podaciGost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -528,12 +535,13 @@
         private System.Windows.Forms.GroupBox podaciGost;
         private System.Windows.Forms.Button potvrdiPrijavu;
         private System.Windows.Forms.Button pokreniUnosSmjestaj;
-        private System.Windows.Forms.BindingSource drzavaBindingSource;
+        private System.Windows.Forms.BindingSource drzavaRodBindingSource;
         private System.Windows.Forms.BindingSource vrstadokumentaBindingSource;
         private System.Windows.Forms.BindingSource statusosobeBindingSource;
         private System.Windows.Forms.BindingSource smjestajBindingSource;
         private System.Windows.Forms.TextBox unosDatumOdlaska;
         private System.Windows.Forms.TextBox unosDatumDolaska;
         private System.Windows.Forms.TextBox unosDatumRodenja;
+        private System.Windows.Forms.BindingSource drzavaStanBindingSource;
     }
 }

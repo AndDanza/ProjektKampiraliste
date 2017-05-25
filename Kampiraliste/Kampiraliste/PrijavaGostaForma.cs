@@ -23,6 +23,11 @@ namespace Kampiraliste
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Pokretanje forme za unos smještaja te osvježavanje combobox-a smještaja.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pokreniUnosSmjestaj_Click(object sender, EventArgs e)
         {
             UnosSmjestajForma formaSmjestaj = new UnosSmjestajForma();
@@ -52,11 +57,11 @@ namespace Kampiraliste
                 this.listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
             }
 
-            unosDrzavaRod.DataSource = this.listaDrzavaRod;
-            unosDrzavaStan.DataSource = this.listaDrzavaStan;
-            unosVrstaDoc.DataSource = this.listaDokumenata;
-            unosStatus.DataSource = this.listaStatusaOsobe;
-            odabirSmjestajaUnos.DataSource = this.listaSmjestaja;
+            drzavaRodBindingSource.DataSource = this.listaDrzavaRod;
+            drzavaStanBindingSource.DataSource = this.listaDrzavaStan;
+            vrstadokumentaBindingSource.DataSource = this.listaDokumenata;
+            statusosobeBindingSource.DataSource = this.listaStatusaOsobe;
+            smjestajBindingSource.DataSource = this.listaSmjestaja;
         }
 
         private void UnosGosta()

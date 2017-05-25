@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.filtrirajLabela = new System.Windows.Forms.Label();
             this.unosOdlazak = new System.Windows.Forms.RadioButton();
             this.unosDolazak = new System.Windows.Forms.RadioButton();
@@ -36,7 +37,9 @@
             this.izradiKnjiguStranihAkcija = new System.Windows.Forms.Button();
             this.izradiKnjiguDomacihAkcija = new System.Windows.Forms.Button();
             this.knjigeGostijuLabela = new System.Windows.Forms.Label();
-            this.listaAktivnihPrijavaBox = new System.Windows.Forms.ListBox();
+            this.prijavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.prijavaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // filtrirajLabela
@@ -139,16 +142,19 @@
             this.knjigeGostijuLabela.TabIndex = 22;
             this.knjigeGostijuLabela.Text = "Knjige gostiju:";
             // 
-            // listaAktivnihPrijavaBox
+            // prijavaBindingSource
             // 
-            this.listaAktivnihPrijavaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaAktivnihPrijavaBox.FormattingEnabled = true;
-            this.listaAktivnihPrijavaBox.ItemHeight = 18;
-            this.listaAktivnihPrijavaBox.Location = new System.Drawing.Point(32, 147);
-            this.listaAktivnihPrijavaBox.Name = "listaAktivnihPrijavaBox";
-            this.listaAktivnihPrijavaBox.ScrollAlwaysVisible = true;
-            this.listaAktivnihPrijavaBox.Size = new System.Drawing.Size(496, 346);
-            this.listaAktivnihPrijavaBox.TabIndex = 0;
+            this.prijavaBindingSource.DataSource = typeof(Kampiraliste.prijava);
+            // 
+            // listBox1
+            // 
+            this.listBox1.DataSource = this.prijavaBindingSource;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(13, 135);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(517, 303);
+            this.listBox1.TabIndex = 23;
+            this.listBox1.ValueMember = "id";
             // 
             // RadSPrijavamaForma
             // 
@@ -156,6 +162,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.ClientSize = new System.Drawing.Size(705, 542);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.knjigeGostijuLabela);
             this.Controls.Add(this.izradiKnjiguDomacihAkcija);
             this.Controls.Add(this.izradiKnjiguStranihAkcija);
@@ -164,11 +171,12 @@
             this.Controls.Add(this.unosOdlazak);
             this.Controls.Add(this.unosDolazak);
             this.Controls.Add(this.filtrirajLabela);
-            this.Controls.Add(this.listaAktivnihPrijavaBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "RadSPrijavamaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RadSPrijavamaForma";
+            this.Load += new System.EventHandler(this.RadSPrijavamaForma_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.prijavaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,6 +191,7 @@
         private System.Windows.Forms.Button izradiKnjiguStranihAkcija;
         private System.Windows.Forms.Button izradiKnjiguDomacihAkcija;
         private System.Windows.Forms.Label knjigeGostijuLabela;
-        private System.Windows.Forms.ListBox listaAktivnihPrijavaBox;
+        private System.Windows.Forms.BindingSource prijavaBindingSource;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

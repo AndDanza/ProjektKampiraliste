@@ -35,5 +35,19 @@ namespace Kampiraliste
         public virtual status_osobe status_osobe { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<racun> racuns { get; set; }
+
+        /*
+        private string PrikazAktvinihPrijava()
+        {
+            string prijava = "";
+            prijava = gost1.ime + " " + gost1.prezime + " => " + this.datum_prijave + " - " + this.datum_odjave;
+            return prijava;
+        }
+
+        public override string ToString()
+        {
+            return PrikazAktvinihPrijava();
+        }
+        */
     }
 }
