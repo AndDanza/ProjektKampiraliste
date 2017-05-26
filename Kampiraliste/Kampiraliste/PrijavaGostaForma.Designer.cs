@@ -35,6 +35,7 @@
             this.unosPrezime = new System.Windows.Forms.TextBox();
             this.unosBrojDoc = new System.Windows.Forms.TextBox();
             this.unosDrzavaRod = new System.Windows.Forms.ComboBox();
+            this.drzavaStanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drzavaRodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unosStatus = new System.Windows.Forms.ComboBox();
             this.statusosobeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,14 +66,13 @@
             this.imeLabela = new System.Windows.Forms.Label();
             this.podaciGost = new System.Windows.Forms.GroupBox();
             this.unosDatumRodenja = new System.Windows.Forms.TextBox();
-            this.drzavaStanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).BeginInit();
             this.podaciPrijava.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).BeginInit();
             this.podaciGost.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // odabirSmjestajaLabela
@@ -132,6 +132,10 @@
             this.unosDrzavaRod.Size = new System.Drawing.Size(251, 26);
             this.unosDrzavaRod.TabIndex = 8;
             this.unosDrzavaRod.ValueMember = "id";
+            // 
+            // drzavaStanBindingSource
+            // 
+            this.drzavaStanBindingSource.DataSource = typeof(Kampiraliste.drzava);
             // 
             // drzavaRodBindingSource
             // 
@@ -278,7 +282,7 @@
             this.potvrdiPrijavu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.potvrdiPrijavu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.potvrdiPrijavu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.potvrdiPrijavu.Location = new System.Drawing.Point(779, 464);
+            this.potvrdiPrijavu.Location = new System.Drawing.Point(779, 467);
             this.potvrdiPrijavu.Name = "potvrdiPrijavu";
             this.potvrdiPrijavu.Size = new System.Drawing.Size(142, 38);
             this.potvrdiPrijavu.TabIndex = 16;
@@ -472,10 +476,6 @@
             this.unosDatumRodenja.Size = new System.Drawing.Size(251, 24);
             this.unosDatumRodenja.TabIndex = 41;
             // 
-            // drzavaStanBindingSource
-            // 
-            this.drzavaStanBindingSource.DataSource = typeof(Kampiraliste.drzava);
-            // 
             // PrijavaGostaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,8 +490,10 @@
             this.Name = "PrijavaGostaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava gosta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PrijavaGostaForma_FormClosing);
             this.Load += new System.EventHandler(this.PrijavaGostaForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).EndInit();
             this.podaciPrijava.ResumeLayout(false);
@@ -499,7 +501,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).EndInit();
             this.podaciGost.ResumeLayout(false);
             this.podaciGost.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

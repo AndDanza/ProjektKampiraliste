@@ -76,6 +76,7 @@
     <Compile Include="IzdavanjeRacunaForma.Designer.cs">
       <DependentUpon>IzdavanjeRacunaForma.cs</DependentUpon>
     </Compile>
+    <Compile Include="KampiralisteException.cs" />
     <Compile Include="parcela.cs">
       <DependentUpon>Kampiraliste.tt</DependentUpon>
     </Compile>

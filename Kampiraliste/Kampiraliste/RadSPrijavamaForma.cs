@@ -24,18 +24,12 @@ namespace Kampiraliste
         {
             using (var baza = new KampiralisteEntiteti())
             {
-
                 this.listaPrijava = new BindingList<prijava>(baza.prijavas.ToList());
                 foreach (var item in listaPrijava)
                 {
-                    listBox1.Items.Add((prijava)item);
+                    aktivnePrijaveListBox.Items.Add((prijava)item);
                 }
             }
-            gostSelect = new gost();
-            //listBox1.DisplayMember = "datum_prijave";
-            // prijavaBindingSource.DataSource = listaPrijava;
-
-            
         }
 
 

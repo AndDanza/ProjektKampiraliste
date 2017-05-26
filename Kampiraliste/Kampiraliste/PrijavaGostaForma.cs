@@ -12,6 +12,8 @@ namespace Kampiraliste
 {
     public partial class PrijavaGostaForma : Form
     {
+        KampiralisteEntiteti kontekst = null;
+
         private BindingList<drzava> listaDrzavaStan = null;
         private BindingList<drzava> listaDrzavaRod = null;
         private BindingList<vrsta_dokumenta> listaDokumenata = null;
@@ -21,6 +23,7 @@ namespace Kampiraliste
         public PrijavaGostaForma()
         { 
             InitializeComponent();
+            this.kontekst = new KampiralisteEntiteti();
         }
 
         /// <summary>
@@ -33,12 +36,8 @@ namespace Kampiraliste
             UnosSmjestajForma formaSmjestaj = new UnosSmjestajForma();
             formaSmjestaj.ShowDialog();
 
-            using (var baza = new KampiralisteEntiteti())
-            {
-                this.listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
-            }
-
-            odabirSmjestajaUnos.DataSource = this.listaSmjestaja;
+            this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
+            smjestajBindingSource.DataSource = this.listaSmjestaja;
         }
 
         /// <summary>
@@ -48,14 +47,11 @@ namespace Kampiraliste
         /// <param name="e"></param>
         private void PrijavaGostaForma_Load(object sender, EventArgs e)
         {
-            using (var baza = new KampiralisteEntiteti())
-            {
-                this.listaDrzavaStan = new BindingList<drzava>(baza.drzavas.ToList());
-                this.listaDrzavaRod = new BindingList<drzava>(baza.drzavas.ToList());
-                this.listaDokumenata = new BindingList<vrsta_dokumenta>(baza.vrsta_dokumenta.ToList());
-                this.listaStatusaOsobe = new BindingList<status_osobe>(baza.status_osobe.ToList());
-                this.listaSmjestaja = new BindingList<smjestaj>(baza.smjestajs.ToList());
-            }
+            this.listaDrzavaStan = new BindingList<drzava>(kontekst.drzavas.ToList());
+            this.listaDrzavaRod = new BindingList<drzava>(kontekst.drzavas.ToList());
+            this.listaDokumenata = new BindingList<vrsta_dokumenta>(kontekst.vrsta_dokumenta.ToList());
+            this.listaStatusaOsobe = new BindingList<status_osobe>(kontekst.status_osobe.ToList());
+            this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
 
             drzavaRodBindingSource.DataSource = this.listaDrzavaRod;
             drzavaStanBindingSource.DataSource = this.listaDrzavaStan;
@@ -64,7 +60,7 @@ namespace Kampiraliste
             smjestajBindingSource.DataSource = this.listaSmjestaja;
         }
 
-        private void UnosGosta()
+        private gost PohraniGosta()
         {
             MessageBox.Show("Vaš gost ne postoji u bazi!");
 
@@ -73,79 +69,107 @@ namespace Kampiraliste
             drzava drzavaRod = unosDrzavaRod.SelectedItem as drzava;
             string spol = unosSpolMuski.Checked ? spol = "M" : spol = "Ž";
 
-            using (var baza = new KampiralisteEntiteti())
+            gost noviGost = new gost
             {
-                baza.vrsta_dokumenta.Attach(dokument);
-                baza.drzavas.Attach(drzavaStan);
-                baza.drzavas.Attach(drzavaRod);
+                spol = spol,
+                ime = unosIme.Text,
+                prezime = unosPrezime.Text,
+                vrsta_dokumenta = dokument,
+                broj_dokumenta = unosBrojDoc.Text,
+                drzava1 = drzavaRod,
+                drzava = drzavaStan,
+                datum_rodenja = DateTime.Parse(unosDatumRodenja.Text)
+            };
 
-                gost noviGost = new gost
-                {
-                    spol = spol,
-                    ime = unosIme.Text,
-                    prezime = unosPrezime.Text,
-                    vrsta_dokumenta = dokument,
-                    broj_dokumenta = unosBrojDoc.Text,
-                    drzava1 = drzavaRod,
-                    drzava = drzavaStan,
-                    datum_rodenja = DateTime.Parse(unosDatumRodenja.Text)
-                };
+            kontekst.gosts.Add(noviGost);
+            kontekst.SaveChanges();
 
-                baza.gosts.Add(noviGost);
-                baza.SaveChanges();
-            }
+            return noviGost;
         }
 
         private int ProvjeraGosta()
         {
             int gostPostoji = 0;
-
             string ime = unosIme.Text;
             string prezime = unosPrezime.Text;
             string drzavaRodenja = (unosDrzavaRod.SelectedItem as drzava).id;
-            
-            try
+
+            if (String.IsNullOrEmpty(ime) || String.IsNullOrEmpty(prezime) || String.IsNullOrEmpty(drzavaRodenja) || String.IsNullOrEmpty(unosDatumRodenja.Text))
+            {
+                throw new KampiralisteException("Nisu uneseni podaci o gostu!", this.Name);
+            }
+            else
             {
                 DateTime datumRodenja = DateTime.Parse(unosDatumRodenja.Text);
 
-                if (String.IsNullOrEmpty(ime) || String.IsNullOrEmpty(prezime) || String.IsNullOrEmpty(drzavaRodenja) || String.IsNullOrEmpty(unosDatumRodenja.Text))
-                {
-                    throw new Exception();
-                }
-                else
-                {
-                    using (var baza = new KampiralisteEntiteti())
-                    {
-                        gostPostoji = (from b in baza.gosts
-                                       where b.ime == ime && b.prezime == prezime && b.drzava_id_rodenja == drzavaRodenja && b.datum_rodenja == datumRodenja
-                                       select b.id).FirstOrDefault();
-                    }
-
-                    
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Nisu uneseni svi podaci !!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                gostPostoji = -1;
+                gostPostoji = (from b in kontekst.gosts
+                               where b.ime == ime && b.prezime == prezime && b.drzava_id_rodenja == drzavaRodenja && b.datum_rodenja == datumRodenja
+                               select b.id).FirstOrDefault();
             }
 
             return gostPostoji;
         }
 
+        private void PohraniPrijavu(gost prijaviGosta)
+        {
+            //privremeni select zaposlenika za unos prijave
+            zaposlenik unioPrijavu = (from b in kontekst.zaposleniks
+                        where b.id == 2
+                        select b).FirstOrDefault();
+
+            string orgDolaska = unosOsobno.Checked ? "O" : "A";
+            smjestaj odabraniSmjestaj = odabirSmjestajaUnos.SelectedItem as smjestaj;
+            status_osobe odabraniStatus = unosStatus.SelectedItem as status_osobe;
+
+            if (String.IsNullOrEmpty(unosDatumDolaska.Text) || String.IsNullOrEmpty(unosDatumOdlaska.Text))
+            {
+                throw new KampiralisteException("Nisu uneseni podaci prijave!", this.Name);
+            }
+            else
+            {
+                DateTime datumPrijave = DateTime.Parse(unosDatumDolaska.Text);
+                DateTime datumOdjave = DateTime.Parse(unosDatumOdlaska.Text);
+
+                prijava prijavaGosta = new prijava
+                {
+                    gost1 = prijaviGosta,
+                    datum_prijave = datumPrijave,
+                    datum_odjave = datumOdjave,
+                    organizacija_dolaska = orgDolaska,
+                    status_osobe = odabraniStatus,
+                    zaposlenik = unioPrijavu,
+                    smjestaj = odabraniSmjestaj
+                };
+
+                kontekst.prijavas.Add(prijavaGosta);
+                kontekst.SaveChanges();
+            }
+        }
+
         private void potvrdiPrijavu_Click(object sender, EventArgs e)
         {
-            int idGosta = ProvjeraGosta();
+            try
+            {
+                int idGosta = ProvjeraGosta();
 
-            if (idGosta == 0)
-            {
-                UnosGosta();
+                switch (idGosta)
+                {
+                    case 0:
+                        gost pohranjeniGost = PohraniGosta();
+                        PohraniPrijavu(pohranjeniGost);
+                        break;
+                };
             }
-            else if (idGosta != -1)
+            catch(KampiralisteException ex)
             {
-                MessageBox.Show("Uneseni gost postoji");
+                MessageBox.Show(ex.PorukaIznimke, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+        }
+
+        private void PrijavaGostaForma_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            kontekst.Dispose();
         }
     }
 }
