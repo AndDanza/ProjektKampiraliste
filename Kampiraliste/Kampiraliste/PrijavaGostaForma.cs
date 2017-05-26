@@ -60,10 +60,12 @@ namespace Kampiraliste
             smjestajBindingSource.DataSource = this.listaSmjestaja;
         }
 
+        /// <summary>
+        /// Pohrana gosta u bazu podataka.
+        /// </summary>
+        /// <returns>Povratna vrijednos je objekt tipa gost.</returns>
         private gost PohraniGosta()
         {
-            MessageBox.Show("Vaš gost ne postoji u bazi!");
-
             vrsta_dokumenta dokument = unosVrstaDoc.SelectedItem as vrsta_dokumenta;
             drzava drzavaStan = unosDrzavaStan.SelectedItem as drzava;
             drzava drzavaRod = unosDrzavaRod.SelectedItem as drzava;
@@ -87,6 +89,10 @@ namespace Kampiraliste
             return noviGost;
         }
 
+        /// <summary>
+        /// Na temelju unesenih podataka provjerava se postoji li gost.
+        /// </summary>
+        /// <returns>Povratna vrijednost je tipa int, a 0 oznaava da gost ne postoji dok sve različito od 0 predstavlja id gosta.</returns>
         private int ProvjeraGosta()
         {
             int gostPostoji = 0;
@@ -110,6 +116,10 @@ namespace Kampiraliste
             return gostPostoji;
         }
 
+        /// <summary>
+        /// Pohrana prijave za danog gosta u bazu podataka.
+        /// </summary>
+        /// <param name="prijaviGosta">Objekt tipa gost za kojeg se unosi prijava.</param>
         private void PohraniPrijavu(gost prijaviGosta)
         {
             //privremeni select zaposlenika za unos prijave
@@ -167,6 +177,11 @@ namespace Kampiraliste
 
         }
 
+        /// <summary>
+        /// Metoda koja se aktivira gašenjem forme i briše kontekst entityframwork-a.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrijavaGostaForma_FormClosing(object sender, FormClosingEventArgs e)
         {
             kontekst.Dispose();
