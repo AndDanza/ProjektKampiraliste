@@ -90,12 +90,14 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Na temelju unesenih podataka provjerava se postoji li gost.
+        /// Na temelju unesenih podataka provjerava se postoji li gost u bazi podataka.
         /// </summary>
-        /// <returns>Povratna vrijednost je tipa int, a 0 oznaava da gost ne postoji dok sve različito od 0 predstavlja id gosta.</returns>
-        private int ProvjeraGosta()
+        /// <returns>Povratna vrijednost je tipa klase gost te ukoliko gost postoji vraća se objekt u 
+        /// suprotnom null.</returns>
+        private gost ProvjeraGosta()
         {
-            int gostPostoji = 0;
+            gost gostPostoji = null;
+
             string ime = unosIme.Text;
             string prezime = unosPrezime.Text;
             string drzavaRodenja = (unosDrzavaRod.SelectedItem as drzava).id;
@@ -110,11 +112,14 @@ namespace Kampiraliste
 
                 gostPostoji = (from b in kontekst.gosts
                                where b.ime == ime && b.prezime == prezime && b.drzava_id_rodenja == drzavaRodenja && b.datum_rodenja == datumRodenja
-                               select b.id).FirstOrDefault();
+                               select b).FirstOrDefault();
             }
 
             return gostPostoji;
         }
+
+        private void ProvjeraPrijave()
+        { }
 
         /// <summary>
         /// Pohrana prijave za danog gosta u bazu podataka.
@@ -160,15 +165,17 @@ namespace Kampiraliste
         {
             try
             {
-                int idGosta = ProvjeraGosta();
+                gost pohranjeniGost = ProvjeraGosta();
 
-                switch (idGosta)
+                if (pohranjeniGost == null)
                 {
-                    case 0:
-                        gost pohranjeniGost = PohraniGosta();
-                        PohraniPrijavu(pohranjeniGost);
-                        break;
-                };
+                    pohranjeniGost = PohraniGosta();
+                    PohraniPrijavu(pohranjeniGost);
+                }
+                else
+                {
+                    PohraniPrijavu(pohranjeniGost);
+                }
             }
             catch(KampiralisteException ex)
             {
