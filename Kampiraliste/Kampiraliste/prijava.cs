@@ -36,18 +36,10 @@ namespace Kampiraliste
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<racun> racuns { get; set; }
 
-        /*
-        private string PrikazAktvinihPrijava()
-        {
-            string prijava = "";
-            prijava = gost1.ime + " " + gost1.prezime + " => " + this.datum_prijave + " - " + this.datum_odjave;
-            return prijava;
-        }
-
         public override string ToString()
         {
-            return PrikazAktvinihPrijava();
+            return gost1.ime + " " + gost1.prezime + " => " + datum_prijave + " - " + datum_odjave;
         }
-        */
+       
     }
 }
