@@ -13,6 +13,7 @@ namespace Kampiraliste
     public partial class AzurirajZaposlenikaForma : Form
     {
         zaposlenik zaposlenikZaIzmjenu;
+   
         public AzurirajZaposlenikaForma()
         {
             InitializeComponent();
@@ -37,21 +38,33 @@ namespace Kampiraliste
             textBoxKorIme.Text = za.korisnicko_ime;
             textBoxVrsta.Text = za.vrsta_zaposlenika.ToString();
             textBoxLozinka.Text = za.lozinka;
+
+            using (var ef = new KampiralisteEntiteti())
+            {
+                comboBox1.DataSource = ef.zaposleniks.ToList();
+                comboBox1.DisplayMember = "ime";
+                comboBox1.ValueMember = "id";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             using (var ef = new KampiralisteEntiteti())
             {
-                ef.zaposleniks.Remove(zaposlenikZaIzmjenu);
-               /* zaposlenikZaIzmjenu.ime = textBoxIme.Text;
-                zaposlenikZaIzmjenu.prezime = textBoxPrezime.Text;
-                zaposlenikZaIzmjenu.korisnicko_ime = textBoxKorIme.Text;
-                zaposlenikZaIzmjenu.vrsta_zaposlenika = int.Parse(textBoxVrsta.Text);
-                zaposlenikZaIzmjenu.lozinka = textBoxLozinka.Text;*/
-                ef.SaveChanges();
+                comboBox1.DataSource = ef.zaposleniks.ToList();
+                comboBox1.DisplayMember = "ime";
+                comboBox1.ValueMember = "id";
             }
 
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedValue != null )
+            {
+                textBox2.Text = comboBox1.SelectedValue.ToString();
+            }
+            
         }
     }
 }
