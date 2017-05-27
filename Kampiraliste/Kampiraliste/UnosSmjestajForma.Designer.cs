@@ -39,6 +39,8 @@
             this.unosBrojOsoba = new System.Windows.Forms.TextBox();
             this.naslovLabela = new System.Windows.Forms.Label();
             this.potvrdiUnosSmjestaja = new System.Windows.Forms.Button();
+            this.unosOznakaSmjestaja = new System.Windows.Forms.TextBox();
+            this.oznakaSmjestajaLabela = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vrstasmjestajaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +51,7 @@
             this.vrstaSmjestajaLabela.BackColor = System.Drawing.Color.Transparent;
             this.vrstaSmjestajaLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vrstaSmjestajaLabela.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.vrstaSmjestajaLabela.Location = new System.Drawing.Point(11, 118);
+            this.vrstaSmjestajaLabela.Location = new System.Drawing.Point(42, 117);
             this.vrstaSmjestajaLabela.Name = "vrstaSmjestajaLabela";
             this.vrstaSmjestajaLabela.Size = new System.Drawing.Size(113, 18);
             this.vrstaSmjestajaLabela.TabIndex = 0;
@@ -62,7 +64,7 @@
             this.unosVrstaSmjestaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosVrstaSmjestaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosVrstaSmjestaja.FormattingEnabled = true;
-            this.unosVrstaSmjestaja.Location = new System.Drawing.Point(130, 115);
+            this.unosVrstaSmjestaja.Location = new System.Drawing.Point(161, 114);
             this.unosVrstaSmjestaja.Name = "unosVrstaSmjestaja";
             this.unosVrstaSmjestaja.Size = new System.Drawing.Size(167, 26);
             this.unosVrstaSmjestaja.TabIndex = 1;
@@ -79,7 +81,7 @@
             this.unosParcele.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosParcele.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosParcele.FormattingEnabled = true;
-            this.unosParcele.Location = new System.Drawing.Point(130, 158);
+            this.unosParcele.Location = new System.Drawing.Point(161, 157);
             this.unosParcele.Name = "unosParcele";
             this.unosParcele.Size = new System.Drawing.Size(167, 26);
             this.unosParcele.TabIndex = 3;
@@ -95,7 +97,7 @@
             this.parcelaLable.BackColor = System.Drawing.Color.Transparent;
             this.parcelaLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.parcelaLable.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.parcelaLable.Location = new System.Drawing.Point(62, 161);
+            this.parcelaLable.Location = new System.Drawing.Point(93, 160);
             this.parcelaLable.Name = "parcelaLable";
             this.parcelaLable.Size = new System.Drawing.Size(62, 18);
             this.parcelaLable.TabIndex = 2;
@@ -107,7 +109,7 @@
             this.brOsobaLabel.BackColor = System.Drawing.Color.Transparent;
             this.brOsobaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brOsobaLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.brOsobaLabel.Location = new System.Drawing.Point(39, 206);
+            this.brOsobaLabel.Location = new System.Drawing.Point(70, 243);
             this.brOsobaLabel.Name = "brOsobaLabel";
             this.brOsobaLabel.Size = new System.Drawing.Size(85, 18);
             this.brOsobaLabel.TabIndex = 4;
@@ -116,7 +118,7 @@
             // unosBrojOsoba
             // 
             this.unosBrojOsoba.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosBrojOsoba.Location = new System.Drawing.Point(130, 203);
+            this.unosBrojOsoba.Location = new System.Drawing.Point(161, 240);
             this.unosBrojOsoba.Name = "unosBrojOsoba";
             this.unosBrojOsoba.Size = new System.Drawing.Size(57, 24);
             this.unosBrojOsoba.TabIndex = 5;
@@ -139,7 +141,7 @@
             this.potvrdiUnosSmjestaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.potvrdiUnosSmjestaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.potvrdiUnosSmjestaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.potvrdiUnosSmjestaja.Location = new System.Drawing.Point(65, 283);
+            this.potvrdiUnosSmjestaja.Location = new System.Drawing.Point(96, 302);
             this.potvrdiUnosSmjestaja.Name = "potvrdiUnosSmjestaja";
             this.potvrdiUnosSmjestaja.Size = new System.Drawing.Size(173, 46);
             this.potvrdiUnosSmjestaja.TabIndex = 7;
@@ -147,12 +149,34 @@
             this.potvrdiUnosSmjestaja.UseVisualStyleBackColor = false;
             this.potvrdiUnosSmjestaja.Click += new System.EventHandler(this.potvrdiUnosSmjestaja_Click);
             // 
+            // unosOznakaSmjestaja
+            // 
+            this.unosOznakaSmjestaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosOznakaSmjestaja.Location = new System.Drawing.Point(161, 201);
+            this.unosOznakaSmjestaja.Name = "unosOznakaSmjestaja";
+            this.unosOznakaSmjestaja.Size = new System.Drawing.Size(167, 24);
+            this.unosOznakaSmjestaja.TabIndex = 9;
+            // 
+            // oznakaSmjestajaLabela
+            // 
+            this.oznakaSmjestajaLabela.AutoSize = true;
+            this.oznakaSmjestajaLabela.BackColor = System.Drawing.Color.Transparent;
+            this.oznakaSmjestajaLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oznakaSmjestajaLabela.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.oznakaSmjestajaLabela.Location = new System.Drawing.Point(24, 204);
+            this.oznakaSmjestajaLabela.Name = "oznakaSmjestajaLabela";
+            this.oznakaSmjestajaLabela.Size = new System.Drawing.Size(131, 18);
+            this.oznakaSmjestajaLabela.TabIndex = 8;
+            this.oznakaSmjestajaLabela.Text = "Oznaka smještaja:";
+            // 
             // UnosSmjestajForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
-            this.ClientSize = new System.Drawing.Size(319, 526);
+            this.ClientSize = new System.Drawing.Size(353, 526);
+            this.Controls.Add(this.unosOznakaSmjestaja);
+            this.Controls.Add(this.oznakaSmjestajaLabela);
             this.Controls.Add(this.potvrdiUnosSmjestaja);
             this.Controls.Add(this.naslovLabela);
             this.Controls.Add(this.unosBrojOsoba);
@@ -185,5 +209,7 @@
         private System.Windows.Forms.Button potvrdiUnosSmjestaja;
         private System.Windows.Forms.BindingSource vrstasmjestajaBindingSource;
         private System.Windows.Forms.BindingSource parcelaBindingSource;
+        private System.Windows.Forms.TextBox unosOznakaSmjestaja;
+        private System.Windows.Forms.Label oznakaSmjestajaLabela;
     }
 }

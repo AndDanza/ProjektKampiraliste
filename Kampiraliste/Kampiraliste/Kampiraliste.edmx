@@ -69,6 +69,7 @@
           <Property Name="broj_osoba" Type="int" Nullable="false" />
           <Property Name="vrsta_smjestaja_id" Type="int" Nullable="false" />
           <Property Name="parcela_id" Type="int" Nullable="false" />
+          <Property Name="oznaka" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="status_osobe">
           <Key>
@@ -467,6 +468,7 @@
           <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_smjestaj" FromRole="smjestaj" ToRole="prijava" />
           <NavigationProperty Name="racuns" Relationship="DBModel.FK_racun_smjestaj" FromRole="smjestaj" ToRole="racun" />
           <NavigationProperty Name="vrsta_smjestaja" Relationship="DBModel.FK_smjestaj_vrsta_smjestaja" FromRole="smjestaj" ToRole="vrsta_smjestaja" />
+          <Property Name="oznaka" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vrsta_dokumenta">
           <Key>
@@ -731,6 +733,7 @@
           <EntitySetMapping Name="smjestajs">
             <EntityTypeMapping TypeName="DBModel.smjestaj">
               <MappingFragment StoreEntitySet="smjestaj">
+                <ScalarProperty Name="oznaka" ColumnName="oznaka" />
                 <ScalarProperty Name="parcela_id" ColumnName="parcela_id" />
                 <ScalarProperty Name="vrsta_smjestaja_id" ColumnName="vrsta_smjestaja_id" />
                 <ScalarProperty Name="broj_osoba" ColumnName="broj_osoba" />

@@ -48,6 +48,7 @@ namespace Kampiraliste
             smjestaj noviSmjestaj = new smjestaj
             {
                 vrsta_smjestaja = smjestaj,
+                oznaka = unosOznakaSmjestaja.Text,
                 parcela = parcelaSmjestaja,
                 broj_osoba = brojOsoba
             };
