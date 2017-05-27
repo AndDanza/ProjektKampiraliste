@@ -36,5 +36,12 @@ namespace Kampiraliste
         {
             UcitajPrijave();
         }
+
+        private void aktivnePrijaveListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            prijava azurirajPrijavu = aktivnePrijaveListBox.SelectedItem as prijava;
+            PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu);
+            instancaPrijavaGostaForma.ShowDialog();
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace Kampiraliste
         public virtual status_osobe status_osobe { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<racun> racuns { get; set; }
+
+        public override string ToString()
+        {
+            return gost1.ime + " " + gost1.prezime + " => " + this.datum_prijave.ToString("yyyy-MM-dd") + " - " + this.datum_odjave.ToString("yyyy-MM-dd");
+        }
     }
 }

@@ -37,8 +37,8 @@
             this.izradiKnjiguStranihAkcija = new System.Windows.Forms.Button();
             this.izradiKnjiguDomacihAkcija = new System.Windows.Forms.Button();
             this.knjigeGostijuLabela = new System.Windows.Forms.Label();
-            this.prijavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aktivnePrijaveListBox = new System.Windows.Forms.ListBox();
+            this.prijavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prijavaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,10 +142,6 @@
             this.knjigeGostijuLabela.TabIndex = 22;
             this.knjigeGostijuLabela.Text = "Knjige gostiju:";
             // 
-            // prijavaBindingSource
-            // 
-            this.prijavaBindingSource.DataSource = typeof(Kampiraliste.prijava);
-            // 
             // aktivnePrijaveListBox
             // 
             this.aktivnePrijaveListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,6 +151,11 @@
             this.aktivnePrijaveListBox.Name = "aktivnePrijaveListBox";
             this.aktivnePrijaveListBox.Size = new System.Drawing.Size(517, 284);
             this.aktivnePrijaveListBox.TabIndex = 23;
+            this.aktivnePrijaveListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.aktivnePrijaveListBox_MouseDoubleClick);
+            // 
+            // prijavaBindingSource
+            // 
+            this.prijavaBindingSource.DataSource = typeof(Kampiraliste.prijava);
             // 
             // RadSPrijavamaForma
             // 

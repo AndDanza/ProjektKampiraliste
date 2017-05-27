@@ -20,10 +20,29 @@ namespace Kampiraliste
         private BindingList<status_osobe> listaStatusaOsobe = null;
         private BindingList<smjestaj> listaSmjestaja = null;
 
+        private prijava azurirajPrijavu = null;
+
         public PrijavaGostaForma()
         { 
             InitializeComponent();
             this.kontekst = new KampiralisteEntiteti();
+        }
+
+        public PrijavaGostaForma(prijava ulazPrijava)
+        {
+            InitializeComponent();
+            this.kontekst = new KampiralisteEntiteti();
+            this.azurirajPrijavu = ulazPrijava;
+        }
+
+        private void PrijavaGostaForma_Load(object sender, EventArgs e)
+        {
+            UcitajMoguceOdabire();
+
+            if (this.azurirajPrijavu != null)
+            {
+                UcitajPrijavu();
+            }
         }
 
         /// <summary>
@@ -50,19 +69,22 @@ namespace Kampiraliste
             this.listaDokumenata = new BindingList<vrsta_dokumenta>(kontekst.vrsta_dokumenta.ToList());
             this.listaStatusaOsobe = new BindingList<status_osobe>(kontekst.status_osobe.ToList());
             this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
-            var upit = kontekst.smjestajs.Where(s => s.prijavas.Count() < s.broj_osoba);
-            this.listaSmjestaja = new BindingList<smjestaj>(upit.ToList());
+            if(this.azurirajPrijavu == null)
+            {
+                var upit = kontekst.smjestajs.Where(s => s.prijavas.Count() < s.broj_osoba);
+                this.listaSmjestaja = new BindingList<smjestaj>(upit.ToList());
+            }
+            else
+            {
+                this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
+            }
+            
 
             drzavaRodBindingSource.DataSource = this.listaDrzavaRod;
             drzavaStanBindingSource.DataSource = this.listaDrzavaStan;
             vrstadokumentaBindingSource.DataSource = this.listaDokumenata;
             statusosobeBindingSource.DataSource = this.listaStatusaOsobe;
             smjestajBindingSource.DataSource = this.listaSmjestaja;
-        }
-
-        private void PrijavaGostaForma_Load(object sender, EventArgs e)
-        {
-            UcitajMoguceOdabire();
         }
 
         /// <summary>
@@ -282,6 +304,42 @@ namespace Kampiraliste
         }
 
         /// <summary>
+        /// Na temelju objekta tipa klase prijava učitava podatke u formu.
+        /// </summary>
+        private void UcitajPrijavu()
+        {
+            kontekst.prijavas.Attach(this.azurirajPrijavu);
+
+            if(this.azurirajPrijavu.gost1.spol == "M")
+            {
+                unosSpolMuski.Checked = true;
+            }
+            else
+            {
+                unosSpolZenski.Checked = true;
+            }
+            unosIme.Text = this.azurirajPrijavu.gost1.ime;
+            unosPrezime.Text = this.azurirajPrijavu.gost1.prezime;
+            unosVrstaDoc.SelectedIndex = unosVrstaDoc.FindStringExact(this.azurirajPrijavu.gost1.vrsta_dokumenta.naziv);
+            unosBrojDoc.Text = this.azurirajPrijavu.gost1.broj_dokumenta;
+            unosDrzavaStan.SelectedIndex = unosDrzavaStan.FindStringExact(this.azurirajPrijavu.gost1.drzava.naziv);
+            unosDrzavaRod.SelectedIndex = unosDrzavaRod.FindStringExact(this.azurirajPrijavu.gost1.drzava1.naziv);
+            unosDatumRodenja.Text = this.azurirajPrijavu.gost1.datum_rodenja.ToString("yyyy-MM-dd");
+            unosStatusOsobe.SelectedIndex = unosStatusOsobe.FindStringExact(this.azurirajPrijavu.status_osobe.naziv);
+            if (this.azurirajPrijavu.organizacija_dolaska == "O")
+            {
+                unosOsobno.Checked = true;
+            }
+            else
+            {
+                unosAgencijski.Checked = true;
+            }
+            odabirSmjestajaUnos.SelectedIndex = odabirSmjestajaUnos.FindStringExact(this.azurirajPrijavu.smjestaj.oznaka);
+            unosDatumDolaska.Text = this.azurirajPrijavu.datum_prijave.ToString("yyyy-MM-dd");
+            unosDatumOdlaska.Text = this.azurirajPrijavu.datum_odjave.ToString("yyyy-MM-dd");
+        }
+
+        /// <summary>
         /// Metoda koja se aktivira gašenjem forme i briše kontekst entityframwork-a.
         /// </summary>
         /// <param name="sender"></param>
@@ -308,6 +366,11 @@ namespace Kampiraliste
             }
         }
 
+        /// <summary>
+        /// Provjera znakova u datumu i provjera je li datum dolaska manji od datum odlaska.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void unosDatumOdlaska_Leave(object sender, EventArgs e)
         {
             try
