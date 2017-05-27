@@ -165,6 +165,7 @@
             this.Name = "UnosSmjestajForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UnosSmjestajForma";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UnosSmjestajForma_FormClosing);
             this.Load += new System.EventHandler(this.UnosSmjestajForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vrstasmjestajaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelaBindingSource)).EndInit();

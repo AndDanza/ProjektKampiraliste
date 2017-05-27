@@ -33,9 +33,9 @@ namespace Kampiraliste
         /// <param name="e"></param>
         private void pokreniUnosSmjestaj_Click(object sender, EventArgs e)
         {
-            UnosSmjestajForma formaSmjestaj = new UnosSmjestajForma();
+            UnosSmjestajForma formaSmjestaj = new UnosSmjestajForma(kontekst);
             formaSmjestaj.ShowDialog();
-
+            
             this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
             smjestajBindingSource.DataSource = this.listaSmjestaja;
         }
