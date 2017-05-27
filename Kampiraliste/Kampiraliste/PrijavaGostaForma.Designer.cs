@@ -37,7 +37,7 @@
             this.unosDrzavaRod = new System.Windows.Forms.ComboBox();
             this.drzavaStanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drzavaRodBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unosStatus = new System.Windows.Forms.ComboBox();
+            this.unosStatusOsobe = new System.Windows.Forms.ComboBox();
             this.statusosobeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datumDolaskaLabela = new System.Windows.Forms.Label();
             this.datumOdlaskaLabela = new System.Windows.Forms.Label();
@@ -88,8 +88,9 @@
             // odabirSmjestajaUnos
             // 
             this.odabirSmjestajaUnos.DataSource = this.smjestajBindingSource;
-            this.odabirSmjestajaUnos.DisplayMember = "id";
+            this.odabirSmjestajaUnos.DisplayMember = "oznaka";
             this.odabirSmjestajaUnos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.odabirSmjestajaUnos.DropDownWidth = 250;
             this.odabirSmjestajaUnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.odabirSmjestajaUnos.FormattingEnabled = true;
             this.odabirSmjestajaUnos.Location = new System.Drawing.Point(179, 89);
@@ -141,18 +142,20 @@
             // 
             this.drzavaRodBindingSource.DataSource = typeof(Kampiraliste.drzava);
             // 
-            // unosStatus
+            // unosStatusOsobe
             // 
-            this.unosStatus.DataSource = this.statusosobeBindingSource;
-            this.unosStatus.DisplayMember = "naziv";
-            this.unosStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.unosStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosStatus.FormattingEnabled = true;
-            this.unosStatus.Location = new System.Drawing.Point(593, 212);
-            this.unosStatus.Name = "unosStatus";
-            this.unosStatus.Size = new System.Drawing.Size(251, 26);
-            this.unosStatus.TabIndex = 10;
-            this.unosStatus.ValueMember = "id";
+            this.unosStatusOsobe.DataSource = this.statusosobeBindingSource;
+            this.unosStatusOsobe.DisplayMember = "naziv";
+            this.unosStatusOsobe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unosStatusOsobe.DropDownWidth = 300;
+            this.unosStatusOsobe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosStatusOsobe.FormattingEnabled = true;
+            this.unosStatusOsobe.Location = new System.Drawing.Point(593, 212);
+            this.unosStatusOsobe.Name = "unosStatusOsobe";
+            this.unosStatusOsobe.Size = new System.Drawing.Size(251, 26);
+            this.unosStatusOsobe.TabIndex = 10;
+            this.unosStatusOsobe.ValueMember = "id";
+            this.unosStatusOsobe.SelectedIndexChanged += new System.EventHandler(this.unosStatusOsobe_SelectedIndexChanged);
             // 
             // statusosobeBindingSource
             // 
@@ -443,7 +446,7 @@
             this.podaciGost.BackColor = System.Drawing.Color.Wheat;
             this.podaciGost.Controls.Add(this.unosDatumRodenja);
             this.podaciGost.Controls.Add(this.statusOsobe);
-            this.podaciGost.Controls.Add(this.unosStatus);
+            this.podaciGost.Controls.Add(this.unosStatusOsobe);
             this.podaciGost.Controls.Add(this.datumRodjenja);
             this.podaciGost.Controls.Add(this.unosDrzavaRod);
             this.podaciGost.Controls.Add(this.drzavaStanovanja);
@@ -512,7 +515,7 @@
         private System.Windows.Forms.TextBox unosPrezime;
         private System.Windows.Forms.TextBox unosBrojDoc;
         private System.Windows.Forms.ComboBox unosDrzavaRod;
-        private System.Windows.Forms.ComboBox unosStatus;
+        private System.Windows.Forms.ComboBox unosStatusOsobe;
         private System.Windows.Forms.Label datumDolaskaLabela;
         private System.Windows.Forms.Label datumOdlaskaLabela;
         private System.Windows.Forms.RadioButton unosAgencijski;

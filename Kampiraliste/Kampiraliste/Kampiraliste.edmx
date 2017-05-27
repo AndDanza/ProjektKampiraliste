@@ -77,7 +77,7 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="iznos" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="popust" Type="decimal" Precision="5" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -626,8 +626,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="iznos" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
           <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_status_osobe" FromRole="status_osobe" ToRole="prijava" />
+          <Property Name="popust" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
         </EntityType>
         <Association Name="FK_prijava_status_osobe">
           <End Type="DBModel.status_osobe" Role="status_osobe" Multiplicity="1" />
@@ -773,7 +773,7 @@
           <EntitySetMapping Name="status_osobe">
             <EntityTypeMapping TypeName="DBModel.status_osobe">
               <MappingFragment StoreEntitySet="status_osobe">
-                <ScalarProperty Name="iznos" ColumnName="iznos" />
+                <ScalarProperty Name="popust" ColumnName="popust" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

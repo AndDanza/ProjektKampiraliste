@@ -13,7 +13,7 @@ namespace Kampiraliste
     public partial class RadSPrijavamaForma : Form
     {
         private BindingList<prijava> listaPrijava = null;
-        private gost gostSelect = null;
+        //private gost gostSelect = null;
 
         public RadSPrijavamaForma()
         {
@@ -31,9 +31,7 @@ namespace Kampiraliste
                 }
             }
         }
-
-
-
+        
         private void RadSPrijavamaForma_Load(object sender, EventArgs e)
         {
             UcitajPrijave();

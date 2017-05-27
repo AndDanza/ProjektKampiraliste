@@ -101,6 +101,7 @@ namespace Kampiraliste
             string ime = unosIme.Text;
             string prezime = unosPrezime.Text;
             string drzavaRodenja = (unosDrzavaRod.SelectedItem as drzava).id;
+            string spol = unosSpolMuski.Checked ? "M" : "Ž";
 
             if (String.IsNullOrEmpty(ime) || String.IsNullOrEmpty(prezime) || String.IsNullOrEmpty(drzavaRodenja) || String.IsNullOrEmpty(unosDatumRodenja.Text))
             {
@@ -111,15 +112,56 @@ namespace Kampiraliste
                 DateTime datumRodenja = DateTime.Parse(unosDatumRodenja.Text);
 
                 gostPostoji = (from b in kontekst.gosts
-                               where b.ime == ime && b.prezime == prezime && b.drzava_id_rodenja == drzavaRodenja && b.datum_rodenja == datumRodenja
+                               where b.ime == ime && b.prezime == prezime && b.drzava_id_rodenja == drzavaRodenja && b.datum_rodenja == datumRodenja && b.spol == spol
                                select b).FirstOrDefault();
             }
 
             return gostPostoji;
         }
 
-        private void ProvjeraPrijave()
-        { }
+        /// <summary>
+        /// Prilikom odabira statusa određene staatuse gost ne može dobiti te mu se oni moraju zabraniti.
+        /// </summary>
+        // npr. Gost s navršenih 13 godina ne može imati status osobe djeca do 12 godina.
+        private void ProvjeraStatusa()
+        {
+            if(!String.IsNullOrEmpty(unosDatumRodenja.Text))
+            {
+                DateTime uneseniDatum = DateTime.Parse(unosDatumRodenja.Text);
+                DateTime trenutniDatum = DateTime.Now;
+
+                status_osobe odabraniStatus = unosStatusOsobe.SelectedItem as status_osobe;
+
+                int godine = trenutniDatum.Year - uneseniDatum.Year;
+
+                if (trenutniDatum.Month < uneseniDatum.Month || (trenutniDatum.Month == uneseniDatum.Month && trenutniDatum.Day < uneseniDatum.Day))
+                {
+                    godine--;
+                }
+
+                switch(odabraniStatus.id)
+                {
+                    case 1:
+                        if (godine > 12)
+                        {
+                            throw new KampiralisteException("Uneseni gost stariji je od 12 godina!", this.Name);
+                        }
+                        break;
+                    case 2:
+                        if(godine < 12 || godine > 18)
+                        {
+                            throw new KampiralisteException("Uneseni gost nije u rasponu od 12 do 18 godina starosti!", this.Name);
+                        }
+                        break;
+                    case 3:
+                        if(godine < 18)
+                        {
+                            throw new KampiralisteException("Uneseni gost mlađi je od 18 godina!", this.Name);
+                        }
+                        break;
+                }
+            }
+        }
 
         /// <summary>
         /// Pohrana prijave za danog gosta u bazu podataka.
@@ -134,7 +176,7 @@ namespace Kampiraliste
 
             string orgDolaska = unosOsobno.Checked ? "O" : "A";
             smjestaj odabraniSmjestaj = odabirSmjestajaUnos.SelectedItem as smjestaj;
-            status_osobe odabraniStatus = unosStatus.SelectedItem as status_osobe;
+            status_osobe odabraniStatus = unosStatusOsobe.SelectedItem as status_osobe;
 
             if (String.IsNullOrEmpty(unosDatumDolaska.Text) || String.IsNullOrEmpty(unosDatumOdlaska.Text))
             {
@@ -161,10 +203,55 @@ namespace Kampiraliste
             }
         }
 
+        /// <summary>
+        /// Prilikom uspješne prijave resetiraju se svi odabiri u combobox-evim i podaci u textbox-evim.
+        /// </summary>
+        private void ResetirajFormu()
+        {
+            //reset textboxeva
+            if (unosSpolZenski.Checked)
+                unosSpolMuski.Checked = true;
+            unosIme.Text = "";
+            unosPrezime.Text = "";
+            unosBrojDoc.Text = "";
+            unosDatumRodenja.Text = "";
+            unosDatumDolaska.Text = "";
+            unosDatumOdlaska.Text = "";
+            if (unosAgencijski.Checked)
+                unosOsobno.Checked = true;
+
+            //reset comboboxeva
+            unosVrstaDoc.SelectedIndex = 0;
+            unosDrzavaRod.SelectedIndex = 0;
+            unosDrzavaStan.SelectedIndex = 0;
+            unosStatusOsobe.SelectedIndex = 0;
+            odabirSmjestajaUnos.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Ako gost postoji već u bazi, ažuriraju se podaci
+        /// </summary>
+        /// <param name="izmjeniGosta"></param>
+        private void AzurirajGosta(gost izmjeniGosta)
+        {
+            vrsta_dokumenta noviDokument = unosVrstaDoc.SelectedItem as vrsta_dokumenta;
+            drzava novaDrzavaStan = unosDrzavaStan.SelectedItem as drzava;
+            status_osobe noviStatusOsobe = unosStatusOsobe.SelectedItem as status_osobe;
+            kontekst.gosts.Attach(izmjeniGosta);
+
+            izmjeniGosta.vrsta_dokumenta = noviDokument;
+            izmjeniGosta.broj_dokumenta = unosBrojDoc.Text;
+            izmjeniGosta.drzava = novaDrzavaStan;
+            
+            kontekst.SaveChanges();
+        }
+
         private void potvrdiPrijavu_Click(object sender, EventArgs e)
         {
             try
             {
+                ProvjeraStatusa();
+
                 gost pohranjeniGost = ProvjeraGosta();
 
                 if (pohranjeniGost == null)
@@ -174,8 +261,12 @@ namespace Kampiraliste
                 }
                 else
                 {
+                    AzurirajGosta(pohranjeniGost);
                     PohraniPrijavu(pohranjeniGost);
                 }
+
+                MessageBox.Show("Gost je uspješno prijavljen", "Uspješna prijava", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                ResetirajFormu();
             }
             catch(KampiralisteException ex)
             {
@@ -192,6 +283,23 @@ namespace Kampiraliste
         private void PrijavaGostaForma_FormClosing(object sender, FormClosingEventArgs e)
         {
             kontekst.Dispose();
+        }
+
+        /// <summary>
+        /// Prilikom promjene indeksa (odabira statusa) provjerava se odgovara li status godinama osobe.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void unosStatusOsobe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ProvjeraStatusa();
+            }
+            catch (KampiralisteException ex)
+            {
+                MessageBox.Show(ex.PorukaIznimke, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
