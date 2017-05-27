@@ -41,23 +41,28 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Učitava sve podatke u combobox-eve
+        /// Učitava podatke iz baze podataka u combobox-eve
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void PrijavaGostaForma_Load(object sender, EventArgs e)
+        private void UcitajMoguceOdabire()
         {
             this.listaDrzavaStan = new BindingList<drzava>(kontekst.drzavas.ToList());
             this.listaDrzavaRod = new BindingList<drzava>(kontekst.drzavas.ToList());
             this.listaDokumenata = new BindingList<vrsta_dokumenta>(kontekst.vrsta_dokumenta.ToList());
             this.listaStatusaOsobe = new BindingList<status_osobe>(kontekst.status_osobe.ToList());
             this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
+            var upit = kontekst.smjestajs.Where(s => s.prijavas.Count() < s.broj_osoba);
+            this.listaSmjestaja = new BindingList<smjestaj>(upit.ToList());
 
             drzavaRodBindingSource.DataSource = this.listaDrzavaRod;
             drzavaStanBindingSource.DataSource = this.listaDrzavaStan;
             vrstadokumentaBindingSource.DataSource = this.listaDokumenata;
             statusosobeBindingSource.DataSource = this.listaStatusaOsobe;
             smjestajBindingSource.DataSource = this.listaSmjestaja;
+        }
+
+        private void PrijavaGostaForma_Load(object sender, EventArgs e)
+        {
+            UcitajMoguceOdabire();
         }
 
         /// <summary>
@@ -215,8 +220,6 @@ namespace Kampiraliste
             unosPrezime.Text = "";
             unosBrojDoc.Text = "";
             unosDatumRodenja.Text = "";
-            unosDatumDolaska.Text = "";
-            unosDatumOdlaska.Text = "";
             if (unosAgencijski.Checked)
                 unosOsobno.Checked = true;
 
@@ -266,6 +269,9 @@ namespace Kampiraliste
                 }
 
                 MessageBox.Show("Gost je uspješno prijavljen", "Uspješna prijava", MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                UcitajMoguceOdabire();
+
                 ResetirajFormu();
             }
             catch(KampiralisteException ex)
