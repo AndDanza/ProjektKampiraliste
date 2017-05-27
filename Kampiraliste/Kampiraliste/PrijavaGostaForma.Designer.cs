@@ -243,6 +243,7 @@
             this.unosDatumOdlaska.Name = "unosDatumOdlaska";
             this.unosDatumOdlaska.Size = new System.Drawing.Size(251, 24);
             this.unosDatumOdlaska.TabIndex = 43;
+            this.unosDatumOdlaska.Leave += new System.EventHandler(this.unosDatumOdlaska_Leave);
             // 
             // unosDatumDolaska
             // 

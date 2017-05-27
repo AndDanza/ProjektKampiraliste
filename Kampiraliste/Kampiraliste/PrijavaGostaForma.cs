@@ -307,5 +307,29 @@ namespace Kampiraliste
                 MessageBox.Show(ex.PorukaIznimke, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void unosDatumOdlaska_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime datumDolaska, datumOdlaska;
+
+                if (DateTime.TryParse(unosDatumDolaska.Text, out datumDolaska) && DateTime.TryParse(unosDatumOdlaska.Text, out datumOdlaska))
+                {
+                     if (datumDolaska > datumOdlaska)
+                    {
+                        throw new KampiralisteException("Datum dolaska ne može biti nakon datum odlaska!", this.Name);
+                    }
+                }
+                else
+                {
+                    throw new KampiralisteException("Datum u neispravnom formatu!", this.Name);
+                }
+            }
+            catch(KampiralisteException ex)
+            {
+                MessageBox.Show(ex.PorukaIznimke, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
