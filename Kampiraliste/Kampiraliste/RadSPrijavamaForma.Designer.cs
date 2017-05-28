@@ -103,8 +103,9 @@
             this.izradiKnjiguStranihAkcija.Name = "izradiKnjiguStranihAkcija";
             this.izradiKnjiguStranihAkcija.Size = new System.Drawing.Size(119, 40);
             this.izradiKnjiguStranihAkcija.TabIndex = 20;
-            this.izradiKnjiguStranihAkcija.Text = "Domaći gosti";
+            this.izradiKnjiguStranihAkcija.Text = "Strani gosti";
             this.izradiKnjiguStranihAkcija.UseVisualStyleBackColor = false;
+            this.izradiKnjiguStranihAkcija.Click += new System.EventHandler(this.izradiKnjiguStranihAkcija_Click);
             // 
             // izradiKnjiguDomacihAkcija
             // 
@@ -116,7 +117,7 @@
             this.izradiKnjiguDomacihAkcija.Name = "izradiKnjiguDomacihAkcija";
             this.izradiKnjiguDomacihAkcija.Size = new System.Drawing.Size(119, 43);
             this.izradiKnjiguDomacihAkcija.TabIndex = 21;
-            this.izradiKnjiguDomacihAkcija.Text = "Strani gosti";
+            this.izradiKnjiguDomacihAkcija.Text = "Domaći gosti";
             this.izradiKnjiguDomacihAkcija.UseVisualStyleBackColor = false;
             // 
             // aktivnePrijaveListBox

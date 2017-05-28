@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -7,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
 
 namespace Kampiraliste
 {
@@ -81,6 +83,52 @@ namespace Kampiraliste
                 UcitajPrijave(3);
             else
                 UcitajPrijave(4);
+        }
+
+        private void izradiKnjiguStranihAkcija_Click(object sender, EventArgs e)
+        {
+            PdfDocument knjigaStranihGostiju = new PdfDocument();
+            PdfPage pdfStranica = knjigaStranihGostiju.AddPage();
+            pdfStranica.Size = PdfSharp.PageSize.A4;
+            pdfStranica.Orientation = PdfSharp.PageOrientation.Landscape;
+
+            XGraphics grafika = XGraphics.FromPdfPage(pdfStranica);
+
+            XPen linija = new XPen(XColor.FromArgb(000, 000, 000), 2.5);
+            grafika.DrawLine(linija, 20, 80, 802, 80);
+            grafika.DrawLine(linija, 20, 120, 802, 120);
+
+            XTextFormatter format = new XTextFormatter(grafika);
+
+            XFont HeadingFont = new XFont("Times New Roman", 20, XFontStyle.Bold);
+            XFont BodyFont = new XFont("Times New Roman", 12);
+            XFont BoldBodyFont = new XFont("Times New Roman", 12, XFontStyle.Bold);
+
+            grafika.DrawString("Knjiga stranih gostiju", 
+                HeadingFont, XBrushes.Black, new XRect(0, 40, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopCenter);
+
+            format.DrawString("Redni \r\n broj", BoldBodyFont, XBrushes.Black, new XRect(40, 88, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+            format.DrawString("Ime", BoldBodyFont, XBrushes.Black, new XRect(280, 100, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+            format.DrawString("Prezime", BoldBodyFont, XBrushes.Black, new XRect(420, 100, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+
+            int noviRed = 140;
+            for (int i = 0; i <= listaPrijava.Count - 1; i++)
+            {
+                prijava jednaPrijava = listaPrijava[i];
+                string id = jednaPrijava.id.ToString();
+                string ime = jednaPrijava.gost1.ime;
+                string prezime = jednaPrijava.gost1.prezime;
+
+                format.DrawString(id, BodyFont, XBrushes.Black, new XRect(40, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+
+                format.DrawString(ime, BodyFont, XBrushes.Black, new XRect(280, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+
+                format.DrawString(prezime, BodyFont, XBrushes.Black, new XRect(420, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+
+                noviRed += 40;
+            }
+
+            knjigaStranihGostiju.Save("second.pdf");
         }
     }
 }
