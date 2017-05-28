@@ -267,6 +267,8 @@
     <None Include="Resources\help_ic.jpg" />
     <None Include="Resources\button_prijavite-se.png" />
     <None Include="Resources\dodaj_gosta.png" />
+    <None Include="Resources\arrow-up.png" />
+    <None Include="Resources\arrow-down.png" />
     <Content Include="Resources\help_icon.jpg" />
     <None Include="Resources\help_icon.png" />
     <None Include="Resources\help_icon1.png" />

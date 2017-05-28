@@ -61,9 +61,17 @@ namespace Kampiraliste
         {
             UnosSmjestajForma formaSmjestaj = new UnosSmjestajForma(kontekst);
             formaSmjestaj.ShowDialog();
-            
-            this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
-            smjestajBindingSource.DataSource = this.listaSmjestaja;
+
+            if (this.azurirajPrijavu == null)
+            {
+                var upit = kontekst.smjestajs.Where(s => s.prijavas.Count() < s.broj_osoba);
+                this.listaSmjestaja = new BindingList<smjestaj>(upit.ToList());
+            }
+            else
+            {
+                this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
+                smjestajBindingSource.DataSource = this.listaSmjestaja;
+            }
         }
 
         /// <summary>
