@@ -95,7 +95,7 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Pohrana gosta u bazu podataka.
+        /// Pohrana novog gosta u bazu podataka.
         /// </summary>
         /// <returns>Povratna vrijednos je objekt tipa gost.</returns>
         private gost PohraniGosta()
@@ -154,7 +154,7 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Prilikom odabira statusa određene staatuse gost ne može dobiti te mu se oni moraju zabraniti.
+        /// Prilikom odabira statusa određene statuse gost ne može dobiti te mu se oni moraju zabraniti.
         /// </summary>
         // npr. Gost s navršenih 13 godina ne može imati status osobe djeca do 12 godina.
         private void ProvjeraStatusa()
@@ -261,7 +261,7 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Ako gost postoji već u bazi, ažuriraju se podaci
+        /// Ako gost postoji, ažuriraju se podaci. Ukoliko je pronađena prijava za ažuriranje ažuriraju se svi podaci o gostu.
         /// </summary>
         /// <param name="izmjeniGosta"></param>
         private void AzurirajGosta(gost izmjeniGosta)
@@ -290,6 +290,9 @@ namespace Kampiraliste
             kontekst.SaveChanges();
         }
 
+        /// <summary>
+        /// Ažurira podatke o prijavi i pohranjuje u bzau.
+        /// </summary>
         private void AzurirajPrijavu()
         {
             kontekst.prijavas.Attach(this.azurirajPrijavu);
@@ -308,6 +311,10 @@ namespace Kampiraliste
 
             kontekst.SaveChanges();
         }
+
+        /// <summary>
+        /// Metoda koja kontrolira unos nove prijave (unos/ažuriranje gosta i unos nove prijave) 
+        /// </summary>
         private void NovaPrijava()
         {
             gost pohranjeniGost = ProvjeraGosta();
