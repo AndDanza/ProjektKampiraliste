@@ -66,7 +66,7 @@ namespace Kampiraliste
         private void aktivnePrijaveListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             prijava azurirajPrijavu = aktivnePrijaveListBox.SelectedItem as prijava;
-            PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu);
+            PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu, kontekst);
             instancaPrijavaGostaForma.ShowDialog();
 
             UcitajPrijave(1);
@@ -108,27 +108,36 @@ namespace Kampiraliste
                 HeadingFont, XBrushes.Black, new XRect(0, 40, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopCenter);
 
             format.DrawString("Redni \r\n broj", BoldBodyFont, XBrushes.Black, new XRect(40, 88, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
-            format.DrawString("Ime", BoldBodyFont, XBrushes.Black, new XRect(280, 100, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
-            format.DrawString("Prezime", BoldBodyFont, XBrushes.Black, new XRect(420, 100, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+            format.DrawString("Ime", BoldBodyFont, XBrushes.Black, new XRect(110, 95, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+            format.DrawString("Prezime", BoldBodyFont, XBrushes.Black, new XRect(180, 95, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+            format.DrawString("Datum \r\nrođenja", BoldBodyFont, XBrushes.Black, new XRect(262, 88, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+            format.DrawString("Država \r\nrođenja", BoldBodyFont, XBrushes.Black, new XRect(340, 88, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
 
             int noviRed = 140;
-            for (int i = 0; i <= listaPrijava.Count - 1; i++)
+            for (int i = 0; i < listaPrijava.Count; i++)
             {
                 prijava jednaPrijava = listaPrijava[i];
                 string id = jednaPrijava.id.ToString();
                 string ime = jednaPrijava.gost1.ime;
                 string prezime = jednaPrijava.gost1.prezime;
+                string datum = jednaPrijava.gost1.datum_rodenja.ToString("dd-MM-yyyy");
+                string drzavaRod = jednaPrijava.gost1.drzava.naziv;
 
-                format.DrawString(id, BodyFont, XBrushes.Black, new XRect(40, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
-
-                format.DrawString(ime, BodyFont, XBrushes.Black, new XRect(280, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
-
-                format.DrawString(prezime, BodyFont, XBrushes.Black, new XRect(420, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                format.DrawString(id, BodyFont, XBrushes.Black, new XRect(50, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                format.DrawString(ime, BodyFont, XBrushes.Black, new XRect(100, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                format.DrawString(prezime, BodyFont, XBrushes.Black, new XRect(180, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                format.DrawString(datum, BodyFont, XBrushes.Black, new XRect(260, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                format.DrawString(drzavaRod, BodyFont, XBrushes.Black, new XRect(340, noviRed, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
 
                 noviRed += 40;
             }
 
             knjigaStranihGostiju.Save("second.pdf");
+        }
+
+        private void RadSPrijavamaForma_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            kontekst.Dispose();
         }
     }
 }

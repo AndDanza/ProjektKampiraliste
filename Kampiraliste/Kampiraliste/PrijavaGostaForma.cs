@@ -35,10 +35,10 @@ namespace Kampiraliste
         /// Konstruktor forme prilikom ažuriranja prijave
         /// </summary>
         /// <param name="ulazPrijava"></param>
-        public PrijavaGostaForma(prijava ulazPrijava)
+        public PrijavaGostaForma(prijava ulazPrijava, KampiralisteEntiteti ulazniKontekst)
         {
             InitializeComponent();
-            this.kontekst = new KampiralisteEntiteti();
+            this.kontekst = ulazniKontekst;
             this.azurirajPrijavu = ulazPrijava;
         }
 
@@ -432,7 +432,8 @@ namespace Kampiraliste
         /// <param name="e"></param>
         private void PrijavaGostaForma_FormClosing(object sender, FormClosingEventArgs e)
         {
-            kontekst.Dispose();
+            if(this.azurirajPrijavu == null)
+                kontekst.Dispose();
         }
 
         /// <summary>
