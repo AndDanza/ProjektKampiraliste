@@ -22,6 +22,8 @@ namespace Kampiraliste
 
         private void UcitajPrijave()
         {
+            aktivnePrijaveListBox.Items.Clear();
+
             using (var baza = new KampiralisteEntiteti())
             {
                 this.listaPrijava = new BindingList<prijava>(baza.prijavas.ToList());
@@ -42,6 +44,8 @@ namespace Kampiraliste
             prijava azurirajPrijavu = aktivnePrijaveListBox.SelectedItem as prijava;
             PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu);
             instancaPrijavaGostaForma.ShowDialog();
+
+            UcitajPrijave();
         }
     }
 }

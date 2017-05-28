@@ -22,12 +22,19 @@ namespace Kampiraliste
 
         private prijava azurirajPrijavu = null;
 
+        /// <summary>
+        /// Konstruktor forme kod unosa novog gosta
+        /// </summary>
         public PrijavaGostaForma()
         { 
             InitializeComponent();
             this.kontekst = new KampiralisteEntiteti();
         }
 
+        /// <summary>
+        /// Konstruktor forme prilikom ažuriranja prijave
+        /// </summary>
+        /// <param name="ulazPrijava"></param>
         public PrijavaGostaForma(prijava ulazPrijava)
         {
             InitializeComponent();
@@ -259,10 +266,22 @@ namespace Kampiraliste
         /// <param name="izmjeniGosta"></param>
         private void AzurirajGosta(gost izmjeniGosta)
         {
+            kontekst.gosts.Attach(izmjeniGosta);
+
             vrsta_dokumenta noviDokument = unosVrstaDoc.SelectedItem as vrsta_dokumenta;
             drzava novaDrzavaStan = unosDrzavaStan.SelectedItem as drzava;
-            status_osobe noviStatusOsobe = unosStatusOsobe.SelectedItem as status_osobe;
-            kontekst.gosts.Attach(izmjeniGosta);
+            
+            if(this.azurirajPrijavu != null)
+            {
+                drzava novaDrzavaRod = unosDrzavaRod.SelectedItem as drzava;
+                string spol = unosSpolMuski.Checked ? spol = "M" : spol = "Ž";
+
+                izmjeniGosta.spol = spol;
+                izmjeniGosta.ime = unosIme.Text;
+                izmjeniGosta.prezime = unosPrezime.Text;
+                izmjeniGosta.drzava1 = novaDrzavaRod;
+                izmjeniGosta.datum_rodenja = DateTime.Parse(unosDatumRodenja.Text);
+            }
 
             izmjeniGosta.vrsta_dokumenta = noviDokument;
             izmjeniGosta.broj_dokumenta = unosBrojDoc.Text;
@@ -271,23 +290,53 @@ namespace Kampiraliste
             kontekst.SaveChanges();
         }
 
+        private void AzurirajPrijavu()
+        {
+            kontekst.prijavas.Attach(this.azurirajPrijavu);
+
+            AzurirajGosta(this.azurirajPrijavu.gost1);
+
+            status_osobe noviStatusOsobe = unosStatusOsobe.SelectedItem as status_osobe;
+            string noviOrgDolaska = unosOsobno.Checked ? "O" : "A";
+            smjestaj noviSmjestaj = odabirSmjestajaUnos.SelectedItem as smjestaj;
+
+            this.azurirajPrijavu.status_osobe = noviStatusOsobe;
+            this.azurirajPrijavu.organizacija_dolaska = noviOrgDolaska;
+            this.azurirajPrijavu.datum_prijave = DateTime.Parse(unosDatumDolaska.Text);
+            this.azurirajPrijavu.datum_odjave = DateTime.Parse(unosDatumOdlaska.Text);
+            this.azurirajPrijavu.smjestaj = noviSmjestaj;
+
+            kontekst.SaveChanges();
+        }
+        private void NovaPrijava()
+        {
+            gost pohranjeniGost = ProvjeraGosta();
+
+            if (pohranjeniGost == null)
+            {
+                pohranjeniGost = PohraniGosta();
+                PohraniPrijavu(pohranjeniGost);
+            }
+            else
+            {
+                AzurirajGosta(pohranjeniGost);
+                PohraniPrijavu(pohranjeniGost);
+            }
+        }
+
         private void potvrdiPrijavu_Click(object sender, EventArgs e)
         {
             try
             {
                 ProvjeraStatusa();
 
-                gost pohranjeniGost = ProvjeraGosta();
-
-                if (pohranjeniGost == null)
+                if (this.azurirajPrijavu == null)
                 {
-                    pohranjeniGost = PohraniGosta();
-                    PohraniPrijavu(pohranjeniGost);
+                    NovaPrijava();
                 }
                 else
                 {
-                    AzurirajGosta(pohranjeniGost);
-                    PohraniPrijavu(pohranjeniGost);
+                    AzurirajPrijavu();
                 }
 
                 MessageBox.Show("Gost je uspješno prijavljen", "Uspješna prijava", MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -295,6 +344,11 @@ namespace Kampiraliste
                 UcitajMoguceOdabire();
 
                 ResetirajFormu();
+                
+                if(this.azurirajPrijavu != null)
+                {
+                    this.Close();
+                }
             }
             catch(KampiralisteException ex)
             {
@@ -340,16 +394,6 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Metoda koja se aktivira gašenjem forme i briše kontekst entityframwork-a.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void PrijavaGostaForma_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            kontekst.Dispose();
-        }
-
-        /// <summary>
         /// Prilikom promjene indeksa (odabira statusa) provjerava se odgovara li status godinama osobe.
         /// </summary>
         /// <param name="sender"></param>
@@ -364,6 +408,16 @@ namespace Kampiraliste
             {
                 MessageBox.Show(ex.PorukaIznimke, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Metoda koja se aktivira gašenjem forme i briše kontekst entityframwork-a.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PrijavaGostaForma_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            kontekst.Dispose();
         }
 
         /// <summary>
