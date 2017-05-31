@@ -111,11 +111,33 @@ namespace Kampiraliste
             format.DrawString("Ime", BoldBodyFont, XBrushes.Black, new XRect(110, 95, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
             format.DrawString("Prezime", BoldBodyFont, XBrushes.Black, new XRect(180, 95, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
             format.DrawString("Datum \r\nrođenja", BoldBodyFont, XBrushes.Black, new XRect(262, 88, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
-            format.DrawString("Država \r\nrođenja", BoldBodyFont, XBrushes.Black, new XRect(340, 88, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+            format.DrawString("Država \r\nrođenja", BoldBodyFont, XBrushes.Black, new XRect(360, 88, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
 
             int noviRed = 140;
             for (int i = 0; i < listaPrijava.Count; i++)
             {
+                if (i > 0 && i % 10 == 0)
+                {
+                    pdfStranica = knjigaStranihGostiju.AddPage();
+                    pdfStranica.Orientation = PdfSharp.PageOrientation.Landscape;
+                    grafika = XGraphics.FromPdfPage(pdfStranica);
+
+                    linija = new XPen(XColor.FromArgb(000, 000, 000), 2.5);
+                    grafika.DrawLine(linija, 20, 10, 802, 10);
+                    grafika.DrawLine(linija, 20, 10, 802, 10);
+
+                    format = new XTextFormatter(grafika);
+
+                    format.DrawString("Redni \r\n broj", BoldBodyFont, XBrushes.Black, new XRect(40, 28, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                    format.DrawString("Ime", BoldBodyFont, XBrushes.Black, new XRect(110, 45, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                    format.DrawString("Prezime", BoldBodyFont, XBrushes.Black, new XRect(180, 45, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                    format.DrawString("Datum \r\nrođenja", BoldBodyFont, XBrushes.Black, new XRect(262, 28, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+                    format.DrawString("Država \r\nrođenja", BoldBodyFont, XBrushes.Black, new XRect(360, 28, pdfStranica.Width.Point, pdfStranica.Height.Point), XStringFormats.TopLeft);
+
+                    noviRed = 80;
+
+                }
+
                 prijava jednaPrijava = listaPrijava[i];
                 string id = jednaPrijava.id.ToString();
                 string ime = jednaPrijava.gost1.ime;
