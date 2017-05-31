@@ -70,8 +70,8 @@ namespace Kampiraliste
             else
             {
                 this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
-                smjestajBindingSource.DataSource = this.listaSmjestaja;
             }
+            smjestajBindingSource.DataSource = this.listaSmjestaja;
         }
 
         /// <summary>
@@ -254,7 +254,6 @@ namespace Kampiraliste
             if (unosSpolZenski.Checked)
                 unosSpolMuski.Checked = true;
             unosIme.Text = "";
-            unosPrezime.Text = "";
             unosBrojDoc.Text = "";
             unosDatumRodenja.Text = "";
             if (unosAgencijski.Checked)
@@ -265,7 +264,6 @@ namespace Kampiraliste
             unosDrzavaRod.SelectedIndex = 0;
             unosDrzavaStan.SelectedIndex = 0;
             unosStatusOsobe.SelectedIndex = 0;
-            odabirSmjestajaUnos.SelectedIndex = 0;
         }
 
         /// <summary>
