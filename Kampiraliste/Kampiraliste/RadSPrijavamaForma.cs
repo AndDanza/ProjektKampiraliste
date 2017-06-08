@@ -6,9 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PdfSharp.Pdf;
-using PdfSharp.Drawing;
-using PdfSharp.Drawing.Layout;
 
 namespace Kampiraliste
 {
@@ -87,7 +84,8 @@ namespace Kampiraliste
 
         private void izradiKnjiguStranihAkcija_Click(object sender, EventArgs e)
         {
-           
+            KnjigeGostiju pregledKnjigeGostiju = new KnjigeGostiju(kontekst);
+            pregledKnjigeGostiju.ShowDialog();
         }
 
         private void RadSPrijavamaForma_FormClosing(object sender, FormClosingEventArgs e)
