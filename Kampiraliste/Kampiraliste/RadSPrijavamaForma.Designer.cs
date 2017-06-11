@@ -119,6 +119,7 @@
             this.izradiKnjiguDomacihAkcija.TabIndex = 21;
             this.izradiKnjiguDomacihAkcija.Text = "Domaći gosti";
             this.izradiKnjiguDomacihAkcija.UseVisualStyleBackColor = false;
+            this.izradiKnjiguDomacihAkcija.Click += new System.EventHandler(this.izradiKnjiguDomacihAkcija_Click);
             // 
             // aktivnePrijaveListBox
             // 

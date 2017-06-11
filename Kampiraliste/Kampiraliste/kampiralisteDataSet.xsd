@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="kampiralisteDataSet" targetNamespace="http://tempuri.org/kampiralisteDataSet.xsd" xmlns:mstns="http://tempuri.org/kampiralisteDataSet.xsd" xmlns="http://tempuri.org/kampiralisteDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="kampiralisteConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="kampiralisteConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Kampiraliste.Properties.Settings.GlobalReference.Default.kampiralisteConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KnjigaDomacihGostijuTableAdapter" GeneratorDataComponentClassName="KnjigaDomacihGostijuTableAdapter" Name="KnjigaDomacihGostiju" UserDataComponentName="KnjigaDomacihGostijuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="kampiralisteConnectionString (Settings)" DbObjectName="[17021_DB].dbo.KnjigaDomacihGostiju" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT RedniBrojPrijave, ime, prezime, DatumRodenja, DržavaRodenja, Drzavljanstvo, VrstaIsprave, BrojIsprave, DatumPrijave, DatumOdjave FROM dbo.KnjigaDomacihGostiju</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RedniBrojPrijave" DataSetColumn="RedniBrojPrijave" />
+              <Mapping SourceColumn="ime" DataSetColumn="ime" />
+              <Mapping SourceColumn="prezime" DataSetColumn="prezime" />
+              <Mapping SourceColumn="DatumRodenja" DataSetColumn="DatumRodenja" />
+              <Mapping SourceColumn="DržavaRodenja" DataSetColumn="DržavaRodenja" />
+              <Mapping SourceColumn="Drzavljanstvo" DataSetColumn="Drzavljanstvo" />
+              <Mapping SourceColumn="VrstaIsprave" DataSetColumn="VrstaIsprave" />
+              <Mapping SourceColumn="BrojIsprave" DataSetColumn="BrojIsprave" />
+              <Mapping SourceColumn="DatumPrijave" DataSetColumn="DatumPrijave" />
+              <Mapping SourceColumn="DatumOdjave" DataSetColumn="DatumOdjave" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KnjigaStranihGostijuTableAdapter" GeneratorDataComponentClassName="KnjigaStranihGostijuTableAdapter" Name="KnjigaStranihGostiju" UserDataComponentName="KnjigaStranihGostijuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="kampiralisteConnectionString (Settings)" DbObjectName="[17021_DB].dbo.KnjigaStranihGostiju" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT RedniBrojPrijave, ime, prezime, DatumRodenja, DržavaRodenja, Drzavljanstvo, VrstaIsprave, BrojIsprave, DatumPrijave, DatumOdjave FROM dbo.KnjigaStranihGostiju</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RedniBrojPrijave" DataSetColumn="RedniBrojPrijave" />
+              <Mapping SourceColumn="ime" DataSetColumn="ime" />
+              <Mapping SourceColumn="prezime" DataSetColumn="prezime" />
+              <Mapping SourceColumn="DatumRodenja" DataSetColumn="DatumRodenja" />
+              <Mapping SourceColumn="DržavaRodenja" DataSetColumn="DržavaRodenja" />
+              <Mapping SourceColumn="Drzavljanstvo" DataSetColumn="Drzavljanstvo" />
+              <Mapping SourceColumn="VrstaIsprave" DataSetColumn="VrstaIsprave" />
+              <Mapping SourceColumn="BrojIsprave" DataSetColumn="BrojIsprave" />
+              <Mapping SourceColumn="DatumPrijave" DataSetColumn="DatumPrijave" />
+              <Mapping SourceColumn="DatumOdjave" DataSetColumn="DatumOdjave" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="kampiralisteDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="kampiralisteDataSet" msprop:Generator_UserDSName="kampiralisteDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="KnjigaDomacihGostiju" msprop:Generator_TableClassName="KnjigaDomacihGostijuDataTable" msprop:Generator_TableVarName="tableKnjigaDomacihGostiju" msprop:Generator_TablePropName="KnjigaDomacihGostiju" msprop:Generator_RowDeletingName="KnjigaDomacihGostijuRowDeleting" msprop:Generator_RowChangingName="KnjigaDomacihGostijuRowChanging" msprop:Generator_RowEvHandlerName="KnjigaDomacihGostijuRowChangeEventHandler" msprop:Generator_RowDeletedName="KnjigaDomacihGostijuRowDeleted" msprop:Generator_UserTableName="KnjigaDomacihGostiju" msprop:Generator_RowChangedName="KnjigaDomacihGostijuRowChanged" msprop:Generator_RowEvArgName="KnjigaDomacihGostijuRowChangeEvent" msprop:Generator_RowClassName="KnjigaDomacihGostijuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RedniBrojPrijave" msprop:Generator_ColumnVarNameInTable="columnRedniBrojPrijave" msprop:Generator_ColumnPropNameInRow="RedniBrojPrijave" msprop:Generator_ColumnPropNameInTable="RedniBrojPrijaveColumn" msprop:Generator_UserColumnName="RedniBrojPrijave" type="xs:int" />
+              <xs:element name="ime" msprop:Generator_ColumnVarNameInTable="columnime" msprop:Generator_ColumnPropNameInRow="ime" msprop:Generator_ColumnPropNameInTable="imeColumn" msprop:Generator_UserColumnName="ime">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prezime" msprop:Generator_ColumnVarNameInTable="columnprezime" msprop:Generator_ColumnPropNameInRow="prezime" msprop:Generator_ColumnPropNameInTable="prezimeColumn" msprop:Generator_UserColumnName="prezime">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DatumRodenja" msprop:Generator_ColumnVarNameInTable="columnDatumRodenja" msprop:Generator_ColumnPropNameInRow="DatumRodenja" msprop:Generator_ColumnPropNameInTable="DatumRodenjaColumn" msprop:Generator_UserColumnName="DatumRodenja" type="xs:dateTime" />
+              <xs:element name="DržavaRodenja" msprop:Generator_ColumnVarNameInTable="columnDržavaRodenja" msprop:Generator_ColumnPropNameInRow="DržavaRodenja" msprop:Generator_ColumnPropNameInTable="DržavaRodenjaColumn" msprop:Generator_UserColumnName="DržavaRodenja">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Drzavljanstvo" msprop:Generator_ColumnVarNameInTable="columnDrzavljanstvo" msprop:Generator_ColumnPropNameInRow="Drzavljanstvo" msprop:Generator_ColumnPropNameInTable="DrzavljanstvoColumn" msprop:Generator_UserColumnName="Drzavljanstvo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VrstaIsprave" msprop:Generator_ColumnVarNameInTable="columnVrstaIsprave" msprop:Generator_ColumnPropNameInRow="VrstaIsprave" msprop:Generator_ColumnPropNameInTable="VrstaIspraveColumn" msprop:Generator_UserColumnName="VrstaIsprave">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BrojIsprave" msprop:Generator_ColumnVarNameInTable="columnBrojIsprave" msprop:Generator_ColumnPropNameInRow="BrojIsprave" msprop:Generator_ColumnPropNameInTable="BrojIspraveColumn" msprop:Generator_UserColumnName="BrojIsprave">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DatumPrijave" msprop:Generator_ColumnVarNameInTable="columnDatumPrijave" msprop:Generator_ColumnPropNameInRow="DatumPrijave" msprop:Generator_ColumnPropNameInTable="DatumPrijaveColumn" msprop:Generator_UserColumnName="DatumPrijave" type="xs:dateTime" />
+              <xs:element name="DatumOdjave" msprop:Generator_ColumnVarNameInTable="columnDatumOdjave" msprop:Generator_ColumnPropNameInRow="DatumOdjave" msprop:Generator_ColumnPropNameInTable="DatumOdjaveColumn" msprop:Generator_UserColumnName="DatumOdjave" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KnjigaStranihGostiju" msprop:Generator_TableClassName="KnjigaStranihGostijuDataTable" msprop:Generator_TableVarName="tableKnjigaStranihGostiju" msprop:Generator_TablePropName="KnjigaStranihGostiju" msprop:Generator_RowDeletingName="KnjigaStranihGostijuRowDeleting" msprop:Generator_RowChangingName="KnjigaStranihGostijuRowChanging" msprop:Generator_RowEvHandlerName="KnjigaStranihGostijuRowChangeEventHandler" msprop:Generator_RowDeletedName="KnjigaStranihGostijuRowDeleted" msprop:Generator_UserTableName="KnjigaStranihGostiju" msprop:Generator_RowChangedName="KnjigaStranihGostijuRowChanged" msprop:Generator_RowEvArgName="KnjigaStranihGostijuRowChangeEvent" msprop:Generator_RowClassName="KnjigaStranihGostijuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RedniBrojPrijave" msprop:Generator_ColumnVarNameInTable="columnRedniBrojPrijave" msprop:Generator_ColumnPropNameInRow="RedniBrojPrijave" msprop:Generator_ColumnPropNameInTable="RedniBrojPrijaveColumn" msprop:Generator_UserColumnName="RedniBrojPrijave" type="xs:int" />
+              <xs:element name="ime" msprop:Generator_ColumnVarNameInTable="columnime" msprop:Generator_ColumnPropNameInRow="ime" msprop:Generator_ColumnPropNameInTable="imeColumn" msprop:Generator_UserColumnName="ime">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prezime" msprop:Generator_ColumnVarNameInTable="columnprezime" msprop:Generator_ColumnPropNameInRow="prezime" msprop:Generator_ColumnPropNameInTable="prezimeColumn" msprop:Generator_UserColumnName="prezime">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DatumRodenja" msprop:Generator_ColumnVarNameInTable="columnDatumRodenja" msprop:Generator_ColumnPropNameInRow="DatumRodenja" msprop:Generator_ColumnPropNameInTable="DatumRodenjaColumn" msprop:Generator_UserColumnName="DatumRodenja" type="xs:dateTime" />
+              <xs:element name="DržavaRodenja" msprop:Generator_ColumnVarNameInTable="columnDržavaRodenja" msprop:Generator_ColumnPropNameInRow="DržavaRodenja" msprop:Generator_ColumnPropNameInTable="DržavaRodenjaColumn" msprop:Generator_UserColumnName="DržavaRodenja">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Drzavljanstvo" msprop:Generator_ColumnVarNameInTable="columnDrzavljanstvo" msprop:Generator_ColumnPropNameInRow="Drzavljanstvo" msprop:Generator_ColumnPropNameInTable="DrzavljanstvoColumn" msprop:Generator_UserColumnName="Drzavljanstvo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VrstaIsprave" msprop:Generator_ColumnVarNameInTable="columnVrstaIsprave" msprop:Generator_ColumnPropNameInRow="VrstaIsprave" msprop:Generator_ColumnPropNameInTable="VrstaIspraveColumn" msprop:Generator_UserColumnName="VrstaIsprave">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BrojIsprave" msprop:Generator_ColumnVarNameInTable="columnBrojIsprave" msprop:Generator_ColumnPropNameInRow="BrojIsprave" msprop:Generator_ColumnPropNameInTable="BrojIspraveColumn" msprop:Generator_UserColumnName="BrojIsprave">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DatumPrijave" msprop:Generator_ColumnVarNameInTable="columnDatumPrijave" msprop:Generator_ColumnPropNameInRow="DatumPrijave" msprop:Generator_ColumnPropNameInTable="DatumPrijaveColumn" msprop:Generator_UserColumnName="DatumPrijave" type="xs:dateTime" />
+              <xs:element name="DatumOdjave" msprop:Generator_ColumnVarNameInTable="columnDatumOdjave" msprop:Generator_ColumnPropNameInRow="DatumOdjave" msprop:Generator_ColumnPropNameInTable="DatumOdjaveColumn" msprop:Generator_UserColumnName="DatumOdjave" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KnjigaDomacihGostiju" />
+      <xs:field xpath="mstns:RedniBrojPrijave" />
+    </xs:unique>
+    <xs:unique name="KnjigaStranihGostiju_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KnjigaStranihGostiju" />
+      <xs:field xpath="mstns:RedniBrojPrijave" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -32,8 +32,8 @@
             this.otvoriRadSPrijavamaAkcija = new System.Windows.Forms.Button();
             this.naslovFormeLabela = new System.Windows.Forms.Label();
             this.otvoriPrijavuGostaAkcija = new System.Windows.Forms.Button();
-            this.odjavaAkcija = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.izlazAkcija = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // otvoriIzdavanjeRacunaAkcija
@@ -96,24 +96,25 @@
             this.otvoriPrijavuGostaAkcija.UseVisualStyleBackColor = false;
             this.otvoriPrijavuGostaAkcija.Click += new System.EventHandler(this.otvoriPrijavuGostaAkcija_Click);
             // 
-            // odjavaAkcija
-            // 
-            this.odjavaAkcija.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.odjavaAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.odjavaAkcija.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.odjavaAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.odjavaAkcija.Location = new System.Drawing.Point(1149, 23);
-            this.odjavaAkcija.Name = "odjavaAkcija";
-            this.odjavaAkcija.Size = new System.Drawing.Size(123, 63);
-            this.odjavaAkcija.TabIndex = 13;
-            this.odjavaAkcija.Text = "ODJAVA";
-            this.odjavaAkcija.UseVisualStyleBackColor = false;
-            // 
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(23, 42);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 14;
+            // 
+            // izlazAkcija
+            // 
+            this.izlazAkcija.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.izlazAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.izlazAkcija.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.izlazAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.izlazAkcija.Location = new System.Drawing.Point(1190, 24);
+            this.izlazAkcija.Name = "izlazAkcija";
+            this.izlazAkcija.Size = new System.Drawing.Size(94, 44);
+            this.izlazAkcija.TabIndex = 15;
+            this.izlazAkcija.Text = "IZLAZ";
+            this.izlazAkcija.UseVisualStyleBackColor = false;
+            this.izlazAkcija.Click += new System.EventHandler(this.izlazAkcija_Click);
             // 
             // MeniRecepcionerForma
             // 
@@ -121,13 +122,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1284, 681);
+            this.ClientSize = new System.Drawing.Size(1326, 681);
+            this.Controls.Add(this.izlazAkcija);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.odjavaAkcija);
             this.Controls.Add(this.otvoriIzdavanjeRacunaAkcija);
             this.Controls.Add(this.otvoriRadSPrijavamaAkcija);
             this.Controls.Add(this.naslovFormeLabela);
             this.Controls.Add(this.otvoriPrijavuGostaAkcija);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MeniRecepcionerForma";
@@ -144,7 +146,7 @@
         private System.Windows.Forms.Button otvoriRadSPrijavamaAkcija;
         private System.Windows.Forms.Label naslovFormeLabela;
         private System.Windows.Forms.Button otvoriPrijavuGostaAkcija;
-        private System.Windows.Forms.Button odjavaAkcija;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button izlazAkcija;
     }
 }

@@ -61,5 +61,9 @@ namespace Kampiraliste
             instancaStornoForma.Show();
         }
 
+        private void izlazAkcija_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

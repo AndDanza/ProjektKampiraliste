@@ -84,8 +84,14 @@ namespace Kampiraliste
 
         private void izradiKnjiguStranihAkcija_Click(object sender, EventArgs e)
         {
-            KnjigeGostiju pregledKnjigeGostiju = new KnjigeGostiju(kontekst);
-            pregledKnjigeGostiju.ShowDialog();
+            KnjigaGostijuForma pregledStranihGostiju = new KnjigaGostijuForma(true);
+            pregledStranihGostiju.ShowDialog();
+        }
+
+        private void izradiKnjiguDomacihAkcija_Click(object sender, EventArgs e)
+        {
+            KnjigaGostijuForma pregledStranihGostiju = new KnjigaGostijuForma(false);
+            pregledStranihGostiju.ShowDialog();
         }
 
         private void RadSPrijavamaForma_FormClosing(object sender, FormClosingEventArgs e)
