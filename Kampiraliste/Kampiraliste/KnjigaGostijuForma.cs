@@ -8,12 +8,19 @@ namespace Kampiraliste
     public partial class KnjigaGostijuForma : Form
     {
         private bool straniGost;
+        /// <summary>
+        /// Konstruktor forme KnjigaGostijuForma
+        /// </summary>
+        /// <param name="vrsta">Određuje radi li se o knjizi domaćih (false) ili stranih (true) gostiju</param>
         public KnjigaGostijuForma(bool vrsta)
         {
             InitializeComponent(vrsta);
             this.straniGost = vrsta;
         }
         
+        /// <summary>
+        /// Učitava podatke u table adapter kako bi ih prikazao u izvještaju
+        /// </summary>
         private void UcitajStraneGoste()
         {
             // TODO: This line of code loads data into the 'kampiralisteDataSet.KnjigaStranihGostiju' table. You can move, or remove it, as needed.
@@ -22,6 +29,9 @@ namespace Kampiraliste
             this.pregledKnjigeGostiju.RefreshReport();
         }
 
+        /// <summary>
+        /// Učitava podatke u table adapter kako bi ih prikazao u izvještaju
+        /// </summary>
         private void UcitajDomaceGoste()
         {
             // TODO: This line of code loads data into the 'kampiralisteDataSet.KnjigaDomacihGostiju' table. You can move, or remove it, as needed.

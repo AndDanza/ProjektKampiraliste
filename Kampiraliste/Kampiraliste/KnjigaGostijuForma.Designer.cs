@@ -26,6 +26,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// <param name="straniGost">Određuje iz kojeg data set-a i binding source-a dolaze podaci. True 
+        /// je za strane goste, false za domaće.</param>
         private void InitializeComponent(bool straniGost)
         {
             this.components = new System.ComponentModel.Container();
@@ -55,6 +57,7 @@
             //
             if (!straniGost)
             {
+                //ako je strani gost false postavi data set z domaće i postavi binging source
                 reportDataSource1.Name = "domaciGostiDataSet";
                 reportDataSource1.Value = this.KnjigaDomacihGostijuBindingSource;
                 this.pregledKnjigeGostiju.LocalReport.DataSources.Add(reportDataSource1);
