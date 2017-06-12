@@ -32,7 +32,7 @@
             this.otvoriRadSPrijavamaAkcija = new System.Windows.Forms.Button();
             this.naslovFormeLabela = new System.Windows.Forms.Label();
             this.otvoriPrijavuGostaAkcija = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.kalendarRecepcioner = new System.Windows.Forms.MonthCalendar();
             this.izlazAkcija = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -96,11 +96,11 @@
             this.otvoriPrijavuGostaAkcija.UseVisualStyleBackColor = false;
             this.otvoriPrijavuGostaAkcija.Click += new System.EventHandler(this.otvoriPrijavuGostaAkcija_Click);
             // 
-            // monthCalendar1
+            // kalendarRecepcioner
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(23, 42);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 14;
+            this.kalendarRecepcioner.Location = new System.Drawing.Point(23, 42);
+            this.kalendarRecepcioner.Name = "kalendarRecepcioner";
+            this.kalendarRecepcioner.TabIndex = 14;
             // 
             // izlazAkcija
             // 
@@ -124,7 +124,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1326, 681);
             this.Controls.Add(this.izlazAkcija);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.kalendarRecepcioner);
             this.Controls.Add(this.otvoriIzdavanjeRacunaAkcija);
             this.Controls.Add(this.otvoriRadSPrijavamaAkcija);
             this.Controls.Add(this.naslovFormeLabela);
@@ -146,7 +146,7 @@
         private System.Windows.Forms.Button otvoriRadSPrijavamaAkcija;
         private System.Windows.Forms.Label naslovFormeLabela;
         private System.Windows.Forms.Button otvoriPrijavuGostaAkcija;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar kalendarRecepcioner;
         private System.Windows.Forms.Button izlazAkcija;
     }
 }

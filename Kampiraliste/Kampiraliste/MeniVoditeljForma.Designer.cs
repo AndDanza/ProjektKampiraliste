@@ -37,7 +37,7 @@
             this.otvoriStatistikuAkcija = new System.Windows.Forms.Button();
             this.stornoRacunaAkcija = new System.Windows.Forms.Button();
             this.izlazAkcija = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.kalendarVoditelj = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
             // otvoriPopisCjenikaAkcija
@@ -180,11 +180,11 @@
             this.izlazAkcija.UseVisualStyleBackColor = false;
             this.izlazAkcija.Click += new System.EventHandler(this.izlazAkcija_Click);
             // 
-            // monthCalendar1
+            // kalendarVoditelj
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(23, 42);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 9;
+            this.kalendarVoditelj.Location = new System.Drawing.Point(23, 42);
+            this.kalendarVoditelj.Name = "kalendarVoditelj";
+            this.kalendarVoditelj.TabIndex = 9;
             // 
             // MeniVoditeljForma
             // 
@@ -193,7 +193,7 @@
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1296, 602);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.kalendarVoditelj);
             this.Controls.Add(this.izlazAkcija);
             this.Controls.Add(this.stornoRacunaAkcija);
             this.Controls.Add(this.otvoriStatistikuAkcija);
@@ -226,6 +226,6 @@
         private System.Windows.Forms.Button otvoriStatistikuAkcija;
         private System.Windows.Forms.Button stornoRacunaAkcija;
         private System.Windows.Forms.Button izlazAkcija;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar kalendarVoditelj;
     }
 }
