@@ -21,7 +21,7 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Učitavanje svih prijava prema datumu dolaska
+        /// Učitavanje svih prijava prema odabranom parametru
         /// </summary>
         /// <param name="sortBy">Određuje stupac prema kojem se sortiraju prijave te je li uzlazno ili silazno</param>
         private void UcitajPrijave(int sortBy)
@@ -82,18 +82,33 @@ namespace Kampiraliste
                 UcitajPrijave(4);
         }
 
+        /// <summary>
+        /// Otvara report s prikazom svih gostiju koji su još u kampiralištu, a nisu državljani RH
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void izradiKnjiguStranihAkcija_Click(object sender, EventArgs e)
         {
             KnjigaGostijuForma pregledStranihGostiju = new KnjigaGostijuForma(true);
             pregledStranihGostiju.ShowDialog();
         }
 
+        /// <summary>
+        /// Prikazuje report s državljanima RH koji su još uvijek u kampiralištu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void izradiKnjiguDomacihAkcija_Click(object sender, EventArgs e)
         {
             KnjigaGostijuForma pregledStranihGostiju = new KnjigaGostijuForma(false);
             pregledStranihGostiju.ShowDialog();
         }
 
+        /// <summary>
+        /// Dispose-anje konteksta prilikom zatvaranja forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RadSPrijavamaForma_FormClosing(object sender, FormClosingEventArgs e)
         {
             kontekst.Dispose();
