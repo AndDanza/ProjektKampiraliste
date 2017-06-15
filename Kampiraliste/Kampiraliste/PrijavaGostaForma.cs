@@ -23,7 +23,7 @@ namespace Kampiraliste
         private prijava azurirajPrijavu = null;
 
         /// <summary>
-        /// Konstruktor forme kod unosa novog gosta
+        /// Konstruktor forme kod unosa novog gosta. Inicijalizacija forme i kreiranje konteksta.
         /// </summary>
         public PrijavaGostaForma()
         { 
@@ -32,9 +32,11 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Konstruktor forme prilikom ažuriranja prijave
+        /// Konstruktor forme prilikom ažuriranja prijave. Inicijalizacija forme, zaprimanje objekata klase prijava
+        /// i entiteta za pristup bazi.
         /// </summary>
-        /// <param name="ulazPrijava"></param>
+        /// <param name="ulazPrijava">Objekt tipa klase prijava (entity klasa)</param>
+        /// <param name="ulazniKontekst">Kontekst baze podataka</param>
         public PrijavaGostaForma(prijava ulazPrijava, KampiralisteEntiteti ulazniKontekst)
         {
             InitializeComponent();
@@ -84,6 +86,7 @@ namespace Kampiraliste
             this.listaDokumenata = new BindingList<vrsta_dokumenta>(kontekst.vrsta_dokumenta.ToList());
             this.listaStatusaOsobe = new BindingList<status_osobe>(kontekst.status_osobe.ToList());
             this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
+
             if(this.azurirajPrijavu == null)
             {
                 var upit = kontekst.smjestajs.Where(s => s.prijavas.Count() < s.broj_osoba);
@@ -105,7 +108,7 @@ namespace Kampiraliste
         /// <summary>
         /// Pohrana novog gosta u bazu podataka.
         /// </summary>
-        /// <returns>Povratna vrijednos je objekt tipa gost.</returns>
+        /// <returns>Povratna vrijednos je objekt tipa klase "gost".</returns>
         private gost PohraniGosta()
         {
             vrsta_dokumenta dokument = unosVrstaDoc.SelectedItem as vrsta_dokumenta;
@@ -175,7 +178,6 @@ namespace Kampiraliste
                 status_osobe odabraniStatus = unosStatusOsobe.SelectedItem as status_osobe;
 
                 int godine = trenutniDatum.Year - uneseniDatum.Year;
-
                 if (trenutniDatum.Month < uneseniDatum.Month || (trenutniDatum.Month == uneseniDatum.Month && trenutniDatum.Day < uneseniDatum.Day))
                 {
                     godine--;
@@ -246,7 +248,7 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Prilikom uspješne prijave resetiraju se svi odabiri u combobox-evim i podaci u textbox-evim.
+        /// Prilikom uspješne prijave resetiraju se odabiri u combobox-evim i podaci u textbox-evim.
         /// </summary>
         private void ResetirajFormu()
         {
@@ -267,9 +269,10 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Ako gost postoji, ažuriraju se podaci. Ukoliko je pronađena prijava za ažuriranje ažuriraju se svi podaci o gostu.
+        /// Ako gost postoji, ažuriraju se podaci. Ukoliko je pronađena prijava za ažuriranje (korisnik želi 
+        /// ažurirati podatke) ažuriraju se svi podaci o gostu.
         /// </summary>
-        /// <param name="izmjeniGosta"></param>
+        /// <param name="izmjeniGosta">Objekt tipa klase gost (sadrži podatke o gostu koje je je potrebno izmjeniti)</param>
         private void AzurirajGosta(gost izmjeniGosta)
         {
             kontekst.gosts.Attach(izmjeniGosta);
@@ -277,6 +280,8 @@ namespace Kampiraliste
             vrsta_dokumenta noviDokument = unosVrstaDoc.SelectedItem as vrsta_dokumenta;
             drzava novaDrzavaStan = unosDrzavaStan.SelectedItem as drzava;
             
+            //ako je učitana prijava za ažuriranje potrebno je izmjeniti sve podatke o gostu
+            //u suprotnom ažurira se samo dio podataka o gostu
             if(this.azurirajPrijavu != null)
             {
                 drzava novaDrzavaRod = unosDrzavaRod.SelectedItem as drzava;
@@ -319,7 +324,9 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Metoda koja kontrolira unos nove prijave (unos/ažuriranje gosta i unos nove prijave) 
+        /// Metoda koja kontrolira unos nove prijave (unos/ažuriranje gosta i unos nove prijave).
+        /// Provjera postoji li gost već u bazi, ako postoji ažuriraju se podaci o gostu u suprotnom unosi se novi
+        /// zapis u bazu. Na kraju kreira se nova prijava za gosta.
         /// </summary>
         private void NovaPrijava()
         {
@@ -328,13 +335,13 @@ namespace Kampiraliste
             if (pohranjeniGost == null)
             {
                 pohranjeniGost = PohraniGosta();
-                PohraniPrijavu(pohranjeniGost);
             }
             else
             {
                 AzurirajGosta(pohranjeniGost);
-                PohraniPrijavu(pohranjeniGost);
             }
+
+            PohraniPrijavu(pohranjeniGost);
         }
 
         private void potvrdiPrijavu_Click(object sender, EventArgs e)
@@ -355,7 +362,6 @@ namespace Kampiraliste
                 MessageBox.Show("Gost je uspješno prijavljen", "Uspješna prijava", MessageBoxButtons.OK,MessageBoxIcon.Information);
 
                 UcitajMoguceOdabire();
-
                 ResetirajFormu();
                 
                 if(this.azurirajPrijavu != null)
@@ -371,7 +377,7 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Na temelju objekta tipa klase prijava učitava podatke u formu.
+        /// Iz objekta tipa klase "prijava" učitava podatke u formu.
         /// </summary>
         private void UcitajPrijavu()
         {
@@ -424,7 +430,8 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Metoda koja se aktivira gašenjem forme i briše kontekst entityframwork-a.
+        /// Metoda koja se aktivira gašenjem forme i dispose-a kontekst entityframwork-a ukoliko se radi o unosu 
+        /// nove prijave.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -435,7 +442,8 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Provjera znakova u datumu i provjera je li datum dolaska manji od datum odlaska.
+        /// Provjera znakova u datumu i provjera je li datum dolaska manji od datum odlaska. Rukovanje iznimkom 
+        /// ukoliko uvjeti nisu zadovoljeni.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
