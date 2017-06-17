@@ -43,6 +43,9 @@
             this.unosOdlazakUzlazno = new System.Windows.Forms.RadioButton();
             this.filtrirajPrijaveGroupBox = new System.Windows.Forms.GroupBox();
             this.knjigaGostijuGroupBox = new System.Windows.Forms.GroupBox();
+            this.desniKlikAktivnePrijave = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.urediToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.obrišiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prijavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -50,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.filtrirajPrijaveGroupBox.SuspendLayout();
             this.knjigaGostijuGroupBox.SuspendLayout();
+            this.desniKlikAktivnePrijave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prijavaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,13 +127,14 @@
             // 
             // aktivnePrijaveListBox
             // 
+            this.aktivnePrijaveListBox.ContextMenuStrip = this.desniKlikAktivnePrijave;
             this.aktivnePrijaveListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aktivnePrijaveListBox.FormattingEnabled = true;
             this.aktivnePrijaveListBox.ItemHeight = 20;
             this.aktivnePrijaveListBox.Location = new System.Drawing.Point(25, 219);
             this.aktivnePrijaveListBox.Name = "aktivnePrijaveListBox";
             this.aktivnePrijaveListBox.ScrollAlwaysVisible = true;
-            this.aktivnePrijaveListBox.Size = new System.Drawing.Size(549, 304);
+            this.aktivnePrijaveListBox.Size = new System.Drawing.Size(549, 324);
             this.aktivnePrijaveListBox.TabIndex = 23;
             this.aktivnePrijaveListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.aktivnePrijaveListBox_MouseDoubleClick);
             // 
@@ -234,6 +239,28 @@
             this.knjigaGostijuGroupBox.TabStop = false;
             this.knjigaGostijuGroupBox.Text = "Knjiga gostiju";
             // 
+            // desniKlikAktivnePrijave
+            // 
+            this.desniKlikAktivnePrijave.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.urediToolStripMenuItem,
+            this.obrišiToolStripMenuItem});
+            this.desniKlikAktivnePrijave.Name = "desniKlikAktivnePrijave";
+            this.desniKlikAktivnePrijave.Size = new System.Drawing.Size(153, 70);
+            // 
+            // urediToolStripMenuItem
+            // 
+            this.urediToolStripMenuItem.Name = "urediToolStripMenuItem";
+            this.urediToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.urediToolStripMenuItem.Text = "Uredi";
+            this.urediToolStripMenuItem.Click += new System.EventHandler(this.urediToolStripMenuItem_Click);
+            // 
+            // obrišiToolStripMenuItem
+            // 
+            this.obrišiToolStripMenuItem.Name = "obrišiToolStripMenuItem";
+            this.obrišiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.obrišiToolStripMenuItem.Text = "Obriši";
+            this.obrišiToolStripMenuItem.Click += new System.EventHandler(this.obrišiToolStripMenuItem_Click);
+            // 
             // prijavaBindingSource
             // 
             this.prijavaBindingSource.DataSource = typeof(Kampiraliste.prijava);
@@ -243,7 +270,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
-            this.ClientSize = new System.Drawing.Size(604, 535);
+            this.ClientSize = new System.Drawing.Size(604, 556);
             this.Controls.Add(this.knjigaGostijuGroupBox);
             this.Controls.Add(this.filtrirajPrijaveGroupBox);
             this.Controls.Add(this.aktivnePrijaveListBox);
@@ -260,6 +287,7 @@
             this.filtrirajPrijaveGroupBox.ResumeLayout(false);
             this.filtrirajPrijaveGroupBox.PerformLayout();
             this.knjigaGostijuGroupBox.ResumeLayout(false);
+            this.desniKlikAktivnePrijave.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.prijavaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -281,5 +309,8 @@
         private System.Windows.Forms.RadioButton unosOdlazakUzlazno;
         private System.Windows.Forms.GroupBox filtrirajPrijaveGroupBox;
         private System.Windows.Forms.GroupBox knjigaGostijuGroupBox;
+        private System.Windows.Forms.ContextMenuStrip desniKlikAktivnePrijave;
+        private System.Windows.Forms.ToolStripMenuItem urediToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem obrišiToolStripMenuItem;
     }
 }
