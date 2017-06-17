@@ -113,5 +113,80 @@ namespace Kampiraliste
         {
             kontekst.Dispose();
         }
+
+        /// <summary>
+        /// Događaj na desni klik na opciju uredi unutar meni-a. Meni se otvara desnim klikom na 
+        /// listu aktivnih prijava
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void urediToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (aktivnePrijaveListBox.SelectedItem != null)
+            {
+                prijava azurirajPrijavu = aktivnePrijaveListBox.SelectedItem as prijava;
+                PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu, kontekst);
+                instancaPrijavaGostaForma.ShowDialog();
+
+                UcitajPrijave(1);
+                unosDolazakUzlazno.Checked = true;
+            }
+            else
+            {
+                MessageBox.Show("Morate odabrati prijavu koju želite urediti!", "Brisanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        /// <summary>
+        /// Funkcija za brisanje prijave, a ukoliko gost vezan za prijavu ima jednu ili nula prijava briše se
+        /// i gost.
+        /// </summary>
+        /// <param name="prijavaZaBrisanje">Objekt tipa klase prijava koji će biti obrisan</param>
+        private void ObrisiPrijavu(prijava prijavaZaBrisanje)
+        {
+            gost gostZaBrisanje = prijavaZaBrisanje.gost1;
+            int brojPrijava = gostZaBrisanje.prijavas.Count();
+
+            kontekst.gosts.Attach(gostZaBrisanje);
+            kontekst.prijavas.Attach(prijavaZaBrisanje);
+            if (brojPrijava < 2)
+            {
+                kontekst.gosts.Remove(gostZaBrisanje);
+            }
+            kontekst.prijavas.Remove(prijavaZaBrisanje);
+            kontekst.SaveChanges();
+
+            MessageBox.Show("Gost uspješno obrisan", "Poruka o brisanju", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Događaj na desni klik na opciju obriši unutar meni-a. Meni se otvara desnim klikom na 
+        /// listu aktivnih prijava
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void obrišiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (aktivnePrijaveListBox.SelectedItem != null)
+            {
+                prijava obrisiPrijavu = aktivnePrijaveListBox.SelectedItem as prijava;
+                string poruka = "Sigurno želite obrisati prijavu za gosta ";
+                poruka += obrisiPrijavu.gost1.ime + " " + obrisiPrijavu.gost1.prezime + "? ";
+                DialogResult brisanjePotvrda = MessageBox.Show(poruka, "Brisanje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if(brisanjePotvrda == DialogResult.Yes)
+                {
+                    ObrisiPrijavu(obrisiPrijavu);
+                }
+
+                UcitajPrijave(1);
+                unosDolazakUzlazno.Checked = true;
+            }
+            else
+            {
+                MessageBox.Show("Morate odabrati prijavu koju želite obrisati!", "Brisanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
     }
 }
