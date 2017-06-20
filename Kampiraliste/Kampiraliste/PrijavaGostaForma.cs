@@ -504,5 +504,25 @@ namespace Kampiraliste
             string ulazniNiz = unosDatumOdlaska.Text;
             unosDatumOdlaska.Text = PretvorbaUnosaDatum(ulazniNiz);
         }
+
+        private void UputeUnosDatuma(Control mjestoPrikaza)
+        {
+            ToolTip pomocDatum = new ToolTip();
+            pomocDatum.AutomaticDelay = 2000;
+            string poruka = "Unos datuma na formi sadrži automatsko formatiranje datuma.\r\n";
+            poruka += "Formati unosa: d.m.yy, dd.mm.yy, dd.mm.yyyy, d.m.y \r\n";
+            poruka += "Brojevi moraju biti odvojeni zarezom (,) ili točkom (.)";
+            pomocDatum.SetToolTip(mjestoPrikaza, poruka);
+        }
+
+        private void helpDatumRodenja_MouseHover(object sender, EventArgs e)
+        {
+            UputeUnosDatuma(sender as Control);
+        }
+
+        private void helpDatumDolaska_MouseHover(object sender, EventArgs e)
+        {
+            UputeUnosDatuma(sender as Control);
+        }
     }
 }

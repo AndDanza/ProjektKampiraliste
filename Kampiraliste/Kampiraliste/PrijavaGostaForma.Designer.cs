@@ -36,7 +36,6 @@
             this.unosBrojDoc = new System.Windows.Forms.TextBox();
             this.unosDrzavaRod = new System.Windows.Forms.ComboBox();
             this.drzavaStanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.drzavaRodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unosStatusOsobe = new System.Windows.Forms.ComboBox();
             this.statusosobeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datumDolaskaLabela = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.unosOsobno = new System.Windows.Forms.RadioButton();
             this.orgDolaskaLabela = new System.Windows.Forms.Label();
             this.podaciPrijava = new System.Windows.Forms.GroupBox();
+            this.helpDatumDolaska = new System.Windows.Forms.PictureBox();
             this.unosDatumOdlaska = new System.Windows.Forms.TextBox();
             this.unosDatumDolaska = new System.Windows.Forms.TextBox();
             this.pokreniUnosSmjestaj = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@
             this.datumRodjenja = new System.Windows.Forms.Label();
             this.drzavaStanovanja = new System.Windows.Forms.Label();
             this.unosDrzavaStan = new System.Windows.Forms.ComboBox();
+            this.drzavaRodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drzavaRodjenja = new System.Windows.Forms.Label();
             this.brojDocLabela = new System.Windows.Forms.Label();
             this.unosVrstaDoc = new System.Windows.Forms.ComboBox();
@@ -65,14 +66,17 @@
             this.prezimeLabela = new System.Windows.Forms.Label();
             this.imeLabela = new System.Windows.Forms.Label();
             this.podaciGost = new System.Windows.Forms.GroupBox();
+            this.helpDatumRodenja = new System.Windows.Forms.PictureBox();
             this.unosDatumRodenja = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).BeginInit();
             this.podaciPrijava.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.helpDatumDolaska)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).BeginInit();
             this.podaciGost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.helpDatumRodenja)).BeginInit();
             this.SuspendLayout();
             // 
             // odabirSmjestajaLabela
@@ -137,10 +141,6 @@
             // drzavaStanBindingSource
             // 
             this.drzavaStanBindingSource.DataSource = typeof(Kampiraliste.drzava);
-            // 
-            // drzavaRodBindingSource
-            // 
-            this.drzavaRodBindingSource.DataSource = typeof(Kampiraliste.drzava);
             // 
             // unosStatusOsobe
             // 
@@ -218,6 +218,7 @@
             // podaciPrijava
             // 
             this.podaciPrijava.BackColor = System.Drawing.Color.Wheat;
+            this.podaciPrijava.Controls.Add(this.helpDatumDolaska);
             this.podaciPrijava.Controls.Add(this.unosDatumOdlaska);
             this.podaciPrijava.Controls.Add(this.unosDatumDolaska);
             this.podaciPrijava.Controls.Add(this.pokreniUnosSmjestaj);
@@ -236,21 +237,32 @@
             this.podaciPrijava.TabStop = false;
             this.podaciPrijava.Text = "Podaci o prijavi";
             // 
+            // helpDatumDolaska
+            // 
+            this.helpDatumDolaska.Image = global::Kampiraliste.Properties.Resources.help_icon1;
+            this.helpDatumDolaska.Location = new System.Drawing.Point(835, 65);
+            this.helpDatumDolaska.Name = "helpDatumDolaska";
+            this.helpDatumDolaska.Size = new System.Drawing.Size(26, 24);
+            this.helpDatumDolaska.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.helpDatumDolaska.TabIndex = 44;
+            this.helpDatumDolaska.TabStop = false;
+            this.helpDatumDolaska.MouseHover += new System.EventHandler(this.helpDatumDolaska_MouseHover);
+            // 
             // unosDatumOdlaska
             // 
             this.unosDatumOdlaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosDatumOdlaska.Location = new System.Drawing.Point(586, 90);
+            this.unosDatumOdlaska.Location = new System.Drawing.Point(593, 89);
             this.unosDatumOdlaska.Name = "unosDatumOdlaska";
-            this.unosDatumOdlaska.Size = new System.Drawing.Size(251, 24);
+            this.unosDatumOdlaska.Size = new System.Drawing.Size(227, 24);
             this.unosDatumOdlaska.TabIndex = 43;
             this.unosDatumOdlaska.Leave += new System.EventHandler(this.unosDatumOdlaska_Leave);
             // 
             // unosDatumDolaska
             // 
             this.unosDatumDolaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosDatumDolaska.Location = new System.Drawing.Point(586, 45);
+            this.unosDatumDolaska.Location = new System.Drawing.Point(593, 45);
             this.unosDatumDolaska.Name = "unosDatumDolaska";
-            this.unosDatumDolaska.Size = new System.Drawing.Size(251, 24);
+            this.unosDatumDolaska.Size = new System.Drawing.Size(227, 24);
             this.unosDatumDolaska.TabIndex = 42;
             this.unosDatumDolaska.Leave += new System.EventHandler(this.unosDatumDolaska_Leave);
             // 
@@ -331,6 +343,10 @@
             this.unosDrzavaStan.Size = new System.Drawing.Size(251, 26);
             this.unosDrzavaStan.TabIndex = 7;
             this.unosDrzavaStan.ValueMember = "id";
+            // 
+            // drzavaRodBindingSource
+            // 
+            this.drzavaRodBindingSource.DataSource = typeof(Kampiraliste.drzava);
             // 
             // drzavaRodjenja
             // 
@@ -446,6 +462,7 @@
             // podaciGost
             // 
             this.podaciGost.BackColor = System.Drawing.Color.Wheat;
+            this.podaciGost.Controls.Add(this.helpDatumRodenja);
             this.podaciGost.Controls.Add(this.unosDatumRodenja);
             this.podaciGost.Controls.Add(this.statusOsobe);
             this.podaciGost.Controls.Add(this.unosStatusOsobe);
@@ -473,12 +490,23 @@
             this.podaciGost.TabStop = false;
             this.podaciGost.Text = "Podaci o gostu";
             // 
+            // helpDatumRodenja
+            // 
+            this.helpDatumRodenja.Image = global::Kampiraliste.Properties.Resources.help_icon1;
+            this.helpDatumRodenja.Location = new System.Drawing.Point(404, 212);
+            this.helpDatumRodenja.Name = "helpDatumRodenja";
+            this.helpDatumRodenja.Size = new System.Drawing.Size(26, 24);
+            this.helpDatumRodenja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.helpDatumRodenja.TabIndex = 41;
+            this.helpDatumRodenja.TabStop = false;
+            this.helpDatumRodenja.MouseHover += new System.EventHandler(this.helpDatumRodenja_MouseHover);
+            // 
             // unosDatumRodenja
             // 
             this.unosDatumRodenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosDatumRodenja.Location = new System.Drawing.Point(179, 212);
             this.unosDatumRodenja.Name = "unosDatumRodenja";
-            this.unosDatumRodenja.Size = new System.Drawing.Size(251, 24);
+            this.unosDatumRodenja.Size = new System.Drawing.Size(225, 24);
             this.unosDatumRodenja.TabIndex = 10;
             this.unosDatumRodenja.Leave += new System.EventHandler(this.unosDatumRodenja_Leave);
             // 
@@ -500,13 +528,15 @@
             this.Load += new System.EventHandler(this.PrijavaGostaForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).EndInit();
             this.podaciPrijava.ResumeLayout(false);
             this.podaciPrijava.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.helpDatumDolaska)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).EndInit();
             this.podaciGost.ResumeLayout(false);
             this.podaciGost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.helpDatumRodenja)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -550,5 +580,7 @@
         private System.Windows.Forms.TextBox unosDatumDolaska;
         private System.Windows.Forms.TextBox unosDatumRodenja;
         private System.Windows.Forms.BindingSource drzavaStanBindingSource;
+        private System.Windows.Forms.PictureBox helpDatumDolaska;
+        private System.Windows.Forms.PictureBox helpDatumRodenja;
     }
 }
