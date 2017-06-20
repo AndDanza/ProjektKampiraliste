@@ -43,7 +43,7 @@
             this.unosAgencijski = new System.Windows.Forms.RadioButton();
             this.unosOsobno = new System.Windows.Forms.RadioButton();
             this.orgDolaskaLabela = new System.Windows.Forms.Label();
-            this.podaciPrijava = new System.Windows.Forms.GroupBox();
+            this.podaciPrijavaGroupBox = new System.Windows.Forms.GroupBox();
             this.helpDatumDolaska = new System.Windows.Forms.PictureBox();
             this.unosDatumOdlaska = new System.Windows.Forms.TextBox();
             this.unosDatumDolaska = new System.Windows.Forms.TextBox();
@@ -65,17 +65,17 @@
             this.unosIme = new System.Windows.Forms.TextBox();
             this.prezimeLabela = new System.Windows.Forms.Label();
             this.imeLabela = new System.Windows.Forms.Label();
-            this.podaciGost = new System.Windows.Forms.GroupBox();
+            this.podaciGostGroupBox = new System.Windows.Forms.GroupBox();
             this.helpDatumRodenja = new System.Windows.Forms.PictureBox();
             this.unosDatumRodenja = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).BeginInit();
-            this.podaciPrijava.SuspendLayout();
+            this.podaciPrijavaGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.helpDatumDolaska)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).BeginInit();
-            this.podaciGost.SuspendLayout();
+            this.podaciGostGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.helpDatumRodenja)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,27 +215,27 @@
             this.orgDolaskaLabela.TabIndex = 20;
             this.orgDolaskaLabela.Text = "Organizacija dolaska:";
             // 
-            // podaciPrijava
+            // podaciPrijavaGroupBox
             // 
-            this.podaciPrijava.BackColor = System.Drawing.Color.Wheat;
-            this.podaciPrijava.Controls.Add(this.helpDatumDolaska);
-            this.podaciPrijava.Controls.Add(this.unosDatumOdlaska);
-            this.podaciPrijava.Controls.Add(this.unosDatumDolaska);
-            this.podaciPrijava.Controls.Add(this.pokreniUnosSmjestaj);
-            this.podaciPrijava.Controls.Add(this.unosAgencijski);
-            this.podaciPrijava.Controls.Add(this.unosOsobno);
-            this.podaciPrijava.Controls.Add(this.datumOdlaskaLabela);
-            this.podaciPrijava.Controls.Add(this.orgDolaskaLabela);
-            this.podaciPrijava.Controls.Add(this.datumDolaskaLabela);
-            this.podaciPrijava.Controls.Add(this.odabirSmjestajaUnos);
-            this.podaciPrijava.Controls.Add(this.odabirSmjestajaLabela);
-            this.podaciPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.podaciPrijava.Location = new System.Drawing.Point(48, 303);
-            this.podaciPrijava.Name = "podaciPrijava";
-            this.podaciPrijava.Size = new System.Drawing.Size(873, 142);
-            this.podaciPrijava.TabIndex = 2;
-            this.podaciPrijava.TabStop = false;
-            this.podaciPrijava.Text = "Podaci o prijavi";
+            this.podaciPrijavaGroupBox.BackColor = System.Drawing.Color.Wheat;
+            this.podaciPrijavaGroupBox.Controls.Add(this.helpDatumDolaska);
+            this.podaciPrijavaGroupBox.Controls.Add(this.unosDatumOdlaska);
+            this.podaciPrijavaGroupBox.Controls.Add(this.unosDatumDolaska);
+            this.podaciPrijavaGroupBox.Controls.Add(this.pokreniUnosSmjestaj);
+            this.podaciPrijavaGroupBox.Controls.Add(this.unosAgencijski);
+            this.podaciPrijavaGroupBox.Controls.Add(this.unosOsobno);
+            this.podaciPrijavaGroupBox.Controls.Add(this.datumOdlaskaLabela);
+            this.podaciPrijavaGroupBox.Controls.Add(this.orgDolaskaLabela);
+            this.podaciPrijavaGroupBox.Controls.Add(this.datumDolaskaLabela);
+            this.podaciPrijavaGroupBox.Controls.Add(this.odabirSmjestajaUnos);
+            this.podaciPrijavaGroupBox.Controls.Add(this.odabirSmjestajaLabela);
+            this.podaciPrijavaGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.podaciPrijavaGroupBox.Location = new System.Drawing.Point(48, 303);
+            this.podaciPrijavaGroupBox.Name = "podaciPrijavaGroupBox";
+            this.podaciPrijavaGroupBox.Size = new System.Drawing.Size(873, 142);
+            this.podaciPrijavaGroupBox.TabIndex = 2;
+            this.podaciPrijavaGroupBox.TabStop = false;
+            this.podaciPrijavaGroupBox.Text = "Podaci o prijavi";
             // 
             // helpDatumDolaska
             // 
@@ -459,36 +459,36 @@
             this.imeLabela.TabIndex = 26;
             this.imeLabela.Text = "Ime:";
             // 
-            // podaciGost
+            // podaciGostGroupBox
             // 
-            this.podaciGost.BackColor = System.Drawing.Color.Wheat;
-            this.podaciGost.Controls.Add(this.helpDatumRodenja);
-            this.podaciGost.Controls.Add(this.unosDatumRodenja);
-            this.podaciGost.Controls.Add(this.statusOsobe);
-            this.podaciGost.Controls.Add(this.unosStatusOsobe);
-            this.podaciGost.Controls.Add(this.datumRodjenja);
-            this.podaciGost.Controls.Add(this.unosDrzavaRod);
-            this.podaciGost.Controls.Add(this.drzavaStanovanja);
-            this.podaciGost.Controls.Add(this.unosBrojDoc);
-            this.podaciGost.Controls.Add(this.unosDrzavaStan);
-            this.podaciGost.Controls.Add(this.unosPrezime);
-            this.podaciGost.Controls.Add(this.drzavaRodjenja);
-            this.podaciGost.Controls.Add(this.spolLabela);
-            this.podaciGost.Controls.Add(this.brojDocLabela);
-            this.podaciGost.Controls.Add(this.imeLabela);
-            this.podaciGost.Controls.Add(this.unosVrstaDoc);
-            this.podaciGost.Controls.Add(this.prezimeLabela);
-            this.podaciGost.Controls.Add(this.vrstaDocLabela);
-            this.podaciGost.Controls.Add(this.unosIme);
-            this.podaciGost.Controls.Add(this.unosSpolZenski);
-            this.podaciGost.Controls.Add(this.unosSpolMuski);
-            this.podaciGost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.podaciGost.Location = new System.Drawing.Point(48, 23);
-            this.podaciGost.Name = "podaciGost";
-            this.podaciGost.Size = new System.Drawing.Size(873, 257);
-            this.podaciGost.TabIndex = 1;
-            this.podaciGost.TabStop = false;
-            this.podaciGost.Text = "Podaci o gostu";
+            this.podaciGostGroupBox.BackColor = System.Drawing.Color.Wheat;
+            this.podaciGostGroupBox.Controls.Add(this.helpDatumRodenja);
+            this.podaciGostGroupBox.Controls.Add(this.unosDatumRodenja);
+            this.podaciGostGroupBox.Controls.Add(this.statusOsobe);
+            this.podaciGostGroupBox.Controls.Add(this.unosStatusOsobe);
+            this.podaciGostGroupBox.Controls.Add(this.datumRodjenja);
+            this.podaciGostGroupBox.Controls.Add(this.unosDrzavaRod);
+            this.podaciGostGroupBox.Controls.Add(this.drzavaStanovanja);
+            this.podaciGostGroupBox.Controls.Add(this.unosBrojDoc);
+            this.podaciGostGroupBox.Controls.Add(this.unosDrzavaStan);
+            this.podaciGostGroupBox.Controls.Add(this.unosPrezime);
+            this.podaciGostGroupBox.Controls.Add(this.drzavaRodjenja);
+            this.podaciGostGroupBox.Controls.Add(this.spolLabela);
+            this.podaciGostGroupBox.Controls.Add(this.brojDocLabela);
+            this.podaciGostGroupBox.Controls.Add(this.imeLabela);
+            this.podaciGostGroupBox.Controls.Add(this.unosVrstaDoc);
+            this.podaciGostGroupBox.Controls.Add(this.prezimeLabela);
+            this.podaciGostGroupBox.Controls.Add(this.vrstaDocLabela);
+            this.podaciGostGroupBox.Controls.Add(this.unosIme);
+            this.podaciGostGroupBox.Controls.Add(this.unosSpolZenski);
+            this.podaciGostGroupBox.Controls.Add(this.unosSpolMuski);
+            this.podaciGostGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.podaciGostGroupBox.Location = new System.Drawing.Point(48, 23);
+            this.podaciGostGroupBox.Name = "podaciGostGroupBox";
+            this.podaciGostGroupBox.Size = new System.Drawing.Size(873, 257);
+            this.podaciGostGroupBox.TabIndex = 1;
+            this.podaciGostGroupBox.TabStop = false;
+            this.podaciGostGroupBox.Text = "Podaci o gostu";
             // 
             // helpDatumRodenja
             // 
@@ -517,9 +517,9 @@
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(961, 526);
-            this.Controls.Add(this.podaciPrijava);
+            this.Controls.Add(this.podaciPrijavaGroupBox);
             this.Controls.Add(this.potvrdiPrijavu);
-            this.Controls.Add(this.podaciGost);
+            this.Controls.Add(this.podaciGostGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PrijavaGostaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -529,13 +529,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.smjestajBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaStanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosobeBindingSource)).EndInit();
-            this.podaciPrijava.ResumeLayout(false);
-            this.podaciPrijava.PerformLayout();
+            this.podaciPrijavaGroupBox.ResumeLayout(false);
+            this.podaciPrijavaGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.helpDatumDolaska)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzavaRodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstadokumentaBindingSource)).EndInit();
-            this.podaciGost.ResumeLayout(false);
-            this.podaciGost.PerformLayout();
+            this.podaciGostGroupBox.ResumeLayout(false);
+            this.podaciGostGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.helpDatumRodenja)).EndInit();
             this.ResumeLayout(false);
 
@@ -554,7 +554,7 @@
         private System.Windows.Forms.RadioButton unosAgencijski;
         private System.Windows.Forms.RadioButton unosOsobno;
         private System.Windows.Forms.Label orgDolaskaLabela;
-        private System.Windows.Forms.GroupBox podaciPrijava;
+        private System.Windows.Forms.GroupBox podaciPrijavaGroupBox;
         private System.Windows.Forms.Label statusOsobe;
         private System.Windows.Forms.Label datumRodjenja;
         private System.Windows.Forms.Label drzavaStanovanja;
@@ -569,7 +569,7 @@
         private System.Windows.Forms.TextBox unosIme;
         private System.Windows.Forms.Label prezimeLabela;
         private System.Windows.Forms.Label imeLabela;
-        private System.Windows.Forms.GroupBox podaciGost;
+        private System.Windows.Forms.GroupBox podaciGostGroupBox;
         private System.Windows.Forms.Button potvrdiPrijavu;
         private System.Windows.Forms.Button pokreniUnosSmjestaj;
         private System.Windows.Forms.BindingSource drzavaRodBindingSource;
