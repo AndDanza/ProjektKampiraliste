@@ -153,7 +153,7 @@
             this.unosStatusOsobe.Location = new System.Drawing.Point(593, 212);
             this.unosStatusOsobe.Name = "unosStatusOsobe";
             this.unosStatusOsobe.Size = new System.Drawing.Size(251, 26);
-            this.unosStatusOsobe.TabIndex = 10;
+            this.unosStatusOsobe.TabIndex = 11;
             this.unosStatusOsobe.ValueMember = "id";
             this.unosStatusOsobe.SelectedIndexChanged += new System.EventHandler(this.unosStatusOsobe_SelectedIndexChanged);
             // 
@@ -252,6 +252,7 @@
             this.unosDatumDolaska.Name = "unosDatumDolaska";
             this.unosDatumDolaska.Size = new System.Drawing.Size(251, 24);
             this.unosDatumDolaska.TabIndex = 42;
+            this.unosDatumDolaska.Leave += new System.EventHandler(this.unosDatumDolaska_Leave);
             // 
             // pokreniUnosSmjestaj
             // 
@@ -478,7 +479,8 @@
             this.unosDatumRodenja.Location = new System.Drawing.Point(179, 212);
             this.unosDatumRodenja.Name = "unosDatumRodenja";
             this.unosDatumRodenja.Size = new System.Drawing.Size(251, 24);
-            this.unosDatumRodenja.TabIndex = 41;
+            this.unosDatumRodenja.TabIndex = 10;
+            this.unosDatumRodenja.Leave += new System.EventHandler(this.unosDatumRodenja_Leave);
             // 
             // PrijavaGostaForma
             // 

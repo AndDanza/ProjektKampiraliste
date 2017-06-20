@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using PretvornikDatumDLL;
 using System.Windows.Forms;
 
 namespace Kampiraliste
@@ -23,7 +23,7 @@ namespace Kampiraliste
         private prijava azurirajPrijavu = null;
 
         /// <summary>
-        /// Konstruktor forme kod unosa novog gosta. Inicijalizacija forme i kreiranje konteksta.
+        /// Konstruktor forme kod unosa novog gosta.
         /// </summary>
         public PrijavaGostaForma()
         { 
@@ -32,10 +32,9 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Konstruktor forme prilikom ažuriranja prijave. Inicijalizacija forme, zaprimanje objekata klase prijava
-        /// i entiteta za pristup bazi.
+        /// Konstruktor forme prilikom ažuriranja prijave.
         /// </summary>
-        /// <param name="ulazPrijava">Objekt tipa klase prijava (entity klasa)</param>
+        /// <param name="ulazPrijava">Objekt klase prijava koji se ažurira</param>
         /// <param name="ulazniKontekst">Kontekst baze podataka</param>
         public PrijavaGostaForma(prijava ulazPrijava, KampiralisteEntiteti ulazniKontekst)
         {
@@ -44,6 +43,11 @@ namespace Kampiraliste
             this.azurirajPrijavu = ulazPrijava;
         }
 
+        /// <summary>
+        /// Početno popunjavanje forme.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrijavaGostaForma_Load(object sender, EventArgs e)
         {
             UcitajMoguceOdabire();
@@ -73,6 +77,7 @@ namespace Kampiraliste
             {
                 this.listaSmjestaja = new BindingList<smjestaj>(kontekst.smjestajs.ToList());
             }
+
             smjestajBindingSource.DataSource = this.listaSmjestaja;
         }
 
@@ -109,14 +114,14 @@ namespace Kampiraliste
         /// Pohrana novog gosta u bazu podataka.
         /// </summary>
         /// <returns>Povratna vrijednos je objekt tipa klase "gost".</returns>
-        private gost PohraniGosta()
+        private gost NoviGost()
         {
             vrsta_dokumenta dokument = unosVrstaDoc.SelectedItem as vrsta_dokumenta;
             drzava drzavaStan = unosDrzavaStan.SelectedItem as drzava;
             drzava drzavaRod = unosDrzavaRod.SelectedItem as drzava;
             string spol = unosSpolMuski.Checked ? spol = "M" : spol = "Ž";
 
-            gost noviGost = new gost
+            gost krairajGosta = new gost
             {
                 spol = spol,
                 ime = unosIme.Text,
@@ -128,18 +133,17 @@ namespace Kampiraliste
                 datum_rodenja = DateTime.Parse(unosDatumRodenja.Text)
             };
 
-            kontekst.gosts.Add(noviGost);
+            kontekst.gosts.Add(krairajGosta);
             kontekst.SaveChanges();
 
-            return noviGost;
+            return krairajGosta;
         }
 
         /// <summary>
         /// Na temelju unesenih podataka provjerava se postoji li gost u bazi podataka.
         /// </summary>
-        /// <returns>Povratna vrijednost je tipa klase gost te ukoliko gost postoji vraća se objekt u 
-        /// suprotnom null.</returns>
-        private gost ProvjeraGosta()
+        /// <returns>Objekt tipa klase gost ili null ukoliko nije pronađen</returns>
+        private gost PostojiGostUBazi()
         {
             gost gostPostoji = null;
 
@@ -165,9 +169,8 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Prilikom odabira statusa određene statuse gost ne može dobiti te mu se oni moraju zabraniti.
+        /// Odgovara ili odabrani status unesenom datumu rođenja
         /// </summary>
-        // npr. Gost s navršenih 13 godina ne može imati status osobe djeca do 12 godina.
         private void ProvjeraStatusa()
         {
             if(!String.IsNullOrEmpty(unosDatumRodenja.Text))
@@ -324,17 +327,16 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Metoda koja kontrolira unos nove prijave (unos/ažuriranje gosta i unos nove prijave).
-        /// Provjera postoji li gost već u bazi, ako postoji ažuriraju se podaci o gostu u suprotnom unosi se novi
-        /// zapis u bazu. Na kraju kreira se nova prijava za gosta.
+        /// Unos nove prijave (unos/ažuriranje gosta i unos nove prijave). Ako postoji gost ažurira zapise
+        /// u suprotnom kreira novi zapis.
         /// </summary>
         private void NovaPrijava()
         {
-            gost pohranjeniGost = ProvjeraGosta();
+            gost pohranjeniGost = PostojiGostUBazi();
 
             if (pohranjeniGost == null)
             {
-                pohranjeniGost = PohraniGosta();
+                pohranjeniGost = NoviGost();
             }
             else
             {
@@ -349,6 +351,7 @@ namespace Kampiraliste
             try
             {
                 ProvjeraStatusa();
+                UsporedbaDatumDolaskaOdlaska();
 
                 if (this.azurirajPrijavu == null)
                 {
@@ -430,8 +433,7 @@ namespace Kampiraliste
         }
 
         /// <summary>
-        /// Metoda koja se aktivira gašenjem forme i dispose-a kontekst entityframwork-a ukoliko se radi o unosu 
-        /// nove prijave.
+        /// Prilikom zatvaranja forme dispose-a kontekst za pristup bazi podataka.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -441,34 +443,66 @@ namespace Kampiraliste
                 kontekst.Dispose();
         }
 
-        /// <summary>
-        /// Provjera znakova u datumu i provjera je li datum dolaska manji od datum odlaska. Rukovanje iznimkom 
-        /// ukoliko uvjeti nisu zadovoljeni.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void unosDatumOdlaska_Leave(object sender, EventArgs e)
+        private void UsporedbaDatumDolaskaOdlaska()
         {
-            try
-            {
-                DateTime datumDolaska, datumOdlaska;
+            DateTime datumDolaska, datumOdlaska;
 
-                if (DateTime.TryParse(unosDatumDolaska.Text, out datumDolaska) && DateTime.TryParse(unosDatumOdlaska.Text, out datumOdlaska))
+            if (DateTime.TryParse(unosDatumDolaska.Text, out datumDolaska) && DateTime.TryParse(unosDatumOdlaska.Text, out datumOdlaska))
+            {
+                if (datumDolaska > datumOdlaska)
                 {
-                     if (datumDolaska > datumOdlaska)
-                    {
-                        throw new KampiralisteException("Datum dolaska ne može biti nakon datum odlaska!", this.Name);
-                    }
-                }
-                else
-                {
-                    throw new KampiralisteException("Datum u neispravnom formatu!", this.Name);
+                    throw new KampiralisteException("Datum dolaska ne može biti nakon datum odlaska!", this.Name);
                 }
             }
-            catch(KampiralisteException ex)
+            else
+            {
+                throw new KampiralisteException("Datum u neispravnom formatu!", this.Name);
+            }
+        }    
+
+
+        /// <summary>
+        /// Pokreće PretvornikDatumDLL i vraća ispravni format datuma
+        /// </summary>
+        /// <param name="ulazniNiz">Podaci dobalvjeni s ulaza</param>
+        /// <returns>Formatirani datum spreman za rad</returns>
+        private string PretvorbaUnosaDatum(string ulazniNiz)
+        {
+            string izlazniNiz = "";
+
+            try
+            {
+                izlazniNiz = PretvornikDatum.PretvoriDatum(ulazniNiz);
+                if (izlazniNiz == "greska")
+                {
+                    throw new KampiralisteException("Datum rođenja je u neispravnom formatu!", this.Name);
+                }
+            }
+            catch (KampiralisteException ex)
             {
                 MessageBox.Show(ex.PorukaIznimke, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            return izlazniNiz;
+        }
+
+        private void unosDatumRodenja_Leave(object sender, EventArgs e)
+        {
+            string ulazniNiz = unosDatumRodenja.Text;
+            unosDatumRodenja.Text = PretvorbaUnosaDatum(ulazniNiz);
+        }
+
+
+        private void unosDatumDolaska_Leave(object sender, EventArgs e)
+        {
+            string ulazniNiz = unosDatumDolaska.Text;
+            unosDatumDolaska.Text = PretvorbaUnosaDatum(ulazniNiz);
+        }
+
+        private void unosDatumOdlaska_Leave(object sender, EventArgs e)
+        {
+            string ulazniNiz = unosDatumOdlaska.Text;
+            unosDatumOdlaska.Text = PretvorbaUnosaDatum(ulazniNiz);
         }
     }
 }
