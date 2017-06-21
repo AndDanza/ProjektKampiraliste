@@ -34,5 +34,10 @@ namespace Kampiraliste
             IzdavanjeRacunaForma instancaRacunForma = new IzdavanjeRacunaForma();
             instancaRacunForma.Show();
         }
+
+        private void izlazAkcija_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -29,58 +29,59 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.filtrirajLabela = new System.Windows.Forms.Label();
-            this.unosOdlazak = new System.Windows.Forms.RadioButton();
-            this.unosDolazak = new System.Windows.Forms.RadioButton();
+            this.unosDolazakSilazno = new System.Windows.Forms.RadioButton();
+            this.unosDolazakUzlazno = new System.Windows.Forms.RadioButton();
             this.akcijaFiltriraj = new System.Windows.Forms.Button();
-            this.akcijaResetiraj = new System.Windows.Forms.Button();
             this.izradiKnjiguStranihAkcija = new System.Windows.Forms.Button();
             this.izradiKnjiguDomacihAkcija = new System.Windows.Forms.Button();
-            this.knjigeGostijuLabela = new System.Windows.Forms.Label();
+            this.aktivnePrijaveListBox = new System.Windows.Forms.ListBox();
+            this.desniKlikAktivnePrijave = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.urediToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.obrisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.unosOdlazakSilazno = new System.Windows.Forms.RadioButton();
+            this.unosOdlazakUzlazno = new System.Windows.Forms.RadioButton();
+            this.filtrirajPrijaveGroupBox = new System.Windows.Forms.GroupBox();
+            this.knjigaGostijuGroupBox = new System.Windows.Forms.GroupBox();
             this.prijavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.desniKlikAktivnePrijave.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.filtrirajPrijaveGroupBox.SuspendLayout();
+            this.knjigaGostijuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prijavaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // filtrirajLabela
+            // unosDolazakSilazno
             // 
-            this.filtrirajLabela.AutoSize = true;
-            this.filtrirajLabela.BackColor = System.Drawing.Color.Transparent;
-            this.filtrirajLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filtrirajLabela.Location = new System.Drawing.Point(45, 47);
-            this.filtrirajLabela.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.filtrirajLabela.Name = "filtrirajLabela";
-            this.filtrirajLabela.Size = new System.Drawing.Size(129, 24);
-            this.filtrirajLabela.TabIndex = 1;
-            this.filtrirajLabela.Text = "Filtriraj prijave:";
+            this.unosDolazakSilazno.AutoSize = true;
+            this.unosDolazakSilazno.BackColor = System.Drawing.Color.Transparent;
+            this.unosDolazakSilazno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosDolazakSilazno.Location = new System.Drawing.Point(192, 34);
+            this.unosDolazakSilazno.Name = "unosDolazakSilazno";
+            this.unosDolazakSilazno.Size = new System.Drawing.Size(81, 22);
+            this.unosDolazakSilazno.TabIndex = 17;
+            this.unosDolazakSilazno.Text = "Dolazak";
+            this.unosDolazakSilazno.UseVisualStyleBackColor = false;
             // 
-            // unosOdlazak
+            // unosDolazakUzlazno
             // 
-            this.unosOdlazak.AutoSize = true;
-            this.unosOdlazak.BackColor = System.Drawing.Color.Transparent;
-            this.unosOdlazak.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosOdlazak.Location = new System.Drawing.Point(317, 44);
-            this.unosOdlazak.Margin = new System.Windows.Forms.Padding(4);
-            this.unosOdlazak.Name = "unosOdlazak";
-            this.unosOdlazak.Size = new System.Drawing.Size(99, 28);
-            this.unosOdlazak.TabIndex = 17;
-            this.unosOdlazak.TabStop = true;
-            this.unosOdlazak.Text = "Odlazak";
-            this.unosOdlazak.UseVisualStyleBackColor = false;
-            // 
-            // unosDolazak
-            // 
-            this.unosDolazak.AutoSize = true;
-            this.unosDolazak.BackColor = System.Drawing.Color.Transparent;
-            this.unosDolazak.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosDolazak.Location = new System.Drawing.Point(188, 44);
-            this.unosDolazak.Margin = new System.Windows.Forms.Padding(4);
-            this.unosDolazak.Name = "unosDolazak";
-            this.unosDolazak.Size = new System.Drawing.Size(97, 28);
-            this.unosDolazak.TabIndex = 16;
-            this.unosDolazak.TabStop = true;
-            this.unosDolazak.Text = "Dolazak";
-            this.unosDolazak.UseVisualStyleBackColor = false;
+            this.unosDolazakUzlazno.AutoSize = true;
+            this.unosDolazakUzlazno.BackColor = System.Drawing.Color.Transparent;
+            this.unosDolazakUzlazno.Checked = true;
+            this.unosDolazakUzlazno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosDolazakUzlazno.Location = new System.Drawing.Point(56, 34);
+            this.unosDolazakUzlazno.Name = "unosDolazakUzlazno";
+            this.unosDolazakUzlazno.Size = new System.Drawing.Size(81, 22);
+            this.unosDolazakUzlazno.TabIndex = 16;
+            this.unosDolazakUzlazno.TabStop = true;
+            this.unosDolazakUzlazno.Text = "Dolazak";
+            this.unosDolazakUzlazno.UseVisualStyleBackColor = false;
             // 
             // akcijaFiltriraj
             // 
@@ -88,27 +89,13 @@
             this.akcijaFiltriraj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.akcijaFiltriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.akcijaFiltriraj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.akcijaFiltriraj.Location = new System.Drawing.Point(79, 96);
-            this.akcijaFiltriraj.Margin = new System.Windows.Forms.Padding(4);
+            this.akcijaFiltriraj.Location = new System.Drawing.Point(200, 125);
             this.akcijaFiltriraj.Name = "akcijaFiltriraj";
-            this.akcijaFiltriraj.Size = new System.Drawing.Size(128, 47);
+            this.akcijaFiltriraj.Size = new System.Drawing.Size(96, 30);
             this.akcijaFiltriraj.TabIndex = 18;
             this.akcijaFiltriraj.Text = "Filtriraj";
             this.akcijaFiltriraj.UseVisualStyleBackColor = false;
-            // 
-            // akcijaResetiraj
-            // 
-            this.akcijaResetiraj.BackColor = System.Drawing.Color.Peru;
-            this.akcijaResetiraj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.akcijaResetiraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.akcijaResetiraj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.akcijaResetiraj.Location = new System.Drawing.Point(249, 96);
-            this.akcijaResetiraj.Margin = new System.Windows.Forms.Padding(4);
-            this.akcijaResetiraj.Name = "akcijaResetiraj";
-            this.akcijaResetiraj.Size = new System.Drawing.Size(128, 47);
-            this.akcijaResetiraj.TabIndex = 19;
-            this.akcijaResetiraj.Text = "Resetiraj";
-            this.akcijaResetiraj.UseVisualStyleBackColor = false;
+            this.akcijaFiltriraj.Click += new System.EventHandler(this.akcijaFiltriraj_Click);
             // 
             // izradiKnjiguStranihAkcija
             // 
@@ -116,13 +103,13 @@
             this.izradiKnjiguStranihAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.izradiKnjiguStranihAkcija.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.izradiKnjiguStranihAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.izradiKnjiguStranihAkcija.Location = new System.Drawing.Point(732, 223);
-            this.izradiKnjiguStranihAkcija.Margin = new System.Windows.Forms.Padding(4);
+            this.izradiKnjiguStranihAkcija.Location = new System.Drawing.Point(21, 45);
             this.izradiKnjiguStranihAkcija.Name = "izradiKnjiguStranihAkcija";
-            this.izradiKnjiguStranihAkcija.Size = new System.Drawing.Size(177, 55);
+            this.izradiKnjiguStranihAkcija.Size = new System.Drawing.Size(119, 40);
             this.izradiKnjiguStranihAkcija.TabIndex = 20;
-            this.izradiKnjiguStranihAkcija.Text = "Domaći gosti";
+            this.izradiKnjiguStranihAkcija.Text = "Strani gosti";
             this.izradiKnjiguStranihAkcija.UseVisualStyleBackColor = false;
+            this.izradiKnjiguStranihAkcija.Click += new System.EventHandler(this.izradiKnjiguStranihAkcija_Click);
             // 
             // izradiKnjiguDomacihAkcija
             // 
@@ -130,77 +117,200 @@
             this.izradiKnjiguDomacihAkcija.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.izradiKnjiguDomacihAkcija.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.izradiKnjiguDomacihAkcija.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.izradiKnjiguDomacihAkcija.Location = new System.Drawing.Point(732, 300);
-            this.izradiKnjiguDomacihAkcija.Margin = new System.Windows.Forms.Padding(4);
+            this.izradiKnjiguDomacihAkcija.Location = new System.Drawing.Point(21, 112);
             this.izradiKnjiguDomacihAkcija.Name = "izradiKnjiguDomacihAkcija";
-            this.izradiKnjiguDomacihAkcija.Size = new System.Drawing.Size(177, 55);
+            this.izradiKnjiguDomacihAkcija.Size = new System.Drawing.Size(119, 43);
             this.izradiKnjiguDomacihAkcija.TabIndex = 21;
-            this.izradiKnjiguDomacihAkcija.Text = "Strani gosti";
+            this.izradiKnjiguDomacihAkcija.Text = "Domaći gosti";
             this.izradiKnjiguDomacihAkcija.UseVisualStyleBackColor = false;
+            this.izradiKnjiguDomacihAkcija.Click += new System.EventHandler(this.izradiKnjiguDomacihAkcija_Click);
             // 
-            // knjigeGostijuLabela
+            // aktivnePrijaveListBox
             // 
-            this.knjigeGostijuLabela.AutoSize = true;
-            this.knjigeGostijuLabela.BackColor = System.Drawing.Color.Transparent;
-            this.knjigeGostijuLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.knjigeGostijuLabela.Location = new System.Drawing.Point(728, 181);
-            this.knjigeGostijuLabela.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.knjigeGostijuLabela.Name = "knjigeGostijuLabela";
-            this.knjigeGostijuLabela.Size = new System.Drawing.Size(127, 24);
-            this.knjigeGostijuLabela.TabIndex = 22;
-            this.knjigeGostijuLabela.Text = "Knjige gostiju:";
+            this.aktivnePrijaveListBox.ContextMenuStrip = this.desniKlikAktivnePrijave;
+            this.aktivnePrijaveListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aktivnePrijaveListBox.FormattingEnabled = true;
+            this.aktivnePrijaveListBox.ItemHeight = 20;
+            this.aktivnePrijaveListBox.Location = new System.Drawing.Point(25, 219);
+            this.aktivnePrijaveListBox.Name = "aktivnePrijaveListBox";
+            this.aktivnePrijaveListBox.ScrollAlwaysVisible = true;
+            this.aktivnePrijaveListBox.Size = new System.Drawing.Size(549, 324);
+            this.aktivnePrijaveListBox.TabIndex = 23;
+            this.aktivnePrijaveListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.aktivnePrijaveListBox_MouseDoubleClick);
+            // 
+            // desniKlikAktivnePrijave
+            // 
+            this.desniKlikAktivnePrijave.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.urediToolStripMenuItem,
+            this.obrisiToolStripMenuItem});
+            this.desniKlikAktivnePrijave.Name = "desniKlikAktivnePrijave";
+            this.desniKlikAktivnePrijave.Size = new System.Drawing.Size(153, 70);
+            // 
+            // urediToolStripMenuItem
+            // 
+            this.urediToolStripMenuItem.Name = "urediToolStripMenuItem";
+            this.urediToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.urediToolStripMenuItem.Text = "Uredi";
+            this.urediToolStripMenuItem.Click += new System.EventHandler(this.urediToolStripMenuItem_Click);
+            // 
+            // obrisiToolStripMenuItem
+            // 
+            this.obrisiToolStripMenuItem.Name = "obrisiToolStripMenuItem";
+            this.obrisiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.obrisiToolStripMenuItem.Text = "Obriši";
+            this.obrisiToolStripMenuItem.Click += new System.EventHandler(this.obrišiToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Kampiraliste.Properties.Resources.arrow_up;
+            this.pictureBox1.Location = new System.Drawing.Point(133, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Kampiraliste.Properties.Resources.arrow_down;
+            this.pictureBox2.Location = new System.Drawing.Point(267, 34);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Kampiraliste.Properties.Resources.arrow_down;
+            this.pictureBox3.Location = new System.Drawing.Point(267, 81);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::Kampiraliste.Properties.Resources.arrow_up;
+            this.pictureBox4.Location = new System.Drawing.Point(133, 81);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
+            // unosOdlazakSilazno
+            // 
+            this.unosOdlazakSilazno.AutoSize = true;
+            this.unosOdlazakSilazno.BackColor = System.Drawing.Color.Transparent;
+            this.unosOdlazakSilazno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosOdlazakSilazno.Location = new System.Drawing.Point(192, 81);
+            this.unosOdlazakSilazno.Name = "unosOdlazakSilazno";
+            this.unosOdlazakSilazno.Size = new System.Drawing.Size(81, 22);
+            this.unosOdlazakSilazno.TabIndex = 27;
+            this.unosOdlazakSilazno.Text = "Odlazak";
+            this.unosOdlazakSilazno.UseVisualStyleBackColor = false;
+            // 
+            // unosOdlazakUzlazno
+            // 
+            this.unosOdlazakUzlazno.AutoSize = true;
+            this.unosOdlazakUzlazno.BackColor = System.Drawing.Color.Transparent;
+            this.unosOdlazakUzlazno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosOdlazakUzlazno.Location = new System.Drawing.Point(56, 81);
+            this.unosOdlazakUzlazno.Name = "unosOdlazakUzlazno";
+            this.unosOdlazakUzlazno.Size = new System.Drawing.Size(81, 22);
+            this.unosOdlazakUzlazno.TabIndex = 26;
+            this.unosOdlazakUzlazno.Text = "Odlazak";
+            this.unosOdlazakUzlazno.UseVisualStyleBackColor = false;
+            // 
+            // filtrirajPrijaveGroupBox
+            // 
+            this.filtrirajPrijaveGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.pictureBox3);
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.pictureBox4);
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.unosOdlazakSilazno);
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.unosOdlazakUzlazno);
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.pictureBox2);
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.akcijaFiltriraj);
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.pictureBox1);
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.unosDolazakSilazno);
+            this.filtrirajPrijaveGroupBox.Controls.Add(this.unosDolazakUzlazno);
+            this.filtrirajPrijaveGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filtrirajPrijaveGroupBox.Location = new System.Drawing.Point(35, 32);
+            this.filtrirajPrijaveGroupBox.Name = "filtrirajPrijaveGroupBox";
+            this.filtrirajPrijaveGroupBox.Size = new System.Drawing.Size(327, 171);
+            this.filtrirajPrijaveGroupBox.TabIndex = 30;
+            this.filtrirajPrijaveGroupBox.TabStop = false;
+            this.filtrirajPrijaveGroupBox.Text = "Filtriraj prijave";
+            // 
+            // knjigaGostijuGroupBox
+            // 
+            this.knjigaGostijuGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.knjigaGostijuGroupBox.Controls.Add(this.izradiKnjiguDomacihAkcija);
+            this.knjigaGostijuGroupBox.Controls.Add(this.izradiKnjiguStranihAkcija);
+            this.knjigaGostijuGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.knjigaGostijuGroupBox.Location = new System.Drawing.Point(409, 32);
+            this.knjigaGostijuGroupBox.Name = "knjigaGostijuGroupBox";
+            this.knjigaGostijuGroupBox.Size = new System.Drawing.Size(165, 171);
+            this.knjigaGostijuGroupBox.TabIndex = 31;
+            this.knjigaGostijuGroupBox.TabStop = false;
+            this.knjigaGostijuGroupBox.Text = "Knjiga gostiju";
             // 
             // prijavaBindingSource
             // 
             this.prijavaBindingSource.DataSource = typeof(Kampiraliste.prijava);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(17, 166);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(688, 372);
-            this.listBox1.TabIndex = 23;
-            // 
             // RadSPrijavamaForma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
-            this.ClientSize = new System.Drawing.Size(940, 667);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.knjigeGostijuLabela);
-            this.Controls.Add(this.izradiKnjiguDomacihAkcija);
-            this.Controls.Add(this.izradiKnjiguStranihAkcija);
-            this.Controls.Add(this.akcijaResetiraj);
-            this.Controls.Add(this.akcijaFiltriraj);
-            this.Controls.Add(this.unosOdlazak);
-            this.Controls.Add(this.unosDolazak);
-            this.Controls.Add(this.filtrirajLabela);
+            this.ClientSize = new System.Drawing.Size(604, 556);
+            this.Controls.Add(this.knjigaGostijuGroupBox);
+            this.Controls.Add(this.filtrirajPrijaveGroupBox);
+            this.Controls.Add(this.aktivnePrijaveListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RadSPrijavamaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RadSPrijavamaForma";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RadSPrijavamaForma_FormClosing);
             this.Load += new System.EventHandler(this.RadSPrijavamaForma_Load);
+            this.desniKlikAktivnePrijave.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.filtrirajPrijaveGroupBox.ResumeLayout(false);
+            this.filtrirajPrijaveGroupBox.PerformLayout();
+            this.knjigaGostijuGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.prijavaBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label filtrirajLabela;
-        private System.Windows.Forms.RadioButton unosOdlazak;
-        private System.Windows.Forms.RadioButton unosDolazak;
+        private System.Windows.Forms.RadioButton unosDolazakSilazno;
+        private System.Windows.Forms.RadioButton unosDolazakUzlazno;
         private System.Windows.Forms.Button akcijaFiltriraj;
-        private System.Windows.Forms.Button akcijaResetiraj;
         private System.Windows.Forms.Button izradiKnjiguStranihAkcija;
         private System.Windows.Forms.Button izradiKnjiguDomacihAkcija;
-        private System.Windows.Forms.Label knjigeGostijuLabela;
         private System.Windows.Forms.BindingSource prijavaBindingSource;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox aktivnePrijaveListBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.RadioButton unosOdlazakSilazno;
+        private System.Windows.Forms.RadioButton unosOdlazakUzlazno;
+        private System.Windows.Forms.GroupBox filtrirajPrijaveGroupBox;
+        private System.Windows.Forms.GroupBox knjigaGostijuGroupBox;
+        private System.Windows.Forms.ContextMenuStrip desniKlikAktivnePrijave;
+        private System.Windows.Forms.ToolStripMenuItem urediToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem obrisiToolStripMenuItem;
     }
 }

@@ -79,6 +79,16 @@
           <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="popust" Type="decimal" Precision="5" Scale="2" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="vrsta_dokumenta">
           <Key>
             <PropertyRef Name="id" />
@@ -90,7 +100,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="iznos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
         </EntityType>
@@ -257,6 +267,7 @@
           <EntitySet Name="racun" EntityType="Self.racun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="smjestaj" EntityType="Self.smjestaj" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="status_osobe" EntityType="Self.status_osobe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vrsta_dokumenta" EntityType="Self.vrsta_dokumenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vrsta_smjestaja" EntityType="Self.vrsta_smjestaja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="zaposlenik" EntityType="Self.zaposlenik" Schema="dbo" store:Type="Tables" />
@@ -372,6 +383,7 @@
             <End Role="prijava" EntitySet="prijavas" />
             <End Role="racun" EntitySet="racuns" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="DBModel.sysdiagram" />
         </EntityContainer>
         <EntityType Name="drzava">
           <Key>
@@ -641,6 +653,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -754,6 +776,17 @@
                 <ScalarProperty Name="popust" ColumnName="popust" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

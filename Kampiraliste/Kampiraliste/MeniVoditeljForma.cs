@@ -12,10 +12,8 @@ namespace Kampiraliste
 {
     public partial class MeniVoditeljForma : Form
     {
-        KampiralisteEntiteti ef;
         public MeniVoditeljForma()
         {
-            ef = new KampiralisteEntiteti();
             InitializeComponent();
         }
 
@@ -61,5 +59,9 @@ namespace Kampiraliste
             instancaStornoForma.Show();
         }
 
+        private void izlazAkcija_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
