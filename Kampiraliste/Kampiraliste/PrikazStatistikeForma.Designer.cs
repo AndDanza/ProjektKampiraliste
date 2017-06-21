@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.prikazGostijuPremaDatumuLabela = new System.Windows.Forms.Label();
             this.ispisStatDatumGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.prikazGostijuPremaDrzaviLabela = new System.Windows.Forms.Label();
@@ -58,16 +58,16 @@
             // 
             // ispisStatDatumGraf
             // 
-            chartArea3.Name = "ChartArea1";
-            this.ispisStatDatumGraf.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.ispisStatDatumGraf.ChartAreas.Add(chartArea1);
             this.ispisStatDatumGraf.Location = new System.Drawing.Point(38, 73);
             this.ispisStatDatumGraf.Name = "ispisStatDatumGraf";
-            series3.BorderColor = System.Drawing.Color.Firebrick;
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.IndianRed;
-            series3.IsXValueIndexed = true;
-            series3.Name = "prikazBrojGostiju";
-            this.ispisStatDatumGraf.Series.Add(series3);
+            series1.BorderColor = System.Drawing.Color.Firebrick;
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.IndianRed;
+            series1.IsXValueIndexed = true;
+            series1.Name = "prikazBrojGostiju";
+            this.ispisStatDatumGraf.Series.Add(series1);
             this.ispisStatDatumGraf.Size = new System.Drawing.Size(593, 256);
             this.ispisStatDatumGraf.TabIndex = 3;
             this.ispisStatDatumGraf.Text = "chart1";
@@ -85,17 +85,17 @@
             // 
             // ispisStatParceleGraf
             // 
-            chartArea4.Name = "ChartArea1";
-            this.ispisStatParceleGraf.ChartAreas.Add(chartArea4);
+            chartArea2.Name = "ChartArea1";
+            this.ispisStatParceleGraf.ChartAreas.Add(chartArea2);
             this.ispisStatParceleGraf.Location = new System.Drawing.Point(38, 399);
             this.ispisStatParceleGraf.Name = "ispisStatParceleGraf";
-            series4.BorderWidth = 3;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.IndianRed;
-            series4.IsXValueIndexed = true;
-            series4.Name = "prikazPoParceli";
-            this.ispisStatParceleGraf.Series.Add(series4);
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.IndianRed;
+            series2.IsXValueIndexed = true;
+            series2.Name = "prikazPoParceli";
+            this.ispisStatParceleGraf.Series.Add(series2);
             this.ispisStatParceleGraf.Size = new System.Drawing.Size(593, 256);
             this.ispisStatParceleGraf.TabIndex = 5;
             this.ispisStatParceleGraf.Text = "chart2";
@@ -111,6 +111,7 @@
             this.unosDatumFiltiranja.Name = "unosDatumFiltiranja";
             this.unosDatumFiltiranja.Size = new System.Drawing.Size(173, 24);
             this.unosDatumFiltiranja.TabIndex = 7;
+            this.unosDatumFiltiranja.Leave += new System.EventHandler(this.unosDatumFiltiranja_Leave);
             // 
             // akcijaPrikaziStatPoDatumu
             // 

@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using PretvornikDatumDLL;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -82,6 +82,13 @@ namespace Kampiraliste
                     this.ispisStatParceleGraf.Series["prikazPoParceli"].Points.AddXY("Parcela_"+i, brPomocni);
                 }
             }
+        }
+
+        private void unosDatumFiltiranja_Leave(object sender, EventArgs e)
+        {
+            string uneseniNiz = unosDatumFiltiranja.Text;
+            string izlazniNiz = PretvornikDatum.PretvoriDatum(uneseniNiz);
+            unosDatumFiltiranja.Text = izlazniNiz;
         }
     }
 }
