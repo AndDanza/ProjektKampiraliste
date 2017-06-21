@@ -35,6 +35,5 @@ namespace Kampiraliste
         public virtual DbSet<vrsta_smjestaja> vrsta_smjestaja { get; set; }
         public virtual DbSet<zaposlenik> zaposleniks { get; set; }
         public virtual DbSet<status_osobe> status_osobe { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
