@@ -12,10 +12,8 @@ namespace Kampiraliste
 {
     public partial class MeniVoditeljForma : Form
     {
-        KampiralisteEntiteti ef;
         public MeniVoditeljForma()
         {
-            ef = new KampiralisteEntiteti();
             InitializeComponent();
         }
 
