@@ -14,18 +14,24 @@ namespace Kampiraliste
     
     public partial class racun
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public racun()
+        {
+            this.prijavas = new HashSet<prijava>();
+        }
+    
         public int id { get; set; }
         public int zaposlenik_id { get; set; }
         public int smjestaj_id { get; set; }
+        public System.DateTime datum_vrijeme_izdavanja { get; set; }
         public string JIR { get; set; }
         public string ZIR { get; set; }
         public decimal preostalo_za_platit { get; set; }
         public decimal iznos { get; set; }
-        public System.DateTime datum_vrijeme_izdavanja { get; set; }
-        public int prijava_id { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<prijava> prijavas { get; set; }
         public virtual smjestaj smjestaj { get; set; }
         public virtual zaposlenik zaposlenik { get; set; }
-        public virtual prijava prijava { get; set; }
     }
 }

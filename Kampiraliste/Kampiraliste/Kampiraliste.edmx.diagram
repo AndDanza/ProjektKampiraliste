@@ -4,12 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="21dfdade690e4a71bf64fdc17ae44ca8" Name="Diagram1" ZoomLevel="112">
+      <Diagram DiagramId="21dfdade690e4a71bf64fdc17ae44ca8" Name="Diagram1" ZoomLevel="83">
         <EntityTypeShape EntityType="DBModel.drzava" Width="1.5" PointX="0.5" PointY="3.125" />
         <EntityTypeShape EntityType="DBModel.gost" Width="1.75" PointX="3.375" PointY="2.125" />
         <EntityTypeShape EntityType="DBModel.parcela" Width="1.5" PointX="14.125" PointY="13" />
-        <EntityTypeShape EntityType="DBModel.prijava" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.racun" Width="2" PointX="10.875" PointY="1.125" />
+        <EntityTypeShape EntityType="DBModel.prijava" Width="2" PointX="6" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.smjestaj" Width="1.5" PointX="10" PointY="11.125" />
         <EntityTypeShape EntityType="DBModel.vrsta_dokumenta" Width="1.5" PointX="0.875" PointY="0.625" />
         <EntityTypeShape EntityType="DBModel.vrsta_smjestaja" Width="1.5" PointX="14.375" PointY="10.125" />
@@ -20,20 +19,16 @@
         <AssociationConnector Association="DBModel.FK_smjestaj_parcela" />
         <AssociationConnector Association="DBModel.FK_prijava_smjestaj" />
         <AssociationConnector Association="DBModel.FK_prijava_zaposlenik" />
-        <AssociationConnector Association="DBModel.FK_racun_smjestaj" />
-        <AssociationConnector Association="DBModel.FK_racun_zaposlenik" />
         <AssociationConnector Association="DBModel.FK_smjestaj_vrsta_smjestaja" ManuallyRouted="false" >
         </AssociationConnector>
-        <AssociationConnector Association="DBModel.FK_prijava_gost1" ManuallyRouted="true" >
-          <ConnectorPoint PointX="5.125" PointY="4.4654430301966643" />
-          <ConnectorPoint PointX="6.072916666666667" PointY="4.4654430301966634" />
-          <ConnectorPoint PointX="6.239583333333333" PointY="4.4654430301966643" />
-          <ConnectorPoint PointX="6.75" PointY="4.4654430301966643" />
-          <ConnectorPoint PointX="6.75" PointY="6.125" />
+        <AssociationConnector Association="DBModel.FK_prijava_gost1" ManuallyRouted="false" >
         </AssociationConnector>
         <EntityTypeShape EntityType="DBModel.status_osobe" Width="1.5" PointX="2" PointY="8.25" />
         <AssociationConnector Association="DBModel.FK_prijava_status_osobe" />
-        <AssociationConnector Association="DBModel.FK_racun_prijava" />
+        <EntityTypeShape EntityType="DBModel.racun" Width="1.5" PointX="9.625" PointY="1.375" />
+        <AssociationConnector Association="DBModel.FK_prijava_racun" />
+        <AssociationConnector Association="DBModel.FK_racun_smjestaj" />
+        <AssociationConnector Association="DBModel.FK_racun_zaposlenik" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

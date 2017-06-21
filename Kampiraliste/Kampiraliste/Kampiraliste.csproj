@@ -181,9 +181,6 @@
     <Compile Include="StorniranjeRacunaForma.Designer.cs">
       <DependentUpon>StorniranjeRacunaForma.cs</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Kampiraliste.tt</DependentUpon>
-    </Compile>
     <Compile Include="UnosSmjestajForma.cs">
       <SubType>Form</SubType>
     </Compile>

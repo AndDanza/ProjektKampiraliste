@@ -30,8 +30,8 @@ namespace Kampiraliste
         public virtual parcela parcela { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<prijava> prijavas { get; set; }
+        public virtual vrsta_smjestaja vrsta_smjestaja { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<racun> racuns { get; set; }
-        public virtual vrsta_smjestaja vrsta_smjestaja { get; set; }
     }
 }
