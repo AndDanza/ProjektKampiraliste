@@ -28,26 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.unosDatumaZaPrikazStatistike = new System.Windows.Forms.DateTimePicker();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.prikazGostijuPremaDatumuLabela = new System.Windows.Forms.Label();
             this.ispisStatDatumGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.prikazGostijuPremaDrzaviLabela = new System.Windows.Forms.Label();
-            this.ispisStatDrzaveGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.odabirDrzaveZaPrikazStatistike = new System.Windows.Forms.ComboBox();
+            this.ispisStatParceleGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.drzavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unosDatumFiltiranja = new System.Windows.Forms.TextBox();
+            this.akcijaPrikaziStatPoDatumu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ispisStatDatumGraf)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ispisStatDrzaveGraf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ispisStatParceleGraf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // unosDatumaZaPrikazStatistike
-            // 
-            this.unosDatumaZaPrikazStatistike.Location = new System.Drawing.Point(353, 33);
-            this.unosDatumaZaPrikazStatistike.Name = "unosDatumaZaPrikazStatistike";
-            this.unosDatumaZaPrikazStatistike.Size = new System.Drawing.Size(191, 20);
-            this.unosDatumaZaPrikazStatistike.TabIndex = 0;
             // 
             // prikazGostijuPremaDatumuLabela
             // 
@@ -62,14 +58,16 @@
             // 
             // ispisStatDatumGraf
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ispisStatDatumGraf.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.ispisStatDatumGraf.ChartAreas.Add(chartArea3);
             this.ispisStatDatumGraf.Location = new System.Drawing.Point(38, 73);
             this.ispisStatDatumGraf.Name = "ispisStatDatumGraf";
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.IndianRed;
-            series1.Name = "Series1";
-            this.ispisStatDatumGraf.Series.Add(series1);
+            series3.BorderColor = System.Drawing.Color.Firebrick;
+            series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.IndianRed;
+            series3.IsXValueIndexed = true;
+            series3.Name = "prikazBrojGostiju";
+            this.ispisStatDatumGraf.Series.Add(series3);
             this.ispisStatDatumGraf.Size = new System.Drawing.Size(593, 256);
             this.ispisStatDatumGraf.TabIndex = 3;
             this.ispisStatDatumGraf.Text = "chart1";
@@ -79,33 +77,50 @@
             this.prikazGostijuPremaDrzaviLabela.AutoSize = true;
             this.prikazGostijuPremaDrzaviLabela.BackColor = System.Drawing.Color.Transparent;
             this.prikazGostijuPremaDrzaviLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.prikazGostijuPremaDrzaviLabela.Location = new System.Drawing.Point(84, 354);
+            this.prikazGostijuPremaDrzaviLabela.Location = new System.Drawing.Point(231, 361);
             this.prikazGostijuPremaDrzaviLabela.Name = "prikazGostijuPremaDrzaviLabela";
-            this.prikazGostijuPremaDrzaviLabela.Size = new System.Drawing.Size(250, 25);
+            this.prikazGostijuPremaDrzaviLabela.Size = new System.Drawing.Size(255, 25);
             this.prikazGostijuPremaDrzaviLabela.TabIndex = 4;
-            this.prikazGostijuPremaDrzaviLabela.Text = "Prikaz gostiju prema državi:";
+            this.prikazGostijuPremaDrzaviLabela.Text = "Prikaz gostiju prema parceli:";
             // 
-            // ispisStatDrzaveGraf
+            // ispisStatParceleGraf
             // 
-            chartArea2.Name = "ChartArea1";
-            this.ispisStatDrzaveGraf.ChartAreas.Add(chartArea2);
-            this.ispisStatDrzaveGraf.Location = new System.Drawing.Point(38, 399);
-            this.ispisStatDrzaveGraf.Name = "ispisStatDrzaveGraf";
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.IndianRed;
-            series2.Name = "Series1";
-            this.ispisStatDrzaveGraf.Series.Add(series2);
-            this.ispisStatDrzaveGraf.Size = new System.Drawing.Size(593, 256);
-            this.ispisStatDrzaveGraf.TabIndex = 5;
-            this.ispisStatDrzaveGraf.Text = "chart2";
+            chartArea4.Name = "ChartArea1";
+            this.ispisStatParceleGraf.ChartAreas.Add(chartArea4);
+            this.ispisStatParceleGraf.Location = new System.Drawing.Point(38, 399);
+            this.ispisStatParceleGraf.Name = "ispisStatParceleGraf";
+            series4.BorderWidth = 3;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Color = System.Drawing.Color.IndianRed;
+            series4.IsXValueIndexed = true;
+            series4.Name = "prikazPoParceli";
+            this.ispisStatParceleGraf.Series.Add(series4);
+            this.ispisStatParceleGraf.Size = new System.Drawing.Size(593, 256);
+            this.ispisStatParceleGraf.TabIndex = 5;
+            this.ispisStatParceleGraf.Text = "chart2";
             // 
-            // odabirDrzaveZaPrikazStatistike
+            // drzavaBindingSource
             // 
-            this.odabirDrzaveZaPrikazStatistike.FormattingEnabled = true;
-            this.odabirDrzaveZaPrikazStatistike.Location = new System.Drawing.Point(353, 358);
-            this.odabirDrzaveZaPrikazStatistike.Name = "odabirDrzaveZaPrikazStatistike";
-            this.odabirDrzaveZaPrikazStatistike.Size = new System.Drawing.Size(191, 21);
-            this.odabirDrzaveZaPrikazStatistike.TabIndex = 6;
+            this.drzavaBindingSource.DataSource = typeof(Kampiraliste.drzava);
+            // 
+            // unosDatumFiltiranja
+            // 
+            this.unosDatumFiltiranja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.unosDatumFiltiranja.Location = new System.Drawing.Point(353, 30);
+            this.unosDatumFiltiranja.Name = "unosDatumFiltiranja";
+            this.unosDatumFiltiranja.Size = new System.Drawing.Size(173, 24);
+            this.unosDatumFiltiranja.TabIndex = 7;
+            // 
+            // akcijaPrikaziStatPoDatumu
+            // 
+            this.akcijaPrikaziStatPoDatumu.Location = new System.Drawing.Point(544, 25);
+            this.akcijaPrikaziStatPoDatumu.Name = "akcijaPrikaziStatPoDatumu";
+            this.akcijaPrikaziStatPoDatumu.Size = new System.Drawing.Size(87, 36);
+            this.akcijaPrikaziStatPoDatumu.TabIndex = 8;
+            this.akcijaPrikaziStatPoDatumu.Text = "Prikaži";
+            this.akcijaPrikaziStatPoDatumu.UseVisualStyleBackColor = true;
+            this.akcijaPrikaziStatPoDatumu.Click += new System.EventHandler(this.akcijaPrikaziStatPoDatumu_Click);
             // 
             // PrikazStatistikeForma
             // 
@@ -115,30 +130,32 @@
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(681, 676);
-            this.Controls.Add(this.odabirDrzaveZaPrikazStatistike);
-            this.Controls.Add(this.ispisStatDrzaveGraf);
+            this.Controls.Add(this.akcijaPrikaziStatPoDatumu);
+            this.Controls.Add(this.unosDatumFiltiranja);
+            this.Controls.Add(this.ispisStatParceleGraf);
             this.Controls.Add(this.prikazGostijuPremaDrzaviLabela);
             this.Controls.Add(this.ispisStatDatumGraf);
             this.Controls.Add(this.prikazGostijuPremaDatumuLabela);
-            this.Controls.Add(this.unosDatumaZaPrikazStatistike);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "PrikazStatistikeForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrikazStatistike";
+            this.Load += new System.EventHandler(this.PrikazStatistikeForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ispisStatDatumGraf)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ispisStatDrzaveGraf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ispisStatParceleGraf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drzavaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker unosDatumaZaPrikazStatistike;
         private System.Windows.Forms.Label prikazGostijuPremaDatumuLabela;
         private System.Windows.Forms.DataVisualization.Charting.Chart ispisStatDatumGraf;
         private System.Windows.Forms.Label prikazGostijuPremaDrzaviLabela;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ispisStatDrzaveGraf;
-        private System.Windows.Forms.ComboBox odabirDrzaveZaPrikazStatistike;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ispisStatParceleGraf;
+        private System.Windows.Forms.TextBox unosDatumFiltiranja;
+        private System.Windows.Forms.Button akcijaPrikaziStatPoDatumu;
+        private System.Windows.Forms.BindingSource drzavaBindingSource;
     }
 }
