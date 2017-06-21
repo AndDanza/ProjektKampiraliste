@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="21dfdade690e4a71bf64fdc17ae44ca8" Name="Diagram1" ZoomLevel="58">
+      <Diagram DiagramId="21dfdade690e4a71bf64fdc17ae44ca8" Name="Diagram1" ZoomLevel="112">
         <EntityTypeShape EntityType="DBModel.drzava" Width="1.5" PointX="0.5" PointY="3.125" />
         <EntityTypeShape EntityType="DBModel.gost" Width="1.75" PointX="3.375" PointY="2.125" />
         <EntityTypeShape EntityType="DBModel.parcela" Width="1.5" PointX="14.125" PointY="13" />
@@ -34,7 +34,6 @@
         <EntityTypeShape EntityType="DBModel.status_osobe" Width="1.5" PointX="2" PointY="8.25" />
         <AssociationConnector Association="DBModel.FK_prijava_status_osobe" />
         <AssociationConnector Association="DBModel.FK_racun_prijava" />
-        <EntityTypeShape EntityType="DBModel.sysdiagram" Width="1.5" PointX="6.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
