@@ -239,6 +239,7 @@
             // 
             // helpDatumDolaska
             // 
+            this.helpDatumDolaska.Cursor = System.Windows.Forms.Cursors.Help;
             this.helpDatumDolaska.Image = global::Kampiraliste.Properties.Resources.help_icon1;
             this.helpDatumDolaska.Location = new System.Drawing.Point(835, 65);
             this.helpDatumDolaska.Name = "helpDatumDolaska";
@@ -492,6 +493,7 @@
             // 
             // helpDatumRodenja
             // 
+            this.helpDatumRodenja.Cursor = System.Windows.Forms.Cursors.Help;
             this.helpDatumRodenja.Image = global::Kampiraliste.Properties.Resources.help_icon1;
             this.helpDatumRodenja.Location = new System.Drawing.Point(404, 212);
             this.helpDatumRodenja.Name = "helpDatumRodenja";
