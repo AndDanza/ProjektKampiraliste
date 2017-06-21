@@ -12,57 +12,42 @@ namespace Kampiraliste
 {
     public partial class DodajZaposlenikaForma : Form
     {
-        List<int> vrsteZaposlenika = new List<int>();
-      
+
+        List<int> vrsteZaposlenika = new List<int> { 1, 2 };
+        
         public DodajZaposlenikaForma()
         {
             InitializeComponent();
-            vrsteZaposlenika.Add(1);
-            vrsteZaposlenika.Add(2);
-
-            comboBoxVrstaZaposlenika.DataSource = vrsteZaposlenika;
+            unosVrstaZaposlenika.DataSource = vrsteZaposlenika;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dodajZaposlenika_Click(object sender, EventArgs e)
         {
-            using (var ef = new KampiralisteEntiteti())
+            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite dodati novog zaposlenika?", "Dodavanje zaposlenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (rezultatUpita == DialogResult.Yes)
             {
-                zaposlenik zap = new zaposlenik {
-                    ime = textBoxIme.Text,
-                    prezime = textBoxPrezime.Text,
-                    korisnicko_ime = textBoxKorIme.Text,
-                    vrsta_zaposlenika = (int)comboBoxVrstaZaposlenika.SelectedValue,
-                    lozinka = textBoxLozinka.Text              
-                };
-
-                ef.zaposleniks.Add(zap); //Dodajemo tim u odgovarajuću kolekciju u kontekstu.
-                ef.SaveChanges();
-
-
-                List<zaposlenik> popis = new List<zaposlenik>();
-                zaposlenik pop = (from z in ef.zaposleniks
-                             where z.vrsta_zaposlenika == 1
-                             select z).First<zaposlenik>();
-                //popis.Add(pop);
-
-                var pop1 = ef.zaposleniks.Where(z => z.vrsta_zaposlenika == 1);
-                foreach (var zapo in pop1)
+                using (var ef = new KampiralisteEntiteti())
                 {
-                    popis.Add(zapo);
+                    zaposlenik zap = new zaposlenik
+                    {
+                        ime = unosIme.Text,
+                        prezime = unosPrezime.Text,
+                        korisnicko_ime = unosKorIme.Text,
+                        vrsta_zaposlenika = (int)unosVrstaZaposlenika.SelectedValue,
+                        lozinka = unosLozinka.Text
+                    };
+
+                    ef.zaposleniks.Add(zap);
+                    ef.SaveChanges();
+                    this.Hide();
+                    ZaposleniciForma formaZaposlenika = new ZaposleniciForma();
+                    formaZaposlenika.ShowDialog();
+
                 }
-                zaposlenikBindingSource.DataSource = popis;
             }
+           
         }
 
-        private void zaposlenikBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            zaposlenik za = zaposlenikBindingSource.Current as zaposlenik;
-            textBox1.Text = za.ime;
-        }
     }
 }

@@ -16,16 +16,15 @@ namespace Kampiraliste
         public ZaposleniciForma()
         {
             InitializeComponent();
-            //popis = new List<zaposlenik>();
+            UcitajZaposlenike();
+            DodajZaposlenikaForma dodajZatvori = new DodajZaposlenikaForma();
+            dodajZatvori.Close();
+            DodajZaposlenikaForma azurirajZatvori = new DodajZaposlenikaForma();
+            azurirajZatvori.Close();
+        }
 
-            /*BindingList<zaposlenik> listaZaposlenika;
-            using (var ef = new KampiralisteEntiteti())
-            {
-                listaZaposlenika = new BindingList<zaposlenik>(ef.zaposleniks.ToList());
-            }
-            zaposlenikDataBinding.DataSource = listaZaposlenika;
-            */
-
+        public void UcitajZaposlenike()
+        {
             using (var ef = new KampiralisteEntiteti())
             {
                 popis = new List<zaposlenik>(ef.zaposleniks.ToList());
@@ -34,32 +33,36 @@ namespace Kampiraliste
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void obrisiZaposlenika_Click(object sender, EventArgs e)
         {
+            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite obrisati zaposlenika?", "Brisanje zaposlenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (rezultatUpita == DialogResult.Yes)
+            {
+                using (var ef = new KampiralisteEntiteti())
+                {
+                    zaposlenik za = zaposlenikBindingSource.Current as zaposlenik;
+                    ef.zaposleniks.Attach(za);
+                    ef.zaposleniks.Remove(za);
+                    ef.SaveChanges();
+                    UcitajZaposlenike();
+                }
+            }
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void azurirajZaposlenika_Click(object sender, EventArgs e)
         {
             zaposlenik za = zaposlenikBindingSource.Current as zaposlenik;
-            textBoxTest.Text = za.ime;
-   
             AzurirajZaposlenikaForma azuriraj = new AzurirajZaposlenikaForma(zaposlenikBindingSource.Current as zaposlenik);
             azuriraj.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void dodajNovogZaposlenika_Click(object sender, EventArgs e)
         {
-            using (var ef = new KampiralisteEntiteti())
-            {
-                zaposlenik za = zaposlenikBindingSource.Current as zaposlenik;
-                ef.zaposleniks.Attach(za);
-                ef.zaposleniks.Remove(za);
-              
-                ef.SaveChanges();
-            }
-           
-
+            DodajZaposlenikaForma dodajNovog = new DodajZaposlenikaForma();
+            dodajNovog.ShowDialog();
         }
     }
 }

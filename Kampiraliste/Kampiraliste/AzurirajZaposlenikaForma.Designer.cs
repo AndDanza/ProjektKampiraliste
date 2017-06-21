@@ -29,109 +29,160 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBoxIme = new System.Windows.Forms.TextBox();
-            this.textBoxPrezime = new System.Windows.Forms.TextBox();
-            this.textBoxKorIme = new System.Windows.Forms.TextBox();
-            this.textBoxVrsta = new System.Windows.Forms.TextBox();
-            this.textBoxLozinka = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.unosIme = new System.Windows.Forms.TextBox();
+            this.unosPrezime = new System.Windows.Forms.TextBox();
+            this.unosKorIme = new System.Windows.Forms.TextBox();
+            this.unosVrsta = new System.Windows.Forms.TextBox();
+            this.unosLozinka = new System.Windows.Forms.TextBox();
+            this.spremiNovePodatke = new System.Windows.Forms.Button();
+            this.imeLabela = new System.Windows.Forms.Label();
+            this.prezimeLabela = new System.Windows.Forms.Label();
+            this.korisnickoImeLabela = new System.Windows.Forms.Label();
+            this.tipLabela = new System.Windows.Forms.Label();
+            this.lozinkaLabela = new System.Windows.Forms.Label();
             this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // unosIme
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 22);
-            this.textBox1.TabIndex = 0;
+            this.unosIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosIme.Location = new System.Drawing.Point(221, 57);
+            this.unosIme.Multiline = true;
+            this.unosIme.Name = "unosIme";
+            this.unosIme.Size = new System.Drawing.Size(232, 29);
+            this.unosIme.TabIndex = 1;
             // 
-            // textBoxIme
+            // unosPrezime
             // 
-            this.textBoxIme.Location = new System.Drawing.Point(97, 134);
-            this.textBoxIme.Name = "textBoxIme";
-            this.textBoxIme.Size = new System.Drawing.Size(349, 22);
-            this.textBoxIme.TabIndex = 1;
+            this.unosPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosPrezime.Location = new System.Drawing.Point(221, 111);
+            this.unosPrezime.Multiline = true;
+            this.unosPrezime.Name = "unosPrezime";
+            this.unosPrezime.Size = new System.Drawing.Size(232, 29);
+            this.unosPrezime.TabIndex = 2;
             // 
-            // textBoxPrezime
+            // unosKorIme
             // 
-            this.textBoxPrezime.Location = new System.Drawing.Point(101, 180);
-            this.textBoxPrezime.Name = "textBoxPrezime";
-            this.textBoxPrezime.Size = new System.Drawing.Size(290, 22);
-            this.textBoxPrezime.TabIndex = 2;
+            this.unosKorIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosKorIme.Location = new System.Drawing.Point(221, 164);
+            this.unosKorIme.Multiline = true;
+            this.unosKorIme.Name = "unosKorIme";
+            this.unosKorIme.Size = new System.Drawing.Size(232, 29);
+            this.unosKorIme.TabIndex = 3;
             // 
-            // textBoxKorIme
+            // unosVrsta
             // 
-            this.textBoxKorIme.Location = new System.Drawing.Point(101, 228);
-            this.textBoxKorIme.Name = "textBoxKorIme";
-            this.textBoxKorIme.Size = new System.Drawing.Size(300, 22);
-            this.textBoxKorIme.TabIndex = 3;
+            this.unosVrsta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosVrsta.Location = new System.Drawing.Point(221, 217);
+            this.unosVrsta.Multiline = true;
+            this.unosVrsta.Name = "unosVrsta";
+            this.unosVrsta.Size = new System.Drawing.Size(127, 29);
+            this.unosVrsta.TabIndex = 4;
             // 
-            // textBoxVrsta
+            // unosLozinka
             // 
-            this.textBoxVrsta.Location = new System.Drawing.Point(100, 279);
-            this.textBoxVrsta.Name = "textBoxVrsta";
-            this.textBoxVrsta.Size = new System.Drawing.Size(300, 22);
-            this.textBoxVrsta.TabIndex = 4;
+            this.unosLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unosLozinka.Location = new System.Drawing.Point(221, 271);
+            this.unosLozinka.Multiline = true;
+            this.unosLozinka.Name = "unosLozinka";
+            this.unosLozinka.Size = new System.Drawing.Size(232, 29);
+            this.unosLozinka.TabIndex = 5;
             // 
-            // textBoxLozinka
+            // spremiNovePodatke
             // 
-            this.textBoxLozinka.Location = new System.Drawing.Point(103, 321);
-            this.textBoxLozinka.Name = "textBoxLozinka";
-            this.textBoxLozinka.Size = new System.Drawing.Size(296, 22);
-            this.textBoxLozinka.TabIndex = 5;
+            this.spremiNovePodatke.BackColor = System.Drawing.Color.Peru;
+            this.spremiNovePodatke.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.spremiNovePodatke.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spremiNovePodatke.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.spremiNovePodatke.Location = new System.Drawing.Point(42, 334);
+            this.spremiNovePodatke.Name = "spremiNovePodatke";
+            this.spremiNovePodatke.Size = new System.Drawing.Size(411, 51);
+            this.spremiNovePodatke.TabIndex = 6;
+            this.spremiNovePodatke.Text = "Spremi";
+            this.spremiNovePodatke.UseVisualStyleBackColor = false;
+            this.spremiNovePodatke.Click += new System.EventHandler(this.spremiNovePodatke_Click);
             // 
-            // button1
+            // imeLabela
             // 
-            this.button1.Location = new System.Drawing.Point(104, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(311, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "spremi";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.imeLabela.AutoSize = true;
+            this.imeLabela.BackColor = System.Drawing.Color.Transparent;
+            this.imeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imeLabela.Location = new System.Drawing.Point(37, 57);
+            this.imeLabela.Name = "imeLabela";
+            this.imeLabela.Size = new System.Drawing.Size(59, 29);
+            this.imeLabela.TabIndex = 7;
+            this.imeLabela.Text = "Ime:";
             // 
-            // comboBox1
+            // prezimeLabela
             // 
-            this.comboBox1.DataSource = this.zaposlenikBindingSource;
-            this.comboBox1.DisplayMember = "ime";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 438);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(330, 24);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.ValueMember = "id";
-            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.prezimeLabela.AutoSize = true;
+            this.prezimeLabela.BackColor = System.Drawing.Color.Transparent;
+            this.prezimeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezimeLabela.Location = new System.Drawing.Point(37, 111);
+            this.prezimeLabela.Name = "prezimeLabela";
+            this.prezimeLabela.Size = new System.Drawing.Size(108, 29);
+            this.prezimeLabela.TabIndex = 8;
+            this.prezimeLabela.Text = "Prezime:";
+            // 
+            // korisnickoImeLabela
+            // 
+            this.korisnickoImeLabela.AutoSize = true;
+            this.korisnickoImeLabela.BackColor = System.Drawing.Color.Transparent;
+            this.korisnickoImeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.korisnickoImeLabela.Location = new System.Drawing.Point(37, 164);
+            this.korisnickoImeLabela.Name = "korisnickoImeLabela";
+            this.korisnickoImeLabela.Size = new System.Drawing.Size(178, 29);
+            this.korisnickoImeLabela.TabIndex = 9;
+            this.korisnickoImeLabela.Text = "Korisnicko ime:";
+            // 
+            // tipLabela
+            // 
+            this.tipLabela.AutoSize = true;
+            this.tipLabela.BackColor = System.Drawing.Color.Transparent;
+            this.tipLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipLabela.Location = new System.Drawing.Point(41, 217);
+            this.tipLabela.Name = "tipLabela";
+            this.tipLabela.Size = new System.Drawing.Size(55, 29);
+            this.tipLabela.TabIndex = 10;
+            this.tipLabela.Text = "Tip:";
+            // 
+            // lozinkaLabela
+            // 
+            this.lozinkaLabela.AutoSize = true;
+            this.lozinkaLabela.BackColor = System.Drawing.Color.Transparent;
+            this.lozinkaLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lozinkaLabela.Location = new System.Drawing.Point(41, 271);
+            this.lozinkaLabela.Name = "lozinkaLabela";
+            this.lozinkaLabela.Size = new System.Drawing.Size(101, 29);
+            this.lozinkaLabela.TabIndex = 11;
+            this.lozinkaLabela.Text = "Lozinka:";
             // 
             // zaposlenikBindingSource
             // 
             this.zaposlenikBindingSource.DataSource = typeof(Kampiraliste.zaposlenik);
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(172, 477);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(257, 22);
-            this.textBox2.TabIndex = 8;
-            // 
             // AzurirajZaposlenikaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 510);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBoxLozinka);
-            this.Controls.Add(this.textBoxVrsta);
-            this.Controls.Add(this.textBoxKorIme);
-            this.Controls.Add(this.textBoxPrezime);
-            this.Controls.Add(this.textBoxIme);
-            this.Controls.Add(this.textBox1);
+            this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(503, 420);
+            this.Controls.Add(this.lozinkaLabela);
+            this.Controls.Add(this.tipLabela);
+            this.Controls.Add(this.korisnickoImeLabela);
+            this.Controls.Add(this.prezimeLabela);
+            this.Controls.Add(this.imeLabela);
+            this.Controls.Add(this.spremiNovePodatke);
+            this.Controls.Add(this.unosLozinka);
+            this.Controls.Add(this.unosVrsta);
+            this.Controls.Add(this.unosKorIme);
+            this.Controls.Add(this.unosPrezime);
+            this.Controls.Add(this.unosIme);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AzurirajZaposlenikaForma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AzurirajZaposlenikaForma";
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -140,16 +191,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBoxIme;
-        private System.Windows.Forms.TextBox textBoxPrezime;
-        private System.Windows.Forms.TextBox textBoxKorIme;
-        private System.Windows.Forms.TextBox textBoxVrsta;
-        private System.Windows.Forms.TextBox textBoxLozinka;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox unosIme;
+        private System.Windows.Forms.TextBox unosPrezime;
+        private System.Windows.Forms.TextBox unosKorIme;
+        private System.Windows.Forms.TextBox unosVrsta;
+        private System.Windows.Forms.TextBox unosLozinka;
+        private System.Windows.Forms.Button spremiNovePodatke;
         private System.Windows.Forms.BindingSource zaposlenikBindingSource;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label imeLabela;
+        private System.Windows.Forms.Label prezimeLabela;
+        private System.Windows.Forms.Label korisnickoImeLabela;
+        private System.Windows.Forms.Label tipLabela;
+        private System.Windows.Forms.Label lozinkaLabela;
     }
 }
