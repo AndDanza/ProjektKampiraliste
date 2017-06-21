@@ -25,6 +25,7 @@ namespace Kampiraliste
         public int broj_osoba { get; set; }
         public int vrsta_smjestaja_id { get; set; }
         public int parcela_id { get; set; }
+        public string oznaka { get; set; }
     
         public virtual parcela parcela { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
