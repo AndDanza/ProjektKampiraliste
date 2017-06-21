@@ -41,6 +41,7 @@
             this.obrisiZaposlenika = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +50,6 @@
             this.lozinkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prijavasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.racunsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -113,6 +113,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -132,29 +133,34 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.Location = new System.Drawing.Point(106, 167);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 167);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(614, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(749, 308);
             this.dataGridView1.TabIndex = 7;
+            // 
+            // zaposlenikBindingSource
+            // 
+            this.zaposlenikBindingSource.DataSource = typeof(Kampiraliste.zaposlenik);
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idDataGridViewTextBoxColumn.FillWeight = 85.27919F;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 50;
             // 
             // imeDataGridViewTextBoxColumn
             // 
             this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.imeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.imeDataGridViewTextBoxColumn.FillWeight = 102.9442F;
             this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
             this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
             this.imeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -164,6 +170,7 @@
             this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             this.prezimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.prezimeDataGridViewTextBoxColumn.FillWeight = 102.9442F;
             this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
             this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
             this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -173,26 +180,27 @@
             this.korisnickoimeDataGridViewTextBoxColumn.DataPropertyName = "korisnicko_ime";
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.korisnickoimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.korisnickoimeDataGridViewTextBoxColumn.FillWeight = 102.9442F;
             this.korisnickoimeDataGridViewTextBoxColumn.HeaderText = "Korisnicko ime";
             this.korisnickoimeDataGridViewTextBoxColumn.Name = "korisnickoimeDataGridViewTextBoxColumn";
             this.korisnickoimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.korisnickoimeDataGridViewTextBoxColumn.Width = 150;
             // 
             // vrstazaposlenikaDataGridViewTextBoxColumn
             // 
             this.vrstazaposlenikaDataGridViewTextBoxColumn.DataPropertyName = "vrsta_zaposlenika";
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             this.vrstazaposlenikaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.vrstazaposlenikaDataGridViewTextBoxColumn.FillWeight = 102.9442F;
             this.vrstazaposlenikaDataGridViewTextBoxColumn.HeaderText = "Tip";
             this.vrstazaposlenikaDataGridViewTextBoxColumn.Name = "vrstazaposlenikaDataGridViewTextBoxColumn";
             this.vrstazaposlenikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vrstazaposlenikaDataGridViewTextBoxColumn.Width = 50;
             // 
             // lozinkaDataGridViewTextBoxColumn
             // 
             this.lozinkaDataGridViewTextBoxColumn.DataPropertyName = "lozinka";
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             this.lozinkaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.lozinkaDataGridViewTextBoxColumn.FillWeight = 102.9442F;
             this.lozinkaDataGridViewTextBoxColumn.HeaderText = "Lozinka";
             this.lozinkaDataGridViewTextBoxColumn.Name = "lozinkaDataGridViewTextBoxColumn";
             this.lozinkaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -212,10 +220,6 @@
             this.racunsDataGridViewTextBoxColumn.Name = "racunsDataGridViewTextBoxColumn";
             this.racunsDataGridViewTextBoxColumn.ReadOnly = true;
             this.racunsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // zaposlenikBindingSource
-            // 
-            this.zaposlenikBindingSource.DataSource = typeof(Kampiraliste.zaposlenik);
             // 
             // ZaposleniciForma
             // 

@@ -37,7 +37,7 @@ namespace Kampiraliste
 
         private void spremiNovePodatke_Click(object sender, EventArgs e)
         {
-            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite dodati novog zaposlenika?", "Dodavanje zaposlenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite ažurirati zaposlenika?", "Ažuriranje zaposlenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (rezultatUpita == DialogResult.Yes)
             {
@@ -51,9 +51,7 @@ namespace Kampiraliste
                     zaposlenikZaIzmjenu.vrsta_zaposlenika = int.Parse(unosVrsta.Text);
                     zaposlenikZaIzmjenu.lozinka = unosLozinka.Text;
                     ef.SaveChanges();
-                    this.Hide();
-                    ZaposleniciForma formaZaposlenika = new ZaposleniciForma();
-                    formaZaposlenika.ShowDialog();
+                    this.Close();
                 }
             }
                 

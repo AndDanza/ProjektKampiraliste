@@ -40,9 +40,8 @@ namespace Kampiraliste
 
                     ef.zaposleniks.Add(zap);
                     ef.SaveChanges();
-                    this.Hide();
-                    ZaposleniciForma formaZaposlenika = new ZaposleniciForma();
-                    formaZaposlenika.ShowDialog();
+                    this.Close();
+
 
                 }
             }

@@ -38,7 +38,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="gost_id" Type="int" Nullable="false" />
           <Property Name="smjestaj_id" Type="int" Nullable="false" />
           <Property Name="datum_prijave" Type="date" Nullable="false" />
@@ -69,6 +69,7 @@
           <Property Name="broj_osoba" Type="int" Nullable="false" />
           <Property Name="vrsta_smjestaja_id" Type="int" Nullable="false" />
           <Property Name="parcela_id" Type="int" Nullable="false" />
+          <Property Name="oznaka" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="status_osobe">
           <Key>
@@ -76,17 +77,7 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="iznos" Type="decimal" Precision="5" Scale="2" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
+          <Property Name="popust" Type="decimal" Precision="5" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="vrsta_dokumenta">
           <Key>
@@ -99,7 +90,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="iznos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
         </EntityType>
@@ -266,7 +257,6 @@
           <EntitySet Name="racun" EntityType="Self.racun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="smjestaj" EntityType="Self.smjestaj" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="status_osobe" EntityType="Self.status_osobe" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vrsta_dokumenta" EntityType="Self.vrsta_dokumenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vrsta_smjestaja" EntityType="Self.vrsta_smjestaja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="zaposlenik" EntityType="Self.zaposlenik" Schema="dbo" store:Type="Tables" />
@@ -382,7 +372,6 @@
             <End Role="prijava" EntitySet="prijavas" />
             <End Role="racun" EntitySet="racuns" />
           </AssociationSet>
-          <EntitySet Name="sysdiagrams" EntityType="DBModel.sysdiagram" />
         </EntityContainer>
         <EntityType Name="drzava">
           <Key>
@@ -467,6 +456,7 @@
           <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_smjestaj" FromRole="smjestaj" ToRole="prijava" />
           <NavigationProperty Name="racuns" Relationship="DBModel.FK_racun_smjestaj" FromRole="smjestaj" ToRole="racun" />
           <NavigationProperty Name="vrsta_smjestaja" Relationship="DBModel.FK_smjestaj_vrsta_smjestaja" FromRole="smjestaj" ToRole="vrsta_smjestaja" />
+          <Property Name="oznaka" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vrsta_dokumenta">
           <Key>
@@ -624,8 +614,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="iznos" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
           <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_status_osobe" FromRole="status_osobe" ToRole="prijava" />
+          <Property Name="popust" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
         </EntityType>
         <Association Name="FK_prijava_status_osobe">
           <End Type="DBModel.status_osobe" Role="status_osobe" Multiplicity="1" />
@@ -651,16 +641,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -731,6 +711,7 @@
           <EntitySetMapping Name="smjestajs">
             <EntityTypeMapping TypeName="DBModel.smjestaj">
               <MappingFragment StoreEntitySet="smjestaj">
+                <ScalarProperty Name="oznaka" ColumnName="oznaka" />
                 <ScalarProperty Name="parcela_id" ColumnName="parcela_id" />
                 <ScalarProperty Name="vrsta_smjestaja_id" ColumnName="vrsta_smjestaja_id" />
                 <ScalarProperty Name="broj_osoba" ColumnName="broj_osoba" />
@@ -770,20 +751,9 @@
           <EntitySetMapping Name="status_osobe">
             <EntityTypeMapping TypeName="DBModel.status_osobe">
               <MappingFragment StoreEntitySet="status_osobe">
-                <ScalarProperty Name="iznos" ColumnName="iznos" />
+                <ScalarProperty Name="popust" ColumnName="popust" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DBModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

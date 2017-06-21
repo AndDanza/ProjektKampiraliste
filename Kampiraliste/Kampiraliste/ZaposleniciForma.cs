@@ -17,10 +17,6 @@ namespace Kampiraliste
         {
             InitializeComponent();
             UcitajZaposlenike();
-            DodajZaposlenikaForma dodajZatvori = new DodajZaposlenikaForma();
-            dodajZatvori.Close();
-            DodajZaposlenikaForma azurirajZatvori = new DodajZaposlenikaForma();
-            azurirajZatvori.Close();
         }
 
         public void UcitajZaposlenike()
@@ -57,12 +53,14 @@ namespace Kampiraliste
             zaposlenik za = zaposlenikBindingSource.Current as zaposlenik;
             AzurirajZaposlenikaForma azuriraj = new AzurirajZaposlenikaForma(zaposlenikBindingSource.Current as zaposlenik);
             azuriraj.ShowDialog();
+            UcitajZaposlenike();
         }
 
         private void dodajNovogZaposlenika_Click(object sender, EventArgs e)
         {
             DodajZaposlenikaForma dodajNovog = new DodajZaposlenikaForma();
             dodajNovog.ShowDialog();
+            UcitajZaposlenike();
         }
     }
 }
