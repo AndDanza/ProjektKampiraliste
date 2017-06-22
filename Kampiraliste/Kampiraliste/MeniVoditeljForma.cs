@@ -14,10 +14,12 @@ namespace Kampiraliste
     public partial class MeniVoditeljForma : Form
     {
         KampiralisteEntiteti ef;
-        public MeniVoditeljForma()
+        zaposlenik prijavljeniZaposlenik = null;
+        public MeniVoditeljForma(zaposlenik prijavljeni)
         {
             ef = new KampiralisteEntiteti();
             InitializeComponent();
+            this.prijavljeniZaposlenik = prijavljeni;
         }
 
         private void otvorPopisZaposlenikaAkcija_Click(object sender, EventArgs e)
@@ -34,19 +36,19 @@ namespace Kampiraliste
 
         private void otvoriPrijavuGostaAction_Click(object sender, EventArgs e)
         {
-            PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma();
+            PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(this.prijavljeniZaposlenik);
             instancaPrijavaGostaForma.ShowDialog();
         }
 
         private void otvoriRadSPrijavamaAkcija_Click(object sender, EventArgs e)
         {
-            RadSPrijavamaForma instancaRadSPrijavamaForma = new RadSPrijavamaForma();
+            RadSPrijavamaForma instancaRadSPrijavamaForma = new RadSPrijavamaForma(this.prijavljeniZaposlenik);
             instancaRadSPrijavamaForma.Show();
         }
 
         private void otvoriIzdavanjeRacunaAkcija_Click(object sender, EventArgs e)
         {
-            IzdavanjeRacunaForma instancaRacunForma = new IzdavanjeRacunaForma();
+            IzdavanjeRacunaForma instancaRacunForma = new IzdavanjeRacunaForma(this.prijavljeniZaposlenik);
             instancaRacunForma.Show();
         }
 

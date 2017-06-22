@@ -13,6 +13,7 @@ namespace Kampiraliste
     public partial class PrijavaGostaForma : Form
     {
         KampiralisteEntiteti kontekst = null;
+        zaposlenik prijavljeniZaposlenik = null;
 
         private BindingList<drzava> listaDrzavaStan = null;
         private BindingList<drzava> listaDrzavaRod = null;
@@ -25,10 +26,11 @@ namespace Kampiraliste
         /// <summary>
         /// Konstruktor forme kod unosa novog gosta.
         /// </summary>
-        public PrijavaGostaForma()
+        public PrijavaGostaForma(zaposlenik prijavljeni)
         { 
             InitializeComponent();
             this.kontekst = new KampiralisteEntiteti();
+            this.prijavljeniZaposlenik = prijavljeni;
         }
 
         /// <summary>
@@ -36,11 +38,12 @@ namespace Kampiraliste
         /// </summary>
         /// <param name="ulazPrijava">Objekt klase prijava koji se ažurira</param>
         /// <param name="ulazniKontekst">Kontekst baze podataka</param>
-        public PrijavaGostaForma(prijava ulazPrijava, KampiralisteEntiteti ulazniKontekst)
+        public PrijavaGostaForma(prijava ulazPrijava, KampiralisteEntiteti ulazniKontekst, zaposlenik prijavljeni)
         {
             InitializeComponent();
             this.kontekst = ulazniKontekst;
             this.azurirajPrijavu = ulazPrijava;
+            this.prijavljeniZaposlenik = prijavljeni;
         }
 
         /// <summary>
@@ -216,11 +219,6 @@ namespace Kampiraliste
         /// <param name="prijaviGosta">Objekt tipa gost za kojeg se unosi prijava.</param>
         private void PohraniPrijavu(gost prijaviGosta)
         {
-            //privremeni select zaposlenika za unos prijave
-            zaposlenik unioPrijavu = (from b in kontekst.zaposleniks
-                        where b.id == 2
-                        select b).FirstOrDefault();
-
             string orgDolaska = unosOsobno.Checked ? "O" : "A";
             smjestaj odabraniSmjestaj = odabirSmjestajaUnos.SelectedItem as smjestaj;
             status_osobe odabraniStatus = unosStatusOsobe.SelectedItem as status_osobe;
@@ -241,7 +239,7 @@ namespace Kampiraliste
                     datum_odjave = datumOdjave,
                     organizacija_dolaska = orgDolaska,
                     status_osobe = odabraniStatus,
-                    zaposlenik = unioPrijavu,
+                    zaposlenik = this.prijavljeniZaposlenik,
                     smjestaj = odabraniSmjestaj
                 };
 

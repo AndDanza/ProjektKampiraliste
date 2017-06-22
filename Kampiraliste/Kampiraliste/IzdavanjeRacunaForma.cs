@@ -14,11 +14,13 @@ namespace Kampiraliste
     {
         private smjestaj odabraniSmjestaj = null;
         private static Random random = new Random();
-
+        zaposlenik prijavljeniZaposlenik = null;
         BindingList<prijava> listaPrijava = null;
-        public IzdavanjeRacunaForma()
+
+        public IzdavanjeRacunaForma(zaposlenik prijavljeni)
         {
             InitializeComponent();
+            this.prijavljeniZaposlenik = prijavljeni;
         }
 
 
@@ -113,18 +115,13 @@ namespace Kampiraliste
             racun noviRacun = null;
             using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti())
             {
-                //privremeni select zaposlenika za unos prijave
-                zaposlenik unioPrijavu = (from b in kontekst.zaposleniks
-                                          where b.id == 2
-                                          select b).FirstOrDefault();
-
                 kontekst.smjestajs.Attach(odabraniSmjestaj);
 
                 noviRacun = new racun()
                 {
                     smjestaj = odabraniSmjestaj as smjestaj,
                     smjestaj_id = odabraniSmjestaj.id,
-                    zaposlenik = unioPrijavu,
+                    zaposlenik = this.prijavljeniZaposlenik,
                     JIR = RandomString(),
                     ZIR = RandomString(),
                     iznos = 0,

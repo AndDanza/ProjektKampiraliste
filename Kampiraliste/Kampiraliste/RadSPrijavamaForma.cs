@@ -13,11 +13,13 @@ namespace Kampiraliste
     {
         private BindingList<prijava> listaPrijava = null;
         KampiralisteEntiteti kontekst = null;
+        zaposlenik prijavljeniZaposlenik = null;
 
-        public RadSPrijavamaForma()
+        public RadSPrijavamaForma(zaposlenik prijavljeni)
         {
             InitializeComponent();
             kontekst = new KampiralisteEntiteti();
+            this.prijavljeniZaposlenik = prijavljeni;
         }
 
         /// <summary>
@@ -63,7 +65,7 @@ namespace Kampiraliste
         private void aktivnePrijaveListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             prijava azurirajPrijavu = aktivnePrijaveListBox.SelectedItem as prijava;
-            PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu, kontekst);
+            PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu, kontekst, this.prijavljeniZaposlenik);
             instancaPrijavaGostaForma.ShowDialog();
 
             UcitajPrijave(1);
@@ -125,7 +127,7 @@ namespace Kampiraliste
             if (aktivnePrijaveListBox.SelectedItem != null)
             {
                 prijava azurirajPrijavu = aktivnePrijaveListBox.SelectedItem as prijava;
-                PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu, kontekst);
+                PrijavaGostaForma instancaPrijavaGostaForma = new PrijavaGostaForma(azurirajPrijavu, kontekst, this.prijavljeniZaposlenik);
                 instancaPrijavaGostaForma.ShowDialog();
 
                 UcitajPrijave(1);

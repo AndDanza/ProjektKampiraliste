@@ -50,14 +50,14 @@ namespace Kampiraliste
                     if (prijavljeniZaposlenik.vrsta_zaposlenika == 1)
                     {
                         MessageBox.Show("Uspješna prijava!");
-                        MeniVoditeljForma formaUredi = new MeniVoditeljForma();
+                        MeniVoditeljForma formaUredi = new MeniVoditeljForma(prijavljeniZaposlenik);
                         formaUredi.Show();
                     }
 
                     if (prijavljeniZaposlenik.vrsta_zaposlenika == 2)
                     {
                         MessageBox.Show("Uspješna prijava!");
-                        MeniRecepcionerForma formaUredi = new MeniRecepcionerForma();
+                        MeniRecepcionerForma formaUredi = new MeniRecepcionerForma(prijavljeniZaposlenik);
                         formaUredi.Show();
 
                     }
