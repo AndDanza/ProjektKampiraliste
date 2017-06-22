@@ -35,7 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.prikazGostijuPremaDatumuLabela = new System.Windows.Forms.Label();
             this.ispisStatDatumGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.prikazGostijuPremaDrzaviLabela = new System.Windows.Forms.Label();
+            this.prikazGostijuPremaParceliLabela = new System.Windows.Forms.Label();
             this.ispisStatParceleGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.drzavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unosDatumFiltiranja = new System.Windows.Forms.TextBox();
@@ -72,16 +72,16 @@
             this.ispisStatDatumGraf.TabIndex = 3;
             this.ispisStatDatumGraf.Text = "chart1";
             // 
-            // prikazGostijuPremaDrzaviLabela
+            // prikazGostijuPremaParceliLabela
             // 
-            this.prikazGostijuPremaDrzaviLabela.AutoSize = true;
-            this.prikazGostijuPremaDrzaviLabela.BackColor = System.Drawing.Color.Transparent;
-            this.prikazGostijuPremaDrzaviLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.prikazGostijuPremaDrzaviLabela.Location = new System.Drawing.Point(231, 361);
-            this.prikazGostijuPremaDrzaviLabela.Name = "prikazGostijuPremaDrzaviLabela";
-            this.prikazGostijuPremaDrzaviLabela.Size = new System.Drawing.Size(255, 25);
-            this.prikazGostijuPremaDrzaviLabela.TabIndex = 4;
-            this.prikazGostijuPremaDrzaviLabela.Text = "Prikaz gostiju prema parceli:";
+            this.prikazGostijuPremaParceliLabela.AutoSize = true;
+            this.prikazGostijuPremaParceliLabela.BackColor = System.Drawing.Color.Transparent;
+            this.prikazGostijuPremaParceliLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.prikazGostijuPremaParceliLabela.Location = new System.Drawing.Point(231, 361);
+            this.prikazGostijuPremaParceliLabela.Name = "prikazGostijuPremaParceliLabela";
+            this.prikazGostijuPremaParceliLabela.Size = new System.Drawing.Size(255, 25);
+            this.prikazGostijuPremaParceliLabela.TabIndex = 4;
+            this.prikazGostijuPremaParceliLabela.Text = "Prikaz gostiju prema parceli:";
             // 
             // ispisStatParceleGraf
             // 
@@ -134,7 +134,7 @@
             this.Controls.Add(this.akcijaPrikaziStatPoDatumu);
             this.Controls.Add(this.unosDatumFiltiranja);
             this.Controls.Add(this.ispisStatParceleGraf);
-            this.Controls.Add(this.prikazGostijuPremaDrzaviLabela);
+            this.Controls.Add(this.prikazGostijuPremaParceliLabela);
             this.Controls.Add(this.ispisStatDatumGraf);
             this.Controls.Add(this.prikazGostijuPremaDatumuLabela);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -153,7 +153,7 @@
         #endregion
         private System.Windows.Forms.Label prikazGostijuPremaDatumuLabela;
         private System.Windows.Forms.DataVisualization.Charting.Chart ispisStatDatumGraf;
-        private System.Windows.Forms.Label prikazGostijuPremaDrzaviLabela;
+        private System.Windows.Forms.Label prikazGostijuPremaParceliLabela;
         private System.Windows.Forms.DataVisualization.Charting.Chart ispisStatParceleGraf;
         private System.Windows.Forms.TextBox unosDatumFiltiranja;
         private System.Windows.Forms.Button akcijaPrikaziStatPoDatumu;

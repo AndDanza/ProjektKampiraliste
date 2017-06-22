@@ -47,7 +47,7 @@ namespace Kampiraliste
             Help.ShowHelp(this, "file://" + path + "\\Resources\\korisnicka_dokumentacija.chm");
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void helpPictureBox_Click(object sender, EventArgs e)
         {
             var path = Directory.GetCurrentDirectory();
             Help.ShowHelp(this, "file://" + path + "\\Resources\\korisnicka_dokumentacija.chm");
