@@ -47,9 +47,8 @@
             this.unosKorisnickoIme.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.unosKorisnickoIme.Location = new System.Drawing.Point(321, 334);
             this.unosKorisnickoIme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.unosKorisnickoIme.Multiline = true;
             this.unosKorisnickoIme.Name = "unosKorisnickoIme";
-            this.unosKorisnickoIme.Size = new System.Drawing.Size(257, 29);
+            this.unosKorisnickoIme.Size = new System.Drawing.Size(257, 28);
             this.unosKorisnickoIme.TabIndex = 1;
             // 
             // unosLozinka
@@ -57,10 +56,9 @@
             this.unosLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosLozinka.Location = new System.Drawing.Point(321, 375);
             this.unosLozinka.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.unosLozinka.Multiline = true;
             this.unosLozinka.Name = "unosLozinka";
             this.unosLozinka.PasswordChar = '*';
-            this.unosLozinka.Size = new System.Drawing.Size(257, 29);
+            this.unosLozinka.Size = new System.Drawing.Size(257, 28);
             this.unosLozinka.TabIndex = 2;
             // 
             // korisnickoImeLabela

@@ -13,17 +13,20 @@ namespace Kampiraliste
     public partial class AzurirajZaposlenikaForma : Form
     {
         private zaposlenik zaposlenikZaIzmjenu;
+       List<int> vrtsaZaposlenika = new List<int> {1,2 };
         public AzurirajZaposlenikaForma()
         {
-            InitializeComponent();
 
+            InitializeComponent();
         }
 
         public AzurirajZaposlenikaForma(zaposlenik zapo)
         {
             
             InitializeComponent();
-            if(zapo != null)
+            List<int> vrsteZaposlenika = new List<int> { 1, 2 };
+            comboBoxVrsta.DataSource = vrsteZaposlenika;
+            if (zapo != null)
             {
                 zaposlenikZaIzmjenu = zapo;
             }
@@ -31,13 +34,13 @@ namespace Kampiraliste
             unosIme.Text = zapo.ime;
             unosPrezime.Text = zapo.prezime;
             unosKorIme.Text = zapo.korisnicko_ime;
-            unosVrsta.Text = zapo.vrsta_zaposlenika.ToString();
+            comboBoxVrsta.SelectedIndex = zapo.vrsta_zaposlenika - 1;
             unosLozinka.Text = zapo.lozinka;
         }
 
         private void spremiNovePodatke_Click(object sender, EventArgs e)
         {
-            if (unosIme.Text == "" || unosPrezime.Text=="" || unosKorIme.Text=="" || unosVrsta.Text=="" || unosLozinka.Text=="")
+            if (unosIme.Text == "" || unosPrezime.Text=="" || unosKorIme.Text=="" || unosLozinka.Text=="")
             {
                 MessageBox.Show("Svi podaci moraju biti popunjeni!", "Ispravnost podataka", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }else
@@ -55,7 +58,7 @@ namespace Kampiraliste
                             zaposlenikZaIzmjenu.ime = unosIme.Text;
                             zaposlenikZaIzmjenu.prezime = unosPrezime.Text;
                             zaposlenikZaIzmjenu.korisnicko_ime = unosKorIme.Text;
-                            zaposlenikZaIzmjenu.vrsta_zaposlenika = int.Parse(unosVrsta.Text);
+                            zaposlenikZaIzmjenu.vrsta_zaposlenika = comboBoxVrsta.SelectedIndex + 1;
                             zaposlenikZaIzmjenu.lozinka = unosLozinka.Text;
                             ef.SaveChanges();
                             this.Close();
