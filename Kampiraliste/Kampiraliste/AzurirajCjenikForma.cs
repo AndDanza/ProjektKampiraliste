@@ -12,7 +12,7 @@ namespace Kampiraliste
 {
     public partial class AzurirajCjenikForma : Form
     {
-        vrsta_smjestaja vrstaSmjestajaZaIzmjenu;
+        private vrsta_smjestaja vrstaSmjestajaZaIzmjenu;
         public AzurirajCjenikForma()
         {
             InitializeComponent();
