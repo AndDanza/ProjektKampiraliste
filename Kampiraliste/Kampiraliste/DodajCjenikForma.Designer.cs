@@ -102,7 +102,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DodajCjenikForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DodajCjenikForma";
+            this.Text = "Dodaj novi cjenik";
             this.ResumeLayout(false);
             this.PerformLayout();
 

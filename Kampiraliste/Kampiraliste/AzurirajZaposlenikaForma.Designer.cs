@@ -183,7 +183,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AzurirajZaposlenikaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AzurirajZaposlenikaForma";
+            this.Text = "Azuriraj zaposlenika";
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

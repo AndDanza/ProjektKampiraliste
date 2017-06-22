@@ -12,14 +12,14 @@ namespace Kampiraliste
 {
     public partial class ZaposleniciForma : Form
     {
-        List<zaposlenik> popis;
+        private List<zaposlenik> popis;
         public ZaposleniciForma()
         {
             InitializeComponent();
             UcitajZaposlenike();
         }
 
-        public void UcitajZaposlenike()
+        private void UcitajZaposlenike()
         {
             using (var ef = new KampiralisteEntiteti())
             {

@@ -157,7 +157,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CjenikForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CjenikForma";
+            this.Text = "Cjenik";
             ((System.ComponentModel.ISupportInitialize)(this.cjenikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstasmjestajaBindingSource)).EndInit();
             this.ResumeLayout(false);
