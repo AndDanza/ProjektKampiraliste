@@ -41,6 +41,7 @@
             this.tipLabela = new System.Windows.Forms.Label();
             this.lozinkaLabela = new System.Windows.Forms.Label();
             this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,6 +163,14 @@
             // 
             this.zaposlenikBindingSource.DataSource = typeof(Kampiraliste.zaposlenik);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(383, 218);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(69, 24);
+            this.comboBox1.TabIndex = 12;
+            // 
             // AzurirajZaposlenikaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -169,6 +178,7 @@
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(503, 420);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lozinkaLabela);
             this.Controls.Add(this.tipLabela);
             this.Controls.Add(this.korisnickoImeLabela);
@@ -203,5 +213,6 @@
         private System.Windows.Forms.Label korisnickoImeLabela;
         private System.Windows.Forms.Label tipLabela;
         private System.Windows.Forms.Label lozinkaLabela;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -36,14 +36,23 @@ namespace Kampiraliste
 
             if (rezultatUpita == DialogResult.Yes)
             {
-                using (var ef = new KampiralisteEntiteti())
+                try
                 {
-                    zaposlenik za = zaposlenikBindingSource.Current as zaposlenik;
-                    ef.zaposleniks.Attach(za);
-                    ef.zaposleniks.Remove(za);
-                    ef.SaveChanges();
-                    UcitajZaposlenike();
+                    using (var ef = new KampiralisteEntiteti())
+                    {
+                        zaposlenik za = zaposlenikBindingSource.Current as zaposlenik;
+                        ef.zaposleniks.Attach(za);
+                        ef.zaposleniks.Remove(za);
+                        ef.SaveChanges();
+                        UcitajZaposlenike();
+                    }
+                    MessageBox.Show("Zaposlenik uspješno obrisan");
                 }
+                catch
+                {
+                    MessageBox.Show("Zaposlenika nije moguće obrisati!");
+                }
+                
             }
 
         }

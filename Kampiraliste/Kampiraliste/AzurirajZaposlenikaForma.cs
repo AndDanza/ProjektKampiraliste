@@ -12,11 +12,11 @@ namespace Kampiraliste
 {
     public partial class AzurirajZaposlenikaForma : Form
     {
-        zaposlenik zaposlenikZaIzmjenu;
-   
+        private zaposlenik zaposlenikZaIzmjenu;
         public AzurirajZaposlenikaForma()
         {
             InitializeComponent();
+
         }
 
         public AzurirajZaposlenikaForma(zaposlenik zapo)
@@ -37,23 +37,39 @@ namespace Kampiraliste
 
         private void spremiNovePodatke_Click(object sender, EventArgs e)
         {
-            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite ažurirati zaposlenika?", "Ažuriranje zaposlenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (rezultatUpita == DialogResult.Yes)
+            if (unosIme.Text == "" || unosPrezime.Text=="" || unosKorIme.Text=="" || unosVrsta.Text=="" || unosLozinka.Text=="")
             {
-                using (var ef = new KampiralisteEntiteti())
-                {
+                MessageBox.Show("Svi podaci moraju biti popunjeni!", "Ispravnost podataka", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }else
+            {
+                DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite ažurirati zaposlenika?", "Ažuriranje zaposlenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    ef.zaposleniks.Attach(zaposlenikZaIzmjenu);
-                    zaposlenikZaIzmjenu.ime = unosIme.Text;
-                    zaposlenikZaIzmjenu.prezime = unosPrezime.Text;
-                    zaposlenikZaIzmjenu.korisnicko_ime = unosKorIme.Text;
-                    zaposlenikZaIzmjenu.vrsta_zaposlenika = int.Parse(unosVrsta.Text);
-                    zaposlenikZaIzmjenu.lozinka = unosLozinka.Text;
-                    ef.SaveChanges();
-                    this.Close();
+                if (rezultatUpita == DialogResult.Yes)
+                {
+                    try
+                    {
+                        using (var ef = new KampiralisteEntiteti())
+                        {
+
+                            ef.zaposleniks.Attach(zaposlenikZaIzmjenu);
+                            zaposlenikZaIzmjenu.ime = unosIme.Text;
+                            zaposlenikZaIzmjenu.prezime = unosPrezime.Text;
+                            zaposlenikZaIzmjenu.korisnicko_ime = unosKorIme.Text;
+                            zaposlenikZaIzmjenu.vrsta_zaposlenika = int.Parse(unosVrsta.Text);
+                            zaposlenikZaIzmjenu.lozinka = unosLozinka.Text;
+                            ef.SaveChanges();
+                            this.Close();
+                        }
+                        MessageBox.Show("Zaposlenik uspješno ažuriran!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Zaposlenik nije ažuriran pokušajte ponovo!");
+                    }
+                    
                 }
             }
+            
                 
             
         }

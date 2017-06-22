@@ -30,22 +30,49 @@ namespace Kampiraliste
             }
         }
 
+        private bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
         private void spremiPromjene_Click(object sender, EventArgs e)
         {
-            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite ažurirati cjenik?", "Ažuriranje cjenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (rezultatUpita == DialogResult.Yes)
+            if (unosNaziv.Text == "" || unosCijena.Text == "" || !IsDigitsOnly(unosCijena.Text))
             {
-                using (var ef = new KampiralisteEntiteti())
-                {
+                MessageBox.Show("Svi podaci moraju biti ispravno popunjeni!", "Ispravnost podataka", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }else
+            {
+                DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite ažurirati stavku cjenika?", "Ažuriranje stavke cjenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    ef.vrsta_smjestaja.Attach(vrstaSmjestajaZaIzmjenu);
-                    vrstaSmjestajaZaIzmjenu.naziv = unosNaziv.Text;
-                    vrstaSmjestajaZaIzmjenu.iznos = decimal.Parse(unosCijena.Text);
-                    ef.SaveChanges();
-                    this.Close();
+                if (rezultatUpita == DialogResult.Yes)
+                {
+                    try
+                    {
+                        using (var ef = new KampiralisteEntiteti())
+                        {
+
+                            ef.vrsta_smjestaja.Attach(vrstaSmjestajaZaIzmjenu);
+                            vrstaSmjestajaZaIzmjenu.naziv = unosNaziv.Text;
+                            vrstaSmjestajaZaIzmjenu.iznos = decimal.Parse(unosCijena.Text);
+                            ef.SaveChanges();
+                            this.Close();
+                        }
+                        MessageBox.Show("Stavka cjenika uspješno ažurirana!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Stavka cjenika nije ažurirana. Pokušajte ponovo!");
+                    }
+                    
                 }
+                
             }
+            
         }
 
      

@@ -33,7 +33,7 @@ namespace Kampiraliste
 
         private void obrisiCjenik_Click(object sender, EventArgs e)
         {
-            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite obrisati cjenik?", "Brisanje cjenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite stavku cjenik?", "Brisanje stavke cjenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             try
             {
                 if (rezultatUpita == DialogResult.Yes)
@@ -46,6 +46,8 @@ namespace Kampiraliste
                         ef.SaveChanges();
                         UcitajCjenik();
                     }
+                    MessageBox.Show("Stavka cjenika uspješno obrisana!");
+
                 }
             }
             catch

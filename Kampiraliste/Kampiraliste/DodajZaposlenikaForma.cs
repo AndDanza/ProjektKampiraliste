@@ -13,7 +13,7 @@ namespace Kampiraliste
     public partial class DodajZaposlenikaForma : Form
     {
 
-        List<int> vrsteZaposlenika = new List<int> { 1, 2 };
+        private List<int> vrsteZaposlenika = new List<int> { 1, 2 };
         
         public DodajZaposlenikaForma()
         {
@@ -23,26 +23,31 @@ namespace Kampiraliste
 
         private void dodajZaposlenika_Click(object sender, EventArgs e)
         {
-            DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite dodati novog zaposlenika?", "Dodavanje zaposlenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (rezultatUpita == DialogResult.Yes)
+            
+            if (unosIme.Text == "" || unosPrezime.Text=="" || unosKorIme.Text=="" || unosLozinka.Text=="")
             {
-                using (var ef = new KampiralisteEntiteti())
+                MessageBox.Show("Svi podaci moraju biti popunjeni!", "Ispravnost unsesenih podataka", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }else
+            {
+                DialogResult rezultatUpita = MessageBox.Show("Jeste li sigurni da želite dodati novog zaposlenika?", "Dodavanje zaposlenika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (rezultatUpita == DialogResult.Yes)
                 {
-                    zaposlenik zap = new zaposlenik
+                    using (var ef = new KampiralisteEntiteti())
                     {
-                        ime = unosIme.Text,
-                        prezime = unosPrezime.Text,
-                        korisnicko_ime = unosKorIme.Text,
-                        vrsta_zaposlenika = (int)unosVrstaZaposlenika.SelectedValue,
-                        lozinka = unosLozinka.Text
-                    };
+                        zaposlenik zap = new zaposlenik
+                        {
+                            ime = unosIme.Text,
+                            prezime = unosPrezime.Text,
+                            korisnicko_ime = unosKorIme.Text,
+                            vrsta_zaposlenika = (int)unosVrstaZaposlenika.SelectedValue,
+                            lozinka = unosLozinka.Text
+                        };
 
-                    ef.zaposleniks.Add(zap);
-                    ef.SaveChanges();
-                    this.Close();
-
-
+                        ef.zaposleniks.Add(zap);
+                        ef.SaveChanges();
+                        this.Close();
+                    }
+                    MessageBox.Show("Novi zaposlenik uspješno dodan!");
                 }
             }
            
