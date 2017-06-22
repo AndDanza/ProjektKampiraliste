@@ -37,13 +37,10 @@
             this.smjestajidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jIRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zIRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preostalozaplatitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iznosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumvrijemeizdavanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prijavaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.smjestajDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prijavaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.racunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ispisIzdanihRacuna)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racunBindingSource)).BeginInit();
@@ -55,7 +52,7 @@
             this.akcijaStornirajRacun.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.akcijaStornirajRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.akcijaStornirajRacun.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.akcijaStornirajRacun.Location = new System.Drawing.Point(328, 303);
+            this.akcijaStornirajRacun.Location = new System.Drawing.Point(218, 307);
             this.akcijaStornirajRacun.Name = "akcijaStornirajRacun";
             this.akcijaStornirajRacun.Size = new System.Drawing.Size(385, 44);
             this.akcijaStornirajRacun.TabIndex = 0;
@@ -86,19 +83,16 @@
             this.smjestajidDataGridViewTextBoxColumn,
             this.jIRDataGridViewTextBoxColumn,
             this.zIRDataGridViewTextBoxColumn,
-            this.preostalozaplatitDataGridViewTextBoxColumn,
             this.iznosDataGridViewTextBoxColumn,
             this.datumvrijemeizdavanjaDataGridViewTextBoxColumn,
-            this.prijavaidDataGridViewTextBoxColumn,
             this.smjestajDataGridViewTextBoxColumn,
-            this.zaposlenikDataGridViewTextBoxColumn,
-            this.prijavaDataGridViewTextBoxColumn});
+            this.zaposlenikDataGridViewTextBoxColumn});
             this.ispisIzdanihRacuna.DataSource = this.racunBindingSource;
-            this.ispisIzdanihRacuna.Location = new System.Drawing.Point(31, 59);
+            this.ispisIzdanihRacuna.Location = new System.Drawing.Point(31, 58);
             this.ispisIzdanihRacuna.Name = "ispisIzdanihRacuna";
             this.ispisIzdanihRacuna.ReadOnly = true;
             this.ispisIzdanihRacuna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ispisIzdanihRacuna.Size = new System.Drawing.Size(944, 214);
+            this.ispisIzdanihRacuna.Size = new System.Drawing.Size(748, 214);
             this.ispisIzdanihRacuna.TabIndex = 3;
             // 
             // idDataGridViewTextBoxColumn
@@ -136,13 +130,6 @@
             this.zIRDataGridViewTextBoxColumn.Name = "zIRDataGridViewTextBoxColumn";
             this.zIRDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // preostalozaplatitDataGridViewTextBoxColumn
-            // 
-            this.preostalozaplatitDataGridViewTextBoxColumn.DataPropertyName = "preostalo_za_platit";
-            this.preostalozaplatitDataGridViewTextBoxColumn.HeaderText = "preostalo_za_platit";
-            this.preostalozaplatitDataGridViewTextBoxColumn.Name = "preostalozaplatitDataGridViewTextBoxColumn";
-            this.preostalozaplatitDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // iznosDataGridViewTextBoxColumn
             // 
             this.iznosDataGridViewTextBoxColumn.DataPropertyName = "iznos";
@@ -156,13 +143,6 @@
             this.datumvrijemeizdavanjaDataGridViewTextBoxColumn.HeaderText = "datum_vrijeme_izdavanja";
             this.datumvrijemeizdavanjaDataGridViewTextBoxColumn.Name = "datumvrijemeizdavanjaDataGridViewTextBoxColumn";
             this.datumvrijemeizdavanjaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prijavaidDataGridViewTextBoxColumn
-            // 
-            this.prijavaidDataGridViewTextBoxColumn.DataPropertyName = "prijava_id";
-            this.prijavaidDataGridViewTextBoxColumn.HeaderText = "prijava_id";
-            this.prijavaidDataGridViewTextBoxColumn.Name = "prijavaidDataGridViewTextBoxColumn";
-            this.prijavaidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // smjestajDataGridViewTextBoxColumn
             // 
@@ -180,14 +160,6 @@
             this.zaposlenikDataGridViewTextBoxColumn.ReadOnly = true;
             this.zaposlenikDataGridViewTextBoxColumn.Visible = false;
             // 
-            // prijavaDataGridViewTextBoxColumn
-            // 
-            this.prijavaDataGridViewTextBoxColumn.DataPropertyName = "prijava";
-            this.prijavaDataGridViewTextBoxColumn.HeaderText = "prijava";
-            this.prijavaDataGridViewTextBoxColumn.Name = "prijavaDataGridViewTextBoxColumn";
-            this.prijavaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prijavaDataGridViewTextBoxColumn.Visible = false;
-            // 
             // racunBindingSource
             // 
             this.racunBindingSource.DataSource = typeof(Kampiraliste.racun);
@@ -198,7 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1006, 379);
+            this.ClientSize = new System.Drawing.Size(798, 379);
             this.Controls.Add(this.ispisIzdanihRacuna);
             this.Controls.Add(this.izdaniRacuniLabela);
             this.Controls.Add(this.akcijaStornirajRacun);

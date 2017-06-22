@@ -26,7 +26,6 @@ namespace Kampiraliste
         public System.DateTime datum_vrijeme_izdavanja { get; set; }
         public string JIR { get; set; }
         public string ZIR { get; set; }
-        public decimal preostalo_za_platit { get; set; }
         public decimal iznos { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

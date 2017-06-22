@@ -95,6 +95,7 @@
             this.ispisRacuna.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ispisRacuna.Location = new System.Drawing.Point(177, 210);
             this.ispisRacuna.Name = "ispisRacuna";
+            this.ispisRacuna.ReadOnly = true;
             this.ispisRacuna.Size = new System.Drawing.Size(88, 24);
             this.ispisRacuna.TabIndex = 10;
             // 
@@ -110,6 +111,7 @@
             this.akcijaKreirajRacun.TabIndex = 12;
             this.akcijaKreirajRacun.Text = "Kreiraj račun";
             this.akcijaKreirajRacun.UseVisualStyleBackColor = false;
+            this.akcijaKreirajRacun.Click += new System.EventHandler(this.akcijaKreirajRacun_Click);
             // 
             // smjestajLabela
             // 

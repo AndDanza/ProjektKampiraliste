@@ -33,6 +33,7 @@ namespace Kampiraliste
 
         private void akcijaStornirajRacun_Click(object sender, EventArgs e)
         {
+            BindingList<prijava> listaPrijava = new BindingList<prijava>();
             racun odabraniRacun = racunBindingSource.Current as racun;
             if (odabraniRacun != null)
             {
@@ -41,6 +42,18 @@ namespace Kampiraliste
                     using (var baza = new KampiralisteEntiteti())
                     {
                         baza.racuns.Attach(odabraniRacun);
+
+                        var upit = from prijava in baza.prijavas
+                                   where prijava.racun.id == odabraniRacun.id
+                                   select prijava;
+
+                        listaPrijava = new BindingList<prijava>(upit.ToList());
+
+                        foreach (var item in listaPrijava)
+                        {
+                            item.racun_id = null;
+                        }
+
                         baza.racuns.Remove(odabraniRacun);
                         baza.SaveChanges();
                     }

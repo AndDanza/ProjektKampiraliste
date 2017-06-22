@@ -52,13 +52,12 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="zaposlenik_id" Type="int" Nullable="false" />
           <Property Name="smjestaj_id" Type="int" Nullable="false" />
           <Property Name="datum_vrijeme_izdavanja" Type="datetime" Nullable="false" />
           <Property Name="JIR" Type="char" MaxLength="32" Nullable="false" />
           <Property Name="ZIR" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="preostalo_za_platit" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="iznos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="smjestaj">
@@ -599,7 +598,6 @@
           <Property Name="datum_vrijeme_izdavanja" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="JIR" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
           <Property Name="ZIR" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
-          <Property Name="preostalo_za_platit" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
           <Property Name="iznos" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
           <NavigationProperty Name="prijavas" Relationship="DBModel.FK_prijava_racun" FromRole="racun" ToRole="prijava" />
           <NavigationProperty Name="smjestaj" Relationship="DBModel.FK_racun_smjestaj" FromRole="racun" ToRole="smjestaj" />
@@ -747,7 +745,6 @@
             <EntityTypeMapping TypeName="DBModel.racun">
               <MappingFragment StoreEntitySet="racun">
                 <ScalarProperty Name="iznos" ColumnName="iznos" />
-                <ScalarProperty Name="preostalo_za_platit" ColumnName="preostalo_za_platit" />
                 <ScalarProperty Name="ZIR" ColumnName="ZIR" />
                 <ScalarProperty Name="JIR" ColumnName="JIR" />
                 <ScalarProperty Name="datum_vrijeme_izdavanja" ColumnName="datum_vrijeme_izdavanja" />
