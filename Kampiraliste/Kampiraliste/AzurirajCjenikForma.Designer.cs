@@ -103,7 +103,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AzurirajCjenikForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Azuriraj cjenik";
+            this.Text = "Azuriraj stavku cjenika";
             this.ResumeLayout(false);
             this.PerformLayout();
 

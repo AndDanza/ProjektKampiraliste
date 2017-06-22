@@ -33,11 +33,11 @@
             this.azurirajCjenik = new System.Windows.Forms.Button();
             this.obrisiCjenik = new System.Windows.Forms.Button();
             this.cjenikBindingSource = new System.Windows.Forms.DataGridView();
+            this.iznos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.naslovLabela = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iznos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstasmjestajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.naslovLabela = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cjenikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstasmjestajaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.dodajNoviCjenik.Name = "dodajNoviCjenik";
             this.dodajNoviCjenik.Size = new System.Drawing.Size(233, 70);
             this.dodajNoviCjenik.TabIndex = 0;
-            this.dodajNoviCjenik.Text = "Dodaj novi cjenik";
+            this.dodajNoviCjenik.Text = "Dodaj stavku cjenika";
             this.dodajNoviCjenik.UseVisualStyleBackColor = false;
             this.dodajNoviCjenik.Click += new System.EventHandler(this.dodajNoviCjenik_Click);
             // 
@@ -66,7 +66,7 @@
             this.azurirajCjenik.Name = "azurirajCjenik";
             this.azurirajCjenik.Size = new System.Drawing.Size(233, 64);
             this.azurirajCjenik.TabIndex = 1;
-            this.azurirajCjenik.Text = "Ažuriraj cjenik";
+            this.azurirajCjenik.Text = "Ažuriraj stavku cjenika";
             this.azurirajCjenik.UseVisualStyleBackColor = false;
             this.azurirajCjenik.Click += new System.EventHandler(this.azurirajCjenik_Click);
             // 
@@ -80,7 +80,7 @@
             this.obrisiCjenik.Name = "obrisiCjenik";
             this.obrisiCjenik.Size = new System.Drawing.Size(233, 66);
             this.obrisiCjenik.TabIndex = 2;
-            this.obrisiCjenik.Text = "Obriši cjenik";
+            this.obrisiCjenik.Text = "Obriši stavku cjenika";
             this.obrisiCjenik.UseVisualStyleBackColor = false;
             this.obrisiCjenik.Click += new System.EventHandler(this.obrisiCjenik_Click);
             // 
@@ -104,6 +104,25 @@
             this.cjenikBindingSource.Size = new System.Drawing.Size(388, 263);
             this.cjenikBindingSource.TabIndex = 3;
             // 
+            // iznos
+            // 
+            this.iznos.DataPropertyName = "iznos";
+            this.iznos.HeaderText = "iznos";
+            this.iznos.Name = "iznos";
+            this.iznos.ReadOnly = true;
+            // 
+            // naslovLabela
+            // 
+            this.naslovLabela.AutoSize = true;
+            this.naslovLabela.BackColor = System.Drawing.Color.Transparent;
+            this.naslovLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.naslovLabela.ForeColor = System.Drawing.Color.Black;
+            this.naslovLabela.Location = new System.Drawing.Point(301, 32);
+            this.naslovLabela.Name = "naslovLabela";
+            this.naslovLabela.Size = new System.Drawing.Size(104, 36);
+            this.naslovLabela.TabIndex = 4;
+            this.naslovLabela.Text = "Cjenik";
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -118,28 +137,9 @@
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
             this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // iznos
-            // 
-            this.iznos.DataPropertyName = "iznos";
-            this.iznos.HeaderText = "iznos";
-            this.iznos.Name = "iznos";
-            this.iznos.ReadOnly = true;
-            // 
             // vrstasmjestajaBindingSource
             // 
             this.vrstasmjestajaBindingSource.DataSource = typeof(Kampiraliste.vrsta_smjestaja);
-            // 
-            // naslovLabela
-            // 
-            this.naslovLabela.AutoSize = true;
-            this.naslovLabela.BackColor = System.Drawing.Color.Transparent;
-            this.naslovLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.naslovLabela.ForeColor = System.Drawing.Color.Black;
-            this.naslovLabela.Location = new System.Drawing.Point(301, 32);
-            this.naslovLabela.Name = "naslovLabela";
-            this.naslovLabela.Size = new System.Drawing.Size(104, 36);
-            this.naslovLabela.TabIndex = 4;
-            this.naslovLabela.Text = "Cjenik";
             // 
             // CjenikForma
             // 
