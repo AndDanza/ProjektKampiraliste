@@ -59,6 +59,9 @@ namespace Kampiraliste
                     }
                 }
             }
+            else {
+                MessageBox.Show("Potrebno je odabrati račun koji se želi stornirati!");
+            }
             PrikaziRacune();
         }
     }
