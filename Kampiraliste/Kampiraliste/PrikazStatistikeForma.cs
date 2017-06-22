@@ -21,36 +21,49 @@ namespace Kampiraliste
 
         private void akcijaPrikaziStatPoDatumu_Click(object sender, EventArgs e)
         {
-            DateTime datumFiltriranja = DateTime.Parse(unosDatumFiltiranja.Text);
-            int brojOsobaHrv = 0;
-            int brojOsobaStr = 0;
-            using (var baza = new KampiralisteEntiteti()){
-                brojOsobaHrv = (from prijave in baza.prijavas
-                             where prijave.datum_prijave <= datumFiltriranja &&
-                             prijave.datum_odjave >= datumFiltriranja &&
-                             prijave.gost1.drzava_id_drzavljanstvo == "HRV"
-                             select prijave).Count();
-                
+            DateTime datum;
+            bool ispravnostDatuma = DateTime.TryParse(unosDatumFiltiranja.Text, out datum);
 
-            brojOsobaStr = (from prijave in baza.prijavas
-                            where prijave.datum_prijave <= datumFiltriranja &&
-                            prijave.datum_odjave >= datumFiltriranja &&
-                            prijave.gost1.drzava_id_drzavljanstvo != "HRV"
-                            select prijave).Count();
+            if (ispravnostDatuma == false)
+            {
+                MessageBox.Show("Potrebno je unijeti datum za pregled statistike!");
             }
 
-            foreach (var series in ispisStatDatumGraf.Series){
-                  series.Points.Clear();
+            else
+            {
+                DateTime datumFiltriranja = DateTime.Parse(unosDatumFiltiranja.Text);
+                int brojOsobaHrv = 0;
+                int brojOsobaStr = 0;
+                using (var baza = new KampiralisteEntiteti())
+                {
+                    brojOsobaHrv = (from prijave in baza.prijavas
+                                    where prijave.datum_prijave <= datumFiltriranja &&
+                                    prijave.datum_odjave >= datumFiltriranja &&
+                                    prijave.gost1.drzava_id_drzavljanstvo == "HRV"
+                                    select prijave).Count();
+
+
+                    brojOsobaStr = (from prijave in baza.prijavas
+                                    where prijave.datum_prijave <= datumFiltriranja &&
+                                    prijave.datum_odjave >= datumFiltriranja &&
+                                    prijave.gost1.drzava_id_drzavljanstvo != "HRV"
+                                    select prijave).Count();
                 }
 
+                foreach (var series in ispisStatDatumGraf.Series)
+                {
+                    series.Points.Clear();
+                }
 
-            if (brojOsobaHrv != 0 || brojOsobaStr != 0)
-            {
-                  this.ispisStatDatumGraf.Series["prikazBrojGostiju"].Points.AddXY("Domaći gosti", brojOsobaHrv);
-                  this.ispisStatDatumGraf.Series["prikazBrojGostiju"].Points.AddXY("Strani gosti", brojOsobaStr);
-            }
-            else{
-                  MessageBox.Show("Na uneseni datum niste imali gostiju u kampiralištu!");
+                if (brojOsobaHrv != 0 || brojOsobaStr != 0)
+                {
+                    this.ispisStatDatumGraf.Series["prikazBrojGostiju"].Points.AddXY("Domaći gosti", brojOsobaHrv);
+                    this.ispisStatDatumGraf.Series["prikazBrojGostiju"].Points.AddXY("Strani gosti", brojOsobaStr);
+                }
+                else
+                {
+                    MessageBox.Show("Na uneseni datum niste imali gostiju u kampiralištu!");
+                }
             }
         }
 
