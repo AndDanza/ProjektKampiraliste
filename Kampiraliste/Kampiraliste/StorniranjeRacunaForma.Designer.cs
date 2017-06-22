@@ -197,9 +197,6 @@
         private System.Windows.Forms.Label izdaniRacuniLabela;
         private System.Windows.Forms.DataGridView ispisIzdanihRacuna;
         private System.Windows.Forms.BindingSource racunBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preostalozaplatitDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prijavaidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prijavaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zaposlenikidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn smjestajidDataGridViewTextBoxColumn;
