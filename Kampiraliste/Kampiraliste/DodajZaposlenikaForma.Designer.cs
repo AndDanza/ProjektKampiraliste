@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.imeLabela = new System.Windows.Forms.Label();
             this.unosIme = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.prezimeLabela = new System.Windows.Forms.Label();
             this.unosPrezime = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.korImeLabela = new System.Windows.Forms.Label();
             this.unosKorIme = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tipLabela = new System.Windows.Forms.Label();
             this.unosVrstaZaposlenika = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lozinkaLabela = new System.Windows.Forms.Label();
             this.unosLozinka = new System.Windows.Forms.TextBox();
             this.dodajZaposlenika = new System.Windows.Forms.Button();
             this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,100 +49,110 @@
             this.imeLabela.AutoSize = true;
             this.imeLabela.BackColor = System.Drawing.Color.Transparent;
             this.imeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imeLabela.Location = new System.Drawing.Point(69, 58);
+            this.imeLabela.Location = new System.Drawing.Point(52, 47);
+            this.imeLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.imeLabela.Name = "imeLabela";
-            this.imeLabela.Size = new System.Drawing.Size(46, 24);
+            this.imeLabela.Size = new System.Drawing.Size(36, 18);
             this.imeLabela.TabIndex = 0;
             this.imeLabela.Text = "Ime:";
             // 
             // unosIme
             // 
             this.unosIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosIme.Location = new System.Drawing.Point(213, 51);
+            this.unosIme.Location = new System.Drawing.Point(160, 41);
+            this.unosIme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unosIme.Multiline = true;
             this.unosIme.Name = "unosIme";
-            this.unosIme.Size = new System.Drawing.Size(208, 31);
+            this.unosIme.Size = new System.Drawing.Size(157, 26);
             this.unosIme.TabIndex = 1;
             // 
-            // label1
+            // prezimeLabela
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Prezime:";
+            this.prezimeLabela.AutoSize = true;
+            this.prezimeLabela.BackColor = System.Drawing.Color.Transparent;
+            this.prezimeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezimeLabela.Location = new System.Drawing.Point(52, 92);
+            this.prezimeLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.prezimeLabela.Name = "prezimeLabela";
+            this.prezimeLabela.Size = new System.Drawing.Size(67, 18);
+            this.prezimeLabela.TabIndex = 2;
+            this.prezimeLabela.Text = "Prezime:";
             // 
             // unosPrezime
             // 
             this.unosPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosPrezime.Location = new System.Drawing.Point(213, 104);
+            this.unosPrezime.Location = new System.Drawing.Point(160, 84);
+            this.unosPrezime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unosPrezime.Multiline = true;
             this.unosPrezime.Name = "unosPrezime";
-            this.unosPrezime.Size = new System.Drawing.Size(208, 33);
+            this.unosPrezime.Size = new System.Drawing.Size(157, 28);
             this.unosPrezime.TabIndex = 3;
             // 
-            // label2
+            // korImeLabela
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 164);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Korisnicko ime:";
+            this.korImeLabela.AutoSize = true;
+            this.korImeLabela.BackColor = System.Drawing.Color.Transparent;
+            this.korImeLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.korImeLabela.Location = new System.Drawing.Point(52, 133);
+            this.korImeLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.korImeLabela.Name = "korImeLabela";
+            this.korImeLabela.Size = new System.Drawing.Size(111, 18);
+            this.korImeLabela.TabIndex = 4;
+            this.korImeLabela.Text = "Korisnicko ime:";
             // 
             // unosKorIme
             // 
             this.unosKorIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosKorIme.Location = new System.Drawing.Point(213, 161);
+            this.unosKorIme.Location = new System.Drawing.Point(160, 131);
+            this.unosKorIme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unosKorIme.Multiline = true;
             this.unosKorIme.Name = "unosKorIme";
-            this.unosKorIme.Size = new System.Drawing.Size(208, 35);
+            this.unosKorIme.Size = new System.Drawing.Size(157, 29);
             this.unosKorIme.TabIndex = 5;
             // 
-            // label3
+            // tipLabela
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 223);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 24);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Tip:";
+            this.tipLabela.AutoSize = true;
+            this.tipLabela.BackColor = System.Drawing.Color.Transparent;
+            this.tipLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipLabela.Location = new System.Drawing.Point(52, 181);
+            this.tipLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tipLabela.Name = "tipLabela";
+            this.tipLabela.Size = new System.Drawing.Size(32, 18);
+            this.tipLabela.TabIndex = 6;
+            this.tipLabela.Text = "Tip:";
             // 
             // unosVrstaZaposlenika
             // 
             this.unosVrstaZaposlenika.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unosVrstaZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unosVrstaZaposlenika.FormattingEnabled = true;
-            this.unosVrstaZaposlenika.Location = new System.Drawing.Point(213, 217);
+            this.unosVrstaZaposlenika.Location = new System.Drawing.Point(160, 176);
+            this.unosVrstaZaposlenika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unosVrstaZaposlenika.Name = "unosVrstaZaposlenika";
-            this.unosVrstaZaposlenika.Size = new System.Drawing.Size(98, 30);
+            this.unosVrstaZaposlenika.Size = new System.Drawing.Size(74, 25);
             this.unosVrstaZaposlenika.TabIndex = 7;
             // 
-            // label4
+            // lozinkaLabela
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(69, 263);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 24);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Lozinka:";
+            this.lozinkaLabela.AutoSize = true;
+            this.lozinkaLabela.BackColor = System.Drawing.Color.Transparent;
+            this.lozinkaLabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lozinkaLabela.Location = new System.Drawing.Point(52, 214);
+            this.lozinkaLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lozinkaLabela.Name = "lozinkaLabela";
+            this.lozinkaLabela.Size = new System.Drawing.Size(64, 18);
+            this.lozinkaLabela.TabIndex = 8;
+            this.lozinkaLabela.Text = "Lozinka:";
             // 
             // unosLozinka
             // 
             this.unosLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unosLozinka.Location = new System.Drawing.Point(213, 260);
+            this.unosLozinka.Location = new System.Drawing.Point(160, 211);
+            this.unosLozinka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unosLozinka.Multiline = true;
             this.unosLozinka.Name = "unosLozinka";
-            this.unosLozinka.Size = new System.Drawing.Size(212, 31);
+            this.unosLozinka.Size = new System.Drawing.Size(160, 26);
             this.unosLozinka.TabIndex = 9;
             // 
             // dodajZaposlenika
@@ -151,9 +161,10 @@
             this.dodajZaposlenika.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.dodajZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dodajZaposlenika.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dodajZaposlenika.Location = new System.Drawing.Point(73, 342);
+            this.dodajZaposlenika.Location = new System.Drawing.Point(55, 278);
+            this.dodajZaposlenika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dodajZaposlenika.Name = "dodajZaposlenika";
-            this.dodajZaposlenika.Size = new System.Drawing.Size(352, 48);
+            this.dodajZaposlenika.Size = new System.Drawing.Size(264, 39);
             this.dodajZaposlenika.TabIndex = 10;
             this.dodajZaposlenika.Text = "Dodaj";
             this.dodajZaposlenika.UseVisualStyleBackColor = false;
@@ -165,23 +176,24 @@
             // 
             // DodajZaposlenikaForma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(534, 415);
+            this.ClientSize = new System.Drawing.Size(400, 337);
             this.Controls.Add(this.dodajZaposlenika);
             this.Controls.Add(this.unosLozinka);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lozinkaLabela);
             this.Controls.Add(this.unosVrstaZaposlenika);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tipLabela);
             this.Controls.Add(this.unosKorIme);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.korImeLabela);
             this.Controls.Add(this.unosPrezime);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.prezimeLabela);
             this.Controls.Add(this.unosIme);
             this.Controls.Add(this.imeLabela);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DodajZaposlenikaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj zaposlenika";
@@ -195,13 +207,13 @@
 
         private System.Windows.Forms.Label imeLabela;
         private System.Windows.Forms.TextBox unosIme;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label prezimeLabela;
         private System.Windows.Forms.TextBox unosPrezime;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label korImeLabela;
         private System.Windows.Forms.TextBox unosKorIme;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label tipLabela;
         private System.Windows.Forms.ComboBox unosVrstaZaposlenika;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lozinkaLabela;
         private System.Windows.Forms.TextBox unosLozinka;
         private System.Windows.Forms.Button dodajZaposlenika;
         private System.Windows.Forms.BindingSource zaposlenikBindingSource;

@@ -40,7 +40,7 @@
             this.azurirajZaposlenika = new System.Windows.Forms.Button();
             this.obrisiZaposlenika = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.zaposlenikDataBinding = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +50,7 @@
             this.prijavasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.racunsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zaposlenikDataBinding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,18 +104,18 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(333, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 29);
+            this.label1.Size = new System.Drawing.Size(118, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Zaposlenici";
             // 
-            // dataGridView1
+            // zaposlenikDataBinding
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.zaposlenikDataBinding.AllowUserToAddRows = false;
+            this.zaposlenikDataBinding.AllowUserToDeleteRows = false;
+            this.zaposlenikDataBinding.AutoGenerateColumns = false;
+            this.zaposlenikDataBinding.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.zaposlenikDataBinding.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.zaposlenikDataBinding.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.imeDataGridViewTextBoxColumn,
             this.prezimeDataGridViewTextBoxColumn,
@@ -124,7 +124,7 @@
             this.lozinkaDataGridViewTextBoxColumn,
             this.prijavasDataGridViewTextBoxColumn,
             this.racunsDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.zaposlenikBindingSource;
+            this.zaposlenikDataBinding.DataSource = this.zaposlenikBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,14 +132,14 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 167);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 308);
-            this.dataGridView1.TabIndex = 7;
+            this.zaposlenikDataBinding.DefaultCellStyle = dataGridViewCellStyle7;
+            this.zaposlenikDataBinding.Location = new System.Drawing.Point(45, 167);
+            this.zaposlenikDataBinding.Name = "zaposlenikDataBinding";
+            this.zaposlenikDataBinding.ReadOnly = true;
+            this.zaposlenikDataBinding.RowTemplate.Height = 24;
+            this.zaposlenikDataBinding.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.zaposlenikDataBinding.Size = new System.Drawing.Size(749, 308);
+            this.zaposlenikDataBinding.TabIndex = 7;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -226,7 +226,7 @@
             this.BackgroundImage = global::Kampiraliste.Properties.Resources.WvftUC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(842, 551);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.zaposlenikDataBinding);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.obrisiZaposlenika);
             this.Controls.Add(this.azurirajZaposlenika);
@@ -236,7 +236,7 @@
             this.Name = "ZaposleniciForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zaposlenici";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zaposlenikDataBinding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -248,7 +248,7 @@
         private System.Windows.Forms.Button azurirajZaposlenika;
         private System.Windows.Forms.Button obrisiZaposlenika;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView zaposlenikDataBinding;
         private System.Windows.Forms.BindingSource zaposlenikBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
