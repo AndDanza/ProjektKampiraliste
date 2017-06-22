@@ -32,16 +32,16 @@
             this.akcijaStornirajRacun = new System.Windows.Forms.Button();
             this.izdaniRacuniLabela = new System.Windows.Forms.Label();
             this.ispisIzdanihRacuna = new System.Windows.Forms.DataGridView();
+            this.racunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smjestajidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smjestajidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.jIRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zIRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iznosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumvrijemeizdavanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.smjestajDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.racunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ispisIzdanihRacuna)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racunBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -88,12 +88,16 @@
             this.smjestajDataGridViewTextBoxColumn,
             this.zaposlenikDataGridViewTextBoxColumn});
             this.ispisIzdanihRacuna.DataSource = this.racunBindingSource;
-            this.ispisIzdanihRacuna.Location = new System.Drawing.Point(31, 58);
+            this.ispisIzdanihRacuna.Location = new System.Drawing.Point(129, 61);
             this.ispisIzdanihRacuna.Name = "ispisIzdanihRacuna";
             this.ispisIzdanihRacuna.ReadOnly = true;
             this.ispisIzdanihRacuna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ispisIzdanihRacuna.Size = new System.Drawing.Size(748, 214);
+            this.ispisIzdanihRacuna.Size = new System.Drawing.Size(544, 214);
             this.ispisIzdanihRacuna.TabIndex = 3;
+            // 
+            // racunBindingSource
+            // 
+            this.racunBindingSource.DataSource = typeof(Kampiraliste.racun);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -108,13 +112,18 @@
             this.zaposlenikidDataGridViewTextBoxColumn.HeaderText = "zaposlenik_id";
             this.zaposlenikidDataGridViewTextBoxColumn.Name = "zaposlenikidDataGridViewTextBoxColumn";
             this.zaposlenikidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.zaposlenikidDataGridViewTextBoxColumn.Visible = false;
             // 
             // smjestajidDataGridViewTextBoxColumn
             // 
             this.smjestajidDataGridViewTextBoxColumn.DataPropertyName = "smjestaj_id";
+            this.smjestajidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.smjestajidDataGridViewTextBoxColumn.HeaderText = "smjestaj_id";
             this.smjestajidDataGridViewTextBoxColumn.Name = "smjestajidDataGridViewTextBoxColumn";
             this.smjestajidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.smjestajidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.smjestajidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.smjestajidDataGridViewTextBoxColumn.Visible = false;
             // 
             // jIRDataGridViewTextBoxColumn
             // 
@@ -160,10 +169,6 @@
             this.zaposlenikDataGridViewTextBoxColumn.ReadOnly = true;
             this.zaposlenikDataGridViewTextBoxColumn.Visible = false;
             // 
-            // racunBindingSource
-            // 
-            this.racunBindingSource.DataSource = typeof(Kampiraliste.racun);
-            // 
             // StorniranjeRacunaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,17 +197,17 @@
         private System.Windows.Forms.Label izdaniRacuniLabela;
         private System.Windows.Forms.DataGridView ispisIzdanihRacuna;
         private System.Windows.Forms.BindingSource racunBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preostalozaplatitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prijavaidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prijavaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zaposlenikidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn smjestajidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn smjestajidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jIRDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zIRDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preostalozaplatitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iznosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumvrijemeizdavanjaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prijavaidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn smjestajDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zaposlenikDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prijavaDataGridViewTextBoxColumn;
     }
 }
