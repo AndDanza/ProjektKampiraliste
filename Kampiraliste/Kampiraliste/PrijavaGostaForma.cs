@@ -178,7 +178,11 @@ namespace Kampiraliste
         {
             if(!String.IsNullOrEmpty(unosDatumRodenja.Text))
             {
-                DateTime uneseniDatum = DateTime.Parse(unosDatumRodenja.Text);
+                DateTime uneseniDatum;
+                if(!DateTime.TryParse(unosDatumRodenja.Text, out uneseniDatum))
+                {
+                    throw new KampiralisteException("Datum rođenja je neispravno unesen", this.Name);
+                }               
                 DateTime trenutniDatum = DateTime.Now;
 
                 status_osobe odabraniStatus = unosStatusOsobe.SelectedItem as status_osobe;
@@ -467,7 +471,6 @@ namespace Kampiraliste
         private string PretvorbaUnosaDatum(string ulazniNiz)
         {
             string izlazniNiz = "";
-
             try
             {
                 izlazniNiz = PretvornikDatum.PretvoriDatum(ulazniNiz);
