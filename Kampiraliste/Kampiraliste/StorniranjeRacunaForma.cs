@@ -12,6 +12,7 @@ namespace Kampiraliste
 {
     public partial class StorniranjeRacunaForma : Form
     {
+        private smjestaj odabraniSmjestaj = null;
         public StorniranjeRacunaForma()
         {
             InitializeComponent();
@@ -53,6 +54,8 @@ namespace Kampiraliste
                         {
                             item.racun_id = null;
                         }
+                        odabraniSmjestaj = odabraniRacun.smjestaj as smjestaj;
+                        ZauzmiParcelu();
 
                         baza.racuns.Remove(odabraniRacun);
                         baza.SaveChanges();
@@ -63,6 +66,16 @@ namespace Kampiraliste
                 MessageBox.Show("Potrebno je odabrati račun koji se želi stornirati!");
             }
             PrikaziRacune();
+        }
+
+        private void ZauzmiParcelu()
+        {
+            using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti())
+            {
+                odabraniSmjestaj.parcela.slobodno = false;
+
+                kontekst.SaveChanges();
+            }
         }
     }
 }

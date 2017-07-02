@@ -12,6 +12,8 @@ namespace Kampiraliste
 {
     public partial class IzdavanjeRacunaForma : Form
     {
+        public int brojOdabranihGostiju = 0;
+
         private smjestaj odabraniSmjestaj = null;
         private static Random random = new Random();
         zaposlenik prijavljeniZaposlenik = null;
@@ -29,7 +31,7 @@ namespace Kampiraliste
             BindingList<parcela> listaParcela = null;
             using (var baza = new KampiralisteEntiteti())
             {
-                listaParcela = new BindingList<parcela>(baza.parcelas.Where(p => p.slobodno == true).ToList());
+                listaParcela = new BindingList<parcela>(baza.parcelas.Where(p => p.slobodno == false).ToList());
             }
             parcelaBindingSource.DataSource = listaParcela;
         }
@@ -75,6 +77,8 @@ namespace Kampiraliste
             {
                 ispisOdabraniGosti.Items.Add(ispisSviGosti.SelectedItem);
                 ispisSviGosti.Items.Remove(ispisSviGosti.SelectedItem);
+                brojOdabranihGostiju++;
+
                 using (var kontekst = new KampiralisteEntiteti()) {
                     decimal ukupniIznos = UkupniIznosRacuna(null,kontekst);
                     ispisRacuna.Text = Convert.ToString(ukupniIznos) + " kn";
@@ -88,6 +92,7 @@ namespace Kampiraliste
             {
                 ispisSviGosti.Items.Add(ispisOdabraniGosti.SelectedItem);
                 ispisOdabraniGosti.Items.Remove(ispisOdabraniGosti.SelectedItem);
+                brojOdabranihGostiju--;
                 using (var kontekst = new KampiralisteEntiteti())
                 {
                     decimal ukupniIznos = UkupniIznosRacuna(null, kontekst);
@@ -103,6 +108,8 @@ namespace Kampiraliste
                 racun kreiraniRacun=KreirajRacun();
                 KreirajStavke(kreiraniRacun);
                 MessageBox.Show("Račun je kreiran!");
+                ispisOdabraniGosti.Items.Clear();
+                ispisRacuna.Text = null;
             }
 
             else {
@@ -166,7 +173,15 @@ namespace Kampiraliste
             using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti()) {
                 kontekst.smjestajs.Attach(odabraniSmjestaj);
                 odabraniSmjestaj.broj_osoba = brojOsoba;
-                odabraniSmjestaj.parcela.slobodno = true;
+                if (brojOdabranihGostiju < odabraniSmjestaj.broj_osoba)
+                {
+                    odabraniSmjestaj.parcela.slobodno = false;
+                }
+                else
+                {
+                    odabraniSmjestaj.parcela.slobodno = true;
+                }
+                
 
                 kontekst.SaveChanges();
             }
