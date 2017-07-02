@@ -116,6 +116,7 @@ namespace Kampiraliste
             using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti())
             {
                 kontekst.smjestajs.Attach(odabraniSmjestaj);
+                kontekst.zaposleniks.Attach(this.prijavljeniZaposlenik);
 
                 noviRacun = new racun()
                 {
@@ -164,6 +165,7 @@ namespace Kampiraliste
         private void OslobodiParcelu(int brojOsoba)
         {
             using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti()) {
+                kontekst.smjestajs.Attach(odabraniSmjestaj);
                 odabraniSmjestaj.broj_osoba = brojOsoba;
                 odabraniSmjestaj.parcela.slobodno = true;
 
