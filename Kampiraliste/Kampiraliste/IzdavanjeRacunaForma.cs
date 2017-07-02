@@ -20,7 +20,7 @@ namespace Kampiraliste
         public IzdavanjeRacunaForma(zaposlenik prijavljeni)
         {
             InitializeComponent();
-            this.prijavljeniZaposlenik = prijavljeni;
+            prijavljeniZaposlenik = prijavljeni;
         }
 
 
@@ -29,7 +29,7 @@ namespace Kampiraliste
             BindingList<parcela> listaParcela = null;
             using (var baza = new KampiralisteEntiteti())
             {
-                listaParcela = new BindingList<parcela>(baza.parcelas.Where(p => p.slobodno == false).ToList());
+                listaParcela = new BindingList<parcela>(baza.parcelas.Where(p => p.slobodno == true).ToList());
             }
             parcelaBindingSource.DataSource = listaParcela;
         }
@@ -116,13 +116,12 @@ namespace Kampiraliste
             using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti())
             {
                 kontekst.smjestajs.Attach(odabraniSmjestaj);
-                kontekst.zaposleniks.Attach(this.prijavljeniZaposlenik);
 
                 noviRacun = new racun()
                 {
                     smjestaj = odabraniSmjestaj as smjestaj,
                     smjestaj_id = odabraniSmjestaj.id,
-                    zaposlenik = this.prijavljeniZaposlenik,
+                    zaposlenik_id = prijavljeniZaposlenik.id,
                     JIR = RandomString(),
                     ZIR = RandomString(),
                     iznos = 0,
