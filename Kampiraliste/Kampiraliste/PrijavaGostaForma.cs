@@ -31,6 +31,7 @@ namespace Kampiraliste
             InitializeComponent();
             this.kontekst = new KampiralisteEntiteti();
             this.prijavljeniZaposlenik = prijavljeni;
+            this.kontekst.zaposleniks.Attach(this.prijavljeniZaposlenik);
         }
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace Kampiraliste
             this.kontekst = ulazniKontekst;
             this.azurirajPrijavu = ulazPrijava;
             this.prijavljeniZaposlenik = prijavljeni;
+            this.kontekst.zaposleniks.Attach(this.prijavljeniZaposlenik);
         }
 
         /// <summary>
