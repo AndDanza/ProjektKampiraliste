@@ -173,7 +173,7 @@ namespace Kampiraliste
             using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti()) {
                 kontekst.smjestajs.Attach(odabraniSmjestaj);
                 odabraniSmjestaj.broj_osoba = brojOsoba;
-                if (brojOdabranihGostiju < odabraniSmjestaj.broj_osoba)
+                if (ispisSviGosti.Items.Count>0)
                 {
                     odabraniSmjestaj.parcela.slobodno = false;
                 }
