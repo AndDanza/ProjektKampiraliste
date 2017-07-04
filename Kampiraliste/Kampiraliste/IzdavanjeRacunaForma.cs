@@ -12,8 +12,6 @@ namespace Kampiraliste
 {
     public partial class IzdavanjeRacunaForma : Form
     {
-        public int brojOdabranihGostiju = 0;
-
         private smjestaj odabraniSmjestaj = null;
         private static Random random = new Random();
         zaposlenik prijavljeniZaposlenik = null;
@@ -25,7 +23,7 @@ namespace Kampiraliste
             prijavljeniZaposlenik = prijavljeni;
         }
 
-
+        //ispis svih zauzetih parcela
         private void PrikaziParcele()
         {
             BindingList<parcela> listaParcela = null;
@@ -41,6 +39,7 @@ namespace Kampiraliste
             PrikaziParcele();
         }
 
+        //odabrana parcela -> prikaz prijavljenih gostiju u zadnjem smještaju
         private void odabirParcele_SelectedIndexChanged(object sender, EventArgs e)
         {
             ispisSviGosti.Items.Clear();
@@ -51,6 +50,7 @@ namespace Kampiraliste
             {
                 if (odabranaParcela != null)
                 {
+                    ispisRacuna.Clear();
                     kontekst.parcelas.Attach(odabranaParcela);
 
                     odabraniSmjestaj = odabranaParcela.smjestajs.LastOrDefault() as smjestaj;
@@ -71,13 +71,13 @@ namespace Kampiraliste
 
         }
 
+        //ispis -> svi gosti sa odabrane parcele
         private void ispisSviGosti_DoubleClick(object sender, EventArgs e)
         {
             if (ispisSviGosti.SelectedItem != null)
             {
                 ispisOdabraniGosti.Items.Add(ispisSviGosti.SelectedItem);
                 ispisSviGosti.Items.Remove(ispisSviGosti.SelectedItem);
-                brojOdabranihGostiju++;
 
                 using (var kontekst = new KampiralisteEntiteti()) {
                     decimal ukupniIznos = UkupniIznosRacuna(null,kontekst);
@@ -86,13 +86,14 @@ namespace Kampiraliste
             }
         }
 
+        //ispis -> odabrani gosti za koje se želi izdati račun
         private void ispisOdabraniGosti_DoubleClick(object sender, EventArgs e)
         {
             if (ispisOdabraniGosti.SelectedItem != null)
             {
                 ispisSviGosti.Items.Add(ispisOdabraniGosti.SelectedItem);
                 ispisOdabraniGosti.Items.Remove(ispisOdabraniGosti.SelectedItem);
-                brojOdabranihGostiju--;
+
                 using (var kontekst = new KampiralisteEntiteti())
                 {
                     decimal ukupniIznos = UkupniIznosRacuna(null, kontekst);
@@ -101,6 +102,7 @@ namespace Kampiraliste
             }
         }
 
+        //poziv funkcije za kreiranje računa, osvjezavanje parcela, prikaza iznosa i gostiju
         private void akcijaKreirajRacun_Click(object sender, EventArgs e)
         {
             if (ispisOdabraniGosti.Items.Count > 0)
@@ -110,13 +112,15 @@ namespace Kampiraliste
                 MessageBox.Show("Račun je kreiran!");
                 ispisOdabraniGosti.Items.Clear();
                 ispisRacuna.Text = null;
+                PrikaziParcele();
             }
 
             else {
                 MessageBox.Show("Niste odabrali goste za koje želite izdati račun!");
             }
         }
-
+        
+        //kreiranje računa
         private racun KreirajRacun()
         {
             racun noviRacun = null;
@@ -140,7 +144,7 @@ namespace Kampiraliste
             return noviRacun;
         }
 
-
+        //random string za JIR i ZIR na racunu
         public static string RandomString()
         {
             const string znakovi = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -148,7 +152,7 @@ namespace Kampiraliste
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-
+        //detalji racuna -> dohvacanje ukupnog iznosa i ispis te oslobađanje parcele
         public void KreirajStavke(racun kreiraniRacun)
         {
             decimal ukupniIznos = 0;
@@ -167,7 +171,7 @@ namespace Kampiraliste
         }
 
 
-
+        //ako nema gostiju na parceli, oslobodi parcelu u suprotnom je i dalje zauzeta
         private void OslobodiParcelu(int brojOsoba)
         {
             using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti()) {
@@ -187,6 +191,7 @@ namespace Kampiraliste
             }
         }
 
+        //racun -> izracun ukupnog iznosa prema statusu osobe, broju dana, vrsti smjestaja i broju osoba
         private decimal UkupniIznosRacuna(racun kreiraniRacun, KampiralisteEntiteti kontekst)
         {
                 decimal ukupniIznos = 0;

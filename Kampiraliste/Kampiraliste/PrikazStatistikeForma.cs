@@ -19,6 +19,7 @@ namespace Kampiraliste
             InitializeComponent();
         }
 
+        //ispis statistike -domaci-strani- prema upisanom datumu
         private void akcijaPrikaziStatPoDatumu_Click(object sender, EventArgs e)
         {
             DateTime datum;
@@ -67,6 +68,7 @@ namespace Kampiraliste
             }
         }
 
+        //prikaz statistike gostiju na parcelama kroz godinu pri pokretanju forme
         private void PrikazStatistikeForma_Load(object sender, EventArgs e)
         {
             List<int> listaBrojeva = new List<int>();
@@ -97,6 +99,8 @@ namespace Kampiraliste
             }
         }
 
+
+        //dll za prikaz datuma
         private void unosDatumFiltiranja_Leave(object sender, EventArgs e)
         {
             string uneseniNiz = unosDatumFiltiranja.Text;

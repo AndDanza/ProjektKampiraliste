@@ -17,6 +17,8 @@ namespace Kampiraliste
         {
             InitializeComponent();
         }
+
+        //ispis svih računa iz baze
         private void PrikaziRacune()
         {
             BindingList<racun> listaRacuna = null;
@@ -32,6 +34,8 @@ namespace Kampiraliste
             PrikaziRacune();
         }
 
+
+        // storniranje racuna -> dohvacanje prijava, postavljanje racuna na null i ponovno zauzimanje parcele
         private void akcijaStornirajRacun_Click(object sender, EventArgs e)
         {
             BindingList<prijava> listaPrijava = new BindingList<prijava>();
@@ -68,6 +72,8 @@ namespace Kampiraliste
             PrikaziRacune();
         }
 
+
+        //funkcija za ponovno zauzimanje parcela nakon storniranja racuna
         private void ZauzmiParcelu()
         {
             using (KampiralisteEntiteti kontekst = new KampiralisteEntiteti())
